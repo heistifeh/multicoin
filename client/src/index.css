@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+  --color-twitter-blue: #1da1f2;
+  --font-primary: "Titillium Web", serif;
+  --color-primary: #4a4a67;
+  --color-secondary: #cb6e17;
+  --color-bg: #fdfdfd;
+  --color-nav: #102a43;
+  --color-footer: #102a43;
+}
+
+/* #102A43 - nav
+#FDFDFD - body
+#4A4A67 - primary
+#4B4A4A -iconbg
+#222222- header
+#CB6E17 - onratechange, sec
+#102A43- footer */
