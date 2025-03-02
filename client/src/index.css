@@ -3,13 +3,18 @@
 @theme {
   --color-twitter-blue: #1da1f2;
   --font-primary: "Titillium Web", serif;
-  --color-primary: #4a4a67;
+  --color-primary: #a09fa0;
   --color-secondary: #cb6e17;
-  --color-bg: #fdfdfd;
-  --color-nav: #102a43;
+  --color-bg: #222222;
+  --color-nav: #252729;
   --color-footer: #102a43;
 }
 
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+}
 /* #102A43 - nav
 #FDFDFD - body
 #4A4A67 - primary
