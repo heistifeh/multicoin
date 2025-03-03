@@ -3,18 +3,20 @@
 @theme {
   --color-twitter-blue: #1da1f2;
   --font-primary: "Titillium Web", serif;
-  --color-primary: #a09fa0;
+  --color-primary: #0038df;
+  --color-dark-primary: #000b33;
+  --color-light-primary: #4d74ff;
   --color-secondary: #cb6e17;
-  --color-bg: #222222;
-  --color-nav: #252729;
+  --color-text: #74879a;
+  --color-icon: #95f001;
   --color-footer: #102a43;
 }
 
 body {
   font-family: var(--font-primary);
-  background-color: var(--color-bg);
-  color: var(--color-primary);
+  color: var(--color-text);
 }
+
 /* #102A43 - nav
 #FDFDFD - body
 #4A4A67 - primary
@@ -22,3 +24,11 @@ body {
 #222222- header
 #CB6E17 - onratechange, sec
 #102A43- footer */
+
+/* #0038DF  pri
+#000B33- dar pri
+#4D74FF- light pri
+#FF4D94- pink
+#95F001 - icon
+#95F001
+#74879A - text */

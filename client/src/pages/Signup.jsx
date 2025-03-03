@@ -27,6 +27,9 @@ function Signup() {
         <button className="bg-secondary text-white p-2 rounded-lg hover:opacity-85 cursor-pointer">
           SIGN UP
         </button>
+        <button className="bg-orange-700 text-white p-2 rounded-lg hover:opacity-85 cursor-pointer">
+          SIGN UP WITH GOOGLE
+        </button>
       </form>
       <div className="my-2">
         <span>{`already have an account?`} </span>{" "}

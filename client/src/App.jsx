@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./initpages/Home";
+import Portfolio from "./pages/Portfolio";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import About from "./pages/About.jsx";
@@ -11,6 +12,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/sign-in" element={<Signin />} />
         <Route path="/sign-up" element={<Signup />} />
         <Route path="/about" element={<About />} />

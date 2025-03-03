@@ -22,6 +22,9 @@ function Signin() {
         <button className="bg-secondary text-white p-2 rounded-lg hover:opacity-85 cursor-pointer">
           SIGN IN
         </button>
+        <button className="bg-orange-700 text-white p-2 rounded-lg hover:opacity-85 cursor-pointer">
+          SIGN IN WITH GOOGLE
+        </button>
       </form>
       <div className="my-2">
         <span>{`Don't have an account?`} </span>{" "}
