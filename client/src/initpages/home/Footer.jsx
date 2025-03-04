@@ -142,7 +142,7 @@ const Footer = () => {
           <span className=" cursor-pointer text-black text-base">
             Check the background of this firm on{" "}
             <span className="text-primary-very-light hover:underline text-sm">
-              FINRA’s BrokerCheck.
+              FINRAs BrokerCheck.
             </span>
           </span>
           <span className=" text-primary-very-light cursor-pointer hover:underline text-sm">
