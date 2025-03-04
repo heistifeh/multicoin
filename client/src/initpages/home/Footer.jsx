@@ -514,8 +514,9 @@ const Footer = () => {
             of your investment. See Jiko U.S. Treasuries Risk Disclosures for
             further details.
           </span>
-          <span className="text-sm py-2 font-bold uppercase">
-            Investments in T-bills: Not FDIC Insured; No Bank Guarantee;
+          <span className="text-sm py-2 font-bold ">
+            Investments in T-bills: Not FDIC Insured; No Bank Guarantee; May
+            Lose Value.
           </span>
 
           <span className="text-sm py-4">
