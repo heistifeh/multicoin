@@ -1,5 +1,7 @@
 import React from "react";
 import hero from "../../assets/images/hero-stocks.png";
+import { FaCheck } from "react-icons/fa6";
+
 import stock2 from "../../assets/images/guide-stock-2.png";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa6";
@@ -8,11 +10,14 @@ import { TbArrowsUpLeft } from "react-icons/tb";
 import star from "../../assets/images/star.png";
 import light from "../../assets/images/light.png";
 import { CiCircleInfo } from "react-icons/ci";
+import sipc from "../../assets/images/SIPC-logo.png";
+import fdic from "../../assets/images/FDIC-logo.png";
+import finra from "../../assets/images/FINRA-logo.png";
 const Alpha = () => {
   return (
     <div>
-      <div className="blocks flex rounded-2xl flex-col md:flex-row justify-around gap-4  my-16 bg-slate-100">
-        <div className="key-moments flex flex-col hover:translate-y-2 duration-300">
+      <div className="blocks flex rounded-2xl flex-col md:flex-row justify-between gap-4  my-16 bg-slate-100">
+        <div className="key-moments flex flex-col hover:translate-y-2 duration-300 w-[90%] mx-auto">
           <div className="flex gap-2 pt-4 items-center">
             <img src={star} alt="" className="w-6 h-6" />
             <p className="text-black text-2xl md:3xl ">alpha</p>
@@ -40,17 +45,178 @@ const Alpha = () => {
             <span>Alpha Disclosures</span>
           </div>
         </div>
-        <div className="key-moments text-center flex flex-col  hover:translate-y-2 duration-300  ">
+        <div className="key-moments text-center flex flex-col  hover:translate-y-2 duration-300 items-center justify-center">
           <div className="img mb-8">
-            <img src={hero} alt="" className="w-1/2 mx-auto" />
+            <img src={hero} alt="" className="w-1/2 mx-auto " />
           </div>
         </div>
       </div>
 
       {/* next section on Alpha */}
 
-      <div className="img-alpha" style={{ width: "100%" }}>
-        <img src={light} alt="" />
+      <div className="relative img-alpha mb-0" style={{ width: "100%" }}>
+        <img src={light} alt="" className="h-[400px] w-full" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl md:5xl font-semibold flex flex-col items-center justify-center">
+          <span className="text-6xl md:12xl  mt-4">Secure by design.</span>
+          <span className="text-6xl md:12xl text-alpha">
+            Transparent by choice.
+          </span>
+        </div>
+      </div>
+      <div className="grid grid-cols-1  md:grid-cols-3 gap-4 mt-0 mb-0 bg-black pb-10">
+        <div className="flex flex-col justify-center p-4 border-t-1 border-b-1 border-slate-600">
+          <p className="text-white text-lg sm:text-xl">Regulated in the US</p>
+          <span className="my-4">
+            Brokerage services for US-listed, registered securities are offered
+            through Public Investing, Inc., a registered broker-dealer and
+            FINRA/SIPC member.
+          </span>
+          <img src={finra} alt="" className="w-12 h-8 object-contain" />
+        </div>
+        <div className="flex flex-col justify-center p-4 md:border-t-1 border-b-1 border-slate-600">
+          <p className="text-white text-lg sm:text-xl">Insurance coverage</p>
+          <span className="my-4">
+            SIPC protects the cash and securities in your portfolio up to
+            $500,000. FDIC provides up to $5 million in protection for your
+            High-Yield Cash Account.
+          </span>
+          <div className="flex gap-4">
+            <img src={fdic} alt="" className="w-10 h-8 object-contain" />
+            <img src={sipc} alt="" className="w-10 h-8 object-contain" />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center p-4 md:border-t-1 border-b-1 border-slate-600">
+          <p className="text-white text-lg sm:text-xl">
+            Financial-grade security
+          </p>
+          <span className="my-4">
+            We secure your data on Public with AES 256-bit encryption and the
+            latest TLS protocols, ensuring your information stays protected at
+            all times.
+          </span>
+        </div>
+        <div className="flex flex-col justify-center p-4  border-b-1 md:border-b-0 border-slate-600">
+          <p className="text-white text-lg sm:text-xl">Order integrity</p>
+          <span className="my-4">
+            Unlike other brokerages, Public does not take payment for order flow
+            from market makers on equity trades, supporting more transparent
+            markets.
+          </span>
+          <div className="learn-more flex items-center  text-primary-very-light  gap-2 p-2 hover:underline-offset-1 text-sm">
+            <span>Learn more</span>
+            <FaArrowRight />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center p-4  border-b-1 md:border-b-0 border-slate-600">
+          <p className="text-white text-lg sm:text-xl">Fee transparency</p>
+          <span className="my-4">
+            Our straightforward fee structure can help you understand exactly
+            what things cost—and what are incentives are as a business.
+          </span>
+          <div className="learn-more flex items-center  text-primary-very-light  gap-2 p-2 hover:underline-offset-1 text-sm">
+            <span>Learn about fees on public</span>
+            <FaArrowRight />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center p-4   md:border-b-0 border-slate-600">
+          <p className="text-white text-lg sm:text-xl">99.994% uptime</p>
+          <span className="my-4">
+            Our reliable platform achieves 99.994% uptime, keeping you connected
+            to the markets whenever you need, so you never miss an opportunity
+            to invest.
+          </span>
+          <span my-6>Based on calendar year 2024</span>
+        </div>
+      </div>
+
+      {/* account benefits */}
+      <div className="bg-black mt-0">
+        <hr className="text-slate-400" />
+        <div className="flex flex-col items-center justify-center mb-16 pt-40 pb-4 bg-black w-[90%] mx-auto">
+          <span className="text-primary-very-light">ACCOUNT BENEFITS</span>
+          <span className="text-4xl md:text-6xl text-white">
+            As your account value grows,
+          </span>
+          <span className="text-4xl md:text-6xl">
+            so does your experience on Public
+          </span>
+        </div>
+        <div className="grid grid-cols-1  md:grid-cols-3 md:w-4/5  mt-0 bg-black md:mx-auto mb-10">
+          <div className="flex flex-col justify-center p-4 border-t-1 border-b-1 md:border-1 border-slate-800">
+            <span className="text-primary-very-light text-2xl pt-4">Base</span>
+            <div className="flex gap-2 items-center">
+              <p className="text-white text-xl sm:text-2xl">$1+</p>
+              <span className="text-white px-2 bg-slate-700 rounded-lg">
+                account value
+              </span>
+            </div>
+            <div className="flex gap-2 items-center mt-4 mb-2">
+              <FaCheck className="text-primary-very-light" />
+              <span>Multi-asset investing</span>
+            </div>
+            <div className="flex gap-2 items-center my-2">
+              <FaCheck className="text-primary-very-light" />
+              <span>Industry-leading yields</span>
+            </div>
+            <div className="flex gap-2 items-center my-2">
+              <FaCheck className="text-primary-very-light" />
+              <span>AI-powered analysis</span>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center p-4 border-t-1 border-b-1 md:border-1 border-slate-800">
+            <span className="text-primary-very-light text-2xl pt-4">
+              Premium
+            </span>
+            <div className="flex gap-2 items-center">
+              <p className="text-white text-xl sm:text-2xl">$50,000+</p>
+              <span className="text-white px-2 bg-slate-700 rounded-lg">
+                account value
+              </span>
+            </div>
+            <div className="flex gap-2 items-center mt-4 mb-2">
+              <FaCheck className="text-primary-very-light" />
+              <span>Free extended-hours trading</span>
+            </div>
+            <div className="flex gap-2 items-center my-2">
+              <FaCheck className="text-primary-very-light" />
+              <span>Free Investment Plans</span>
+            </div>
+            <div className="flex gap-2 items-center my-2">
+              <FaCheck className="text-primary-very-light" />
+              <span>Priority support</span>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center p-4 border-t-1 border-b-1 md:border-1 border-slate-800">
+            <span className="text-primary-very-light text-2xl pt-4">
+              Concierge
+            </span>
+            <div className="flex gap-2 items-center">
+              <p className="text-white text-xl sm:text-2xl">$250,000+</p>
+              <span className="text-white px-2 bg-slate-700 rounded-lg">
+                account value
+              </span>
+            </div>
+            <div className="flex gap-2 items-center mt-4 mb-2">
+              <FaCheck className="text-primary-very-light" />
+              <span>White-glove VIP support</span>
+            </div>
+            <div className="flex gap-2 items-center my-2">
+              <FaCheck className="text-primary-very-light" />
+              <span>Personalized offers</span>
+            </div>
+            <div className="flex gap-2 items-center my-2">
+              <FaCheck className="text-primary-very-light" />
+              <span>Exclusive invites</span>
+            </div>
+          </div>
+          <div></div>
+          <div className="flex items-center justify-center">
+            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] md:w-2xl text-lg md:text-xl font-semibold s">
+              Sign Up
+            </button>
+          </div>
+          <div></div>
+        </div>
       </div>
     </div>
   );

@@ -12,6 +12,7 @@
   --color-text: #74879a;
   --color-icon: #95f001;
   --color-footer: #102a43;
+  --color-alpha: #378cb3;
   /* --font-lg: 18px;
   --font-large: 24px;
   --font-sm: 16px; */
@@ -23,9 +24,7 @@ body {
   width: 95%;
   margin: 0 auto;
 }
-.img-alpha {
-  width: 100%; !important;
-}
+
 /* #102A43 - nav
 #FDFDFD - body
 #4A4A67 - primary

@@ -1,0 +1,18 @@
+Nav- dropdown sm, lg
+
+
+nerdwallet image
+features image
+alpha image
+spread alpha image out
+
+...we actually care image
+
+reuse
+
+icon with word
+////////////////////////////////////
+ <div className="flex gap-2 items-center my-4">
+              <FaCheck />
+              <span>Multi-asset investing</span>
+            </div>
