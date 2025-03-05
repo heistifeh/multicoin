@@ -22,7 +22,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/invest/stocks" element={<Stock />} />
+        <Route path="/invest/stock" element={<Stock />} />
         <Route path="/invest/options" element={<Options />} />
         <Route path="/invest/margin" element={<Margin />} />
         <Route path="/invest/bonds" element={<Bonds />} />

@@ -119,6 +119,11 @@ export const ResourceMenu = () => {
               See how the Options Trading Rebate Program works
             </p>
           </div>
+        </Link>
+        <Link
+          to={"/invest/investment"}
+          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+        >
           <div className="hover:bg-slate-50">
             <span className="text-base">Transfer Your Account</span>
             <p className="text-text text-sm">
@@ -126,10 +131,37 @@ export const ResourceMenu = () => {
               Public.
             </p>
           </div>
+        </Link>
+        <Link
+          to={"/invest/investment"}
+          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+        >
           <div className="hover:bg-slate-50">
             <span className="text-base">High Yield Savings Calculator.</span>
             <p className="text-text text-sm">
               Compare our competitive rates and plan your financial growth
+            </p>
+          </div>
+        </Link>
+        <Link
+          to={"/invest/investment"}
+          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+        >
+          <div className="hover:bg-slate-50">
+            <span className="text-base">Bond Screener</span>
+            <p className="text-text text-sm">
+              Explore over 10,000 bonds with our advanced screening tool.
+            </p>
+          </div>
+        </Link>
+        <Link
+          to={"/invest/investment"}
+          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+        >
+          <div className="hover:bg-slate-50">
+            <span className="text-base">Learn</span>
+            <p className="text-text text-sm">
+              Browse our latest articles and investing resources.
             </p>
           </div>
         </Link>
@@ -153,33 +185,28 @@ export const ResourceMenu = () => {
   );
 };
 const Navbar = () => {
-  const [hamburger, setHamburger] = useState({
+  const [hamburger, setHamburger] = useState(false);
+  const [megaMenu, setMegaMenu] = useState({
     state: false,
     name: "",
   });
-  const [megaMenu, setMegaMenu] = useState(false);
 
   const handleHamBurgerMenu = () => {
     setHamburger(!hamburger);
   };
 
-  const handleMegaMenuClose = () => {
-    setMegaMenu(false);
-  };
   return (
-    <nav className="relative flex justify-between items-center pb-5   text-head text-base sm:text-lg font-semibold z-50">
-      <div>
-        <img
-          src="./logo1.jpg"
-          alt=""
-          className="rounded-lg w-8 h-8"
-          onMouseLeave={handleMegaMenuClose}
-        />
-      </div>
-      <div
-        className="hidden lg:flex space-x-5 items-center"
-        onMouseLeave={handleMegaMenuClose}
-      >
+    <nav
+      className="relative flex justify-between items-center pb-5   text-head text-base sm:text-lg font-semibold z-50 "
+      onMouseLeave={() => setMegaMenu({ state: false, name: "" })}
+    >
+      <Link to={"/"}>
+        <div>
+          <img src="/logo1.jpg" alt="" className="rounded-lg w-8 h-8" />
+        </div>
+      </Link>
+
+      <div className="hidden lg:flex space-x-5 items-center">
         <ul className="flex space-x-10  z-10">
           <Link
             onMouseEnter={() => setMegaMenu({ state: true, name: "invest" })}

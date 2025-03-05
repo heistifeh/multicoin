@@ -8,6 +8,8 @@ spread alpha image out
 
 ...we actually care image
 
+ADD DROP-MESSAGE TO STOCK
+
 reuse
 
 icon with word
