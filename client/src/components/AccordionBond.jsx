@@ -48,7 +48,7 @@ const AccordionBond = () => {
             <div
               className={` ${
                 accordionOpen.name === "1" && accordionOpen.state
-                  ? "opacity-100 transition-all duration-500 ease-in-out max-h-screen visible "
+                  ? "opacity-100 transition-all duration-700 ease-in-out max-h-screen visible "
                   : "opacity-0 h-0 invisible"
               }`}
             >
@@ -97,7 +97,7 @@ const AccordionBond = () => {
             <div
               className={` ${
                 accordionOpen.name === "2" && accordionOpen.state
-                  ? "opacity-100 transition-all duration-500 ease-in-out max-h-screen visible "
+                  ? "opacity-100 transition-all duration-700 ease-in-out max-h-screen visible "
                   : "opacity-0 h-0 invisible"
               }`}
             >
@@ -146,7 +146,7 @@ const AccordionBond = () => {
             <div
               className={` ${
                 accordionOpen.name === "3" && accordionOpen.state
-                  ? "opacity-100 transition-all duration-500 ease-in-out max-h-screen visible "
+                  ? "opacity-100 transition-all duration-700 ease-in-out max-h-screen visible "
                   : "opacity-0 h-0 invisible"
               }`}
             >
@@ -195,7 +195,7 @@ const AccordionBond = () => {
             <div
               className={` ${
                 accordionOpen.name === "4" && accordionOpen.state
-                  ? "opacity-100 transition-all duration-500 ease-in-out max-h-screen visible "
+                  ? "opacity-100 transition-all duration-700 ease-in-out max-h-screen visible "
                   : "opacity-0 h-0 invisible"
               }`}
             >
@@ -246,7 +246,7 @@ const AccordionBond = () => {
             <div
               className={` ${
                 accordionOpen.name === "5" && accordionOpen.state
-                  ? "opacity-100 transition-all duration-500 ease-in-out max-h-screen visible "
+                  ? "opacity-100 transition-all duration-700 ease-in-out max-h-screen visible "
                   : "opacity-0 h-0 invisible"
               }`}
             >
@@ -295,7 +295,7 @@ const AccordionBond = () => {
             <div
               className={` ${
                 accordionOpen.name === "6" && accordionOpen.state
-                  ? "opacity-100 transition-all duration-500 ease-in-out max-h-screen visible "
+                  ? "opacity-100 transition-all duration-700 ease-in-out max-h-screen visible "
                   : "opacity-0 h-0 invisible"
               }`}
             >
@@ -344,7 +344,7 @@ const AccordionBond = () => {
             <div
               className={` ${
                 accordionOpen.name === "7" && accordionOpen.state
-                  ? "opacity-100 transition-all duration-500 ease-in-out max-h-screen visible "
+                  ? "opacity-100 transition-all duration-700 ease-in-out max-h-screen visible "
                   : "opacity-0 h-0 invisible"
               }`}
             >
@@ -393,7 +393,7 @@ const AccordionBond = () => {
             <div
               className={` ${
                 accordionOpen.name === "8" && accordionOpen.state
-                  ? "opacity-100 transition-all duration-500 ease-in-out max-h-screen visible "
+                  ? "opacity-100 transition-all duration-700 ease-in-out max-h-screen visible "
                   : "opacity-0 h-0 invisible"
               }`}
             >
@@ -405,6 +405,100 @@ const AccordionBond = () => {
                 <div className="my-4 sm:my-0">
                   <p className="text-sm">Issuer</p>
                   <p className="text-black text-lg">PSEC</p>
+                </div>
+                <div className="my-4 sm:my-0">
+                  <p className="text-sm"> SP Rating</p>
+                  <p className="text-primary-very-light text-lg ">
+                    Login to see rating
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="cursor-pointer flex-col">
+            <div>
+              <div
+                className={`flex justify-between border-t-1 border-slate-200 items-center `}
+                onClick={() => toggleAccordion("9")}
+              >
+                <div className="first-side flex gap-2 items-center py-2">
+                  <FaCoins className="text-3xl text-slate-700" />
+                  <div>
+                    <p className="text-slate-700">V.F.</p>
+                    <span>VFC 2.95% 04/23/2030</span>
+                  </div>
+                </div>
+
+                <div className="second-side">
+                  <IoIosArrowDown />
+                  {/* <IoIosArrowUp /> */}
+                </div>
+              </div>
+            </div>
+
+            {/* dropdown */}
+            <div
+              className={` ${
+                accordionOpen.name === "9" && accordionOpen.state
+                  ? "opacity-100 transition-all duration-700 ease-in-out max-h-screen visible "
+                  : "opacity-0 h-0 invisible"
+              }`}
+            >
+              <div className={`grid grid-cols-3 px-4 overflow-hidden`}>
+                <div className="my-4 sm:my-0">
+                  <p className="text-sm">Yield</p>
+                  <p className="text-black text-lg">5.86%</p>
+                </div>
+                <div className="my-4 sm:my-0">
+                  <p className="text-sm">Issuer</p>
+                  <p className="text-black text-lg">VFC</p>
+                </div>
+                <div className="my-4 sm:my-0">
+                  <p className="text-sm"> SP Rating</p>
+                  <p className="text-primary-very-light text-lg ">
+                    Login to see rating
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="cursor-pointer flex-col">
+            <div>
+              <div
+                className={`flex justify-between border-t-1 border-slate-200 items-center `}
+                onClick={() => toggleAccordion("10")}
+              >
+                <div className="first-side flex gap-2 items-center py-2">
+                  <FaCoins className="text-3xl text-slate-700" />
+                  <div>
+                    <p className="text-slate-700">Vornado Realty Trust</p>
+                    <span>VNO 3.4% 06/01/2031</span>
+                  </div>
+                </div>
+
+                <div className="second-side">
+                  <IoIosArrowDown />
+                  {/* <IoIosArrowUp /> */}
+                </div>
+              </div>
+            </div>
+
+            {/* dropdown */}
+            <div
+              className={` ${
+                accordionOpen.name === "10" && accordionOpen.state
+                  ? "opacity-100 transition-all duration-700 ease-in-out max-h-screen visible "
+                  : "opacity-0 h-0 invisible"
+              }`}
+            >
+              <div className={`grid grid-cols-3 px-4 overflow-hidden`}>
+                <div className="my-4 sm:my-0">
+                  <p className="text-sm">Yield</p>
+                  <p className="text-black text-lg">6.21%</p>
+                </div>
+                <div className="my-4 sm:my-0">
+                  <p className="text-sm">Issuer</p>
+                  <p className="text-black text-lg">VNO</p>
                 </div>
                 <div className="my-4 sm:my-0">
                   <p className="text-sm"> SP Rating</p>

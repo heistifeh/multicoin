@@ -3,12 +3,20 @@ import Navbar from "../../../components/Navbar";
 import bondaccount from "../bond-account/images/bond-account.png";
 import step1 from "../bond-account/images/step-1.png";
 import step2 from "../bond-account/images/step-2.png";
+import acc1 from "../bond-account/images/acc-1.png";
+import acc2 from "../bond-account/images/acc-2.png";
+import acc3 from "../bond-account/images/acc-3.png";
 import rateRaise from "../bond-account/images/rate-raise-1.png";
 import rateCut from "../bond-account/images/rate-cut-1.png";
+import yieldAcc from "../bond-account/images/yield.png";
+import herobg from "../../../assets/images/herobg.png";
 import { FaCheck } from "react-icons/fa6";
 import { IoIosHeart } from "react-icons/io";
 import { FaFlagUsa } from "react-icons/fa";
 import AccordionBond from "../../../components/AccordionBond";
+import { Link } from "react-router-dom";
+
+import Footer from "../../home/Footer.jsx";
 const BondAccount = () => {
   return (
     <div>
@@ -40,7 +48,9 @@ const BondAccount = () => {
           yield shown here and YTW is not “locked in” until the time of
           purchase. A bond’s YTW is not guaranteed; you can earn less than that
           YTW if you do not hold the bonds to maturity or the issuer defaults.
-          <span className="underline">Learn more.</span>
+          <Link to={"/"}>
+            <span className="underline">Learn more.</span>
+          </Link>
         </span>
       </div>
       {/* what is Bond account */}
@@ -56,6 +66,7 @@ const BondAccount = () => {
           time.
         </span>
       </div>
+
       {/* next */}
       <div>
         <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row-reverse justify-between gap-8">
@@ -64,7 +75,7 @@ const BondAccount = () => {
           </div>
           <div className="w-1/2">
             <div className="invest  sm:w-1/2 mb-6 flex flex-col justify-center">
-              <h1 className=" my-2 text-xl sm:text-xl  text-black">
+              <h1 className=" my-2 font-bold text-xl sm:text-xl  text-black">
                 Lock in your yield
               </h1>
               <span className="text-basesm:text-xl tracking-wide text-slate-600">
@@ -75,7 +86,7 @@ const BondAccount = () => {
               </span>
             </div>
             <div className="invest  sm:w-1/2 mb-6 flex flex-col justify-center">
-              <h1 className=" my-2 text-xl sm:text-xl  text-black">
+              <h1 className=" my-2 font-bold text-xl sm:text-xl  text-black">
                 Skip the sky-high minimums
               </h1>
               <span className="text-basesm:text-xl tracking-wide text-slate-600">
@@ -85,7 +96,7 @@ const BondAccount = () => {
               </span>
             </div>
             <div className="invest  sm:w-1/2 mb-6 flex flex-col justify-center">
-              <h1 className=" my-2 text-xl sm:text-xl  text-black">
+              <h1 className=" my-2 font-bold text-xl sm:text-xl  text-black">
                 Receive regular interest payments
               </h1>
               <span className="text-basesm:text-xl tracking-wide text-slate-600">
@@ -234,17 +245,23 @@ const BondAccount = () => {
         <div className="py-20 flex flex-col justify-center items-center sm:w-2/3 sm:mx-auto">
           <span className="text-white">New Bond Account</span>
           <div className="flex">
-            <span className="text-9xl text-white">Earn </span>
-            <h1 className="text-9xl text-white ml-4"> 6.6</h1>
+            <span className="text-4xl sm:text-5xl lg:text-9xl text-white">
+              Earn
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-9xl text-white ml-4">
+              6.6
+            </h1>
             <div className="h-full">
-              <div className="text-8xl  text-icon">%</div>
+              <div className="text-4xl sm:text-5xl lg:text-8xl text-icon">
+                %
+              </div>
               <div className="text-icon p-0 m-0 text-2xl invisible">yield</div>
             </div>
           </div>
           <span className=" text-text text-4xl sm:text-6xl text-center">
             even if the Fed cuts rates.
           </span>
-          <span className="text-left py-8 text-white">
+          <span className="text-left py-8 text-white px-4">
             The Fed has signaled potential rate cuts this year, and market
             expectations are for cuts of 1% or more by year-end. Plus, the
             market has priced in additional cuts in 2025. That means bond yields
@@ -274,10 +291,10 @@ const BondAccount = () => {
             initial investment.
           </p>
 
-          <p className="text-white text-4xl my-6 font-semibold">
+          <p className="text-white text-4xl my-6 font-semibold px-4">
             Protect your earnings from rate cuts
           </p>
-          <p className="text-white ">
+          <p className="text-white px-4">
             Locking in your 6.6%* yield before the Fed's potential rate cuts can
             have a significant impact on the earnings you generate over the next
             4–5 years.
@@ -286,7 +303,7 @@ const BondAccount = () => {
             Lock in your yield
           </button>
         </div>
-        <span className="block sm:w-4/5 py-5 sm:mx-auto ">
+        <span className="block sm:w-4/5 py-5 sm:mx-auto px-4">
           *This yield is the current average, annualized yield to worst (YTW)
           across all ten bonds in the Bond Account, before fees. Because the YTW
           of each bond is a function of that bond’s market price, which can
@@ -294,9 +311,11 @@ const BondAccount = () => {
           yield shown here and YTW is not “locked in” until the time of
           purchase. A bond’s YTW is not guaranteed; you can earn less than that
           YTW if you do not hold the bonds to maturity or the issuer defaults.
-          <span className="underline">Learn more.</span>
+          <Link to={"/"}>
+            <span className="underline">Learn more.</span>
+          </Link>
         </span>
-        <span className="block sm:w-4/5 py-5 sm:mx-auto ">
+        <span className="block sm:w-4/5 py-5 sm:mx-auto px-4 ">
           While corporate bond yields should fall in reaction to a Federal
           Reserve rate cut, we cannot know whether that will be true of the
           bonds in the Bond Account, how quickly bond yields will respond, or
@@ -368,6 +387,347 @@ const BondAccount = () => {
           <AccordionBond />
         </div>
       </div>
+
+      {/* next */}
+      <div className="mt-10 sm:mt-20">
+        <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
+          <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
+            <img src={yieldAcc} alt="" className="w-2/3 mx-auto " />
+          </div>
+          <div className="w-1/2">
+            <div className="invest  sm:w-2/3 mb-6 flex flex-col justify-center  mx-auto">
+              <span className="text-primary text-base font-semibold">
+                Income Hub
+              </span>
+              <h1 className=" my-2 font-bold text-xl sm:text-5xl  text-black">
+                Chart your income journey
+              </h1>
+              <span className="text-basesm:text-xl tracking-wide text-slate-600">
+                It's easy to monitor your income sources on Public with our
+                monthly breakdown of your earnings from each asset class,
+                including your Bond Account.
+              </span>
+              <div className="mt-6">
+                <div className="flex gap-4">
+                  <FaCheck className="text-primary-very-light text-2xl" />
+                  <span>
+                    View a monthly breakdown of all your income sources.
+                  </span>
+                </div>
+                <div className="flex gap-4">
+                  <FaCheck className="text-primary-very-light text-2xl" />
+                  <span>
+                    Icon Check Blue Refine your view by filtering by asset
+                    class.
+                  </span>
+                </div>
+                <div className="flex gap-4">
+                  <FaCheck className="text-primary-very-light text-2xl" />
+                  <span>
+                    Icon Check Blue See your estimated earnings for the next 12
+                    months.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Discover our suite */}
+      <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
+        <span className="text-primary text-base font-semibold"></span>
+        <p className=" text-4xl sm:9xl text-black text-center pb-4">
+          Discover our suite of yield accounts
+        </p>
+      </div>
+
+      {/* next */}
+      <div>
+        <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
+          <div className="invest-image sm:w-2/3 bg-slate-100  mx-auto py-6">
+            <img src={acc1} alt="" className="w-4/5 mx-auto " />
+            <div className="invest  p-4 flex flex-col justify-center mx-auto">
+              <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
+                High-Yield Cash Account
+                <span className="text-primary text-base font-semibold ml-2">
+                  4.1%
+                </span>
+              </h1>
+              <span className="text-basesm:text-xl tracking-wide text-slate-600">
+                Earn an industry-leading 4.1% APY* on your cash with no fees.
+                Plus, get up to $5M FDIC insurance.
+              </span>
+              <Link>
+                <span className="text-sm text-primary-very-light mt-4">
+                  Learn more
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="invest-image sm:w-2/3 bg-slate-100  mx-auto py-6">
+            <img src={acc2} alt="" className="w-4/5 mx-auto " />
+            <div className="invest  p-4 flex flex-col justify-center mx-auto">
+              <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
+                Treasury Account
+                <span className="text-primary text-base font-semibold ml-2">
+                  4.24%
+                </span>
+              </h1>
+              <span className="text-basesm:text-xl tracking-wide text-slate-600">
+                Invest in US Treasury bills with a 4.24%** yield, and pay no
+                state or local taxes on your earnings.
+              </span>
+              <Link>
+                <span className="text-sm text-primary-very-light mt-4">
+                  Learn more
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="invest-image sm:w-2/3 bg-slate-100  mx-auto py-6">
+            <img src={acc3} alt="" className="w-4/5 mx-auto " />
+            <div className="invest  p-4 flex flex-col justify-center mx-auto">
+              <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
+                Bond Account
+                <span className="text-primary text-base font-semibold ml-2">
+                  6.6%
+                </span>
+              </h1>
+              <span className="text-basesm:text-xl tracking-wide text-slate-600">
+                Balance risk and return with a diversified portfolio of
+                corporate bonds that generate a 6.6%*** yield.
+              </span>
+              <Link>
+                <span className="text-sm text-primary-very-light mt-4">
+                  Learn more
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* leading texts */}
+      <div className="my-10 flex flex-col gap-6 text-sm">
+        <span>
+          *Rate as of 9/19/2024. APY is variable and subject to change **Yield
+          is an annualized 26-week T-bill rate (as of 8/12/2024) when held to
+          maturity. Rate is gross of fees and is subject to change ***This yield
+          is the current average, annualized yield to worst (YTW) across all ten
+          bonds in the Bond Account, before fees. Because the YTW of each bond
+          is a function of that bond’s market price, which can fluctuate, your
+          yield at time of purchase may be different from the yield shown here
+          and your YTW is not “locked in” until the time of purchase. A bond’s
+          YTW is not guaranteed; you can earn less than that YTW if you do not
+          hold the bonds to maturity or the issuer defaults.
+          <span className="text-sm text-primary-very-light">Learn more</span>
+        </span>
+      </div>
+
+      {/* informed */}
+      <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
+        <span className="text-primary text-base font-semibold"></span>
+        <p className=" text-4xl sm:9xl text-black text-center pb-4">
+          What else do I need to know?
+        </p>
+      </div>
+
+      {/* next */}
+      <div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 mt-10 sm:mt-0 justify-between gap-4">
+          <div className="invest-image  bg-slate-100  mx-auto py-6">
+            <div className="invest  p-4 flex flex-col justify-center mx-auto">
+              <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
+                How do I invest in a Bond Account on Public?
+              </h1>
+              <span className="text-sm tracking-wide text-slate-600">
+                You can find the Bond Account alongside other yield accounts
+                (Treasury and High Yield Cash) on the Public app or on the web.
+                You can fund the account from your existing buying power or from
+                an external account with an investment of $1,000 or more. Each
+                investment of $1,000 will be used to purchase a portfolio of ten
+                fractional investment-grade and high-yield bonds in equal par
+                value allocations. You may make a one-time investment into the
+                Bond Account or schedule recurring investments on a weekly or
+                monthly basis.
+              </span>
+              <Link>
+                <span className="text-sm text-primary-very-light mt-4">
+                  Learn more
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="invest-image  bg-slate-100  mx-auto py-6">
+            <div className="invest  p-4 flex flex-col justify-center mx-auto">
+              <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
+                What are the benefits and risks of investing in a Bond Account?
+              </h1>
+              <span className="text-sm tracking-wide text-slate-600">
+                One key benefit of a Bond Account is locking in your yield at
+                time of purchase. Unlike a savings account or other variable
+                rate account, your yield for each bond is fixed at the time of
+                purchase, though the return may be affected if you do not hold a
+                bond to maturity, or if the issuer defaults or calls the bond.
+                Other benefits include the ability to invest in ten bonds for
+                $1,000, where typically individual bonds have minimums of
+                $1,000+. However, fractional bonds carry some risks, which can
+                be found here. Other risks include the risk of default,
+                liquidity risk, and inflation risk (if inflation outpaces the
+                fixed income from a bond, this may reduce the real return on
+                investment.)
+              </span>
+              <Link>
+                <span className="text-sm text-primary-very-light mt-4">
+                  Learn more
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="invest-image  bg-slate-100  mx-auto py-6">
+            <div className="invest  p-4 flex flex-col justify-center mx-auto">
+              <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
+                How does the Bond Account compare to other yield accounts?
+              </h1>
+              <span className="text-sm tracking-wide text-slate-600">
+                Compared to Public’s High Yield Cash Account and Treasury
+                Account, a Bond Account generates a higher yield, but comes with
+                higher risk of default and illiquidity. Like a Treasury Account
+                on Public, the Bond Account reinvests interest at the current
+                rate automatically once it hits a minimum threshold (in this
+                case ~$100). Similar to other yield accounts on Public, cash in
+                a Bond Account may be withdrawn at any time, but there is a
+                small fee if bonds need to be sold to do so ($0.50 per $100).
+              </span>
+              <Link>
+                <span className="text-sm text-primary-very-light mt-4">
+                  Learn more
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="invest-image  bg-slate-100  mx-auto py-6">
+            <div className="invest  p-4 flex flex-col justify-center mx-auto">
+              <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
+                What happens to my investment if interest rates change?
+              </h1>
+              <span className="text-sm tracking-wide text-slate-600">
+                Once you are invested in a Bond Account, your yield on that
+                investment is locked in unless a bond in the account defaults,
+                is called, or is sold. That means that even if interest rates
+                fall (i.e. the Federal Reserve cuts rates), your Bond Account
+                yield for deposits already made will not change. Note that the
+                Bond Account yield will fluctuate daily and subsequent deposits
+                into the account may be at different yields than your original
+                deposit.
+              </span>
+              <Link>
+                <span className="text-sm text-primary-very-light mt-4">
+                  Learn more
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="invest-image  bg-slate-100  mx-auto py-6">
+            <div className="invest  p-4 flex flex-col justify-center mx-auto">
+              <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
+                Are there any fees for the Bond Account?
+              </h1>
+              <span className="text-sm tracking-wide text-slate-600">
+                Once you are invested in a Bond Account, your yield on that
+                investment is locked in unless a bond in the account defaults,
+                is called, or is sold. That means that even if interest rates
+                fall (i.e. the Federal Reserve cuts rates), your Bond Account
+                yield for deposits already made will not change. Note that the
+                Bond Account yield will fluctuate daily and subsequent deposits
+                into the account may be at different yields than your original
+                deposit.
+              </span>
+              <Link>
+                <span className="text-sm text-primary-very-light mt-4">
+                  Learn more
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="invest-image  bg-slate-100  mx-auto py-6">
+            <div className="invest  p-4 flex flex-col justify-center mx-auto">
+              <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
+                How is my Bond Account protected?
+              </h1>
+              <span className="text-sm tracking-wide text-slate-600">
+                A Bond Account at Public is a separate account from your
+                brokerage account but cash and securities are combined for SIPC
+                coverage limits. SIPC coverage protects assets up to a total of
+                $500,000, of which $250,000 applies for cash. There are
+                additional terms and limits on SIPC coverage that aren’t
+                discussed here. For full details, please refer to www.SIPC.org
+                and read more on our SIPC FAQ.
+              </span>
+              <Link>
+                <span className="text-sm text-primary-very-light mt-4">
+                  Learn more
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* informed */}
+      <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
+        <span className="text-primary text-base font-semibold"></span>
+        <p className=" text-4xl sm:9xl text-black text-center pb-4">
+          Need help? Reach out.
+        </p>
+      </div>
+
+      {/* next */}
+      <div>
+        <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row-reverse justify-between gap-8">
+          <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
+            <img src={bondaccount} alt="" className="w-1/2 mx-auto " />
+          </div>
+          <div className="w-1/2">
+            <div className="invest  sm:w-1/2 mb-6 flex flex-col justify-center">
+              <h1 className=" my-2 font-bold text-base sm:text-base  text-black">
+                Have additional questions about Bond Account on Public?
+              </h1>
+              <span className="text-sm sm:text-base tracking-wide text-slate-600">
+                Our US-based customer experience team has FINRA-licensed
+                specialists standing by to help.
+              </span>
+              <Link>
+                <span className="block text-base text-primary-very-light mt-8">
+                  Contact our award-winning team
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* big image */}
+      <div className="bg-black my-0">
+        <hr className="text-slate-400" />
+        <div className="flex flex-col items-center justify-center mb-0 pt-40 pb-4 bg-black w-[90%] mx-auto text-center">
+          <span className="text-4xl md:text-6xl text-white">
+            Build your portfolio with Public
+          </span>
+          <span className="text-4xl md:text-6xl text-primary-very-light"></span>
+          <div className="flex items-center justify-center md:w-fit">
+            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className="relative img-alpha mt-0" style={{ width: "100%" }}>
+        <img src={herobg} alt="" className="h-[400px] w-full" />
+      </div>
+
+      <Footer />
     </div>
   );
 };
