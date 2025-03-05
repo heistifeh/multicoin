@@ -8,6 +8,7 @@ import rateCut from "../bond-account/images/rate-cut-1.png";
 import { FaCheck } from "react-icons/fa6";
 import { IoIosHeart } from "react-icons/io";
 import { FaFlagUsa } from "react-icons/fa";
+import AccordionBond from "../../../components/AccordionBond";
 const BondAccount = () => {
   return (
     <div>
@@ -42,9 +43,7 @@ const BondAccount = () => {
           <span className="underline">Learn more.</span>
         </span>
       </div>
-
       {/* what is Bond account */}
-
       {/* informed */}
       <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
         <span className="text-primary text-base font-semibold"></span>
@@ -57,7 +56,6 @@ const BondAccount = () => {
           time.
         </span>
       </div>
-
       {/* next */}
       <div>
         <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row-reverse justify-between gap-8">
@@ -99,7 +97,6 @@ const BondAccount = () => {
           </div>
         </div>
       </div>
-
       <div className="my-10 flex flex-col gap-6 text-sm">
         <span>
           A Bond Account is a self-directed brokerage account with Public
@@ -126,7 +123,6 @@ const BondAccount = () => {
           Interest payments will not be evenly distributed.
         </span>
       </div>
-
       {/* informed */}
       <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
         <span className="text-primary text-base font-semibold"></span>
@@ -139,7 +135,6 @@ const BondAccount = () => {
           time.
         </span>
       </div>
-
       {/* next */}
       <div>
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8 bg-slate-100 items-center">
@@ -151,7 +146,6 @@ const BondAccount = () => {
           </div>
         </div>
       </div>
-
       {/* steps */}
       <div className="flex flex-col sm:flex-row justify-between my-10">
         <div className="flex gap-4">
@@ -181,7 +175,6 @@ const BondAccount = () => {
 
         <div></div>
       </div>
-
       <div className="my-10 flex flex-col gap-6 text-sm">
         <span>
           *This yield is the current average, annualized yield to worst (YTW)
@@ -199,7 +192,6 @@ const BondAccount = () => {
           Interest payments will not be evenly distributed.
         </span>
       </div>
-
       <div>
         <div className="w-[98%] mx-auto flex flex-col md:flex-row justify-between items-center my-16 ">
           <div className="leading  md:w-2/3 flex flex-col justify-center text-center md:text-left md:justify-start">
@@ -237,7 +229,6 @@ const BondAccount = () => {
           <img src={herobg} alt="" className="h-[400px] w-full" />
         </div> */}
       </div>
-
       {/* big image footer */}
       <div className="bg-black">
         <div className="py-20 flex flex-col justify-center items-center sm:w-2/3 sm:mx-auto">
@@ -312,93 +303,69 @@ const BondAccount = () => {
           how much they will decline.
         </span>
       </div>
-
       {/* explore the keys stats */}
-
       {/* what is Bond account */}
-
       {/* informed */}
-      <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
-        <span className="text-primary text-base font-semibold"></span>
-        <p className=" text-4xl sm:9xl text-black text-center pb-4">
-          Explore the key stats
-        </p>
-        <span className="text-base tracking-wider text-black">
-          Investing in a portfolio of corporate bonds from various industries
-          and with different credit ratings can help balance risk and return.
-        </span>
-      </div>
-
-      <div className="w-4/5 mx-auto sm:w-[90%]">
-        <div className="bg-slate-100 py-6 px-4 ">
-          <span className="text-lg">
-            Bond Account
-            <span className="text-primary-very-light">6.6% Yield*</span>
+      <div className="w-[80%] mx-auto">
+        <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
+          <span className="text-primary text-base font-semibold"></span>
+          <p className=" text-4xl sm:9xl text-black text-center pb-4">
+            Explore the key stats
+          </p>
+          <span className="text-base tracking-wider text-black">
+            Investing in a portfolio of corporate bonds from various industries
+            and with different credit ratings can help balance risk and return.
           </span>
         </div>
-        <div className="grid grid-cols-3 sm:grid-cols-5 px-4 ">
-          <div>
-            <p className="text-sm">Yield</p>
-            <p className="text-black text-lg">6.6%*</p>
+        <div className="w-4/5 mx-auto sm:w-[90%] border-1 border-slate-200 rounded-lg">
+          <div className="bg-slate-100 py-4 mb-2 px-4">
+            <span className="text-base">
+              Bond Account
+              <span className="text-primary-very-light ml-4">6.6% Yield*</span>
+            </span>
           </div>
-          <div>
-            <p className="text-sm">Avg Coupon</p>
-            <p className="text-black text-lg">6.07%</p>
-          </div>
-          <div>
-            <p className="text-sm">Avg Duration</p>
-            <p className="text-black text-lg">6.6%*</p>
-          </div>
-          <div>
-            <p className="text-sm">Yield</p>
-            <p className="text-black text-lg">6.6%*</p>
-          </div>
-          <div>
-            <p className="text-sm">Yield</p>
-            <p className="text-black text-lg">6.6%*</p>
+          <div className="grid grid-cols-1 sm:grid-cols-5 px-4 ">
+            <div className="my-4 sm:my-0">
+              <p className="text-sm">Yield</p>
+              <p className="text-black text-lg">6.6%*</p>
+            </div>
+            <div className="my-4 sm:my-0">
+              <p className="text-sm">Avg Coupon</p>
+              <p className="text-black text-lg">6.07%</p>
+            </div>
+            <div className="my-4 sm:my-0">
+              <p className="text-sm">Avg Rating</p>
+              <p className="text-black text-lg">BBB/BBB-</p>
+            </div>
+            <div className="my-4 sm:my-0">
+              <p className="text-sm">Avg Duration</p>
+              <p className="text-black text-lg">4.33</p>
+            </div>
+            <div className="my-4 sm:my-0">
+              <p className="text-sm">Ann. income</p>
+              <p className="text-black text-lg">$60.68</p>
+            </div>
           </div>
         </div>
-      </div>
+        {/* next */}
 
-      {/* next */}
-      <div>
-        <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row-reverse justify-between gap-8">
-          <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
-            <img src={bondaccount} alt="" className="w-1/2 mx-auto " />
-          </div>
-          <div className="w-1/2">
-            <div className="invest  sm:w-1/2 mb-6 flex flex-col justify-center">
-              <h1 className=" my-2 text-xl sm:text-xl  text-black">
-                Lock in your yield
-              </h1>
-              <span className="text-basesm:text-xl tracking-wide text-slate-600">
-                Unlike a High-Yield Cash Account, the yield of a Bond Account is
-                locked in at the time of purchase. That means you’ll receive
-                that yield until the first of the ten bonds matures or is
-                called. 1
-              </span>
-            </div>
-            <div className="invest  sm:w-1/2 mb-6 flex flex-col justify-center">
-              <h1 className=" my-2 text-xl sm:text-xl  text-black">
-                Skip the sky-high minimums
-              </h1>
-              <span className="text-basesm:text-xl tracking-wide text-slate-600">
-                With a minimum initial $1,000 deposit, you can invest in a
-                portfolio of ten bonds. Many bonds on other platforms are only
-                available in investment sizes of $10k or more.
-              </span>
-            </div>
-            <div className="invest  sm:w-1/2 mb-6 flex flex-col justify-center">
-              <h1 className=" my-2 text-xl sm:text-xl  text-black">
-                Receive regular interest payments
-              </h1>
-              <span className="text-basesm:text-xl tracking-wide text-slate-600">
-                While you are invested in a Bond Account, you’ll receive 20
-                interest payments throughout the year from your diversified
-                portfolio of ten corporate bonds.2
-              </span>
-            </div>
-          </div>
+        {/* leading texts */}
+        <div className="my-10 flex flex-col gap-6 text-sm">
+          <span>
+            The yields shown below correspond to each individual bond’s current
+            yield. The Bond Account’s overall yield equals the current average,
+            annualized yield to worst (YTW) across all ten individual bonds in
+            the Bond Account, before fees. Your set of 10 bonds will be
+            established at the time you submit your Bond Account purchase and
+            may be different from what is shown here. The Bond Account is not a
+            recommendation of its overall set of bonds, or its individual
+            holdings or default allocations. You are solely responsible for
+            determining whether to purchase or sell the bonds in the Account.
+            <span className="text-sm text-primary-very-light">Learn more</span>
+          </span>
+        </div>
+        <div className="mx-auto">
+          <AccordionBond />
         </div>
       </div>
     </div>
