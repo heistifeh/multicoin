@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 import navpic from "../initpages/invest/images/navpic.png";
-
 export const InvestMenu = () => {
   return (
     <div className="absolute  w-full left-0 right-0 top-full z-5 bg-white">
@@ -196,10 +195,12 @@ const Navbar = () => {
   };
 
   return (
+    
     <nav
       className="relative flex justify-between items-center pb-5   text-head text-base sm:text-lg font-semibold z-50 "
       onMouseLeave={() => setMegaMenu({ state: false, name: "" })}
     >
+     
       <Link to={"/"}>
         <div>
           <img src="/logo1.jpg" alt="" className="rounded-lg w-8 h-8" />

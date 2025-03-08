@@ -11,10 +11,35 @@ spread alpha image out
 ADD DROP-MESSAGE TO STOCK
 
 reuse
-
+////////////////////////////
+GRID OF TWO CHILD
+ <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20">
+        <div className="sm:w-1/2 sm:mx-auto">hey</div>
+        <div className="sm:w-1/2 sm:mx-auto">love</div>
+      </div>
+////////////////////////////////////
 icon with word
 ////////////////////////////////////
  <div className="flex gap-2 items-center my-4">
               <FaCheck />
               <span>Multi-asset investing</span>
             </div>
+//////////////////////////
+blue span
+ <span className="text-sm text-primary-very-light">Learn more</span>
+/////////////////////////////
+ {/* informed */}
+        <div className="mt-20 mb-5 text-center sm:w-4/5 sm:mx-auto">
+          <span className="text-primary text-base font-semibold"></span>
+          <p className=" text-4xl sm:9xl text-white text-center pb-4">
+            We're the only investing platform that gives you a rebate on every
+            options trade.
+          </p>
+        </div>
+        {/* leading texts */}
+        <div className="my-5 flex flex-col gap-6 text-sm text-center sm:w-2/5 mx-auto">
+          <span>
+            Our rebate means that each options contract costs less than zero.
+            You actually earn money.
+          </span>
+        </div>

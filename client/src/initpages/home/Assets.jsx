@@ -3,7 +3,7 @@ import assetbg from "../../assets/images/assetbg.jpg";
 import { CiCircleInfo } from "react-icons/ci";
 
 const Assets = () => {
-  const disclosure = () => {
+  const disclosure = () => { 
     return (
       <>
         <div className="flex gap-2 items-center my-6 md:mt-4 hover:bg-slate-100 w-[fit-content] p-2 rounded-xl border-1 border-slate-100 text-sm transition duration-300">

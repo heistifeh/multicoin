@@ -158,7 +158,7 @@ const Stock = () => {
               companies.
             </span>
 
-            <div className="grid grid-col2-1 sm:grid-cols-2 gap-4 py-6 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-6 ">
               <div className="available flex gap-4">
                 <TiWorld className="text-light-primary text-4xl bg-slate-800 p-2 rounded-sm" />
                 <span>Over 300 select OTC stocks are now available</span>
