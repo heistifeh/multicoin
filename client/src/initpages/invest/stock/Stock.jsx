@@ -17,7 +17,7 @@ import Footer from "../../home/Footer";
 
 const Stock = () => {
   return (
-    <div>
+    <div className="container-all">
       <header>
         <Navbar />
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">

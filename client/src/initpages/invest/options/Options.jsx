@@ -19,7 +19,7 @@ const Options = () => {
     );
   };
   return (
-    <div>
+    <div className="container-all">
       <Navbar />
       <div className="header bg-black p-8 rounded-t-lg">
         {/* assets with pictures */}
@@ -104,7 +104,7 @@ const Options = () => {
             You actually earn money.
           </span>
         </div>
-        '{/* table */}
+        {/* table */}
         <table className="px-4 sm:w-3/5 mx-auto text-white">
           <thead>
             <tr>

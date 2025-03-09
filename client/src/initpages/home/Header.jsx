@@ -3,13 +3,15 @@ import Navbar from "../../components/Navbar";
 import star from "../../assets/images/star.png";
 import herobg from "../../assets/images/herobg.png";
 import { MdArrowOutward } from "react-icons/md";
-
+import { BiSolidPieChart } from "react-icons/bi";
+import { TbArrowsUp } from "react-icons/tb";
+import { FaHeart } from "react-icons/fa";
 const Header = () => {
   return (
     <div>
       <Navbar />
-      <hero>
-        <div className="flex  h-60 items-center font-semi-bold text-5xl md:6xl text-black">
+      <div className="px-4">
+        <div className="flex  h-60 items-center font-semi-bold text-5xl md:6xl text-black ">
           <h1 className="lg:w-1/2">
             Investing for those who take it seriously
           </h1>
@@ -17,15 +19,15 @@ const Header = () => {
         <div className="flex flex-col lg:flex-row lg:flex justify-between ">
           <div className="flex flex-col md:flex-row gap-4 md:pb-8 lg:pb-0 pb-4">
             <div className="flex gap-2 items-center text-base lg:text-lg">
-              <img src={star} alt="" className="w-4 h-4" />
+              <BiSolidPieChart className="text-primary" />
               <span className=""> Multi-asset investing</span>
             </div>
             <div className="flex gap-2 items-center text-base lg:text-lg">
-              <img src={star} alt="" className="w-4 h-4" />
+              <TbArrowsUp className="text-primary" />
               <span className=""> Industry-leading yields</span>
             </div>
             <div className="flex gap-2 items-center text-base lg:text-lg">
-              <img src={star} alt="" className="w-4 h-4" />
+              <FaHeart className="text-primary" />
               <span className=""> Trusted by millions</span>
             </div>
           </div>
@@ -39,7 +41,7 @@ const Header = () => {
         <div className="hero-bg my-10 rounded-lg overflow-hidden">
           <img src={herobg} alt="" className="w-" />
         </div>
-      </hero>
+      </div>
     </div>
   );
 };

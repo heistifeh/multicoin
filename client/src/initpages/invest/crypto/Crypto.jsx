@@ -31,6 +31,7 @@ import "./crypto.css";
 import { Link } from "react-router-dom";
 
 import poster from "./images/poster.jpg";
+
 const Crypto = () => {
   const [activeId, setActiveId] = useState(1);
   return (

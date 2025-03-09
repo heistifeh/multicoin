@@ -17,7 +17,7 @@ import Accordion from "../../../components/Accordion";
 import Footer from "../../home/Footer";
 const Investment = () => {
   return (
-    <>
+    <div className="container-all" >
       <header>
         <Navbar />
         <div>
@@ -227,7 +227,7 @@ const Investment = () => {
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 };
 

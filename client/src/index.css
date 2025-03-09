@@ -18,11 +18,13 @@
   --font-sm: 16px; */
 }
 
+.container-all {
+  width: 98%;
+  margin: 0 auto;
+}
 body {
   font-family: var(--font-primary);
   color: var(--color-text);
-  width: 95%;
-  margin: 0 auto;
 }
 
 /* #102A43 - nav

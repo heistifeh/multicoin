@@ -183,7 +183,7 @@ export const ResourceMenu = () => {
     </div>
   );
 };
-const Navbar = () => {
+const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
   const [hamburger, setHamburger] = useState(false);
   const [megaMenu, setMegaMenu] = useState({
     state: false,
@@ -195,12 +195,12 @@ const Navbar = () => {
   };
 
   return (
-    
     <nav
-      className="relative flex justify-between items-center pb-5   text-head text-base sm:text-lg font-semibold z-50 "
+      className={`relative flex justify-between items-center pb-5  text-base sm:text-lg font-semibold z-50 ${
+        megaMenu.state ? megaOn : megaOff
+      }`}
       onMouseLeave={() => setMegaMenu({ state: false, name: "" })}
     >
-     
       <Link to={"/"}>
         <div>
           <img src="/logo1.jpg" alt="" className="rounded-lg w-8 h-8" />
@@ -208,11 +208,13 @@ const Navbar = () => {
       </Link>
 
       <div className="hidden lg:flex space-x-5 items-center">
-        <ul className="flex space-x-10  z-10">
+        <ul className={`flex space-x-10  z-10 ${megaOff}`}>
           <Link
             onMouseEnter={() => setMegaMenu({ state: true, name: "invest" })}
             to={"/"}
-            className=" hover:bg-slate-100 transition duration-300 p-3"
+            className={` hover:bg-slate-100 transition duration-300 p-3 ${
+              megaMenu.state ? megaOn : megaOff
+            }`}
           >
             Invest
             {megaMenu && megaMenu.name === "invest" ? <InvestMenu /> : ""}
@@ -220,22 +222,35 @@ const Navbar = () => {
           <Link
             onMouseEnter={() => setMegaMenu({ state: true, name: "resources" })}
             to={"/"}
-            className="hover:bg-slate-100 transition duration-300 p-3"
+            className={` hover:bg-slate-100 transition duration-300 p-3 ${
+              megaMenu.state ? megaOn : megaOff
+            }`}
           >
             Resources
             {megaMenu && megaMenu.name === "resources" ? <ResourceMenu /> : ""}
           </Link>
           <Link
             to={"/"}
-            className="hover:bg-slate-100 transition duration-300 p-3"
+            className={` hover:bg-slate-100 transition duration-300 p-3 ${
+              megaMenu.state ? megaOn : megaOff
+            }`}
           >
             Company
           </Link>
-          <Link to={"/"} className="hover:bg-slate-100 p-3">
+          <Link
+            to={"/"}
+            className={` hover:bg-slate-100 transition duration-300 p-3 ${
+              megaMenu.state ? megaOn : megaOff
+            }`}
+          >
             Premium
           </Link>
         </ul>
-        <div className="border-1 border-text  px-5 py-2 rounded-lg cursor-pointer transition-all duration-500">
+        <div
+          className={`border-1 border-text  px-5 py-2 rounded-lg cursor-pointer transition-all duration-500 ${
+            megaMenu.state ? megaOn : megaOff
+          }`}
+        >
           <span>Sign In</span>
         </div>
         <div className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-primary-dark cursor-pointer transition-all duration-500">

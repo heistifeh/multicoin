@@ -17,7 +17,7 @@ import Footer from "../../../initpages/home/Footer.jsx";
 
 const Hyca = () => {
   return (
-    <div>
+    <div className="container-all">
       <Navbar />
       <div className="">
         <div className="py-20 flex flex-col justify-center items-center sm:w-2/3 sm:mx-auto">

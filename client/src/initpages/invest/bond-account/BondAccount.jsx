@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 import Footer from "../../home/Footer.jsx";
 const BondAccount = () => {
   return (
-    <div>
+    <div className="container-all">
       <Navbar />
       <div className="bg-black">
         <div className="py-20 flex flex-col justify-center items-center sm:w-1/3 sm:mx-auto">

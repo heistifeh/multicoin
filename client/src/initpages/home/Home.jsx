@@ -9,13 +9,15 @@ import Footer from "./Footer";
 const Home = () => {
   return (
     <>
-      <Header />
-      <Nerdwallet />
-      <Assets />
-      <Features />
-      <Alpha />
-      <Upsell />
-      <Footer />
+      <div className="container-all">
+        <Header />
+        <Nerdwallet />
+        <Assets />
+        <Features />
+        <Alpha />
+        <Upsell />
+        <Footer />
+      </div>
     </>
   );
 };
