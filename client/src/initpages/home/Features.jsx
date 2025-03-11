@@ -4,6 +4,8 @@ import stock1 from "../../assets/images/guide-stock-1.png";
 import stock2 from "../../assets/images/guide-stock-2.png";
 import green from "../../assets/images/green-icon.png";
 
+import project4 from "../../assets/images/project-4.jpg";
+import project5 from "../../assets/images/project-5.jpg";
 const Features = () => {
   return (
     <div className="my-20">
@@ -41,7 +43,7 @@ const Features = () => {
             <FaArrowRight />
           </div>
           <div className="img mb-8">
-            <img src={stock2} alt="" className="w-1/2 mx-auto" />
+            <img src={project4} alt="" className="w-1/2 mx-auto" />
           </div>
         </div>
       </div>
@@ -58,7 +60,7 @@ const Features = () => {
             <FaArrowRight />
           </div>
           <div className="img mb-8">
-            <img src={stock2} alt="" className="w-1/2 mx-auto" />
+            <img src={project5} alt="" className="w-1/2 mx-auto" />
           </div>
         </div>
       </div>

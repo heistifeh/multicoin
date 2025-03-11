@@ -17,7 +17,7 @@ import Accordion from "../../../components/Accordion";
 import Footer from "../../home/Footer";
 const Investment = () => {
   return (
-    <div className="container-all" >
+    <div className="container-all">
       <header>
         <Navbar />
         <div>
@@ -38,15 +38,15 @@ const Investment = () => {
       </header>
       <main>
         {/* informed */}
-        <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
+        <div className="mt-20 text-center sm:w-4/5 sm:mx-auto">
           <span className="text-primary text-base font-semibold"></span>
-          <p className=" text-4xl sm:9xl text-black text-center pb-4">
+          <p className=" text-4xl sm:text-6xl text-black text-center pb-4">
             What is an Investment Plan?
           </p>
         </div>
 
         {/* leading texts */}
-        <div className="my-10 flex flex-col gap-6 text-sm">
+        <div className="my-10 flex flex-col gap-6 text-sm w-4/5 mx-auto">
           <span>
             An Investment Plan is a collection of assets that you can
             automatically contribute to on a recurring basis. Choose from our
@@ -57,8 +57,8 @@ const Investment = () => {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-4 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-200">
-          <div className="">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-4 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-100 container-all container-inner">
+          <div className="w-4/5">
             <div>
               <FaPencilAlt className="text-primary text-xl" />
             </div>
@@ -70,7 +70,7 @@ const Investment = () => {
               and focus on your long-term financial goals.
             </span>
           </div>
-          <div>
+          <div className="w-4/5">
             <div>
               <RiLeafFill className="text-primary text-2xl" />
             </div>
@@ -82,7 +82,7 @@ const Investment = () => {
               invest, and how you allocate your funds.
             </span>
           </div>
-          <div>
+          <div className="w-4/5">
             <div>
               <FaDollarSign className="text-primary text-xl" />
             </div>
@@ -105,17 +105,17 @@ const Investment = () => {
             Take the emotion out of investing
           </p>
           <span className="text-base tracking-wider text-black">
-            An Investment Plan on Public may help mitigate your risk of buying
-            at a peak by spreading your investments over time. This strategy is
-            known as dollar-cost averaging. Although it doesn't eliminate risk
-            completely, dollar-cost averaging can help lessen the overall impact
-            of market volatility.
+            An Investment Plan on Multicoin may help mitigate your risk of
+            buying at a peak by spreading your investments over time. This
+            strategy is known as dollar-cost averaging. Although it doesn't
+            eliminate risk completely, dollar-cost averaging can help lessen the
+            overall impact of market volatility.
           </span>
         </div>
 
         {/* informed */}
         <div className="my-20   ">
-          <p className=" text-4xl sm:9xl text-black pb-4">
+          <p className=" text-4xl sm:text-6xl text-black pb-4">
             Get started in 3 steps
           </p>
         </div>
@@ -123,7 +123,7 @@ const Investment = () => {
         {/* next */}
         <div>
           <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
-            <div className="invest-image w-1/2  bg-slate-100  mx-auto py-6">
+            <div className="invest-image w-1/2  bg-slate-50  mx-auto py-6">
               <img src={plan1} alt="" className="w-1/2  mx-auto " />
             </div>
             <div className="w-1/2">
@@ -172,12 +172,12 @@ const Investment = () => {
               />
               <Accordion
                 question="Are there fees for adding stocks or ETFs to an Investment Plan?"
-                answer="Public routes orders directly to exchanges and does not receive any payment for order flow revenue. However, placing trades in the stock market is not without cost. To cover the expenses associated with each transaction, we charge a nominal fee based on the number of assets in your Investment Plan. If you’re a Public Premium member, you’re exempt from paying these fees. See our fee schedule."
+                answer="Multicoin routes orders directly to exchanges and does not receive any payment for order flow revenue. However, placing trades in the stock market is not without cost. To cover the expenses associated with each transaction, we charge a nominal fee based on the number of assets in your Investment Plan. If you’re a Multicoin Premium member, you’re exempt from paying these fees. See our fee schedule."
                 id={3}
               />
               <Accordion
                 question="Are there fees for adding crypto to an Investment Plan?"
-                answer="For Investment Plans containing crypto, Bakkt Crypto charges a fee to execute the recurring cryptocurrency purchases in your Plan. That fee is 1.25% of the total cryptocurrency order amount, which covers the costs associated with facilitating crypto transactions and storage. Public Crypto, LLC (“Public Crypto”) receives a portion of the revenue generated by Bakkt Crypto in exchange for licensing our software to Bakkt Crypto."
+                answer="For Investment Plans containing crypto, Bakkt Crypto charges a fee to execute the recurring cryptocurrency purchases in your Plan. That fee is 1.25% of the total cryptocurrency order amount, which covers the costs associated with facilitating crypto transactions and storage. Multicoin Crypto, LLC (“Multicoin Crypto”) receives a portion of the revenue generated by Bakkt Crypto in exchange for licensing our software to Bakkt Crypto."
                 id={3}
               />
             </div>
@@ -186,14 +186,14 @@ const Investment = () => {
 
         {/* next */}
         <div>
-          <div className="flex flex-col-reverse mt-10 sm:mt-10 sm:flex-row-reverse justify-between gap-8 items-center">
-            <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
+          <div className="flex flex-col-reverse mt-10 sm:mt-10 sm:flex-row-reverse justify-between gap-8 items-center container-all container-inner">
+            <div className="invest-image sm:w-1/2 bg-slate-50  mx-auto py-6">
               <img src={slide1} alt="" className="w-1/2 mx-auto " />
             </div>
             <div className="w-1/2">
               <div className="invest  sm:w-2/3 mb-6 flex flex-col justify-center ">
                 <h1 className=" my-2 font-bold text-lg  text-black">
-                  Have additional questions about Investment Plans on Public?
+                  Have additional questions about Investment Plans on Multicoin?
                 </h1>
                 <span className="text-base tracking-wide text-slate-600">
                   Our US-based customer experience team has FINRA-licensed
@@ -212,7 +212,7 @@ const Investment = () => {
         <hr className="text-slate-400" />
         <div className="flex flex-col items-center justify-center mb-0 pt-40 pb-4 bg-black w-[90%] mx-auto text-center">
           <span className="text-4xl md:text-6xl text-white">
-            Build your portfolio with Public
+            Build your portfolio with Multicoin
           </span>
           <span className="text-4xl md:text-6xl text-primary-very-light"></span>
           <div className="flex items-center justify-center md:w-fit">

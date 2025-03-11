@@ -4,18 +4,20 @@ import { IoIosHeart } from "react-icons/io";
 import { FaFlagUsa } from "react-icons/fa";
 import care from "../../assets/images/care.png";
 import herobg from "../../assets/images/herobg.png";
+
+import project7 from "../../assets/images/project-7.jpg";
 const Upsell = () => {
   return (
     <div>
       <div className="w-[98%] mx-auto flex flex-col md:flex-row justify-between items-center my-16 ">
-        <div className="leading  md:w-2/3 flex flex-col justify-center text-center md:text-left md:justify-start">
+        <div className="leading  md:w-1/3 flex flex-col justify-center text-center md:text-left md:justify-start">
           <span className="text-4xl md:text-6xl text-black">
             We’re here to help.
           </span>
           <span className="text-4xl md:text-6xl">Not upsell.</span>
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center my-4 md:justify-start">
             <div className="flex flex-col gap-2 justify-center my-4">
-              <FaFlagUsa className="text-black mx-auto" />
+              <FaFlagUsa className="text-red-500 mx-auto" />
               <span className="text-black">US-BASED</span>
             </div>
             <div className="flex flex-col gap-2 justify-center my-4">
@@ -36,7 +38,7 @@ const Upsell = () => {
           </span>
         </div>
         <div className="img">
-          <img src={care} alt="" />
+          <img src={project7} alt="" />
         </div>
       </div>
 

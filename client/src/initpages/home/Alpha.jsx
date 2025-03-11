@@ -13,30 +13,32 @@ import { CiCircleInfo } from "react-icons/ci";
 import sipc from "../../assets/images/SIPC-logo.png";
 import fdic from "../../assets/images/FDIC-logo.png";
 import finra from "../../assets/images/FINRA-logo.png";
+import project6 from "../../assets/images/project-6.jpg";
+import project7 from "../../assets/images/project-7.jpg";
 const Alpha = () => {
   return (
     <div>
-      <div className="blocks flex rounded-2xl flex-col md:flex-row justify-between gap-4  my-16 bg-slate-100">
+      <div className="blocks flex rounded-2xl flex-col md:flex-row justify-between gap-4 px-8  my-16 bg-slate-100">
         <div className="key-moments flex flex-col hover:translate-y-2 duration-300 w-[90%] mx-auto">
           <div className="flex gap-2 pt-4 items-center">
             <img src={star} alt="" className="w-6 h-6" />
             <p className="text-black text-2xl md:3xl ">alpha</p>
           </div>
-          <span className="text-4xl md:5xl  mt-4">AI for investors</span>
-          <span className="text-4xl md:5xl text-black">
+          <span className="text-4xl md:text-5xl  mt-4">AI for investors</span>
+          <span className="text-3xl  text-black">
             Investment research and proactive insights
           </span>
           <div className="my-6">
             <div className="flex items-center gap-2 my-4 text-black">
-              <RiPieChart2Fill className="text-icon" />
+              <RiPieChart2Fill className="text-black bg-[#E4F595] text-xl" />
               <p>Ask any question about any stock.</p>
             </div>
             <div className="flex items-center gap-2 my-4 text-black">
-              <TbArrowsUpLeft className="text-icon" />
+              <TbArrowsUpLeft className="text-black bg-[#E4F595] text-xl" />
               <p>Receive earnings call breakdowns the minute they hang up.</p>
             </div>
             <div className="flex items-center gap-2 my-4 text-black">
-              <FaHeart className="text-icon" />
+              <FaHeart className="text-black bg-[#E4F595] text-xl" />
               <p>Know why a stock is moving—not just that it is.</p>
             </div>
           </div>
@@ -47,7 +49,7 @@ const Alpha = () => {
         </div>
         <div className="key-moments text-center flex flex-col  hover:translate-y-2 duration-300 items-center justify-center">
           <div className="img mb-8">
-            <img src={hero} alt="" className="w-1/2 mx-auto " />
+            <img src={project6} alt="" className="mx-auto rounded-lg " />
           </div>
         </div>
       </div>
@@ -55,8 +57,9 @@ const Alpha = () => {
       {/* next section on Alpha */}
 
       <div className="relative img-alpha mb-0" style={{ width: "100%" }}>
+        <div className="overlay-alpha absolute inset-0 bg-black opacity-50"></div>
         <img src={light} alt="" className="h-[400px] w-full" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl md:5xl font-semibold flex flex-col items-center justify-center">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl md:5xl font-semibold flex flex-col items-center justify-center text-center">
           <span className="text-6xl md:12xl  mt-4">Secure by design.</span>
           <span className="text-6xl md:12xl text-alpha">
             Transparent by choice.

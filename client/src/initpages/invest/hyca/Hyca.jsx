@@ -91,7 +91,7 @@ const Hyca = () => {
       </div>
 
       {/* access your cash whenever */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-30 gap-4 bg-slate-100 my-10 sm:my-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-30 gap-4 bg-slate-50 my-10 sm:my-20">
         <div className="sm:w-2/3 sm:mx-auto">
           <BsFillLightningChargeFill className="bg-slate-200 text-primary text-2xl my-4" />
           <p className="text-black text-3xl sm:text-5xl">
@@ -104,7 +104,7 @@ const Hyca = () => {
           cash.
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 bg-slate-100 my-10 sm:my-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 bg-slate-50 my-10 sm:my-20">
         <div className="sm:w-4/5 sm:mx-auto">
           <IoShieldCheckmarkOutline className="bg-slate-200 text-primary text-2xl my-4" />
           <p className="text-black text-3xl sm:text-5xl">
@@ -133,7 +133,7 @@ const Hyca = () => {
       {/* next */}
       <div>
         <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
-          <div className="invest-image sm:w-2/3 bg-slate-100  mx-auto py-6">
+          <div className="invest-image sm:w-2/3 bg-slate-50  mx-auto py-6">
             <img src={bond} alt="" className="w-4/5 mx-auto " />
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
@@ -152,7 +152,7 @@ const Hyca = () => {
               </Link>
             </div>
           </div>
-          <div className="invest-image sm:w-2/3 bg-slate-100  mx-auto py-6">
+          <div className="invest-image sm:w-2/3 bg-slate-50  mx-auto py-6">
             <img src={bondaccount} alt="" className="w-4/5 mx-auto " />
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
@@ -170,7 +170,7 @@ const Hyca = () => {
               </Link>
             </div>
           </div>
-          <div className="invest-image sm:w-2/3 bg-slate-100  mx-auto py-6">
+          <div className="invest-image sm:w-2/3 bg-slate-50  mx-auto py-6">
             <img src={treasuries} alt="" className="w-4/5 mx-auto " />
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
@@ -241,7 +241,7 @@ A high-yield cash account on Public generates an industry-leading 4.1% APY*. Wit
       {/* next */}
       <div>
         <div className="flex flex-col-reverse mt-10 sm:mt-10 sm:flex-row-reverse justify-between gap-8 items-center">
-          <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
+          <div className="invest-image sm:w-1/2 bg-slate-50  mx-auto py-6">
             <img src={poster} alt="" className="w-1/2 mx-auto " />
           </div>
           <div className="w-1/2">
@@ -265,15 +265,13 @@ A high-yield cash account on Public generates an industry-leading 4.1% APY*. Wit
         <hr className="text-slate-400" />
         <div className="flex flex-col items-center justify-center mb-0 pt-40 pb-4 bg-black w-[90%] mx-auto text-center">
           <span className="text-4xl md:text-6xl text-white">
-            Simple. Sophisticated.
+            Build Your Portfolio with Multicoin
           </span>
-          <span className="text-4xl md:text-6xl text-primary-very-light">
-            Significantly cheaper.
-          </span>
+          <span className="text-4xl md:text-6xl text-primary-very-light"></span>
           <span className="text-4xl md:text-6xl text-primary-very-light"></span>
           <div className="flex items-center justify-center md:w-fit">
             <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
-              Sign Up
+              Get started
             </button>
           </div>
         </div>

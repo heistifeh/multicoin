@@ -9,7 +9,7 @@
   --color-light-primary: #4d74ff;
   --color-primary-very-light: #5076ff;
   --color-secondary: #cb6e17;
-  --color-text: #74879a;
+  --color-text: #516880;
   --color-icon: #95f001;
   --color-footer: #102a43;
   --color-alpha: #378cb3;
@@ -22,9 +22,16 @@
   width: 98%;
   margin: 0 auto;
 }
-body {
+.container-inner {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+body,
+html {
   font-family: var(--font-primary);
   color: var(--color-text);
+  margin: 0;
+  padding: 0;
 }
 
 /* #102A43 - nav

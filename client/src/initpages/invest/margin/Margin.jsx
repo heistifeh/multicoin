@@ -1,6 +1,7 @@
 import React from "react";
 import illus from "./images/illus.webp";
 import illus2 from "./images/illus2.webp";
+import image from "./images/image.png";
 import Navbar from "../../../components/Navbar";
 import { FaDollarSign, FaPencilAlt } from "react-icons/fa";
 import { RiLeafFill } from "react-icons/ri";
@@ -31,8 +32,10 @@ const Margin = () => {
         </div>
 
         <div className="absolute top-0 bg-cover flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8    left-0 right-0 bg-gradient-to-tr from-black to-[#000E43]">
-          <div className="invest  sm:w-1/2 flex flex-col justify-center mt-10 px-8">
-            <span className="text-sm text-icon font-bold pt-6">
+          <div className="invest  sm:w-1/2 flex flex-col justify-center pt-20 px-8">
+          <br />
+          <br />
+            <span className="text-sm text-icon font-bold pt-6 ">
               Now Available
             </span>
             <h1 className="text-white mb-2 text-4xl sm:text-7xl">
@@ -210,8 +213,8 @@ const Margin = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-4 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-200">
-          <div className="">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-4 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-100 container-inner">
+          <div className="sm:w-4/5">
             <div>
               <LuCylinder className="text-primary text-xl" />
             </div>
@@ -224,7 +227,7 @@ const Margin = () => {
               margin call.
             </span>
           </div>
-          <div>
+          <div className="sm:w-4/5">
             <div>
               <TbTrendingUp2 className="text-primary text-2xl" />
             </div>
@@ -237,7 +240,7 @@ const Margin = () => {
               unintended borrowing.
             </span>
           </div>
-          <div>
+          <div className="sm:w-4/5">
             <div>
               <IoTrendingUpSharp className="text-primary text-xl" />
             </div>
@@ -253,10 +256,10 @@ const Margin = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 ">
-          <div className="relative invest-image sm:w-5/6 mt-20 h-full py-15 bg-slate-200 ">
-            <img src={illus2} alt="" className="sm:w-5/6 h-full mx-auto" />
+          <div className="relative invest-image sm:w-5/6 mt-20 h-full py-15 bg-slate-50 ">
+            <img src={image} alt="" className="sm:w-5/6 h-full mx-auto" />
           </div>
-          <div className="px-4 sm:w-5/6 mx-auto text-text flex flex-col justify-center">
+          <div className="px-4  mx-auto text-text flex flex-col justify-center">
             <p className="text-black text-3xl sm:text-5xl py-4">
               Expand your options trading playbook with margin
             </p>
@@ -316,8 +319,8 @@ If you’re already a Public member, you can apply to start margin investing by 
 
         {/* next */}
         <div>
-          <div className="flex flex-col-reverse mt-10 sm:mt-10 sm:flex-row-reverse justify-between gap-8 items-center">
-            <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
+          <div className="flex flex-col-reverse mt-10 sm:mt-10 sm:flex-row-reverse justify-between gap-8 items-center container-all container-inner">
+            <div className="invest-image sm:w-1/2 bg-slate-50  mx-auto py-6">
               <img src={poster} alt="" className="w-1/2 mx-auto " />
             </div>
             <div className="w-1/2  px-4">
@@ -341,15 +344,13 @@ If you’re already a Public member, you can apply to start margin investing by 
           <hr className="text-slate-400" />
           <div className="flex flex-col items-center justify-center mb-0 pt-40 pb-4 bg-black w-[90%] mx-auto text-center">
             <span className="text-4xl md:text-6xl text-white">
-              Simple. Sophisticated.
+              Enable Margin Investing on Multicoin
             </span>
-            <span className="text-4xl md:text-6xl text-primary-very-light">
-              Significantly cheaper.
-            </span>
+            <span className="text-4xl md:text-6xl text-primary-very-light"></span>
             <span className="text-4xl md:text-6xl text-primary-very-light"></span>
             <div className="flex items-center justify-center md:w-fit">
               <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
-                Sign Up
+                Get started
               </button>
             </div>
           </div>

@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 import Footer from "../../home/Footer.jsx";
 const BondAccount = () => {
   return (
-    <div className="container-all">
+    <div className="container-all container-inner">
       <Navbar />
       <div className="bg-black">
         <div className="py-20 flex flex-col justify-center items-center sm:w-1/3 sm:mx-auto">
@@ -71,9 +71,13 @@ const BondAccount = () => {
       <div>
         <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row-reverse justify-between gap-8">
           <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
-            <img src={bondaccount} alt="" className="w-1/2 mx-auto " />
+            <img
+              src={bondaccount}
+              alt=""
+              className=" mx-auto h-full w-full object-cover"
+            />
           </div>
-          <div className="w-1/2">
+          <div className="w-4/5">
             <div className="invest  sm:w-1/2 mb-6 flex flex-col justify-center">
               <h1 className=" my-2 font-bold text-xl sm:text-xl  text-black">
                 Lock in your yield
@@ -82,7 +86,7 @@ const BondAccount = () => {
                 Unlike a High-Yield Cash Account, the yield of a Bond Account is
                 locked in at the time of purchase. That means you’ll receive
                 that yield until the first of the ten bonds matures or is
-                called. 1
+                called.
               </span>
             </div>
             <div className="invest  sm:w-1/2 mb-6 flex flex-col justify-center">
@@ -391,10 +395,10 @@ const BondAccount = () => {
       {/* next */}
       <div className="mt-10 sm:mt-20">
         <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
-          <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
+          <div className="invest-image sm:w-2/3 bg-slate-100  mx-auto py-6">
             <img src={yieldAcc} alt="" className="w-2/3 mx-auto " />
           </div>
-          <div className="w-1/2">
+          <div className="w-4/5">
             <div className="invest  sm:w-2/3 mb-6 flex flex-col justify-center  mx-auto">
               <span className="text-primary text-base font-semibold">
                 Income Hub
@@ -435,9 +439,9 @@ const BondAccount = () => {
       </div>
 
       {/* Discover our suite */}
-      <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
+      <div className="my-20 text-center sm:w-3/5 sm:mx-auto">
         <span className="text-primary text-base font-semibold"></span>
-        <p className=" text-4xl sm:9xl text-black text-center pb-4">
+        <p className=" text-4xl sm:text-5xl text-black text-center pb-4">
           Discover our suite of yield accounts
         </p>
       </div>
@@ -445,7 +449,7 @@ const BondAccount = () => {
       {/* next */}
       <div>
         <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
-          <div className="invest-image sm:w-2/3 bg-slate-100  mx-auto py-6">
+          <div className="invest-image sm:w-2/3 bg-slate-50  mx-auto py-6">
             <img src={acc1} alt="" className="w-4/5 mx-auto " />
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
@@ -465,7 +469,7 @@ const BondAccount = () => {
               </Link>
             </div>
           </div>
-          <div className="invest-image sm:w-2/3 bg-slate-100  mx-auto py-6">
+          <div className="invest-image sm:w-2/3 bg-slate-50  mx-auto py-6">
             <img src={acc2} alt="" className="w-4/5 mx-auto " />
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
@@ -485,7 +489,7 @@ const BondAccount = () => {
               </Link>
             </div>
           </div>
-          <div className="invest-image sm:w-2/3 bg-slate-100  mx-auto py-6">
+          <div className="invest-image sm:w-2/3 bg-slate-50  mx-auto py-6">
             <img src={acc3} alt="" className="w-4/5 mx-auto " />
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
@@ -509,7 +513,7 @@ const BondAccount = () => {
       </div>
 
       {/* leading texts */}
-      <div className="my-10 flex flex-col gap-6 text-sm">
+      <div className="my-10 flex flex-col gap-6 text-sm container-inner">
         <span>
           *Rate as of 9/19/2024. APY is variable and subject to change **Yield
           is an annualized 26-week T-bill rate (as of 8/12/2024) when held to
@@ -536,7 +540,7 @@ const BondAccount = () => {
       {/* next */}
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-3 mt-10 sm:mt-0 justify-between gap-4">
-          <div className="invest-image  bg-slate-100  mx-auto py-6">
+          <div className="invest-image  bg-slate-50  mx-auto py-6">
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
                 How do I invest in a Bond Account on Public?
@@ -559,7 +563,7 @@ const BondAccount = () => {
               </Link>
             </div>
           </div>
-          <div className="invest-image  bg-slate-100  mx-auto py-6">
+          <div className="invest-image  bg-slate-50  mx-auto py-6">
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
                 What are the benefits and risks of investing in a Bond Account?
@@ -585,7 +589,7 @@ const BondAccount = () => {
               </Link>
             </div>
           </div>
-          <div className="invest-image  bg-slate-100  mx-auto py-6">
+          <div className="invest-image  bg-slate-50  mx-auto py-6">
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
                 How does the Bond Account compare to other yield accounts?
@@ -607,7 +611,7 @@ const BondAccount = () => {
               </Link>
             </div>
           </div>
-          <div className="invest-image  bg-slate-100  mx-auto py-6">
+          <div className="invest-image  bg-slate-50  mx-auto py-6">
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
                 What happens to my investment if interest rates change?
@@ -629,7 +633,7 @@ const BondAccount = () => {
               </Link>
             </div>
           </div>
-          <div className="invest-image  bg-slate-100  mx-auto py-6">
+          <div className="invest-image  bg-slate-50  mx-auto py-6">
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
                 Are there any fees for the Bond Account?
@@ -651,7 +655,7 @@ const BondAccount = () => {
               </Link>
             </div>
           </div>
-          <div className="invest-image  bg-slate-100  mx-auto py-6">
+          <div className="invest-image  bg-slate-50  mx-auto py-6">
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
                 How is my Bond Account protected?
@@ -678,7 +682,7 @@ const BondAccount = () => {
       {/* informed */}
       <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
         <span className="text-primary text-base font-semibold"></span>
-        <p className=" text-4xl sm:9xl text-black text-center pb-4">
+        <p className=" text-4xl sm:text-6xl text-black text-center pb-4">
           Need help? Reach out.
         </p>
       </div>
@@ -686,10 +690,10 @@ const BondAccount = () => {
       {/* next */}
       <div>
         <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row-reverse justify-between gap-8">
-          <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
+          <div className="invest-image sm:w-3/4 bg-slate-100  mx-auto py-6">
             <img src={bondaccount} alt="" className="w-1/2 mx-auto " />
           </div>
-          <div className="w-1/2">
+          <div className="w-5/6 container-inner">
             <div className="invest  sm:w-1/2 mb-6 flex flex-col justify-center">
               <h1 className=" my-2 font-bold text-base sm:text-base  text-black">
                 Have additional questions about Bond Account on Public?

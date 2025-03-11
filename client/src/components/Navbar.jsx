@@ -196,18 +196,19 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
 
   return (
     <nav
-      className={`relative flex justify-between items-center pb-5  text-base sm:text-lg font-semibold z-50 ${
+      className={`container-all relative flex justify-between items-center pb-5  text-base sm:text-lg z-50 text-black ${
         megaMenu.state ? megaOn : megaOff
       }`}
       onMouseLeave={() => setMegaMenu({ state: false, name: "" })}
     >
       <Link to={"/"}>
-        <div>
+        <div className="flex items-center gap-2">
           <img src="/logo1.jpg" alt="" className="rounded-lg w-8 h-8" />
+          <span className="text-lg">Multicoin Capital</span>
         </div>
       </Link>
 
-      <div className="hidden lg:flex space-x-5 items-center">
+      <div className="hidden lg:flex space-x-2 items-center">
         <ul className={`flex space-x-10  z-10 ${megaOff}`}>
           <Link
             onMouseEnter={() => setMegaMenu({ state: true, name: "invest" })}
@@ -253,7 +254,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
         >
           <span>Sign In</span>
         </div>
-        <div className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-primary-dark cursor-pointer transition-all duration-500">
+        <div className="bg-gradient-to-br from-primary to-primary-dark text-white px-5 py-2 rounded-lg hover:bg-primary-dark cursor-pointer transition-all duration-500">
           <span>Get Started</span>
         </div>
       </div>

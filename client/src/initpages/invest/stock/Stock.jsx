@@ -20,7 +20,7 @@ const Stock = () => {
     <div className="container-all">
       <header>
         <Navbar />
-        <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
+        <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8 container-all">
           <div className="invest  sm:w-1/2 flex flex-col justify-center">
             <h1 className="text-black my-2 text-4xl sm:text-7xl">
               Invest in stocks
@@ -44,7 +44,7 @@ const Stock = () => {
         </div>
 
         {/* section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-4 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-200">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-4 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-200 container-all">
           <div className="">
             <div>
               <FaArrowTrendUp className="text-primary text-xl" />
@@ -86,7 +86,7 @@ const Stock = () => {
       </header>
 
       {/* access */}
-      <div className="my-20">
+      <div className="my-20 container-all">
         <span className="text-primary text-base font-semibold">
           Investing tools
         </span>
@@ -96,7 +96,7 @@ const Stock = () => {
       </div>
 
       {/* next */}
-      <div>
+      <div className="container-all">
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
           <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
             <img src={guideStock1} alt="" className="w-1/2 mx-auto" />
@@ -115,7 +115,7 @@ const Stock = () => {
       </div>
 
       {/* informed */}
-      <div className="my-20">
+      <div className="my-20 container-all">
         <span className="text-primary text-base font-semibold">
           Market insights
         </span>
@@ -125,7 +125,7 @@ const Stock = () => {
       </div>
 
       {/* next */}
-      <div>
+      <div className="container-all">
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
           <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
             <img src={guideStock3} alt="" className="w-1/2 mx-auto " />
@@ -145,7 +145,7 @@ const Stock = () => {
 
       {/* logo-list */}
 
-      <div className="bg-black py-10 h-300px">
+      <div className="bg-black py-10 h-300px ">
         <div className="mt-20  text-white grid sm:grid-cols-2  w-[90%] mx-auto">
           <div>
             <span className="text-primary-very-light text-lg font-semibold">

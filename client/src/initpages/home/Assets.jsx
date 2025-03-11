@@ -1,9 +1,12 @@
 import React from "react";
 import assetbg from "../../assets/images/assetbg.jpg";
 import { CiCircleInfo } from "react-icons/ci";
+import project1 from "../../assets/images/project-1.jpg";
+import project2 from "../../assets/images/project-2.jpg";
+import project3 from "../../assets/images/project-3.jpg";
 
 const Assets = () => {
-  const disclosure = () => { 
+  const disclosure = () => {
     return (
       <>
         <div className="flex gap-2 items-center my-6 md:mt-4 hover:bg-slate-100 w-[fit-content] p-2 rounded-xl border-1 border-slate-100 text-sm transition duration-300">
@@ -17,38 +20,49 @@ const Assets = () => {
     <div>
       <p className="text-center">Explore our assets</p>
       <div className="flex flex-wrap items-center justify-center gap-4 my-8">
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl font-semibold text-black hover:bg-slide cursor-pointer">
+        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Stocks
+          <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl font-semibold text-black hover:bg-slide cursor-pointer">
+        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Bonds
+          <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl font-semibold text-black hover:bg-slide cursor-pointer">
+        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Treasuries
+          <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl font-semibold text-black hover:bg-slide cursor-pointer">
+        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Options
+          <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl font-semibold text-black hover:bg-slide cursor-pointer">
+        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Crypto
+          <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl font-semibold text-black hover:bg-slide cursor-pointer">
+        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           ETfs
+          <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl font-semibold text-black hover:bg-slide cursor-pointer">
+        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Bond Account
+          <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl font-semibold text-black hover:bg-slide cursor-pointer">
+        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           High-Yield Cash Account
+          <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl font-semibold text-black hover:bg-slide cursor-pointer">
+        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Treasury Account
+          <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl font-semibold text-black hover:bg-slide cursor-pointer">
+        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Investment Plans
+          <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl font-semibold text-black hover:bg-slide cursor-pointer">
+        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           IRAs
+          <span className="text-slate-300 ml-4">/</span>
         </div>
       </div>
 
@@ -67,8 +81,8 @@ const Assets = () => {
           </span>
           {disclosure()}
         </div>
-        <div className="img">
-          <img src={assetbg} alt="" />
+        <div className="img rounded-lg">
+          <img src={project1} alt="" />
         </div>
       </div>
       <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between items-center my-16 ">
@@ -85,8 +99,8 @@ const Assets = () => {
           </span>
           {disclosure()}
         </div>
-        <div className="img">
-          <img src={assetbg} alt="" />
+        <div className="img rounded-lg">
+          <img src={project1} alt="" className="rounded-lg" />
         </div>
       </div>
       <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between items-center my-16 ">
@@ -103,8 +117,8 @@ const Assets = () => {
           </span>
           {disclosure()}
         </div>
-        <div className="img">
-          <img src={assetbg} alt="" />
+        <div className="img ">
+          <img src={project2} alt="" className="rounded-lg" />
         </div>
       </div>
       <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between items-center my-16 ">
@@ -123,7 +137,7 @@ const Assets = () => {
         </div>
 
         <div className="img">
-          <img src={assetbg} alt="" />
+          <img src={project3} alt="" className="rounded-lg" />
         </div>
       </div>
     </div>

@@ -55,7 +55,7 @@ const Crypto = () => {
             </h1>
             <span className="text-lg leading-5 sm:text-xl tracking-wider text-black py-6">
               Open an account with Bakkt Crypto, automate your investment
-              strategy, manage your portfolio – all on Public.
+              strategy, manage your portfolio – all on Multicoin.
             </span>
             <div className="flex my-8 gap-4 sm:gap-8">
               <button className="sign-up bg-primary text-white p-2 w-30 rounded-4xl text-xl cursor-pointer hover:bg-primary-dark transition duration-300">
@@ -75,14 +75,14 @@ const Crypto = () => {
       <div className="py-40"></div>
       <div className="py-40"></div>
       {/* leading texts */}
-      <div className="my-10 flex flex-col gap-6 text-sm px-2 mx-auto">
+      <div className="my-10 flex flex-col gap-6 text-sm px-2 mx-auto container-inner container-all py-6">
         <span>
           Cryptocurrency services provided by Bakkt Crypto Solutions LLC (NMLS
           ID 1828849), a licensed virtual currency business by the New York Dept
           of Financial Services and a licensed money transmitter. Your
           cryptocurrency investments are held in your Bakkt Crypto account,
-          which is separate from your brokerage account with Public Investing.
-          Public Investing is a registered broker-dealer and FINRA member, and
+          which is separate from your brokerage account with Multicoin Investing.
+          Multicoin Investing is a registered broker-dealer and FINRA member, and
           does not provide cryptocurrency trading or custodying services.
           Cryptocurrencies are not securities and are not FDIC insured or
           protected by SIPC. Cryptocurrency investing is speculative and
@@ -93,8 +93,8 @@ const Crypto = () => {
       </div>
 
       {/* section */}
-      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-200 px-4">
-        <div className="">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-200 px-4 container-all">
+        <div className="w-4/5">
           <div className="">
             <FaArrowTrendUp className="text-[#F37609] text-4xl bg-[#FEF1E6] p-2 rounded-lg" />
           </div>
@@ -106,7 +106,7 @@ const Crypto = () => {
             more.
           </span>
         </div>
-        <div>
+        <div className="w-4/5">
           <div>
             <WiStars className="text-[#F37609] text-4xl bg-[#FEF1E6] p-2 rounded-lg" />
           </div>
@@ -118,7 +118,7 @@ const Crypto = () => {
             tokens.
           </span>
         </div>
-        <div>
+        <div className="w-4/5">
           <div>
             <FaDollarSign className="text-[#F37609] text-4xl bg-[#FEF1E6] p-2 rounded-lg" />
           </div>
@@ -165,7 +165,7 @@ const Crypto = () => {
                   : null
               }
               alt=""
-              className="w-1/2 mx-auto h-1/2"
+              className="w-4/5 mx-auto "
             />
           </div>
           <div className="invest  sm:w-1/2 flex flex-col justify-center">
@@ -180,7 +180,7 @@ const Crypto = () => {
               <Accordion
                 question="Manage your assets in one place"
                 answer="
-On Public, you can see the crypto investments in your Bakkt Crypto account alongside the stocks and ETFs in your brokerage account."
+On Multicoin, you can see the crypto investments in your Bakkt Crypto account alongside the stocks and ETFs in your brokerage account."
                 id={2}
               />
             </div>
@@ -241,7 +241,7 @@ Stay on top of market volatility with crypto price alerts. Get notified when the
           >
             <img
               onClick={() => console.log("hey")}
-              className="w-1/2 mx-auto h-1/2"
+              className="w-4/5 mx-auto"
               src={
                 activeId == 1
                   ? guide4
@@ -259,7 +259,7 @@ Stay on top of market volatility with crypto price alerts. Get notified when the
               <Accordion
                 question="Access helpful crypto context"
                 answer="
-Every asset page on Public has helpful information to guide your crypto investing journey—including stats, news, and more."
+Every asset page on Multicoin has helpful information to guide your crypto investing journey—including stats, news, and more."
                 id={1}
               />
             </div>
@@ -267,7 +267,7 @@ Every asset page on Public has helpful information to guide your crypto investin
               <Accordion
                 question="Tune in to live crypto analysis"
                 answer="
-Each week on Public Live, journalists and experts break down the biggest headlines in the world of crypto. Tune in and get the latest crypto analysis."
+Each week on Multicoin Live, journalists and experts break down the biggest headlines in the world of crypto. Tune in and get the latest crypto analysis."
                 id={2}
               />
             </div>
@@ -276,7 +276,7 @@ Each week on Public Live, journalists and experts break down the biggest headlin
                 question="Upgrade your portfolio"
                 answer="
 
-With Public Premium, you can further customize your crypto price alerts and access advanced metrics to guide your crypto investing strategy."
+With Multicoin Premium, you can further customize your crypto price alerts and access advanced metrics to guide your crypto investing strategy."
                 id={3}
               />
             </div>
@@ -296,9 +296,9 @@ With Public Premium, you can further customize your crypto price alerts and acce
           Cryptocurrency services are provided by Bakkt Crypto, a licensed
           virtual currency business by the New York State Department of
           Financial Services and a licensed money transmitter. Your Bakkt Crypto
-          account is separate from your brokerage account with Public Investing,
+          account is separate from your brokerage account with Multicoin Investing,
           which holds your cash and your investments in US-listed stocks and
-          ETFs. Public Investing is a registered broker-dealer and FINRA member,
+          ETFs. Multicoin Investing is a registered broker-dealer and FINRA member,
           and does not offer cryptocurrency trading or custodying services.
         </p>
         <p className="text-sm ">
@@ -326,15 +326,15 @@ With Public Premium, you can further customize your crypto price alerts and acce
               question="Who is Bakkt Crypto?
 "
               answer="
-When you invest in cryptocurrency via Public, you’re opening an account with Bakkt Crypto Solutions, LLC (NMLS ID 1828849). Bakkt Crypto is a licensed virtual currency business by the New York State Department of Financial Services and a licensed money transmitter. Bakkt Crypto is not a registered broker-dealer or a FINRA member. Learn more about Bakkt Crypto here.
+When you invest in cryptocurrency via Multicoin, you’re opening an account with Bakkt Crypto Solutions, LLC (NMLS ID 1828849). Bakkt Crypto is a licensed virtual currency business by the New York State Department of Financial Services and a licensed money transmitter. Bakkt Crypto is not a registered broker-dealer or a FINRA member. Learn more about Bakkt Crypto here.
 
-Note that your Bakkt Crypto account is separate from your brokerage account with Public Investing, which holds your investments in US-listed stocks and ETFs. Public Investing is a registered broker-dealer and FINRA member."
+Note that your Bakkt Crypto account is separate from your brokerage account with Multicoin Investing, which holds your investments in US-listed stocks and ETFs. Multicoin Investing is a registered broker-dealer and FINRA member."
               id={1}
             />
             <Accordion
               question="How do I get started with crypto?
 "
-              answer="Before you can invest in cryptocurrency via our platform, you’ll first need to open a cryptocurrency account directly with Bakkt Crypto Solutions, LLC. Your cryptocurrency trades will be executed by Bakkt Crypto, and your cryptocurrency assets will be held in your Bakkt Crypto account. Through the Public platform, you will be able to review the crypto holdings in your Bakkt Crypto account, submit trade orders to Bakkt Crypto, and contact Bakkt Crypto for customer support."
+              answer="Before you can invest in cryptocurrency via our platform, you’ll first need to open a cryptocurrency account directly with Bakkt Crypto Solutions, LLC. Your cryptocurrency trades will be executed by Bakkt Crypto, and your cryptocurrency assets will be held in your Bakkt Crypto account. Through the Multicoin platform, you will be able to review the crypto holdings in your Bakkt Crypto account, submit trade orders to Bakkt Crypto, and contact Bakkt Crypto for customer support."
               id={2}
             />
             <Accordion
@@ -352,7 +352,7 @@ The minimum buy amount for crypto is $1 and maximum order size is $100k. The tot
               id={3}
             />
             <Accordion
-              question="Can I access my Bakkt Crypto account outside of Public?
+              question="Can I access my Bakkt Crypto account outside of Multicoin?
 "
               answer="
 
@@ -379,7 +379,7 @@ Cryptocurrency is a digital store of value or medium of exchange that is recorde
           <div className="w-1/2  px-4">
             <div className="invest  sm:w-2/3 mb-6 flex flex-col justify-center ">
               <h1 className=" my-2 font-bold text-lg  text-black">
-                Have additional questions Stocks on Public?
+                Have additional questions Stocks on Multicoin?
               </h1>
               <span className="text-base tracking-wide text-slate-600">
                 Our US-based customer experience team has FINRA-licensed

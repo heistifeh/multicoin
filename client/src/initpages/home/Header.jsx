@@ -10,9 +10,9 @@ const Header = () => {
   return (
     <div>
       <Navbar />
-      <div className="px-4">
-        <div className="flex  h-60 items-center font-semi-bold text-5xl md:6xl text-black ">
-          <h1 className="lg:w-1/2">
+      <div className="container-inner">
+        <div className="flex  h-60 items-center font-semi-bold text-4xl md:text-6xl text-black ">
+          <h1 className="lg:w-2/3">
             Investing for those who take it seriously
           </h1>
         </div>
@@ -20,15 +20,15 @@ const Header = () => {
           <div className="flex flex-col md:flex-row gap-4 md:pb-8 lg:pb-0 pb-4">
             <div className="flex gap-2 items-center text-base lg:text-lg">
               <BiSolidPieChart className="text-primary" />
-              <span className=""> Multi-asset investing</span>
+              <span className="text-black"> Multi-asset investing</span>
             </div>
             <div className="flex gap-2 items-center text-base lg:text-lg">
               <TbArrowsUp className="text-primary" />
-              <span className=""> Industry-leading yields</span>
+              <span className="text-black"> Industry-leading yields</span>
             </div>
             <div className="flex gap-2 items-center text-base lg:text-lg">
               <FaHeart className="text-primary" />
-              <span className=""> Trusted by millions</span>
+              <span className="text-black"> Trusted by millions</span>
             </div>
           </div>
 
