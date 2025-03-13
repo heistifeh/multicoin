@@ -20,47 +20,47 @@ const Assets = () => {
     <div>
       <p className="text-center">Explore our assets</p>
       <div className="flex flex-wrap items-center justify-center gap-4 my-8">
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Stocks
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Bonds
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Treasuries
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Options
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Crypto
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           ETfs
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Bond Account
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           High-Yield Cash Account
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Treasury Account
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           Investment Plans
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-8 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
           IRAs
           <span className="text-slate-300 ml-4">/</span>
         </div>

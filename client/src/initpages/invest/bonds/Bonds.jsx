@@ -65,7 +65,6 @@ const Bonds = () => {
             </div>
             <div className="relative">
               <div className="absolute text-primary md:left-90 hidden ">
-              
                 New
               </div>
               <Accordion

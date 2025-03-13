@@ -104,21 +104,21 @@ const Etf = () => {
             <img src={guideStock1} alt="" className="w-1/2 mx-auto" />
           </div>
           <div className="invest  sm:w-1/2 flex flex-col justify-center">
-            <div onClick={() => setActiveId(1)}>
+            <div>
               <Accordion
                 question="Set price alerts for ETFs"
                 answer="Make timely investment decisions with price alerts for ETFs. Get notified when an asset falls above or below your set threshold."
                 id={1}
               />
             </div>
-            <div onClick={() => setActiveId(2)}>
+            <div>
               <Accordion
                 question="Get more time to react to market events"
                 answer="With extended-hours trading, you get over 5 additional hours to buy and sell ETFs. Access pre-market trading from 8 AM to 9:30 AM ET and after-hours trading from 4 PM to 8 PM ET."
                 id={2}
               />
             </div>
-            <div onClick={() => setActiveId(3)}>
+            <div>
               <Accordion
                 question="Automatically reinvest your dividends"
                 answer="If your ETFs pay dividends, you can automatically reinvest your dividends right back into the fund that paid them out."
@@ -146,21 +146,21 @@ const Etf = () => {
             <img src={guideStock3} alt="" className="w-1/2 mx-auto " />
           </div>
           <div className="invest  sm:w-1/2 flex flex-col justify-center">
-            <div onClick={() => setActiveId(1)}>
+            <div>
               <Accordion
                 question="Take a closer look at any ETF"
                 answer="Every ETF page on Public has helpful information about the fund and its performance, including key metrics, news, and recent activity from other investors."
                 id={1}
               />
             </div>
-            <div onClick={() => setActiveId(2)}>
+            <div>
               <Accordion
                 question="Get daily live analysis on the markets"
                 answer="Each day, you can hear experts, analysts, and journalists discuss the day’s biggest market headlines—and what they mean for your portfolio—on Public Live."
                 id={2}
               />
             </div>
-            <div onClick={() => setActiveId(3)}>
+            <div>
               <Accordion
                 question="Upgrade your portfolio"
                 answer="With Public Premium, you can unlock advanced data and analysis to help inform your ETF trading strategies even further."
