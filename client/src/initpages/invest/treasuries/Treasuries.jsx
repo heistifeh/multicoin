@@ -254,7 +254,7 @@ Yes, there are management fees associated with managing your Treasury Account an
           <div className="w-1/2  px-4 ">
             <div className="invest  sm:w-2/3 mb-6 flex flex-col justify-center ">
               <h1 className=" my-2 font-bold text-lg  text-black">
-                Have additional questions Stocks on Public?
+                Have additional questions Stocks on Multicoin?
               </h1>
               <span className="text-base tracking-wide text-slate-600">
                 Our US-based customer experience team has FINRA-licensed

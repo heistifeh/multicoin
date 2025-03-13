@@ -14,6 +14,7 @@ import herobg from "../../../assets/images/herobg.png";
 import { FaDollarSign } from "react-icons/fa";
 import { IoTrendingUp } from "react-icons/io5";
 import Footer from "../../home/Footer";
+import Accordion from "../../../components/Accordion";
 
 const Stock = () => {
   return (
@@ -102,14 +103,34 @@ const Stock = () => {
             <img src={guideStock1} alt="" className="w-1/2 mx-auto" />
           </div>
           <div className="invest  sm:w-1/2 flex flex-col justify-center">
-            <h1 className=" my-2 text-xl sm:text-xl font-bold">
-              Set price alerts for stocks
-            </h1>
-            <span className="text-lg leading-5 sm:text-xl tracking-wider">
-              Make timely investment decisions with price alerts for all the
-              stocks you care about. Get notified when an asset falls above or
-              below your set threshold.
-            </span>
+            <div className="mb-10">
+              <Accordion
+                question="Set price alerts for stocks"
+                answer="Make timely investment decisions with price alerts for all the stocks you care about. Get notified when an asset falls above or below your set threshold."
+                id={1}
+              />
+            </div>
+            <div>
+              <Accordion
+                question="Get more time to react to market events"
+                answer="With extended-hours trading, you get over 5 additional hours to buy and sell stocks. Access pre-market trading from 8 AM to 9:30 AM ET and after-hours trading from 4 PM to 8 PM ET."
+                id={2}
+              />
+            </div>
+            <div>
+              <Accordion
+                question="Automatically reinvest your dividends"
+                answer="If you have dividend stocks in your portfolio, you can automatically reinvest your proceeds from the asset right back into the company that paid them out."
+                id={3}
+              />
+            </div>
+            <div>
+              <Accordion
+                question="Compare stocks side by side"
+                answer="Power your stock analysis with Compare—our new stock comparison tool that makes it easy to analyze the fundamentals side by side."
+                id={4}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -131,14 +152,28 @@ const Stock = () => {
             <img src={guideStock3} alt="" className="w-1/2 mx-auto " />
           </div>
           <div className="invest  sm:w-1/2 flex flex-col justify-center">
-            <h1 className=" my-2 text-xl sm:text-xl font-bold">
-              Set price alerts for stocks
-            </h1>
-            <span className="text-lg leading-5 sm:text-xl tracking-wider">
-              Make timely investment decisions with price alerts for all the
-              stocks you care about. Get notified when an asset falls above or
-              below your set threshold.
-            </span>
+            <div className="mb-10">
+              <Accordion
+                question="Take a closer look at any stock"
+                answer="Every stock page on Public has helpful information about the company and its performance, including key metrics, news, and recent activity from other investors."
+                id={1}
+              />
+            </div>
+            <div>
+              <Accordion
+                question="Get daily live analysis on the markets"
+                answer="Each day, you can hear experts, analysts, and journalists discuss the day’s biggest market headlines—and what they mean for your portfolio—on Public Live."
+                id={2}
+              />
+            </div>
+            <div>
+              <Accordion
+                question="Upgrade your portfolio"
+                answer="
+With Public Premium, you can unlock advanced data and company-specific analysis to help inform your stock-trading strategies even further."
+                id={3}
+              />
+            </div>
           </div>
         </div>
       </div>
