@@ -761,6 +761,19 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
           </div>
         </div>
       )}
+
+      {hamburger ? (
+        ""
+      ) : (
+        <div className="lg:hidden fixed bg-slate-50 w-full bottom-10 rounded-lg px-4 py-2">
+          <div className="flex justify-between items-center">
+            <span className="text-black">Start Investing now</span>
+            <button className="text-white bg-primary p-2 rounded-lg w-40 font-bold text-lg">
+              Sign up
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
