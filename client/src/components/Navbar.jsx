@@ -11,16 +11,16 @@ import google from "../assets/images/google-badge.svg";
 export const InvestMenu = () => {
   return (
     <div className="absolute  w-full left-0 right-0 top-full z-5 bg-white">
-      <div className="grid grid-cols-4 grid-rows-4 w-[90%] mx-auto gap-4 my-10">
+      <div className="grid grid-cols-4 grid-rows-4 w-[90%] h-[300px] mx-auto gap-4 my-10">
         <Link
           to={"/invest/stock"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2 "
+          className="text-lg col-span-1  hover:bg-slate-100 p-2 "
         >
           Stock
         </Link>
         <Link
           to={"/invest/bond-account"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           Bond Account
           <span className="ml-2 text-[12px] bg-icon px-2 rounded-xl text-black">
@@ -29,19 +29,19 @@ export const InvestMenu = () => {
         </Link>
         <Link
           to={"/invest/investment"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           Investment Plans
         </Link>
         <Link
           to={"/invest/options"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           Options
         </Link>
         <Link
           to={"/invest/hyca"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           High-Yield Cash Account
           <span className="ml-2 text-[12px] bg-icon px-2 rounded-xl text-black">
@@ -50,13 +50,13 @@ export const InvestMenu = () => {
         </Link>
         <Link
           to={"/invest/crypto"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           Crypto
         </Link>
         <Link
           to={"/invest/margin"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           Margin
           <span className="ml-2 text-sm bg-primary px-2 rounded-xl text-white">
@@ -66,25 +66,25 @@ export const InvestMenu = () => {
 
         <Link
           to={"/invest/treasuries"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           Treasuries
         </Link>
         <Link
           to={"/invest/etf"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           ETFs
         </Link>
         <Link
           to={"/invest/bonds"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           Bonds
         </Link>
         <Link
           to={"/invest/retirement"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           Retirement (IRAs)
           <span className="ml-2 text-sm bg-primary px-2 rounded-xl text-white">
@@ -93,7 +93,7 @@ export const InvestMenu = () => {
         </Link>
         <Link
           to={"/invest/stock"}
-          className="text-xl  col-start-4 row-span-full"
+          className="text-lg  col-start-4 row-span-full"
         >
           <div className="flex flex-col p-4 bg-slate-100 ">
             <span className="text-sm text-text">start investing today</span>
@@ -112,10 +112,10 @@ export const InvestMenu = () => {
 export const ResourceMenu = () => {
   return (
     <div className="absolute  w-full left-0 right-0 top-full z-5 bg-white">
-      <div className="grid grid-cols-4 grid-rows-4 w-[90%] mx-auto gap-4 my-10">
+      <div className="grid grid-cols-4 grid-rows-4 w-[90%] h-[300px] mx-auto gap-4 my-10">
         <Link
           to={"/invest/investment"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           <div className="hover:bg-slate-50">
             <span className="text-base">Options Rebate FAQ</span>
@@ -126,7 +126,7 @@ export const ResourceMenu = () => {
         </Link>
         <Link
           to={"/invest/investment"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           <div className="hover:bg-slate-50">
             <span className="text-base">Transfer Your Account</span>
@@ -138,7 +138,7 @@ export const ResourceMenu = () => {
         </Link>
         <Link
           to={"/invest/investment"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           <div className="hover:bg-slate-50">
             <span className="text-base">High Yield Savings Calculator.</span>
@@ -149,7 +149,7 @@ export const ResourceMenu = () => {
         </Link>
         <Link
           to={"/invest/investment"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           <div className="hover:bg-slate-50">
             <span className="text-base">Bond Screener</span>
@@ -160,7 +160,7 @@ export const ResourceMenu = () => {
         </Link>
         <Link
           to={"/invest/investment"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           <div className="hover:bg-slate-50">
             <span className="text-base">Learn</span>
@@ -172,7 +172,7 @@ export const ResourceMenu = () => {
 
         <Link
           to={"/invest/stock"}
-          className="text-xl  col-start-4 row-span-full"
+          className="text-lg  col-start-4 row-span-full"
         >
           <div className="flex flex-col p-4 bg-slate-100 ">
             <span className="text-sm text-text">start investing today</span>
@@ -191,10 +191,10 @@ export const ResourceMenu = () => {
 export const Companymenu = () => {
   return (
     <div className="absolute  w-full left-0 right-0 top-full z-5 bg-white">
-      <div className="grid grid-cols-4 grid-rows-4 w-[90%] mx-auto gap-4 my-10">
+      <div className="grid grid-cols-4 grid-rows-4 w-[90%] h-[300px] mx-auto gap-4 my-10">
         <Link
           to={"/invest/investment"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           <div className="hover:bg-slate-50">
             <span className="text-base">About</span>
@@ -206,7 +206,7 @@ export const Companymenu = () => {
         </Link>
         <Link
           to={"/invest/investment"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           <div className="hover:bg-slate-50">
             <span className="text-base">Have questions?</span>
@@ -217,7 +217,7 @@ export const Companymenu = () => {
         </Link>
         <Link
           to={"/invest/investment"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           <div className="hover:bg-slate-50">
             <span className="text-base">Media.</span>
@@ -228,7 +228,7 @@ export const Companymenu = () => {
         </Link>
         <Link
           to={"/invest/investment"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           <div className="hover:bg-slate-50">
             <span className="text-base">Bond Screener</span>
@@ -239,7 +239,7 @@ export const Companymenu = () => {
         </Link>
         <Link
           to={"/invest/investment"}
-          className="text-xl col-span-1  hover:bg-slate-100 p-2"
+          className="text-lg col-span-1  hover:bg-slate-100 p-2"
         >
           <div className="hover:bg-slate-50">
             <span className="text-base">Learn</span>
@@ -251,7 +251,7 @@ export const Companymenu = () => {
 
         <Link
           to={"/invest/stock"}
-          className="text-xl  col-start-4 row-span-full"
+          className="text-lg  col-start-4 row-span-full"
         >
           <div className="flex flex-col p-4 bg-slate-100 ">
             <span className="text-sm text-text">start investing today</span>
@@ -270,7 +270,7 @@ export const Companymenu = () => {
 export const Premiummenu = () => {
   return (
     <div className="absolute  w-full left-0 right-0 top-full z-5 bg-white">
-      <div className="grid grid-cols-2 w-[90%]  gap-4 my-10">
+      <div className="grid grid-cols-2 w-[90%] h-[300px] gap-4 my-10">
         <Link to={"/invest/stock"} className="text-xl">
           <div className="flex flex-col p-4">
             <img src={assetbg} alt="" className="w-2/3 h-2/3 object-cover" />
@@ -322,459 +322,472 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
 
   const handleHamBurgerMenu = () => {
     setHamburger(!hamburger);
+    if (!hamburger) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
   };
 
   return (
-    <nav
-      className={`container-all relative flex justify-between items-center pb-5 pt-2  text-base sm:text-lg z-50 text-black ${
-        megaMenu.state ? megaOn : megaOff
-      }`}
-      onMouseLeave={() => setMegaMenu({ state: false, name: "" })}
-    >
-      <Link to={"/"}>
-        <div className="flex items-center gap-2">
-          <img src="/logo1.jpg" alt="" className="rounded-lg w-8 h-8" />
-          <span className="text-lg">Multicoin Capital</span>
-        </div>
-      </Link>
+    <div className="sticky top-0 w-full bg-white z-1000">
+      <nav
+        className={`container-all  max-w-[1420px] sticky top-0 flex justify-between items-center pb-5 pt-2  text-base sm:text-lg z-1000 bg-white text-black px-4 ${
+          megaMenu.state ? megaOn : megaOff
+        }`}
+        onMouseLeave={() => setMegaMenu({ state: false, name: "" })}
+      >
+        <Link to={"/"}>
+          <div className="flex items-center gap-2">
+            <img src="/logo1.jpg" alt="" className="rounded-lg w-8 h-8" />
+            <span className="text-lg">Multicoin Capital</span>
+          </div>
+        </Link>
 
-      <div className="hidden lg:flex space-x-2 items-center">
-        <ul className={`flex space-x-10  z-10 ${megaOff}`}>
-          <Link
-            onMouseEnter={() => setMegaMenu({ state: true, name: "invest" })}
-            to={"/"}
-            className={` hover:bg-slate-100 transition duration-300 p-3 ${
-              megaMenu.state ? megaOn : megaOff
-            }`}
-          >
-            Invest
-            {megaMenu && megaMenu.name === "invest" ? <InvestMenu /> : ""}
-          </Link>
-          <Link
-            onMouseEnter={() => setMegaMenu({ state: true, name: "resources" })}
-            to={"/"}
-            className={` hover:bg-slate-100 transition duration-300 p-3 ${
-              megaMenu.state ? megaOn : megaOff
-            }`}
-          >
-            Resources
-            {megaMenu && megaMenu.name === "resources" ? <ResourceMenu /> : ""}
-          </Link>
-          <Link
-            onMouseEnter={() => setMegaMenu({ state: true, name: "company" })}
-            to={"/"}
-            className={` hover:bg-slate-100 transition duration-300 p-3 ${
-              megaMenu.state ? megaOn : megaOff
-            }`}
-          >
-            Company
-            {megaMenu && megaMenu.name === "company" ? <Companymenu /> : ""}
-          </Link>
-          <Link
-            onMouseEnter={() => setMegaMenu({ state: true, name: "premium" })}
-            to={"/"}
-            className={` hover:bg-slate-100 transition duration-300 p-3 ${
-              megaMenu.state ? megaOn : megaOff
-            }`}
-          >
-            Premium
-            {megaMenu && megaMenu.name === "premium" ? <Premiummenu /> : ""}
-          </Link>
-        </ul>
-        <div
-          className={`border-1 border-text  px-5 py-2 rounded-lg cursor-pointer transition-all duration-500 ${
-            megaMenu.state ? megaOn : megaOff
-          }`}
-        >
-          <span>Sign In</span>
-        </div>
-        <div className="bg-gradient-to-br from-primary to-primary-dark text-white px-5 py-2 rounded-lg hover:bg-primary-dark cursor-pointer transition-all duration-500">
-          <span>Get Started</span>
-        </div>
-      </div>
-      <div className=" lg:hidden " onClick={handleHamBurgerMenu}>
-        {hamburger ? (
-          <IoClose className="text-2xl" />
-        ) : (
-          <RxHamburgerMenu className="text-2xl" />
-        )}
-      </div>
-      {hamburger && (
-        <div className="absolute bg-white w-full top-16 left-0 lg:hidden h-[100vh] ">
-          <ul>
-            <div
-              onClick={() =>
-                setListDown({ state: !listDown.state, name: "invest" })
-              }
-              className={` flex justify-between h-10 items-center py-6 ${
-                listDown.state && listDown.name == "invest"
-                  ? "text-primary"
-                  : ""
+        <div className="hidden lg:flex space-x-2 items-center">
+          <ul className={`flex space-x-10  z-10 ${megaOff}`}>
+            <Link
+              onMouseEnter={() => setMegaMenu({ state: true, name: "invest" })}
+              to={"/"}
+              className={` hover:bg-slate-100 transition duration-300 p-3 ${
+                megaMenu.state ? megaOn : megaOff
               }`}
             >
-              <li className="text-lg">Invest</li>
-              <MdKeyboardArrowDown className="text-2xl" />
-            </div>
-            {listDown.state && listDown.name == "invest" ? (
-              <div classname="  w-[90%] ">
-                <ul className="bg-slate-50 text-lg py-2 pl-4 flex flex-col">
-                  <Link to={"/invest/stock"} className="py-2">
-                    Stocks
-                  </Link>
-                  <Link to={"/invest/options"} className="py-2">
-                    Options
-                  </Link>
-                  <div className="flex gap-2 items-center">
-                    <Link to={"/invest/margin"} className="py-2">
-                      Margin
-                    </Link>
-                    <span className=" text-[10px] bg-primary px-2 rounded-lg text-white">
-                      New
-                    </span>
-                  </div>
-                  <Link to={"/invest/bonds"} className="py-2">
-                    Bonds
-                  </Link>
-
-                  <div className="flex gap-2 items-center">
-                    <Link to={"/invest/bond-account"} className="py-2">
-                      Bond Account
-                    </Link>
-                    <span className=" text-[12px] bg-icon px-2 rounded-xl text-black">
-                      6.5% yield
-                    </span>
-                  </div>
-                  <div className="flex gap-2 items-center">
-                    <Link to={"/invest/hyca"} className="py-2">
-                      High-Yield Cash Account
-                    </Link>
-                    <span className=" text-[12px] bg-icon px-2 rounded-xl text-black">
-                      4.1% APY
-                    </span>
-                  </div>
-
-                  <Link to={"/invest/treasuries"} className="py-2">
-                    Treasuries
-                  </Link>
-                  <div className="flex gap-2 items-center">
-                    <Link to={"/invest/retirement"} className="py-2">
-                      Retirement (IRAs)
-                    </Link>
-                    <span className=" text-[10px] bg-primary px-2 rounded-lg text-white">
-                      New
-                    </span>
-                  </div>
-                  <Link to={"/invest/investment"} className="py-2">
-                    Investment Plans
-                  </Link>
-                  <div className="flex gap-2 items-center">
-                    <Link to={"/invest/crypto"} className="py-2">
-                      Crypto
-                    </Link>
-                    <span className=" text-sm bg-slate-100 px-2 rounded-lg text-text font-extralight">
-                      Offered by Bakkt Crypto
-                    </span>
-                  </div>
-                  <Link to={"/invest/etf"} className="py-2">
-                    ETFs
-                  </Link>
-                </ul>
-
-                <div className="bg-slate-50 pl-4">
-                  <span className="text-sm text-text font-semibold">
-                    start investing today
-                  </span>
-                  <img src={navpic} alt="" className="" />
-                  <span className="block text-sm font-bold py-2">
-                    Bond Account
-                  </span>
-                  <span className="text-sm py-2 text-slate-700 ">
-                    Discover a new way to invest in bonds and earn interest
-                    payments. <span className="text-primary">Learn more</span>
-                  </span>
-                </div>
-              </div>
-            ) : (
-              ""
-            )}
-            <div
-              onClick={() =>
-                setListDown({ state: !listDown.state, name: "resources" })
+              Invest
+              {megaMenu && megaMenu.name === "invest" ? <InvestMenu /> : ""}
+            </Link>
+            <Link
+              onMouseEnter={() =>
+                setMegaMenu({ state: true, name: "resources" })
               }
-              className={` flex justify-between h-10 items-center ${
-                listDown.state && listDown.name == "resources"
-                  ? "text-primary"
-                  : ""
+              to={"/"}
+              className={` hover:bg-slate-100 transition duration-300 p-3 ${
+                megaMenu.state ? megaOn : megaOff
               }`}
             >
-              <li className="text-lg">Resources</li>
-              <MdKeyboardArrowDown className="text-2xl" />
-            </div>
-            {listDown.state && listDown.name == "resources" ? (
-              <div classname="  w-[90%] ">
-                <ul className="bg-slate-50 text-lg py-2 pl-4 flex flex-col">
-                  <Link
-                    to={"/invest/investment"}
-                    className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                  >
-                    <div className="hover:bg-slate-50">
-                      <span className="text-base">Options Rebate FAQ</span>
-                      <p className="text-text text-sm">
-                        See how the Options Trading Rebate Program works
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    to={"/invest/investment"}
-                    className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                  >
-                    <div className="hover:bg-slate-50">
-                      <span className="text-base">Transfer Your Account</span>
-                      <p className="text-text text-sm">
-                        Get up to $10,000 when you transfer your investment
-                        portfolio to Public.
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    to={"/invest/investment"}
-                    className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                  >
-                    <div className="hover:bg-slate-50">
-                      <span className="text-base">
-                        High Yield Savings Calculator.
-                      </span>
-                      <p className="text-text text-sm">
-                        Compare our competitive rates and plan your financial
-                        growth
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    to={"/invest/investment"}
-                    className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                  >
-                    <div className="hover:bg-slate-50">
-                      <span className="text-base">Bond Screener</span>
-                      <p className="text-text text-sm">
-                        Explore over 10,000 bonds with our advanced screening
-                        tool.
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    to={"/invest/investment"}
-                    className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                  >
-                    <div className="hover:bg-slate-50">
-                      <span className="text-base">Learn</span>
-                      <p className="text-text text-sm">
-                        Browse our latest articles and investing resources.
-                      </p>
-                    </div>
-                  </Link>
-
-                  <Link
-                    to={"/invest/stock"}
-                    className="text-xl  col-start-4 row-span-full"
-                  ></Link>
-                </ul>
-
-                <div className="bg-slate-50 pl-4">
-                  <span className="font-bold text-sm text-text">
-                    start investing today
-                  </span>
-                  <img src={navpic} alt="" className="w-f" />
-                  <span className="block text-sm font-bold py-2">
-                    Bond Account
-                  </span>
-                  <span className="text-sm py-2 text-slate-700 ">
-                    Discover a new way to invest in bonds and earn interest
-                    payments. Learn more
-                  </span>
-                </div>
-              </div>
-            ) : (
-              ""
-            )}
-            <div
-              onClick={() =>
-                setListDown({ state: !listDown.state, name: "company" })
-              }
-              className={` flex justify-between h-10 items-center ${
-                listDown.state && listDown.name == "company"
-                  ? "text-primary"
-                  : ""
+              Resources
+              {megaMenu && megaMenu.name === "resources" ? (
+                <ResourceMenu />
+              ) : (
+                ""
+              )}
+            </Link>
+            <Link
+              onMouseEnter={() => setMegaMenu({ state: true, name: "company" })}
+              to={"/"}
+              className={` hover:bg-slate-100 transition duration-300 p-3 ${
+                megaMenu.state ? megaOn : megaOff
               }`}
             >
-              <li className="text-lg">Company</li>
-              <MdKeyboardArrowDown className="text-2xl" />
-            </div>
-            {listDown.state && listDown.name == "company" ? (
-              <div classname="  w-[90%] ">
-                <ul className="bg-slate-50 text-lg py-2 pl-4 flex flex-col">
-                  <Link
-                    to={"/invest/investment"}
-                    className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                  >
-                    <div className="hover:bg-slate-50">
-                      <span className="text-base">About</span>
-                      <p className="text-text text-sm">
-                        Discover how we're making the markets work for all
-                        investors. Newsroom Access our media kit and a
-                        collection of our latest news.
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    to={"/invest/investment"}
-                    className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                  >
-                    <div className="hover:bg-slate-50">
-                      <span className="text-base">Have questions?</span>
-                      <p className="text-text text-sm">
-                        Reach out to us at support@multicoin.com — we're here to
-                        help.
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    to={"/invest/investment"}
-                    className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                  >
-                    <div className="hover:bg-slate-50">
-                      <span className="text-base">Media.</span>
-                      <p className="text-text text-sm">
-                        Market news, live commentary, and analysis from industry
-                        experts
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    to={"/invest/investment"}
-                    className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                  >
-                    <div className="hover:bg-slate-50">
-                      <span className="text-base">Bond Screener</span>
-                      <p className="text-text text-sm">
-                        Explore over 10,000 bonds with our advanced screening
-                        tool.
-                      </p>
-                    </div>
-                  </Link>
-                </ul>
-
-                <div className="bg-slate-50 pl-4">
-                  <span className="font-bold text-sm text-text">
-                    start investing today
-                  </span>
-                  <img src={navpic} alt="" className="w-f" />
-                  <span className="block text-sm font-bold py-2">
-                    Bond Account
-                  </span>
-                  <span className="text-sm py-2 text-slate-700 ">
-                    Discover a new way to invest in bonds and earn interest
-                    payments. Learn more
-                  </span>
-                </div>
-              </div>
-            ) : (
-              ""
-            )}
-            <div
-              onClick={() =>
-                setListDown({ state: !listDown.state, name: "premium" })
-              }
-              className={` flex justify-between h-10 items-center ${
-                listDown.state && listDown.name == "premium"
-                  ? "text-primary"
-                  : ""
+              Company
+              {megaMenu && megaMenu.name === "company" ? <Companymenu /> : ""}
+            </Link>
+            <Link
+              onMouseEnter={() => setMegaMenu({ state: true, name: "premium" })}
+              to={"/"}
+              className={` hover:bg-slate-100 transition duration-300 p-3 ${
+                megaMenu.state ? megaOn : megaOff
               }`}
             >
-              <li className="text-lg">Premium</li>
-              <MdKeyboardArrowDown className="text-2xl" />
-            </div>
-            {listDown.state && listDown.name == "premium" ? (
-              <div classname="  w-[90%] ">
-                <ul className="bg-slate-50 text-lg py-2 pl-4 flex flex-col">
-                  <Link to={"/invest/stock"} className="text-xl">
-                    <div className="flex flex-col p-4">
-                      <img
-                        src={assetbg}
-                        alt=""
-                        className="w-2/3 h-2/3 object-cover"
-                      />
-                    </div>
-                  </Link>
-
-                  <Link
-                    to={"/invest/investment"}
-                    className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                  >
-                    <div className="hover:bg-slate-50">
-                      <span className="block text-sm text-text font-semibold">
-                        Multicoin Premium{" "}
-                      </span>
-                      <span className="text-base font-semibold">
-                        Level up your account{" "}
-                      </span>
-                      <p className="text-text text-sm">
-                        Unlock enhanced trading features, white-glove customer
-                        service, advanced data and analysis, and portfolio
-                        management tools.
-                      </p>
-                      <div className="flex gap-4 items-center pt-4">
-                        <button className="cursor-pointer text-white md:my-8 bg-primary py-2 rounded-lg hover:bg-primary-very-light transition duration-300 w-[80px] text-sm  font-semibold ">
-                          Get started
-                        </button>
-                        <Link to={"/"}>
-                          <div className="flex   items-center gap-2">
-                            <span className="text-primary text-sm">
-                              Learn more
-                            </span>
-                            <FaArrowRight className="text-primary" />
-                          </div>
-                        </Link>
-                      </div>
-                    </div>
-                  </Link>
-                </ul>
-              </div>
-            ) : (
-              ""
-            )}
+              Premium
+              {megaMenu && megaMenu.name === "premium" ? <Premiummenu /> : ""}
+            </Link>
           </ul>
-          <div className="flex flex-col gap-4 w-[80%] mx-auto pt-8">
-            <div className="buttons flex gap-4 items-center">
-              <button className="text-black bg-white p-4 rounded-lg w-40 font-bold text-lg border-1 border-slate-200">
-                Sign in
-              </button>
-              <button className="text-white bg-primary p-4 rounded-lg w-40 font-bold text-lg">
-                Get started
-              </button>
-            </div>
-
-            <div className="apps p-6 flex  gap-12 items-center">
-              <img src={apple} alt="" className="w-[120px]" />
-              <img src={google} alt="" className="w-[120px]" />
-            </div>
+          <div
+            className={`border-1 border-text  px-5 py-2 rounded-lg cursor-pointer transition-all duration-500 ${
+              megaMenu.state ? megaOn : megaOff
+            }`}
+          >
+            <span>Sign In</span>
+          </div>
+          <div className="bg-gradient-to-br from-primary to-primary-dark text-white px-5 py-2 rounded-lg hover:bg-primary-dark cursor-pointer transition-all duration-500">
+            <span>Get Started</span>
           </div>
         </div>
-      )}
-
-      {hamburger ? (
-        ""
-      ) : (
-        <div className="lg:hidden fixed bg-slate-50 w-full bottom-10 rounded-lg px-4 py-2">
-          <div className="flex justify-between items-center">
-            <span className="text-black">Start Investing now</span>
-            <button className="text-white bg-primary p-2 rounded-lg w-40 font-bold text-lg">
-              Sign up
-            </button>
-          </div>
+        <div className=" lg:hidden " onClick={handleHamBurgerMenu}>
+          {hamburger ? (
+            <IoClose className="text-2xl" />
+          ) : (
+            <RxHamburgerMenu className="text-2xl" />
+          )}
         </div>
-      )}
-    </nav>
+        {hamburger && (
+          <div className="absolute bg-white w-[100%] top-10 right-0 left-0 lg:hidden h-[100vh] z-400 ">
+            <ul>
+              <div
+                onClick={() =>
+                  setListDown({ state: !listDown.state, name: "invest" })
+                }
+                className={` flex justify-between h-10 items-center py-6 ${
+                  listDown.state && listDown.name == "invest"
+                    ? "text-primary"
+                    : ""
+                }`}
+              >
+                <li className="text-lg">Invest</li>
+                <MdKeyboardArrowDown className="text-2xl" />
+              </div>
+              {listDown.state && listDown.name == "invest" ? (
+                <div classname="  w-[90%] ">
+                  <ul className="bg-slate-50 text-lg py-2 pl-4 flex flex-col">
+                    <Link to={"/invest/stock"} className="py-2">
+                      Stocks
+                    </Link>
+                    <Link to={"/invest/options"} className="py-2">
+                      Options
+                    </Link>
+                    <div className="flex gap-2 items-center">
+                      <Link to={"/invest/margin"} className="py-2">
+                        Margin
+                      </Link>
+                      <span className=" text-[10px] bg-primary px-2 rounded-lg text-white">
+                        New
+                      </span>
+                    </div>
+                    <Link to={"/invest/bonds"} className="py-2">
+                      Bonds
+                    </Link>
+
+                    <div className="flex gap-2 items-center">
+                      <Link to={"/invest/bond-account"} className="py-2">
+                        Bond Account
+                      </Link>
+                      <span className=" text-[12px] bg-icon px-2 rounded-xl text-black">
+                        6.5% yield
+                      </span>
+                    </div>
+                    <div className="flex gap-2 items-center">
+                      <Link to={"/invest/hyca"} className="py-2">
+                        High-Yield Cash Account
+                      </Link>
+                      <span className=" text-[12px] bg-icon px-2 rounded-xl text-black">
+                        4.1% APY
+                      </span>
+                    </div>
+
+                    <Link to={"/invest/treasuries"} className="py-2">
+                      Treasuries
+                    </Link>
+                    <div className="flex gap-2 items-center">
+                      <Link to={"/invest/retirement"} className="py-2">
+                        Retirement (IRAs)
+                      </Link>
+                      <span className=" text-[10px] bg-primary px-2 rounded-lg text-white">
+                        New
+                      </span>
+                    </div>
+                    <Link to={"/invest/investment"} className="py-2">
+                      Investment Plans
+                    </Link>
+                    <div className="flex gap-2 items-center">
+                      <Link to={"/invest/crypto"} className="py-2">
+                        Crypto
+                      </Link>
+                      <span className=" text-sm bg-slate-100 px-2 rounded-lg text-text font-extralight">
+                        Offered by Bakkt Crypto
+                      </span>
+                    </div>
+                    <Link to={"/invest/etf"} className="py-2">
+                      ETFs
+                    </Link>
+                  </ul>
+
+                  <div className="bg-slate-50 pl-4">
+                    <span className="text-sm text-text font-semibold">
+                      start investing today
+                    </span>
+                    <img src={navpic} alt="" className="" />
+                    <span className="block text-sm font-bold py-2">
+                      Bond Account
+                    </span>
+                    <span className="text-sm py-2 text-slate-700 ">
+                      Discover a new way to invest in bonds and earn interest
+                      payments. <span className="text-primary">Learn more</span>
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+              <div
+                onClick={() =>
+                  setListDown({ state: !listDown.state, name: "resources" })
+                }
+                className={` flex justify-between h-10 items-center ${
+                  listDown.state && listDown.name == "resources"
+                    ? "text-primary"
+                    : ""
+                }`}
+              >
+                <li className="text-lg">Resources</li>
+                <MdKeyboardArrowDown className="text-2xl" />
+              </div>
+              {listDown.state && listDown.name == "resources" ? (
+                <div classname="  w-[90%] ">
+                  <ul className="bg-slate-50 text-lg py-2 pl-4 flex flex-col">
+                    <Link
+                      to={"/invest/investment"}
+                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
+                    >
+                      <div className="hover:bg-slate-50">
+                        <span className="text-base">Options Rebate FAQ</span>
+                        <p className="text-text text-sm">
+                          See how the Options Trading Rebate Program works
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      to={"/invest/investment"}
+                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
+                    >
+                      <div className="hover:bg-slate-50">
+                        <span className="text-base">Transfer Your Account</span>
+                        <p className="text-text text-sm">
+                          Get up to $10,000 when you transfer your investment
+                          portfolio to Public.
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      to={"/invest/investment"}
+                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
+                    >
+                      <div className="hover:bg-slate-50">
+                        <span className="text-base">
+                          High Yield Savings Calculator.
+                        </span>
+                        <p className="text-text text-sm">
+                          Compare our competitive rates and plan your financial
+                          growth
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      to={"/invest/investment"}
+                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
+                    >
+                      <div className="hover:bg-slate-50">
+                        <span className="text-base">Bond Screener</span>
+                        <p className="text-text text-sm">
+                          Explore over 10,000 bonds with our advanced screening
+                          tool.
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      to={"/invest/investment"}
+                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
+                    >
+                      <div className="hover:bg-slate-50">
+                        <span className="text-base">Learn</span>
+                        <p className="text-text text-sm">
+                          Browse our latest articles and investing resources.
+                        </p>
+                      </div>
+                    </Link>
+
+                    <Link
+                      to={"/invest/stock"}
+                      className="text-xl  col-start-4 row-span-full"
+                    ></Link>
+                  </ul>
+
+                  <div className="bg-slate-50 pl-4">
+                    <span className="font-bold text-sm text-text">
+                      start investing today
+                    </span>
+                    <img src={navpic} alt="" className="w-f" />
+                    <span className="block text-sm font-bold py-2">
+                      Bond Account
+                    </span>
+                    <span className="text-sm py-2 text-slate-700 ">
+                      Discover a new way to invest in bonds and earn interest
+                      payments. Learn more
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+              <div
+                onClick={() =>
+                  setListDown({ state: !listDown.state, name: "company" })
+                }
+                className={` flex justify-between h-10 items-center ${
+                  listDown.state && listDown.name == "company"
+                    ? "text-primary"
+                    : ""
+                }`}
+              >
+                <li className="text-lg">Company</li>
+                <MdKeyboardArrowDown className="text-2xl" />
+              </div>
+              {listDown.state && listDown.name == "company" ? (
+                <div classname="  w-[90%] ">
+                  <ul className="bg-slate-50 text-lg py-2 pl-4 flex flex-col">
+                    <Link
+                      to={"/invest/investment"}
+                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
+                    >
+                      <div className="hover:bg-slate-50">
+                        <span className="text-base">About</span>
+                        <p className="text-text text-sm">
+                          Discover how we're making the markets work for all
+                          investors. Newsroom Access our media kit and a
+                          collection of our latest news.
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      to={"/invest/investment"}
+                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
+                    >
+                      <div className="hover:bg-slate-50">
+                        <span className="text-base">Have questions?</span>
+                        <p className="text-text text-sm">
+                          Reach out to us at support@multicoin.com — we're here
+                          to help.
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      to={"/invest/investment"}
+                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
+                    >
+                      <div className="hover:bg-slate-50">
+                        <span className="text-base">Media.</span>
+                        <p className="text-text text-sm">
+                          Market news, live commentary, and analysis from
+                          industry experts
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      to={"/invest/investment"}
+                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
+                    >
+                      <div className="hover:bg-slate-50">
+                        <span className="text-base">Bond Screener</span>
+                        <p className="text-text text-sm">
+                          Explore over 10,000 bonds with our advanced screening
+                          tool.
+                        </p>
+                      </div>
+                    </Link>
+                  </ul>
+
+                  <div className="bg-slate-50 pl-4">
+                    <span className="font-bold text-sm text-text">
+                      start investing today
+                    </span>
+                    <img src={navpic} alt="" className="w-f" />
+                    <span className="block text-sm font-bold py-2">
+                      Bond Account
+                    </span>
+                    <span className="text-sm py-2 text-slate-700 ">
+                      Discover a new way to invest in bonds and earn interest
+                      payments. Learn more
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                ""
+              )}
+              <div
+                onClick={() =>
+                  setListDown({ state: !listDown.state, name: "premium" })
+                }
+                className={` flex justify-between h-10 items-center ${
+                  listDown.state && listDown.name == "premium"
+                    ? "text-primary"
+                    : ""
+                }`}
+              >
+                <li className="text-lg">Premium</li>
+                <MdKeyboardArrowDown className="text-2xl" />
+              </div>
+              {listDown.state && listDown.name == "premium" ? (
+                <div classname="  w-[90%] transition-all duration-500 ease-in-out">
+                  <ul className="bg-slate-50 text-lg py-2 pl-4 flex flex-col">
+                    <Link to={"/invest/stock"} className="text-xl">
+                      <div className="flex flex-col p-4">
+                        <img
+                          src={assetbg}
+                          alt=""
+                          className="w-2/3 h-2/3 object-cover"
+                        />
+                      </div>
+                    </Link>
+
+                    <Link
+                      to={"/invest/investment"}
+                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
+                    >
+                      <div className="hover:bg-slate-50">
+                        <span className="block text-sm text-text font-semibold">
+                          Multicoin Premium{" "}
+                        </span>
+                        <span className="text-base font-semibold">
+                          Level up your account{" "}
+                        </span>
+                        <p className="text-text text-sm">
+                          Unlock enhanced trading features, white-glove customer
+                          service, advanced data and analysis, and portfolio
+                          management tools.
+                        </p>
+                        <div className="flex gap-4 items-center pt-4">
+                          <button className="cursor-pointer text-white md:my-8 bg-primary py-2 rounded-lg hover:bg-primary-very-light transition duration-300 w-[80px] text-sm  font-semibold ">
+                            Get started
+                          </button>
+                          <Link to={"/"}>
+                            <div className="flex   items-center gap-2">
+                              <span className="text-primary text-sm">
+                                Learn more
+                              </span>
+                              <FaArrowRight className="text-primary" />
+                            </div>
+                          </Link>
+                        </div>
+                      </div>
+                    </Link>
+                  </ul>
+                </div>
+              ) : (
+                ""
+              )}
+            </ul>
+            <div className="flex flex-col gap-4 w-[80%] mx-auto pt-8">
+              <div className="buttons flex gap-4 items-center">
+                <button className="text-black bg-white p-2 rounded-lg w-35 font-bold text-lg border-1 border-slate-200 custom-shadow">
+                  Sign in
+                </button>
+                <button className="text-white bg-primary p-2 rounded-lg w-35 font-bold text-lg custom-shadow">
+                  Get started
+                </button>
+              </div>
+
+              <div className="apps p-4 flex  gap-12 items-center">
+                <img src={apple} alt="" className="w-[120px]" />
+                <img src={google} alt="" className="w-[120px]" />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {hamburger ? (
+          ""
+        ) : (
+          <div className="lg:hidden fixed bg-slate-50 w-full bottom-5 rounded-lg px-4 py-2 left-0 shadow-sm custom-shadow">
+            <div className="flex justify-between items-center">
+              <span className="text-black text-sm">Start Investing now</span>
+              <button className="text-white bg-primary p-2 rounded-lg w-35 font-bold text-lg">
+                Sign up
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+    </div>
   );
 };
 

@@ -36,7 +36,7 @@ const BondAccount = () => {
             Discover a new way to invest in bonds and earn a 6.6%* yield with
             regular interest payments.
           </span>
-          <button className="cursor-pointer text-white  bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+          <button className="cursor-pointer text-white  bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow-dark">
             Lock in your yield
           </button>
         </div>
@@ -55,7 +55,7 @@ const BondAccount = () => {
       </div>
       {/* what is Bond account */}
       {/* informed */}
-      <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
+      <div className="my-20 text-center sm:w-2/5 sm:mx-auto  max-w-[1420px] mx-auto">
         <span className="text-primary text-base font-semibold"></span>
         <p className=" text-4xl sm:9xl text-black text-center pb-4">
           What is a Bond Account?
@@ -68,7 +68,7 @@ const BondAccount = () => {
       </div>
 
       {/* next */}
-      <div>
+      <div className=" max-w-[1420px] mx-auto">
         <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row-reverse justify-between gap-8">
           <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
             <img
@@ -112,9 +112,9 @@ const BondAccount = () => {
           </div>
         </div>
       </div>
-      <div className="my-10 flex flex-col gap-6 text-sm">
+      <div className="my-10 flex flex-col gap-6 text-sm  max-w-[1420px] mx-auto">
         <span>
-          A Bond Account is a self-directed brokerage account with Public
+          A Bond Account is a self-directed brokerage account with Multicoin
           Investing, member FINRA/SIPC. Deposits into this account are used to
           purchase 10 fractional investment-grade and high-yield bonds in equal
           par value allocations. All bond investments are subject to risk,
@@ -139,7 +139,7 @@ const BondAccount = () => {
         </span>
       </div>
       {/* informed */}
-      <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
+      <div className="my-20 text-center sm:w-2/5 sm:mx-auto  max-w-[1420px] mx-auto">
         <span className="text-primary text-base font-semibold"></span>
         <p className=" text-4xl sm:9xl text-black text-center pb-4">
           Lock in your 6.6%* yield in two steps
@@ -151,7 +151,7 @@ const BondAccount = () => {
         </span>
       </div>
       {/* next */}
-      <div>
+      <div className=" max-w-[1420px] mx-auto">
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8 bg-slate-100 items-center">
           <div className="invest-image sm:w-1/2   mx-auto py-6">
             <img src={step1} alt="" className="w-1/2 mx-auto " />
@@ -162,7 +162,7 @@ const BondAccount = () => {
         </div>
       </div>
       {/* steps */}
-      <div className="flex flex-col sm:flex-row justify-between my-10">
+      <div className="flex flex-col sm:flex-row justify-between my-10  max-w-[1420px] mx-auto">
         <div className="flex gap-4">
           <div className=" text-black border-1 rounded-full w-10 h-8 text-center">
             1
@@ -190,7 +190,7 @@ const BondAccount = () => {
 
         <div></div>
       </div>
-      <div className="my-10 flex flex-col gap-6 text-sm">
+      <div className="my-10 flex flex-col gap-6 text-sm  max-w-[1420px] mx-auto">
         <span>
           *This yield is the current average, annualized yield to worst (YTW)
           across all ten bonds in the Bond Account, before fees. YTW is not
@@ -207,7 +207,7 @@ const BondAccount = () => {
           Interest payments will not be evenly distributed.
         </span>
       </div>
-      <div>
+      <div className=" max-w-[1420px] mx-auto">
         <div className="w-[98%] mx-auto flex flex-col md:flex-row justify-between items-center my-16 ">
           <div className="leading  md:w-2/3 flex flex-col justify-center text-center md:text-left md:justify-start">
             <span className="text-4xl md:text-6xl text-black">
@@ -289,7 +289,7 @@ const BondAccount = () => {
             </div>
           </div>
           <p className="text-white text-center my-4">
-            The good news? With a Bond Account on Public, you can lock in the
+            The good news? With a Bond Account on Multicoin, you can lock in the
             yield from 10 bonds until they mature. The first maturity in the
             account is in 2028—giving you four years of 6.6%* yield from your
             initial investment.
@@ -407,7 +407,7 @@ const BondAccount = () => {
                 Chart your income journey
               </h1>
               <span className="text-basesm:text-xl tracking-wide text-slate-600">
-                It's easy to monitor your income sources on Public with our
+                It's easy to monitor your income sources on Multicoin with our
                 monthly breakdown of your earnings from each asset class,
                 including your Bond Account.
               </span>
@@ -439,7 +439,7 @@ const BondAccount = () => {
       </div>
 
       {/* Discover our suite */}
-      <div className="my-20 text-center sm:w-3/5 sm:mx-auto">
+      <div className="my-20 text-center sm:w-3/5 sm:mx-auto  max-w-[1420px] mx-auto">
         <span className="text-primary text-base font-semibold"></span>
         <p className=" text-4xl sm:text-5xl text-black text-center pb-4">
           Discover our suite of yield accounts
@@ -513,7 +513,7 @@ const BondAccount = () => {
       </div>
 
       {/* leading texts */}
-      <div className="my-10 flex flex-col gap-6 text-sm container-inner">
+      <div className="my-10 flex flex-col gap-6 text-sm container-inner  max-w-[1420px] mx-auto">
         <span>
           *Rate as of 9/19/2024. APY is variable and subject to change **Yield
           is an annualized 26-week T-bill rate (as of 8/12/2024) when held to
@@ -530,7 +530,7 @@ const BondAccount = () => {
       </div>
 
       {/* informed */}
-      <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
+      <div className="my-20 text-center sm:w-2/5 sm:mx-auto  max-w-[1420px] mx-auto">
         <span className="text-primary text-base font-semibold"></span>
         <p className=" text-4xl sm:9xl text-black text-center pb-4">
           What else do I need to know?
@@ -538,23 +538,23 @@ const BondAccount = () => {
       </div>
 
       {/* next */}
-      <div>
+      <div className=" max-w-[1420px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-3 mt-10 sm:mt-0 justify-between gap-4">
           <div className="invest-image  bg-slate-50  mx-auto py-6">
             <div className="invest  p-4 flex flex-col justify-center mx-auto">
               <h1 className=" my-2 font-bold text-xl sm:text-lg  text-black">
-                How do I invest in a Bond Account on Public?
+                How do I invest in a Bond Account on Multicoin?
               </h1>
               <span className="text-sm tracking-wide text-slate-600">
                 You can find the Bond Account alongside other yield accounts
-                (Treasury and High Yield Cash) on the Public app or on the web.
-                You can fund the account from your existing buying power or from
-                an external account with an investment of $1,000 or more. Each
-                investment of $1,000 will be used to purchase a portfolio of ten
-                fractional investment-grade and high-yield bonds in equal par
-                value allocations. You may make a one-time investment into the
-                Bond Account or schedule recurring investments on a weekly or
-                monthly basis.
+                (Treasury and High Yield Cash) on the Multicoin app or on the
+                web. You can fund the account from your existing buying power or
+                from an external account with an investment of $1,000 or more.
+                Each investment of $1,000 will be used to purchase a portfolio
+                of ten fractional investment-grade and high-yield bonds in equal
+                par value allocations. You may make a one-time investment into
+                the Bond Account or schedule recurring investments on a weekly
+                or monthly basis.
               </span>
               <Link>
                 <span className="text-sm text-primary-very-light mt-4">
@@ -595,13 +595,13 @@ const BondAccount = () => {
                 How does the Bond Account compare to other yield accounts?
               </h1>
               <span className="text-sm tracking-wide text-slate-600">
-                Compared to Public’s High Yield Cash Account and Treasury
+                Compared to Multicoin’s High Yield Cash Account and Treasury
                 Account, a Bond Account generates a higher yield, but comes with
                 higher risk of default and illiquidity. Like a Treasury Account
-                on Public, the Bond Account reinvests interest at the current
+                on Multicoin, the Bond Account reinvests interest at the current
                 rate automatically once it hits a minimum threshold (in this
-                case ~$100). Similar to other yield accounts on Public, cash in
-                a Bond Account may be withdrawn at any time, but there is a
+                case ~$100). Similar to other yield accounts on Multicoin, cash
+                in a Bond Account may be withdrawn at any time, but there is a
                 small fee if bonds need to be sold to do so ($0.50 per $100).
               </span>
               <Link>
@@ -661,7 +661,7 @@ const BondAccount = () => {
                 How is my Bond Account protected?
               </h1>
               <span className="text-sm tracking-wide text-slate-600">
-                A Bond Account at Public is a separate account from your
+                A Bond Account at Multicoin is a separate account from your
                 brokerage account but cash and securities are combined for SIPC
                 coverage limits. SIPC coverage protects assets up to a total of
                 $500,000, of which $250,000 applies for cash. There are
@@ -680,7 +680,7 @@ const BondAccount = () => {
       </div>
 
       {/* informed */}
-      <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
+      <div className="my-20 text-center sm:w-2/5 sm:mx-auto  max-w-[1420px] mx-auto">
         <span className="text-primary text-base font-semibold"></span>
         <p className=" text-4xl sm:text-6xl text-black text-center pb-4">
           Need help? Reach out.
@@ -688,7 +688,7 @@ const BondAccount = () => {
       </div>
 
       {/* next */}
-      <div>
+      <div className=" max-w-[1420px] mx-auto">
         <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row-reverse justify-between gap-8">
           <div className="invest-image sm:w-3/4 bg-slate-100  mx-auto py-6">
             <img src={bondaccount} alt="" className="w-1/2 mx-auto " />
@@ -696,7 +696,7 @@ const BondAccount = () => {
           <div className="w-5/6 container-inner">
             <div className="invest  sm:w-1/2 mb-6 flex flex-col justify-center">
               <h1 className=" my-2 font-bold text-base sm:text-base  text-black">
-                Have additional questions about Bond Account on Public?
+                Have additional questions about Bond Account on Multicoin?
               </h1>
               <span className="text-sm sm:text-base tracking-wide text-slate-600">
                 Our US-based customer experience team has FINRA-licensed
@@ -717,18 +717,23 @@ const BondAccount = () => {
         <hr className="text-slate-400" />
         <div className="flex flex-col items-center justify-center mb-0 pt-40 pb-4 bg-black w-[90%] mx-auto text-center">
           <span className="text-4xl md:text-6xl text-white">
-            Build your portfolio with Public
+            Build your portfolio with Multicoin
           </span>
           <span className="text-4xl md:text-6xl text-primary-very-light"></span>
           <div className="flex items-center justify-center md:w-fit">
-            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow-dark">
               Sign Up
             </button>
           </div>
         </div>
       </div>
-      <div className="relative img-alpha mt-0" style={{ width: "100%" }}>
-        <img src={herobg} alt="" className="h-[400px] w-full" />
+      <div className="bg-black">
+        <div
+          className="relative img-alpha mt-0 max-w-[1000px] mx-auto"
+          style={{ width: "100%" }}
+        >
+          <img src={herobg} alt="" className="h-[100%] w-full" />
+        </div>
       </div>
 
       <Footer />

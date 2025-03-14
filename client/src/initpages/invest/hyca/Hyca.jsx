@@ -38,7 +38,7 @@ const Hyca = () => {
             Public. Right now, you can earn 4.1% APY*—one of the highest rates
             in the market.
           </span>
-          <button className="cursor-pointer text-white  bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+          <button className="cursor-pointer text-white  bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow">
             Sign up
           </button>
           <span className="text-center text-black py-8">
@@ -91,7 +91,7 @@ const Hyca = () => {
       </div>
 
       {/* access your cash whenever */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-30 gap-4 bg-slate-50 my-10 sm:my-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-30 gap-4 bg-slate-50 my-10 sm:my-20 max-w-[1000px] mx-auto">
         <div className="sm:w-2/3 sm:mx-auto">
           <BsFillLightningChargeFill className="bg-slate-200 text-primary text-2xl my-4" />
           <p className="text-black text-3xl sm:text-5xl">
@@ -104,7 +104,7 @@ const Hyca = () => {
           cash.
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 bg-slate-50 my-10 sm:my-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 bg-slate-50 my-10 sm:my-20 max-w-[1000px] mx-auto">
         <div className="sm:w-4/5 sm:mx-auto">
           <IoShieldCheckmarkOutline className="bg-slate-200 text-primary text-2xl my-4" />
           <p className="text-black text-3xl sm:text-5xl">
@@ -120,7 +120,7 @@ const Hyca = () => {
       </div>
 
       {/* Discover our suite */}
-      <div className="my-20 text-center sm:w-2/5 sm:mx-auto">
+      <div className="my-20 text-center sm:w-2/5 sm:mx-auto max-w-[1000px] mx-auto">
         <span className="text-primary text-base font-semibold"></span>
         <p className=" text-4xl  text-black text-center pb-4">
           Looking for more ways to generate yield?
@@ -131,7 +131,7 @@ const Hyca = () => {
       </div>
 
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto">
         <div className="flex flex-col-reverse mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
           <div className="invest-image sm:w-2/3 bg-slate-50  mx-auto py-6">
             <img src={bond} alt="" className="w-4/5 mx-auto " />
@@ -194,14 +194,14 @@ const Hyca = () => {
       </div>
 
       {/* informed */}
-      <div className="my-10 w-4/5 mx-auto  ">
+      <div className="my-10 w-4/5 max-w-[1000px] mx-auto ">
         <p className=" text-4xl sm:9xl text-black pb-4">
           Have questions? Find answers.
         </p>
       </div>
 
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto">
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
           <div className="w-4/5 mx-auto">
             <Accordion
@@ -239,7 +239,7 @@ A high-yield cash account on Public generates an industry-leading 4.1% APY*. Wit
       </div>
 
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto my-20">
         <div className="flex flex-col-reverse mt-10 sm:mt-10 sm:flex-row-reverse justify-between gap-8 items-center">
           <div className="invest-image sm:w-1/2 bg-slate-50  mx-auto py-6">
             <img src={poster} alt="" className="w-1/2 mx-auto " />
@@ -270,14 +270,19 @@ A high-yield cash account on Public generates an industry-leading 4.1% APY*. Wit
           <span className="text-4xl md:text-6xl text-primary-very-light"></span>
           <span className="text-4xl md:text-6xl text-primary-very-light"></span>
           <div className="flex items-center justify-center md:w-fit">
-            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow-dark">
               Get started
             </button>
           </div>
         </div>
       </div>
-      <div className="relative img-alpha mt-0" style={{ width: "100%" }}>
-        <img src={herobg} alt="" className="h-[400px] w-full" />
+      <div className="bg-black">
+        <div
+          className="relative img-alpha mt-0 max-w-[1000px] mx-auto"
+          style={{ width: "100%" }}
+        >
+          <img src={herobg} alt="" className="h-[100%] w-full" />
+        </div>
       </div>
 
       <Footer />

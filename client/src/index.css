@@ -35,6 +35,17 @@ html {
   padding: 0;
 }
 
+.custom-shadow {
+  box-shadow: 0px 8px 11.14px rgba(0, 0, 0, 0.46); /* Matches shadowOffset, shadowOpacity, and shadowRadius */
+  elevation: 17; /* For React Native compatibility, but won't affect web */
+}
+.custom-shadow-dark {
+  box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.2); /* Softer, glowing shadow for dark backgrounds */
+  elevation: 17; /* For React Native compatibility */
+}
+
+
+
 /* #102A43 - nav
 #FDFDFD - body
 #4A4A67 - primary

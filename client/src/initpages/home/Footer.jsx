@@ -10,7 +10,7 @@ import apple from "../../assets/images/apple-badge.svg";
 const Footer = () => {
   return (
     <footer className="">
-      <div className="container-inner">
+      <div className="container-inner max-w-[1420px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 my-20">
           <div className="flex flex-col gap-4">
             <span className=" hover:text-primary-very-light cursor-pointer  text-lg font-bold text-black">
@@ -61,7 +61,7 @@ const Footer = () => {
               Careers
             </span>
             <span className=" hover:text-primary-very-light cursor-pointer text-black text-base">
-              Public’s Fee Schedule
+              Multicoin’s Fee Schedule
             </span>
           </div>
           <div className="flex flex-col gap-4">
@@ -101,10 +101,10 @@ const Footer = () => {
               FAQ
             </span>
             <span className=" hover:text-primary-very-light cursor-pointer text-black text-base">
-              support@public.com
+              support@Multicoin.com
             </span>
             <span className=" hover:text-primary-very-light cursor-pointer text-black text-base">
-              press@public.com
+              press@Multicoin.com
             </span>
             <div className="gap-4 flex my-2 ">
               <span className=" hover:text-primary-very-light cursor-pointer text-black text-base">
@@ -137,9 +137,10 @@ const Footer = () => {
             </span>
           </div>
           <div className="flex flex-col gap-4">
-            <span className=" hover:text-primary-very-light cursor-pointer text-black text-base font-bold ">
+            <p className="flex items-center gap-2 hover:text-primary-very-light cursor-pointer text-black text-base font-bold ">
               <img src="./logo1.jpg" alt="" className="rounded-xl" />
-            </span>
+              <span className="text-2xl">Multicoin</span>
+            </p>
             <span className=" cursor-pointer text-black text-base">
               Check the background of this firm on{" "}
               <span className="text-primary-very-light hover:underline text-sm">
@@ -147,7 +148,8 @@ const Footer = () => {
               </span>
             </span>
             <span className=" text-primary-very-light cursor-pointer hover:underline text-sm">
-              Open to the Public Investing, Inc. Customer Relationship Summary.
+              Open to the Multicoin Investing, Inc. Customer Relationship
+              Summary.
             </span>
           </div>
         </div>
@@ -155,7 +157,7 @@ const Footer = () => {
 
       {/* second footer */}
       <div className="bg-slate-100 m-0 p-0">
-        <div className="second-footer w-[90%] mx-auto py-8 rounded-lg ">
+        <div className="second-footer w-[90%] py-8 rounded-lg max-w-[1420px] mx-auto ">
           <div className="flex flex-wrap w-[97%] mx-auto mb-8">
             <span className="p-2 text-sm">Disclosures</span>
             <span className="p-2 text-sm">Privacy Policy</span>
@@ -191,22 +193,22 @@ const Footer = () => {
               strategy.
             </span>
             <span className="text-sm py-2 font-bold uppercase">
-              PUBLIC ADVISORS LLC
+              Multicoin ADVISORS LLC
             </span>
             <span className="text-sm py-4">
               <span className="font-bold block">Treasury Accounts.</span>
               Investment advisory services for Treasury Accounts are provided by
-              Public Advisors LLC (“Public Advisors”), an SEC-registered
-              investment adviser. Brokerage services are provided by Public
-              Investing (see below). Public Advisors and Public Investing are
-              wholly-owned subsidiaries of Public Holdings, Inc. (“Public
-              Holdings”), and both subsidiaries charge a fee for their
-              respective Treasury Account services. Before investing, consider
-              your investment objectives, all fees and expenses, and any
-              potential conflicts of interest. For more details, see Public
-              Advisors’ Form CRS, Form ADV Part 2A, Fee Schedule, and other
-              disclosures. Past performance is no guarantee of future results.
-              Any historical returns, expected returns, or probability
+              Multicoin Advisors LLC (“Multicoin Advisors”), an SEC-registered
+              investment adviser. Brokerage services are provided by Multicoin
+              Investing (see below). Multicoin Advisors and Multicoin Investing
+              are wholly-owned subsidiaries of Multicoin Holdings, Inc.
+              (“Multicoin Holdings”), and both subsidiaries charge a fee for
+              their respective Treasury Account services. Before investing,
+              consider your investment objectives, all fees and expenses, and
+              any potential conflicts of interest. For more details, see
+              Multicoin Advisors’ Form CRS, Form ADV Part 2A, Fee Schedule, and
+              other disclosures. Past performance is no guarantee of future
+              results. Any historical returns, expected returns, or probability
               projections are provided for informational and illustrative
               purposes, and may not reflect actual future performance.
               <br />
@@ -223,10 +225,10 @@ const Footer = () => {
               the price of Treasuries moves inversely to changes in interest
               rates. Before investing, you should consider your tolerance for
               these risks and your overall investment objectives. For more
-              details, see Public Advisors’ Form ADV Part 2A.
+              details, see Multicoin Advisors’ Form ADV Part 2A.
             </span>
             <span className="text-sm py-2 font-bold uppercase">
-              OPEN TO THE PUBLIC INVESTING, INC.
+              OPEN TO THE Multicoin INVESTING, INC.
             </span>
             <span className="text-sm py-2 font-bold ">
               Securities, Options, and Bonds.
@@ -235,17 +237,18 @@ const Footer = () => {
               Self-directed brokerage accounts and brokerage services for
               US-listed, registered securities, options, and bonds (except for
               Treasuries offered through your Jiko Account) are offered to
-              self-directed customers by Open to the Public Investing, Inc.
-              (“Public Investing”), a registered broker-dealer and member of
+              self-directed customers by Open to the Multicoin Investing, Inc.
+              (“Multicoin Investing”), a registered broker-dealer and member of
               FINRA & SIPC. Additional information about your broker can be
-              found by clicking here. Public Investing is a wholly-owned
-              subsidiary of Public Holdings. This is not an offer, solicitation
-              of an offer, or advice to buy or sell securities or open a
-              brokerage account in any jurisdiction where Public Investing is
-              not registered. Securities products offered by Public Investing
-              are not FDIC insured. Apex Clearing Corporation, our clearing
-              firm, has additional insurance coverage in excess of the regular
-              SIPC limits. Additional information about SIPC can be found here.
+              found by clicking here. Multicoin Investing is a wholly-owned
+              subsidiary of Multicoin Holdings. This is not an offer,
+              solicitation of an offer, or advice to buy or sell securities or
+              open a brokerage account in any jurisdiction where Multicoin
+              Investing is not registered. Securities products offered by
+              Multicoin Investing are not FDIC insured. Apex Clearing
+              Corporation, our clearing firm, has additional insurance coverage
+              in excess of the regular SIPC limits. Additional information about
+              SIPC can be found here.
             </span>
             <span className="text-sm py-4">
               <span className="font-bold block">Options.</span> Options trading
@@ -300,15 +303,15 @@ const Footer = () => {
               investment. Please assess your investment objectives, risk
               tolerance, and financial circumstances to determine whether margin
               is appropriate for you. You must repay your margin debt regardless
-              of the underlying value of the securities you purchased. Public
+              of the underlying value of the securities you purchased. Multicoin
               Investing can change its maintenance margin requirements at any
               time without prior notice. If the equity in your margin account
               falls below the minimum maintenance requirements, you may be
               required to deposit additional cash or securities. If you are
-              unable to do so, Public Investing may sell some or all of your
+              unable to do so, Multicoin Investing may sell some or all of your
               securities, without prior approval or notice. You are not entitled
               to an extension of time on a margin call. For more information
-              please see Public Investing’s{" "}
+              please see Multicoin Investing’s{" "}
               <span className="text-primary-very-light hover:underline">
                 Margin Disclosure Statement, Margin Agreement,{" "}
                 <span className="text-text">and </span>
@@ -318,33 +321,35 @@ const Footer = () => {
             <span className="text-sm py-4">
               <span className="font-bold block">High-Yield Cash Account.</span>A
               High-Yield Cash Account is a secondary brokerage account with
-              Public Investing. Funds in your High-Yield Cash Account are
+              Multicoin Investing. Funds in your High-Yield Cash Account are
               automatically deposited into partner banks (“Partner Banks”),
               where that cash earns interest and is eligible for FDIC insurance.
               See here for a list of current Partner Banks. Your Annual
               Percentage Yield is variable and may change at the discretion of
-              the Partner Banks or Public Investing. Apex Clearing and Public
-              Investing receive administrative fees for operating this program,
-              which reduce the amount of interest paid on swept cash. Neither
-              Public Investing nor any of its affiliates is a bank. Learn more.
+              the Partner Banks or Multicoin Investing. Apex Clearing and
+              Multicoin Investing receive administrative fees for operating this
+              program, which reduce the amount of interest paid on swept cash.
+              Neither Multicoin Investing nor any of its affiliates is a bank.
+              Learn more.
             </span>
             <span className="text-sm py-4">
               <span className="font-bold block">
                 Individual Retirement Accounts
               </span>
-              Self-directed individual retirement accounts are offered by Public
-              Investing, a registered broker-dealer and member of FINRA & SIPC.
-              Information about retirement accounts on Public is for educational
-              purposes only and is not tax or investment advice. Consult your
-              tax advisor for individual considerations. Visit the IRS website
-              for more information on the limitations and tax benefits of
-              Traditional and Roth IRAs. All investing involves risk.
+              Self-directed individual retirement accounts are offered by
+              Multicoin Investing, a registered broker-dealer and member of
+              FINRA & SIPC. Information about retirement accounts on Multicoin
+              is for educational purposes only and is not tax or investment
+              advice. Consult your tax advisor for individual considerations.
+              Visit the IRS website for more information on the limitations and
+              tax benefits of Traditional and Roth IRAs. All investing involves
+              risk.
             </span>
             <span className="text-sm py-4">
               <span className="font-bold block">Bonds.</span>
               “Bonds” shall refer to corporate debt securities and U.S.
-              government securities offered on the Public platform through a
-              self-directed brokerage account held at Public Investing and
+              government securities offered on the Multicoin platform through a
+              self-directed brokerage account held at Multicoin Investing and
               custodied at Apex Clearing. For purposes of this section, Bonds
               exclude treasury securities held in your Jiko Account, as
               explained under the “Jiko Account” section.
@@ -368,7 +373,7 @@ const Footer = () => {
             </span>
             <span className="text-sm py-4">
               <span className="font-bold block">Bond Accounts</span>
-              A Bond Account is a self-directed brokerage account with Public
+              A Bond Account is a self-directed brokerage account with Multicoin
               Investing. Deposits into this account are used to purchase 10
               investment-grade and high-yield bonds. The Bond Account’s yield is
               the average, annualized yield to worst (YTW) across all ten bonds
@@ -378,7 +383,7 @@ const Footer = () => {
               time of purchase may be different from the yield shown here. The
               “locked in” YTW is not guaranteed; you may receive less than the
               YTW of the bonds in the Bond Account if you sell any of the bonds
-              before maturity or if the issuer defaults on the bond. Public
+              before maturity or if the issuer defaults on the bond. Multicoin
               Investing charges a markup on each bond trade. See our Fee
               Schedule.
               <br />
@@ -392,7 +397,7 @@ const Footer = () => {
               <br />
               <br />
               Fractional Bonds also carry additional risks including that they
-              are only available on Public and cannot be transferred to other
+              are only available on Multicoin and cannot be transferred to other
               brokerages. Read more about the risks associated with fixed income
               and fractional bonds. See
               <span className="text-primary-very-light hover:underline">
@@ -405,7 +410,7 @@ const Footer = () => {
               Commission-free trading refers to $0 commissions charged on trades
               of US listed registered securities placed during the U.S. Markets
               Regular Trading Hours in self-directed brokerage accounts offered
-              by Public Investing. Keep in mind that other fees such as
+              by Multicoin Investing. Keep in mind that other fees such as
               regulatory fees, Premium subscription fees, commissions on trades
               during extended trading hours, wire transfer fees, and paper
               statement fees may apply to your brokerage account. Please see Fee
@@ -413,7 +418,7 @@ const Footer = () => {
             </span>
             <span className="text-sm py-4">
               <span className="font-bold block">Fractional Shares</span>
-              Fractional shares are illiquid outside of Public and not
+              Fractional shares are illiquid outside of Multicoin and not
               transferable. For a complete explanation of conditions,
               restrictions and limitations associated with fractional shares,
               see our Fractional Share Disclosure to learn more.
@@ -437,38 +442,38 @@ const Footer = () => {
               Interest Disclosure.
             </span>
             <span className="text-sm py-2 font-bold uppercase">
-              PUBLIC HOLDINGS, INC.
+              Multicoin HOLDINGS, INC.
             </span>
             <span className="text-sm py-4">
               <span className="font-bold block">Alpha.</span>
-              Alpha is an experiment brought to you by Public Holdings, Inc.
-              (“Public”). Alpha is an AI research tool powered by GPT-4, a
+              Alpha is an experiment brought to you by Multicoin Holdings, Inc.
+              (“Multicoin”). Alpha is an AI research tool powered by GPT-4, a
               generative large language model. Alpha is experimental technology
               and may give inaccurate or inappropriate responses. Output from
               Alpha should not be construed as investment research or
               recommendations, and should not serve as the basis for any
-              investment decision. All Alpha output is provided “as is.” Public
-              makes no representations or warranties with respect to the
-              accuracy, completeness, quality, timeliness, or any other
+              investment decision. All Alpha output is provided “as is.”
+              Multicoin makes no representations or warranties with respect to
+              the accuracy, completeness, quality, timeliness, or any other
               characteristic of such output. Your use of Alpha output is at your
               sole risk. Please independently evaluate and verify the accuracy
               of any such output for your own use case.
             </span>
             <span className="text-sm py-4">
               <span className="font-bold block">Market Data.</span>
-              Quotes and other market data for Public’s product offerings are
+              Quotes and other market data for Multicoin’s product offerings are
               obtained from third party sources believed to be reliable, but
-              Public Holdings and its affiliates make no representation or
+              Multicoin Holdings and its affiliates make no representation or
               warranty regarding the quality, accuracy, timeliness, and/or
               completeness of this information. Such information is time
               sensitive and subject to change based on market conditions and
               other factors. You assume full responsibility for any trading
-              decisions you make based upon the market data provided, and Public
-              is not liable for any loss caused directly or indirectly by your
-              use of such information. Market data is provided solely for
-              informational and/or educational purposes only. It is not intended
-              as a recommendation and does not represent a solicitation or an
-              offer to buy or sell any particular security.
+              decisions you make based upon the market data provided, and
+              Multicoin is not liable for any loss caused directly or indirectly
+              by your use of such information. Market data is provided solely
+              for informational and/or educational purposes only. It is not
+              intended as a recommendation and does not represent a solicitation
+              or an offer to buy or sell any particular security.
             </span>
             <span className="text-sm py-2 font-bold uppercase">
               BAKKT CRYPTO SOLUTIONS, LLC
@@ -486,7 +491,7 @@ const Footer = () => {
               Department of Financial Services and a licensed money transmitter,
               but is not a registered broker-dealer or a FINRA member. Your
               Bakkt Crypto account is separate from your brokerage account with
-              Public Investing, which holds US-listed stocks and ETFs. Please
+              Multicoin Investing, which holds US-listed stocks and ETFs. Please
               review the Risk Disclosures before trading.
             </span>
             <span className="text-sm py-2 font-bold uppercase">
@@ -499,8 +504,8 @@ const Footer = () => {
               offering 6-month US Treasury Bills (“T-bills”). See JSI’s FINRA
               BrokerCheck and Form CRS for further information. For the
               avoidance of doubt, a Jiko Account is different and separate from
-              the Treasury Account offered by Public Investing and advised by
-              Public Advisors (see “Treasury Accounts” section above).
+              the Treasury Account offered by Multicoin Investing and advised by
+              Multicoin Advisors (see “Treasury Accounts” section above).
               <br />
               <br />
               JSI uses funds from your Jiko Account to purchase T-bills in
@@ -529,9 +534,9 @@ const Footer = () => {
             <span className="text-sm py-4">
               Banking services and bank accounts are offered by Jiko Bank, a
               division of Mid-Central National Bank. JSI and Jiko Bank are not
-              affiliated with Public Holdings or any of its subsidiaries. None
-              of these entities provide legal, tax, or accounting advice. You
-              should consult your legal, tax, or financial advisors before
+              affiliated with Multicoin Holdings or any of its subsidiaries.
+              None of these entities provide legal, tax, or accounting advice.
+              You should consult your legal, tax, or financial advisors before
               making any financial decisions. This material is not intended as a
               recommendation, offer, or solicitation to purchase or sell
               securities, open a brokerage account, or engage in any investment

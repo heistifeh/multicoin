@@ -21,12 +21,12 @@ const Investment = () => {
       <header>
         <Navbar />
         <div>
-          <div className="my-20 text-center sm:w-4/5 sm:mx-auto">
+          <div className="my-20 text-center sm:w-4/5 sm:mx-auto max-w-[1420px] mx-auto ">
             <span className="text-primary text-base font-semibold"></span>
             <p className=" text-5xl sm:text-6xl text-black text-center pb-4 sm:w-3/5 mx-auto">
               Automate your investing strategy
             </p>
-            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow">
               Sign Up
             </button>
 
@@ -36,7 +36,7 @@ const Investment = () => {
           </div>
         </div>
       </header>
-      <main>
+      <main className="max-w-[1420px] mx-auto ">
         {/* informed */}
         <div className="mt-20 text-center sm:w-4/5 sm:mx-auto">
           <span className="text-primary text-base font-semibold"></span>
@@ -216,14 +216,19 @@ const Investment = () => {
           </span>
           <span className="text-4xl md:text-6xl text-primary-very-light"></span>
           <div className="flex items-center justify-center md:w-fit">
-            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow-dark">
               Sign Up
             </button>
           </div>
         </div>
       </div>
-      <div className="relative img-alpha mt-0" style={{ width: "100%" }}>
-        <img src={herobg} alt="" className="h-[400px] w-full" />
+      <div className="bg-black">
+        <div
+          className="relative img-alpha mt-0 max-w-[1000px] mx-auto"
+          style={{ width: "100%" }}
+        >
+          <img src={herobg} alt="" className="h-[100%] w-full" />
+        </div>
       </div>
 
       <Footer />

@@ -17,11 +17,9 @@ const Treasuries = () => {
   return (
     <div>
       <header className="relative rounded-none ">
-        <div className="container mx-auto">
-          <Navbar megaOn="text-black" megaOff="text-white" />
-        </div>
+        <Navbar />
 
-        <div className="absolute top-0 bg-cover flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8    left-0 right-0 bg-gradient-to-tr from-black to-[#000E43]">
+        <div className="absolute top-0 bg-cover flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8    left-0 right-0 bg-gradient-to-tr from-black to-[#000E43] max-w-[1440px] mx-auto">
           <div className="invest  sm:w-2/3 flex flex-col justify-center mt-12 px-8">
             <span className="text-sm text-white border-1 border-slate-600 w-fit rounded-lg px-[4px]  ">
               Treasury Account
@@ -38,7 +36,7 @@ const Treasuries = () => {
               and local taxes.*
             </span>
             <div className="flex my-8 gap-4 sm:gap-8">
-              <button className="sign-up bg-primary text-white p-2 w-30 rounded-4xl text-xl cursor-pointer hover:bg-primary-dark transition duration-300">
+              <button className="sign-up bg-primary text-white p-2 w-30 rounded-4xl text-xl cursor-pointer hover:bg-primary-dark transition duration-300 custom-shadow-dark">
                 Sign up
               </button>
             </div>
@@ -48,9 +46,9 @@ const Treasuries = () => {
           </div>
         </div>
       </header>
-      <div className="py-60"></div>
+      <div className="py-40 lg:py-80"></div>
       <div className="py-20"></div>
-      <div className="mt-20 mb-5 text-center sm:w-4/5 sm:mx-auto">
+      <div className="mt-20 mb-5 text-center sm:w-4/5 sm:mx-auto max-w-[1000px] mx-auto">
         <span className="text-primary-very-light text-base font-semibold mb-4 block">
           What is a Treasury Account?
         </span>
@@ -59,7 +57,7 @@ const Treasuries = () => {
         </p>
       </div>
       {/* leading texts */}
-      <div className="my-5 flex flex-col gap-6 text-sm text-center sm:w-4/5 mx-auto">
+      <div className="my-5 flex flex-col gap-6 text-sm text-center sm:w-4/5 max-w-[1000px] mx-auto">
         <span>
           A Treasury Account lets you invest in a ladder of US Treasuries with
           maturities from 3 months to 30 years. Choose a pre-built ladder to
@@ -69,7 +67,7 @@ const Treasuries = () => {
         </span>
       </div>
       {/* steps */}
-      <div className="flex flex-col sm:flex-row justify-between my-10 sm:w-[80%] sm:mx-auto">
+      <div className="flex flex-col sm:flex-row justify-between my-10 sm:w-[80%] sm:mx-auto max-w-[1000px] mx-auto">
         <div className="flex gap-4">
           <div className=" text-black border-1 rounded-full w-10 h-6 text-center">
             1
@@ -109,7 +107,7 @@ const Treasuries = () => {
 
         <div></div>
       </div>
-      <p className="pt-10 pb-6 sm:pb-20 sm:w-[80%] sm:mx-auto text-sm">
+      <p className="pt-10 pb-6 sm:pb-20 sm:w-[80%] sm:mx-auto text-sm max-w-[1000px] mx-auto">
         *The average yield displayed for the ladder at the time of your
         investment is estimated and assumes that: (1) all Treasuries in the
         ladder are held until maturity; (2) all interest and maturity payments
@@ -121,7 +119,7 @@ const Treasuries = () => {
         capital gains from sale of Treasuries prior to maturity is not exempt.
       </p>
       <div className="border-1 border-slate-100"></div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 max-w-[1000px] mx-auto">
         <div className="sm:w-3/5 sm:mx-auto">
           <span className="text-base text-primary">Tax advantages</span>
           <p className=" text-2xl sm:text-4xl text-black  pb-4 ">
@@ -137,7 +135,7 @@ const Treasuries = () => {
           <img src={image1} alt="" className="rounded-lg" />
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 max-w-[1000px] mx-auto">
         <div className="sm:w-3/5 sm:mx-auto">
           <span className="text-base text-primary">Lock in your yield</span>
           <p className=" text-2xl sm:text-4xl text-black  pb-4 ">
@@ -145,7 +143,7 @@ const Treasuries = () => {
             Your yield won’t.
           </p>
           <span className="">
-            A Treasury Account on Public allows you to lock in your yield at
+            A Treasury Account on Multicoin allows you to lock in your yield at
             purchase*, so you know exactly what you'll earn—even if the Fed cuts
             interest rates.
           </span>
@@ -154,7 +152,7 @@ const Treasuries = () => {
           <img src={feature2} alt="" className="rounded-lg" />
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 max-w-[1000px] mx-auto">
         <div className="sm:w-3/5 sm:mx-auto">
           <span className="text-base text-primary">Liquidity</span>
           <p className=" text-2xl sm:text-4xl text-black  pb-4 ">
@@ -189,13 +187,13 @@ const Treasuries = () => {
         </div>
       </div>{" "}
       {/* informed */}
-      <div className="my-10 w-4/5 mx-auto  ">
+      <div className="my-10 w-4/5 max-w-[1000px] mx-auto  ">
         <p className=" text-4xl sm:9xl text-black pb-4">
           Have questions? Find answers.
         </p>
       </div>
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto">
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
           <div className="w-4/5 mx-auto">
             <Accordion
@@ -215,7 +213,7 @@ A Treasury Account lets you invest in a ladder of US Treasuries with staggered m
             <Accordion
               question="How does a Treasury Account work?"
               answer="
-It only takes a few minutes to get started with a Treasury Account on Public. You can choose from pre-built Treasury ladders designed for different time horizons or build your own from scratch. Then, with a minimum deposit of $1,000, you’ll start earning a government-backed yield. You also have the flexibility to cash out your investments early if you need to."
+It only takes a few minutes to get started with a Treasury Account on Multicoin. You can choose from pre-built Treasury ladders designed for different time horizons or build your own from scratch. Then, with a minimum deposit of $1,000, you’ll start earning a government-backed yield. You also have the flexibility to cash out your investments early if you need to."
               id={3}
             />
             <Accordion
@@ -239,14 +237,14 @@ US Treasuries are backed by the full faith and credit of the US government and a
             <Accordion
               question="Are there fees associated with the Treasury Account?"
               answer="
-Yes, there are management fees associated with managing your Treasury Account and transaction fees associated with every trade. Management fees are tiered, starting at 0.29% and decreasing to 0.09% based on account size. Transaction markups are 0.10%-0.25% of par value, depending on duration. For more details, see Public Advisors’ Fee Schedule"
+Yes, there are management fees associated with managing your Treasury Account and transaction fees associated with every trade. Management fees are tiered, starting at 0.29% and decreasing to 0.09% based on account size. Transaction markups are 0.10%-0.25% of par value, depending on duration. For more details, see Multicoin Advisors’ Fee Schedule"
               id={7}
             />
           </div>
         </div>
       </div>
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto my-20">
         <div className="flex flex-col-reverse mt-10 sm:mt-10 sm:flex-row-reverse justify-between gap-8 items-center container-inner container-all">
           <div className="invest-image sm:w-1/2 bg-slate-50  mx-auto py-6">
             <img src={tree1} alt="" className="w-1/2 mx-auto " />
@@ -279,14 +277,19 @@ Yes, there are management fees associated with managing your Treasury Account an
           </span>
           <span className="text-4xl md:text-6xl text-primary-very-light"></span>
           <div className="flex items-center justify-center md:w-fit">
-            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow-dark">
               Sign Up
             </button>
           </div>
         </div>
       </div>
-      <div className="relative img-alpha mt-0" style={{ width: "100%" }}>
-        <img src={herobg} alt="" className="h-[400px] w-full" />
+      <div className="bg-black">
+        <div
+          className="relative img-alpha mt-0 max-w-[1000px] mx-auto"
+          style={{ width: "100%" }}
+        >
+          <img src={herobg} alt="" className="h-[100%] w-full" />
+        </div>
       </div>
       <div className="container-all">
         <Footer />

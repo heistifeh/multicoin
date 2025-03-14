@@ -23,7 +23,7 @@ const Options = () => {
       <Navbar />
       <div className="header bg-black p-8 rounded-t-lg">
         {/* assets with pictures */}
-        <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between items-center my-16 gap-4">
+        <div className="w-[90%] flex flex-col md:flex-row justify-between items-center my-16 gap-4 max-w-[1000px] mx-auto">
           <div className="leading  sm:w-5/6">
             <span className="text-primary-very-light text-lg sm:xl py-8 font-semibold">
               Options Trading
@@ -38,7 +38,7 @@ const Options = () => {
               no commissions or per-contract fees.
             </span>
             <br />
-            <button className="cursor-pointer text-white my-6 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+            <button className="cursor-pointer text-white my-6 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow-dark">
               Get Started
             </button>
             {disclosure("Options Disclosures")}
@@ -50,7 +50,7 @@ const Options = () => {
       </div>
 
       <div className="header bg-black p-8 rounded-b-lg">
-        <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between items-center my-16 gap-4">
+        <div className="w-[90%]  flex flex-col md:flex-row justify-between items-center my-16 gap-4 max-w-[1000px] mx-auto">
           <div className="grid grid-cols-1 gap-4 py-6 w-4/5 ">
             <div className="available flex gap-4 text-white">
               <IoSearch className="text-light-primary text-4xl bg-slate-800 p-2 rounded-sm" />
@@ -255,7 +255,7 @@ const Options = () => {
 
       {/* section */}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 my-4 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 container-all container-inner border-slate-200">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 my-4 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 container-all container-inner border-slate-200 max-w-[1000px] mx-auto">
         <div className="">
           <p className="text-black text-lg sm:text-xl py-2">Fundamentals</p>
           <span className="tracking-wide text-sm ">
@@ -334,14 +334,14 @@ const Options = () => {
         </div>
       </div>
       {/* informed */}
-      <div className="my-10 w-4/5 mx-auto  ">
+      <div className="my-10 w-4/5 max-w-[1000px] mx-auto  ">
         <p className=" text-4xl sm:9xl text-black pb-4">
           Have questions? Find answers.
         </p>
       </div>
 
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto">
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
           <div className="w-4/5 mx-auto">
             <Accordion
@@ -369,7 +369,7 @@ const Options = () => {
       </div>
 
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto my-10">
         <div className="flex flex-col-reverse mt-10 sm:mt-10 sm:flex-row-reverse justify-between gap-8 items-center container-all">
           <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
             <img src={poster} alt="" className="w-1/2 mx-auto " />
@@ -402,14 +402,19 @@ const Options = () => {
           </span>
           <span className="text-4xl md:text-6xl text-primary-very-light"></span>
           <div className="flex items-center justify-center md:w-fit">
-            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow-dark">
               Sign Up
             </button>
           </div>
         </div>
       </div>
-      <div className="relative img-alpha mt-0" style={{ width: "100%" }}>
-        <img src={herobg} alt="" className="h-[400px] w-full" />
+      <div className="bg-black">
+        <div
+          className="relative img-alpha mt-0 max-w-[1000px] mx-auto"
+          style={{ width: "100%" }}
+        >
+          <img src={herobg} alt="" className="h-[100%] w-full" />
+        </div>
       </div>
 
       <Footer />

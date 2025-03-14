@@ -37,9 +37,7 @@ const Crypto = () => {
   return (
     <div className="">
       <header className="relative rounded-none">
-        <div className="container mx-auto">
-          <Navbar />
-        </div>
+        <Navbar />
 
         <div
           className="absolute top-0 bg-cover flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8    left-0 right-0"
@@ -49,7 +47,7 @@ const Crypto = () => {
             backgroundPosition: "center", // Another property
           }}
         >
-          <div className="invest  sm:w-1/2 px-4 flex flex-col justify-center mt-10">
+          <div className="invest  sm:w-1/2 px-4 flex flex-col justify-center mt-10 max-w-[1000px] mx-auto">
             <h1 className="text-black my-2 text-4xl sm:text-7xl">
               Invest in crypto
             </h1>
@@ -58,10 +56,10 @@ const Crypto = () => {
               strategy, manage your portfolio – all on Multicoin.
             </span>
             <div className="flex my-8 gap-4 sm:gap-8">
-              <button className="sign-up bg-primary text-white p-2 w-30 rounded-4xl text-xl cursor-pointer hover:bg-primary-dark transition duration-300">
+              <button className="sign-up bg-primary text-white p-2 w-30 rounded-4xl text-xl cursor-pointer hover:bg-primary-dark transition duration-300 custom-shadow">
                 Sign Up
               </button>
-              <button className="explore  border-1 border-slate-400 text-black p-2 w-36 rounded-4xl text-lg cursor-pointer hover:bg-primary hover:text-white transition duration-300">
+              <button className="explore  border-1 border-slate-400 text-black p-2 w-36 rounded-4xl text-lg cursor-pointer hover:bg-primary hover:text-white transition duration-300 custom-shadow">
                 Explore stocks
               </button>
             </div>
@@ -72,20 +70,20 @@ const Crypto = () => {
         </div>
       </header>
 
-      <div className="py-40"></div>
-      <div className="py-40"></div>
+      <div className="py-40 lg:py-80"></div>
+      <div className="py-40 lg:py-80"></div>
       {/* leading texts */}
-      <div className="my-10 flex flex-col gap-6 text-sm px-2 mx-auto container-inner container-all py-6">
+      <div className="my-10 flex flex-col gap-6 text-sm px-2 mx-auto container-inner container-all py-6 max-w-[1000px]">
         <span>
           Cryptocurrency services provided by Bakkt Crypto Solutions LLC (NMLS
           ID 1828849), a licensed virtual currency business by the New York Dept
           of Financial Services and a licensed money transmitter. Your
           cryptocurrency investments are held in your Bakkt Crypto account,
-          which is separate from your brokerage account with Multicoin Investing.
-          Multicoin Investing is a registered broker-dealer and FINRA member, and
-          does not provide cryptocurrency trading or custodying services.
-          Cryptocurrencies are not securities and are not FDIC insured or
-          protected by SIPC. Cryptocurrency investing is speculative and
+          which is separate from your brokerage account with Multicoin
+          Investing. Multicoin Investing is a registered broker-dealer and FINRA
+          member, and does not provide cryptocurrency trading or custodying
+          services. Cryptocurrencies are not securities and are not FDIC insured
+          or protected by SIPC. Cryptocurrency investing is speculative and
           involves significant risks, including loss of principal. Please review
           the Risk Disclosures before trading.
           <span className="text-sm text-primary-very-light">Learn more</span>
@@ -93,7 +91,7 @@ const Crypto = () => {
       </div>
 
       {/* section */}
-      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-200 px-4 container-all">
+      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-200 px-4 container-all max-w-[1000px] mx-auto">
         <div className="w-4/5">
           <div className="">
             <FaArrowTrendUp className="text-[#F37609] text-4xl bg-[#FEF1E6] p-2 rounded-lg" />
@@ -133,7 +131,7 @@ const Crypto = () => {
       </div>
 
       {/* access */}
-      <div className="my-20 px-4 ">
+      <div className="my-20 px-4 max-w-[1000px] mx-auto">
         <span className="text-[#F37609] text-base font-semibold">
           Investing tools
         </span>
@@ -143,7 +141,7 @@ const Crypto = () => {
       </div>
 
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto">
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
           <div
             className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6"
@@ -196,7 +194,7 @@ Stay on top of market volatility with crypto price alerts. Get notified when the
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 max-w-[1000px] mx-auto">
         <div className="sm:w-1/2 sm:mx-auto">
           <img src={crypto} alt="" />
         </div>
@@ -219,7 +217,7 @@ Stay on top of market volatility with crypto price alerts. Get notified when the
       </div>
 
       {/* access */}
-      <div className="my-20 px-4 ">
+      <div className="my-20 px-4 max-w-[1000px] mx-auto">
         <span className="text-[#F37609] text-base font-semibold">
           Crypto insights
         </span>
@@ -229,7 +227,7 @@ Stay on top of market volatility with crypto price alerts. Get notified when the
       </div>
 
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto">
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
           <div
             className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6"
@@ -285,7 +283,7 @@ With Multicoin Premium, you can further customize your crypto price alerts and a
       </div>
 
       {/* access */}
-      <div className="my-20 px-4 mx-auto w-5/6 text-center">
+      <div className="my-20 px-4 w-5/6 text-center max-w-[1000px] mx-auto">
         <span className="text-[#F37609] text-base font-semibold">
           Bakkt Crypto
         </span>
@@ -296,10 +294,11 @@ With Multicoin Premium, you can further customize your crypto price alerts and a
           Cryptocurrency services are provided by Bakkt Crypto, a licensed
           virtual currency business by the New York State Department of
           Financial Services and a licensed money transmitter. Your Bakkt Crypto
-          account is separate from your brokerage account with Multicoin Investing,
-          which holds your cash and your investments in US-listed stocks and
-          ETFs. Multicoin Investing is a registered broker-dealer and FINRA member,
-          and does not offer cryptocurrency trading or custodying services.
+          account is separate from your brokerage account with Multicoin
+          Investing, which holds your cash and your investments in US-listed
+          stocks and ETFs. Multicoin Investing is a registered broker-dealer and
+          FINRA member, and does not offer cryptocurrency trading or custodying
+          services.
         </p>
         <p className="text-sm ">
           Cryptocurrencies offered by Bakkt Crypto are not securities and are
@@ -312,14 +311,14 @@ With Multicoin Premium, you can further customize your crypto price alerts and a
       </div>
 
       {/* informed */}
-      <div className="my-10 w-4/5 mx-auto  ">
+      <div className="my-10 w-4/5 max-w-[1000px] mx-auto  ">
         <p className=" text-4xl sm:9xl text-black pb-4">
           Have questions? Find answers.
         </p>
       </div>
 
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto">
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
           <div className="w-4/5 mx-auto">
             <Accordion
@@ -371,7 +370,7 @@ Cryptocurrency is a digital store of value or medium of exchange that is recorde
       </div>
 
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto my-20">
         <div className="flex flex-col-reverse mt-10 sm:mt-10 sm:flex-row-reverse justify-between gap-8 items-center">
           <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
             <img src={poster} alt="" className="w-1/2 mx-auto " />
@@ -404,14 +403,19 @@ Cryptocurrency is a digital store of value or medium of exchange that is recorde
           </span>
           <span className="text-4xl md:text-6xl text-primary-very-light"></span>
           <div className="flex items-center justify-center md:w-fit">
-            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow-dark">
               Sign Up
             </button>
           </div>
         </div>
       </div>
-      <div className="relative img-alpha mt-0" style={{ width: "100%" }}>
-        <img src={herobg} alt="" className="h-[400px] w-full" />
+      <div className="bg-black">
+        <div
+          className="relative img-alpha mt-0 max-w-[1000px] mx-auto"
+          style={{ width: "100%" }}
+        >
+          <img src={herobg} alt="" className="h-[100%] w-full" />
+        </div>
       </div>
 
       <Footer />

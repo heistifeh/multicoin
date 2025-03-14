@@ -17,81 +17,69 @@ const Assets = () => {
     );
   };
   return (
-    <div>
+    <div className="max-w-[1420px] mx-auto">
       <p className="text-center">Explore our assets</p>
       <div className="flex flex-wrap items-center justify-center gap-4 my-8">
-        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-2 hover:bg-slate-100 text-2xl sm:text-5xl font-[500] text-black hover:bg-slide cursor-pointer">
           Stocks
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-2 hover:bg-slate-100 text-2xl sm:text-5xl font-[500] text-black hover:bg-slide cursor-pointer">
           Bonds
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-2 hover:bg-slate-100 text-2xl sm:text-5xl font-[500] text-black hover:bg-slide cursor-pointer">
           Treasuries
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-2 hover:bg-slate-100 text-2xl sm:text-5xl font-[500] text-black hover:bg-slide cursor-pointer">
           Options
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-2 hover:bg-slate-100 text-2xl sm:text-5xl font-[500] text-black hover:bg-slide cursor-pointer">
           Crypto
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-2 hover:bg-slate-100 text-2xl sm:text-5xl font-[500] text-black hover:bg-slide cursor-pointer">
           ETfs
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-2 hover:bg-slate-100 text-2xl sm:text-5xl font-[500] text-black hover:bg-slide cursor-pointer">
           Bond Account
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-2 hover:bg-slate-100 text-2xl sm:text-5xl font-[500] text-black hover:bg-slide cursor-pointer">
           High-Yield Cash Account
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-2 hover:bg-slate-100 text-2xl sm:text-5xl font-[500] text-black hover:bg-slide cursor-pointer">
           Treasury Account
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-2 hover:bg-slate-100 text-2xl sm:text-5xl font-[500] text-black hover:bg-slide cursor-pointer">
           Investment Plans
           <span className="text-slate-300 ml-4">/</span>
         </div>
-        <div className="p-2 sm:p-8 hover:bg-slate-100 text-2xl sm:text-4xl font-[500] text-black hover:bg-slide cursor-pointer">
+        <div className="p-2 sm:p-2 hover:bg-slate-100 text-2xl sm:text-5xl font-[500] text-black hover:bg-slide cursor-pointer">
           IRAs
           <span className="text-slate-300 ml-4">/</span>
         </div>
       </div>
 
       {/* assets with pictures */}
-      <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between items-center my-16 ">
-        <div className="leading  md:w-1/3">
-          <span className="text-primary-very-light text-lg sm:xl py-8 font-semibold">
-            Options Trading
-          </span>
-          <p className="text-black text-3xl sm:4xl pt-6">Trade Options.</p>
-          <p className="text-black text-3xl sm:4xl pb-6">Earn rebates.</p>
-          <span>
-            Public is the only investing platform with options trading rebates.
-            Earn $0.06–$0.18 per stock or ETF contract, based on your monthly
-            trading volume.
-          </span>
-          {disclosure()}
-        </div>
-        <div className="img rounded-lg">
-          <img src={project1} alt="" />
-        </div>
-      </div>
+
       <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between items-center my-16 ">
         <div className="leading  md:w-1/3">
           <span className="text-primary-very-light text-lg sm:xl py-8 font-semibold">
             Bond Account
           </span>
-          <p className="text-black text-3xl sm:4xl pt-6">Trade 6.5% yield.*</p>
-          <p className="text-black text-3xl sm:4xl pb-6">Locked in.</p>
+          <p className="text-black text-3xl sm:4xl pt-6 font-[500]">
+            {" "}
+            7% yield.*
+          </p>
+          <p className="text-black text-3xl sm:4xl pb-6 font-[500]">
+            Locked in.
+          </p>
           <span>
             Now, you can lock in a 6.5% yield that won't change if the Fed cuts
             rates with a diversified portfolio of investment-grade and

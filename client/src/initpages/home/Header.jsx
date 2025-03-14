@@ -6,11 +6,12 @@ import { MdArrowOutward } from "react-icons/md";
 import { BiSolidPieChart } from "react-icons/bi";
 import { TbArrowsUp } from "react-icons/tb";
 import { FaHeart } from "react-icons/fa";
+import "../../components/animate.css";
 const Header = () => {
   return (
-    <div>
-      <Navbar />
-      <div className="container-inner">
+    <div className="">
+     
+      <div className="container-inner max-w-[1420px] mx-auto">
         <div className="flex  h-60 items-center font-semi-bold text-4xl md:text-6xl text-black ">
           <h1 className="lg:w-2/3">
             Investing for those who take it seriously
@@ -31,16 +32,20 @@ const Header = () => {
               <span className="text-black"> Trusted by millions</span>
             </div>
           </div>
-
-          <div className="flex items-center bg-primary-dark text-white rounded-2xl p-2 w-45 justify-center cursor-pointer gap-2 hover:bg-primary transition duration-300">
-            <span>Get Started</span>
-            <MdArrowOutward />
+          <div className="relative group cursor-pointer rounded-2xl overflow-hidden w-45">
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-primary via-primary-dark to-primary 
+                  animate-gradient"
+            ></div>
+            <div className="flex items-center relative z-10 text-white px-5 py-2 transition-all duration-500 justify-center gap-2">
+              <span>Get Started</span>
+              <MdArrowOutward />
+            </div>
           </div>
         </div>
-
-        <div className="hero-bg my-10 rounded-lg overflow-hidden">
-          <img src={herobg} alt="" className="w-" />
-        </div>
+      </div>
+      <div className="hero-bg my-10 rounded-lg overflow-hidden">
+        <img src={herobg} alt="" className="w-" />
       </div>
     </div>
   );

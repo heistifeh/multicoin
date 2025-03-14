@@ -14,7 +14,7 @@ const Bonds = () => {
   return (
     <div>
       <Navbar />
-      <div className="sm:w-7/8 mx-auto text-center">
+      <div className="sm:w-7/8 text-center max-w-[1000px] mx-auto">
         <h1 className="text-4xl sm:text-7xl  mt-12 mb-4 text-black ">
           Find, evaluate, and buy bonds.
         </h1>
@@ -26,7 +26,7 @@ const Bonds = () => {
           that brings fixed income into the 21st century.
         </span>
         <div>
-          <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+          <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow">
             Sign Up
           </button>
 
@@ -36,7 +36,7 @@ const Bonds = () => {
         </div>
       </div>
 
-      <div className="container-inner my-20">
+      <div className="container-inner my-20 max-w-[1000px] mx-auto">
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
           <div className="sm:w-2/3 text-4xl sm:text-6xl text-black">
             <h2>Thousands of unique bonds. More ways to invest.</h2>
@@ -52,14 +52,14 @@ const Bonds = () => {
             <div>
               <Accordion
                 question="Treasury bonds"
-                answer="Support public spending with Treasury bonds, which are backed by the full faith and credit of the US government and may offer tax advantages, too."
+                answer="Support Multicoin spending with Treasury bonds, which are backed by the full faith and credit of the US government and may offer tax advantages, too."
                 id={2}
               />
             </div>
             <div>
               <Accordion
                 question="Fractional bonds"
-                answer="Only Public offers a selection of 100+ bonds available to invest for as little as $100, and in any dollar increment."
+                answer="Only Multicoin offers a selection of 100+ bonds available to invest for as little as $100, and in any dollar increment."
                 id={3}
               />
             </div>
@@ -77,7 +77,7 @@ Lock in 6.9% yield* with a diversified set of investment grade and high-yield co
           </div>
         </div>
       </div>
-      <div className="my-10 container-inner">
+      <div className="my-10 container-inner max-w-[1000px] mx-auto">
         <span className="text-5xl sm:text-8xl text-black">
           We took everything you thought you knew about fixed income.
         </span>
@@ -86,7 +86,7 @@ Lock in 6.9% yield* with a diversified set of investment grade and high-yield co
         </span>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 container-inner">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 container-inner max-w-[1000px] mx-auto">
         <div className="sm:w-3/4 sm:mx-auto bg-slate-50">
           <img src={book} alt="" />
         </div>
@@ -96,12 +96,12 @@ Lock in 6.9% yield* with a diversified set of investment grade and high-yield co
           </p>
           <span className="text-sm sm:text-2xl">
             Bonds typically have high minimum purchase prices, up to $50,000.
-            Only Public lets you corporate and Treasury bonds for as little as
-            $100 and in any increment.
+            Only Multicoin lets you corporate and Treasury bonds for as little
+            as $100 and in any increment.
           </span>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 container-inner">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 container-inner max-w-[1000px] mx-auto">
         <div className="sm:w-3/4 sm:mx-auto bg-slate-50">
           <img src={sp} alt="" />
         </div>
@@ -116,7 +116,7 @@ Lock in 6.9% yield* with a diversified set of investment grade and high-yield co
           </span>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 container-inner">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 container-inner max-w-[1000px] mx-auto">
         <div className="sm:w-3/4 sm:mx-auto bg-slate-50">
           <img src={alpha} alt="" />
         </div>
@@ -131,7 +131,7 @@ Lock in 6.9% yield* with a diversified set of investment grade and high-yield co
           </span>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 container-inner">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 container-inner max-w-[1000px] mx-auto">
         <div className="sm:w-3/4 mx-auto bg-slate-50">
           <img src={balance} alt="" />
         </div>
@@ -147,7 +147,7 @@ Lock in 6.9% yield* with a diversified set of investment grade and high-yield co
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 bg-slate-50 items-center container-inner">
+      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 bg-slate-50 items-center container-inner max-w-[1000px] mx-auto">
         <div className="sm:w-3/4 sm:mx-auto">
           <span className="text-sm text-primary">New</span>
           <p className="text-4xl sm:text-5xl text-black my-2 ">Bond Account</p>
@@ -166,7 +166,7 @@ Lock in 6.9% yield* with a diversified set of investment grade and high-yield co
         </div>
       </div>
 
-      <div className="">
+      <div className="max-w-[1000px] mx-auto">
         <span className="text-4xl sm:text-6xl text-black block w-4/5 mx-auto text-center">
           Get additional tax advantages with government bonds
         </span>
@@ -193,14 +193,14 @@ Lock in 6.9% yield* with a diversified set of investment grade and high-yield co
       </div>
 
       {/* informed */}
-      <div className="my-10 w-4/5 mx-auto  ">
+      <div className="w-4/5 max-w-[1000px] mx-auto my-20">
         <p className=" text-4xl sm:9xl text-black pb-4">
           Have questions? Find answers.
         </p>
       </div>
 
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto">
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
           <div className="w-4/5 mx-auto">
             <Accordion
@@ -270,7 +270,7 @@ Understanding these tax implications is essential for making informed investment
       </div>
 
       {/* next */}
-      <div>
+      <div className="max-w-[1000px] mx-auto my-20">
         <div className="flex flex-col-reverse mt-10 sm:mt-10 sm:flex-row-reverse justify-between gap-8 items-center">
           <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
             <img src={bonds} alt="" className="w-1/2 mx-auto " />
@@ -303,16 +303,21 @@ Understanding these tax implications is essential for making informed investment
           </span>
           <span className="text-4xl md:text-6xl text-primary-very-light"></span>
           <div className="flex items-center justify-center md:w-fit">
-            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
+            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow-dark">
               Sign Up
             </button>
           </div>
         </div>
       </div>
-      <div className="relative img-alpha mt-0" style={{ width: "100%" }}>
-        <img src={herobg} alt="" className="h-[400px] w-full" />
-      </div>
 
+      <div className="bg-black">
+        <div
+          className="relative img-alpha mt-0 max-w-[1000px] mx-auto"
+          style={{ width: "100%" }}
+        >
+          <img src={herobg} alt="" className="h-[100%] w-full" />
+        </div>
+      </div>
       <Footer />
     </div>
   );

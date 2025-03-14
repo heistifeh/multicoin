@@ -6,10 +6,12 @@ import Features from "./Features";
 import Alpha from "./Alpha";
 import Upsell from "./Upsell";
 import Footer from "./Footer";
+import Navbar from "../../components/Navbar"
 const Home = () => {
   return (
     <>
       <div className="container-all">
+        <Navbar />
         <Header />
         <Nerdwallet />
         <Assets />
