@@ -44,7 +44,11 @@ html {
   elevation: 17; /* For React Native compatibility */
 }
 
-
+.page-container {
+  margin-left: aut0;
+  margin-right: auto;
+  max-width: 512px;
+}
 
 /* #102A43 - nav
 #FDFDFD - body

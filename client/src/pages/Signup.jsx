@@ -1,45 +1,133 @@
-import React from "react";
-// import { Navigate, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-function Signup() {
-  // const navigate = useNavigate();
+import { FaHeart } from "react-icons/fa6";
+import { TbArrowsUp } from "react-icons/tb";
+import { BiSolidPieChart } from "react-icons/bi";
+import { FaCheck } from "react-icons/fa6";
+
+const Signup = () => {
+  const [other, setOther] = useState(false);
+  const asset = (assetName, other) => {
+    return (
+      <div className="flex items-center bg-slate-800 w-fit  rounded-lg p-[6px]">
+        <FaCheck className="text-base text-white" />
+        <span className="text-white px-2 text-xl ">{assetName}</span>
+
+        {other && assetName === "Bond Account" && (
+          <span className="ml-2 text-white bg-gradient-to-r from-primary to-primary-very-light px-2 rounded-lg">
+            {other}
+          </span>
+        )}
+        {other && assetName === "High-yield" && (
+          <span className="ml-2 text-white bg-gradient-to-r from-primary to-primary-very-light px-2 rounded-lg">
+            {other}
+          </span>
+        )}
+      </div>
+    );
+  };
+  useEffect(() => {
+    // Enable `other` when High-yield Cash Account is rendered
+    setOther(true);
+  }, []);
   return (
-    <div className="w-2/3 mx-auto text-center my-6 max-w-lg">
-      <h1 className="text-2xl sm:text-3xl text-white text-center my-2">
-        Sign up
-      </h1>
-      <form className="flex flex-col gap-4">
-        <input
-          type="text"
-          className="border-1 border-primary p-2 rounded-lg focus:outline-none text-white"
-          placeholder="username "
-        />
-        <input
-          type="email"
-          className="border-1 border-primary p-2 rounded-lg focus:outline-none  text-white"
-          placeholder="email "
-        />
-        <input
-          type="password"
-          className="border-1 border-primary p-2 rounded-lg focus:outline-none  text-white"
-          placeholder="password "
-        />
-        <button className="bg-secondary text-white p-2 rounded-lg hover:opacity-85 cursor-pointer">
-          SIGN UP
-        </button>
-        <button className="bg-orange-700 text-white p-2 rounded-lg hover:opacity-85 cursor-pointer">
-          SIGN UP WITH GOOGLE
-        </button>
-      </form>
-      <div className="my-2">
-        <span>{`already have an account?`} </span>{" "}
-        <span className="underline text-white">
-          {" "}
-          <Link to={"/sign-in"}> sign in</Link>{" "}
-        </span>
+    <div className=" max-w-lg sm:max-w-lvw mx-auto">
+      <div className=" grid sm:grid-cols-2 justify-between gap-4 h-screen ">
+        <div className=" hidden sm:flex flex-col bg-gradient-to-tr from-black to-[#000E43]  px-6">
+          <div className=" top-4 flex gap-2 items-center ">
+            <div>
+              <img src="./logo.png" alt="" />
+            </div>
+
+            <span className="text-white text-3xl font-bold">Multicoin</span>
+          </div>
+          <div
+            className="
+          mt-15"
+          >
+            <h1 className="text-4xl text-white">Investing for those </h1>
+            <span className="text-4xl text-primary-very-light">
+              who take it seriously
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-4 mt-15 ">
+            <div className="flex gap-2 items-center text-base lg:text-lg">
+              <BiSolidPieChart className="text-primary-very-light bg-slate-700 text-3xl p-[4px]" />
+              <span className="text-white"> Multi-asset investing</span>
+            </div>
+            <div className="flex gap-2 items-center text-base lg:text-lg">
+              <TbArrowsUp className="text-primary-very-light bg-slate-700 text-3xl p-[4px]" />
+              <span className="text-white"> Industry-leading yields</span>
+            </div>
+            <div className="flex gap-2 items-center text-base lg:text-lg">
+              <FaHeart className="text-primary-very-light bg-slate-700 text-3xl p-[4px]" />
+              <span className="text-white"> Trusted by millions</span>
+            </div>
+          </div>
+
+          {/* assets */}
+          <div className="mt-20 flex flex-wrap gap-4">
+            {asset("Stocks")}
+            {asset("Options Trading")}
+            {asset("Treasuries")}
+            {asset("Bonds")}
+
+            {asset("High-yield", "4.1% APY")}
+            {asset("Bond Account", "6.95% yield")}
+          </div>
+        </div>
+        <div className="flex flex-col justify-center max-w-sm mx-auto sm:mx-0 sm:max-w-lg px-8">
+          <h1 className="text-xl sm:text-2xl font-bold text-black">
+            Start Investing in 5 minutes or less.
+          </h1>
+          <span className="text-sm sm:text-lg">
+            Already have an account?
+            <Link className="text-primary font-bold ml-2" to={"/sign-in"}>
+              {`Log in >`}
+            </Link>
+          </span>
+          <form>
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
+            />
+            <input
+              type="password"
+              id="password"
+              placeholder="password (min. 8 characters)"
+              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
+            />
+            <input
+              type="number"
+              id="number"
+              placeholder="Phone number"
+              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
+            />
+
+            <p
+              className="
+            text-sm my-8"
+            >
+              Your data is securely stored with encryption on US servers, we
+              won’t spam you, and we will never sell your personal information.
+              By clicking Create account, you agree to our terms and acknowledge
+              that we process your personal information in accordance with our
+              Privacy Policy.
+            </p>
+            <div className="flex w-full">
+              <button className="mx-auto bg-slate-100 text-slate-400 p-2 rounded-lg hover:opacity-85 cursor-pointer w-full">
+                Create account
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default Signup;
