@@ -8,6 +8,10 @@ import { FaCheck } from "react-icons/fa6";
 
 const Signup = () => {
   const [other, setOther] = useState(false);
+  const [formData, setFormData] = useState({});
+const [error, setError] = useState("")
+const [loading, setLoading] = useState(false)
+  // other with assest
   const asset = (assetName, other) => {
     return (
       <div className="flex items-center bg-slate-800 w-fit  rounded-lg p-[6px]">
@@ -31,9 +35,30 @@ const Signup = () => {
     // Enable `other` when High-yield Cash Account is rendered
     setOther(true);
   }, []);
+
+  // handlechange function
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+  console.log(formData);
+
+const handleSubmit = async (e)=>{
+  e.preventDefault();
+ 
+  try{
+    const res = await fetch("http://localhost:5000/api/auth/signup")
+  }
+  catch(error){
+    setError(error.message);
+  }
+}
   return (
     <div className=" max-w-lg sm:max-w-lvw mx-auto">
       <div className=" grid sm:grid-cols-2 justify-between gap-4 h-screen ">
+        {/* sidebar */}
         <div className=" hidden sm:flex flex-col bg-gradient-to-tr from-black to-[#000E43]  px-6">
           <div className=" top-4 flex gap-2 items-center ">
             <div>
@@ -68,7 +93,7 @@ const Signup = () => {
           </div>
 
           {/* assets */}
-          <div className="mt-20 flex flex-wrap gap-4">
+          <div className="my-10 flex flex-wrap gap-4">
             {asset("Stocks")}
             {asset("Options Trading")}
             {asset("Treasuries")}
@@ -78,6 +103,8 @@ const Signup = () => {
             {asset("Bond Account", "6.95% yield")}
           </div>
         </div>
+
+        {/* form */}
         <div className="flex flex-col justify-center max-w-sm mx-auto sm:mx-0 sm:max-w-lg px-8">
           <h1 className="text-xl sm:text-2xl font-bold text-black">
             Start Investing in 5 minutes or less.
@@ -88,22 +115,26 @@ const Signup = () => {
               {`Log in >`}
             </Link>
           </span>
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
               type="email"
               id="email"
               placeholder="Email"
+              onChange={handleChange}
               className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
             />
             <input
               type="password"
               id="password"
+              onChange={handleChange}
+              min={8}
               placeholder="password (min. 8 characters)"
               className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
             />
             <input
               type="number"
-              id="number"
+              id="phone"
+              onChange={handleChange}
               placeholder="Phone number"
               className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
             />
