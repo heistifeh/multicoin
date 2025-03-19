@@ -1,16 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaHeart } from "react-icons/fa6";
 import { TbArrowsUp } from "react-icons/tb";
 import { BiSolidPieChart } from "react-icons/bi";
 import { FaCheck } from "react-icons/fa6";
-
+import { useDispatch, useSelector } from "react-redux";
+import {
+  signInStart,
+  signInSuccess,
+  signInFailure,
+} from "../redux/user/userSlice.js";
 const Signup = () => {
   const [other, setOther] = useState(false);
   const [formData, setFormData] = useState({});
-const [error, setError] = useState("")
-const [loading, setLoading] = useState(false)
+  const { loading, error } = useSelector((state) => state.user);
+
+  // initialize dispatch
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   // other with assest
   const asset = (assetName, other) => {
     return (
@@ -45,16 +53,24 @@ const [loading, setLoading] = useState(false)
   };
   console.log(formData);
 
-const handleSubmit = async (e)=>{
-  e.preventDefault();
- 
-  try{
-    const res = await fetch("http://localhost:5000/api/auth/signup")
-  }
-  catch(error){
-    setError(error.message);
-  }
-}
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    dispatch(signInStart());
+    try {
+      const res = await fetch("api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        return dispatch(signInFailure(data.message));
+      }
+      dispatch(signInSuccess(data));
+    } catch (error) {
+      dispatch(signInFailure(error.message));
+    }
+  };
   return (
     <div className=" max-w-lg sm:max-w-lvw mx-auto">
       <div className=" grid sm:grid-cols-2 justify-between gap-4 h-screen ">
@@ -149,12 +165,13 @@ const handleSubmit = async (e)=>{
               that we process your personal information in accordance with our
               Privacy Policy.
             </p>
-            <div className="flex w-full">
+            <div disable={loading} className="flex w-full">
               <button className="mx-auto bg-slate-100 text-slate-400 p-2 rounded-lg hover:opacity-85 cursor-pointer w-full">
-                Create account
+                {loading ? "Creating account..." : "Create account"}
               </button>
             </div>
           </form>
+          {error && <p className="text-red-500">{error}</p>}
         </div>
       </div>
     </div>
