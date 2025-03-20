@@ -393,13 +393,13 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
               {megaMenu && megaMenu.name === "premium" ? <Premiummenu /> : ""}
             </Link>
           </ul>
-          <div
+          <Link to={"/sign-up"}
             className={`border-1 border-text  px-5 py-2 rounded-lg cursor-pointer transition-all duration-500 ${
               megaMenu.state ? megaOn : megaOff
             }`}
           >
             <span>Sign In</span>
-          </div>
+          </Link>
           <div className="bg-gradient-to-br from-primary to-primary-dark text-white px-5 py-2 rounded-lg hover:bg-primary-dark cursor-pointer transition-all duration-500">
             <span>Get Started</span>
           </div>

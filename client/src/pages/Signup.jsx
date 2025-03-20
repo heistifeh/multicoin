@@ -7,9 +7,9 @@ import { BiSolidPieChart } from "react-icons/bi";
 import { FaCheck } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  signInStart,
-  signInSuccess,
-  signInFailure,
+  signUpStart,
+  signUpSuccess,
+  signUpFailure,
 } from "../redux/user/userSlice.js";
 const Signup = () => {
   const [other, setOther] = useState(false);
@@ -55,7 +55,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(signInStart());
+    dispatch(signUpStart());
     try {
       const res = await fetch("api/auth/signup", {
         method: "POST",
@@ -64,12 +64,12 @@ const Signup = () => {
       });
       const data = await res.json();
       if (data.success === false) {
-        return dispatch(signInFailure(data.message));
+        return dispatch(signUpFailure(data.message));
       }
-      dispatch(signInSuccess(data));
+      dispatch(signUpSuccess(data));
       navigate("/verify-email");
     } catch (error) {
-      dispatch(signInFailure(error.message));
+      dispatch(signUpFailure(error.message));
     }
   };
   return (

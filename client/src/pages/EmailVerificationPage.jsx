@@ -77,7 +77,8 @@ const EmailVerificationPage = ({ email }) => {
       if (data.success === false) {
         return dispatch(verifyEmailFailure(data.message));
       }
-      navigate("/");
+      dispatch(verifyEmailSuccess(data.message))
+      navigate("/sign-in");
       toast.success("Email verified successfully");
       //   toast.success("Email verified successfully");
     } catch (error) {
