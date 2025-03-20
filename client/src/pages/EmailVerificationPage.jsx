@@ -1,25 +1,25 @@
-import React, { use, useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaHeart } from "react-icons/fa6";
 import { TbArrowsUp } from "react-icons/tb";
 import { BiSolidPieChart } from "react-icons/bi";
 import { FaCheck } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
+import { motion } from "framer-motion";
 import {
-  signInStart,
-  signInSuccess,
-  signInFailure,
+  verifyEmailStart,
+  verifyEmailSuccess,
+  verifyEmailFailure,
 } from "../redux/user/userSlice.js";
-const Signup = () => {
-  const [other, setOther] = useState(false);
-  const [formData, setFormData] = useState({});
-  const { loading, error } = useSelector((state) => state.user);
+import toast from "react-hot-toast";
 
-  // initialize dispatch
-  const dispatch = useDispatch();
+const EmailVerificationPage = ({ email }) => {
+  const [other, setOther] = useState(false);
+  const [inputCode, setInputCode] = useState({});
+  const { loading, error } = useSelector((state) => state.user);
+  const inputRefs = useRef([]);
   const navigate = useNavigate();
-  // other with assest
+  const dispatch = useDispatch();
   const asset = (assetName, other) => {
     return (
       <div className="flex items-center bg-slate-800 w-fit  rounded-lg p-[6px]">
@@ -44,34 +44,54 @@ const Signup = () => {
     setOther(true);
   }, []);
 
-  // handlechange function
+  // Handle Change
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
+    setInputCode({
+      ...inputCode,
       [e.target.id]: e.target.value,
     });
   };
-  console.log(formData);
+  console.log(inputCode);
+
+  // Improved Auto-Submit Logic
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(signInStart());
+
     try {
-      const res = await fetch("api/auth/signup", {
+      dispatch(verifyEmailStart());
+      const res = await fetch("/api/auth/verify-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(inputCode),
       });
+      // handling errors from failed responses
+      if (!res.ok) {
+        const errorData = await res.json();
+        toast.error("Email verification failed");
+
+        return dispatch(verifyEmailFailure(errorData.message));
+      }
+
       const data = await res.json();
       if (data.success === false) {
-        return dispatch(signInFailure(data.message));
+        return dispatch(verifyEmailFailure(data.message));
       }
-      dispatch(signInSuccess(data));
-      navigate("/verify-email");
+      navigate("/");
+      toast.success("Email verified successfully");
+      //   toast.success("Email verified successfully");
     } catch (error) {
-      dispatch(signInFailure(error.message));
+      return dispatch(verifyEmailFailure(error.message));
     }
   };
+
+  // Auto submit when all fields are filled
+  //   useEffect(() => {
+  //     if (inputCode.length === 6) {
+  //       handleSubmit(new Event("submit"));
+  //     }
+  //   }, [inputCode]);
+
   return (
     <div className=" max-w-lg sm:max-w-lvw mx-auto">
       <div className=" grid sm:grid-cols-2 justify-between gap-4 h-screen ">
@@ -122,53 +142,26 @@ const Signup = () => {
         </div>
 
         {/* form */}
-        <div className="flex flex-col justify-center max-w-sm mx-auto sm:mx-0 sm:max-w-lg px-8">
+        <div className="flex flex-col my-20 max-w-sm mx-auto sm:mx-0 sm:max-w-lg px-8">
           <h1 className="text-xl sm:text-2xl font-bold text-black">
-            Start Investing in 5 minutes or less.
+            Enter the one-time code we texted to your email.
           </h1>
           <span className="text-sm sm:text-lg">
-            Already have an account?
-            <Link className="text-primary font-bold ml-2" to={"/sign-in"}>
-              {`Log in >`}
-            </Link>
+            This is to help verify your identity.
           </span>
           <form onSubmit={handleSubmit}>
             <input
-              type="email"
-              id="email"
-              placeholder="Email"
-              onChange={handleChange}
-              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
-            />
-            <input
-              type="password"
-              id="password"
-              onChange={handleChange}
-              min={8}
-              placeholder="password (min. 8 characters)"
-              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
-            />
-            <input
               type="number"
-              id="phone"
+              id="code"
               onChange={handleChange}
-              placeholder="Phone number"
+              placeholder="code"
+              maxLength={5}
               className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
             />
 
-            <p
-              className="
-            text-sm my-8"
-            >
-              Your data is securely stored with encryption on US servers, we
-              won’t spam you, and we will never sell your personal information.
-              By clicking Create account, you agree to our terms and acknowledge
-              that we process your personal information in accordance with our
-              Privacy Policy.
-            </p>
-            <div disable={loading} className="flex w-full">
-              <button className="mx-auto  bg-primary text-white p-2 rounded-lg hover:opacity-85 cursor-pointer w-full">
-                {loading ? "Creating account..." : "Create account"}
+            <div disable={loading} className="flex w-full mt-5">
+              <button className="mx-auto bg-primary text-white p-2 rounded-lg hover:opacity-85 cursor-pointer w-full">
+                {loading ? "Verifying email..." : "Verify email"}
               </button>
             </div>
           </form>
@@ -178,5 +171,4 @@ const Signup = () => {
     </div>
   );
 };
-
-export default Signup;
+export default EmailVerificationPage;
