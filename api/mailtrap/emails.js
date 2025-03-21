@@ -7,7 +7,6 @@ export const sendVerificationEmail = async (email, verificationCode) => {
     await mailtrapClient.send({
       from: sender,
       to: receipient,
-      subject: "Verify Your Email",
       html: VERIFICATION_EMAIL_TEMPLATE.replace(
         "{verificationCode}",
         verificationCode
