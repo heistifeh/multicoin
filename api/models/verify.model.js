@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const verifySchema = new mongoose.Schema(
   {
     ssn: {
-      type: Number,
+      type: String,
       required: true,
     },
     imageUrl: {
