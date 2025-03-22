@@ -19,6 +19,8 @@ import About from "./pages/About.jsx";
 import Profile from "./pages/Profile";
 import EmailVerificationPage from "./pages/EmailVerificationPage.jsx";
 import { Toaster } from "react-hot-toast";
+import PrivateRoute from "./components/PrivateRoute.jsx";
+import VerifyIdentity from "./pages/VerifyIdentity.jsx";
 export default function App() {
   return (
     <BrowserRouter>
@@ -38,9 +40,13 @@ export default function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/sign-in" element={<Signin />} />
         <Route path="/sign-up" element={<Signup />} />
-        <Route path="/verify-email" element={<EmailVerificationPage />} />
+
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<Profile />} />
+        <Route  element={<PrivateRoute />}>
+          <Route path="/verify-identity" element={<VerifyIdentity />} />
+        </Route>
+        <Route path="/verify-email" element={<EmailVerificationPage />} />
       </Routes>
       <Toaster />
     </BrowserRouter>
