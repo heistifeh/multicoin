@@ -1,90 +1,156 @@
 import { get } from "mongoose";
 import React from "react";
-import firebase from "firebase/compat/app";
 import { useState } from "react";
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-} from "firebase/storage";
-import { app } from "../firebase.js";
+import ClipLoader from "react-spinners/ClipLoader";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const VerifyIdentity = () => {
-  const [files, setFiles] = useState([]);
+  // for spinner
+  let [loading, setLoading] = useState(false);
+  let [color, setColor] = useState("#ffffff");
+
+  // for image upload
   const [formData, setFormData] = useState({
     imageUrl: [],
   });
+  const [frontImage, setFrontImage] = useState(null);
+  const [backImage, setBackImage] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
-  const handleImageSubmit = async (e) => {
-    if (files.length > 0 && files.length < 7) {
-      const promises = [];
-      for (let i = 0; i < files.length; i++) {
-        promises.push(uploadImage(files[i]));
-      }
-      // await Promise.all(promise);
-      Promise.all(promises)
-        .then((urls) => {
-          setFormData({ ...formData, imageUrl: form.imageUrl.concat(urls) });
-          setImageUploadError(false);
-        })
-        .catch((err) => {
-          setImageUploadError("Image upload failed (2mb per file)");
+  const navigate = useNavigate();
+
+  const uploadFile = async (img) => {
+    const data = new FormData();
+    data.append("file", img);
+    data.append("upload_preset", "images_preset");
+
+    try {
+      let cloudName = "dyvvq1ycl";
+      let resourceType = "image";
+      let api = `https://api.cloudinary.com/v1_1/${cloudName}/${resourceType}/upload`;
+
+      const res = await axios.post(api, data);
+      const { secure_url } = res.data;
+      console.log(secure_url);
+      return secure_url;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleImageUpload = async (e) => {
+    e.preventDefault();
+    if (frontImage && backImage) {
+      try {
+        setLoading(true);
+        // Upload image file
+        const frontImgUrl = await uploadFile(frontImage);
+        const backImgUrl = await uploadFile(backImage);
+        // Send backend api request
+        // await axios.post(`${process.env.REACT_APP_BACKEND_BASEURL}/api/videos`, { imgUrl, videoUrl });
+        // Reset states
+        setFormData({
+          ...formData,
+          imageUrl: [frontImgUrl, backImgUrl],
         });
+        setFrontImage(null);
+        setBackImage(null);
+        console.log("File upload success!");
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
     } else {
       setImageUploadError(
         "Image upload failed, you can only upload two images."
       );
     }
   };
-
-  const uploadImage = async (file) => {
-    return new Promise((resolve, reject) => {
-      const storage = getStorage(app);
-      const fileName = new Date().getTime() + file.name;
-      const storageRef = ref(storage, fileName);
-      const uploadTask = uploadBytesResumable(storageRef, file);
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log("Upload is " + progress + "% done");
-          switch (snapshot.state) {
-            case "paused":
-              console.log("Upload is paused");
-              break;
-            case "running":
-              console.log("Upload is running");
-              break;
-            default:
-          }
-        },
-        (error) => {
-          reject(error);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            resolve(downloadURL);
-          });
-        }
-      );
+  //   const handleSubmit = (e)=>{
+  // e.preventDefault();
+  // setFormData({
+  //   ...formData,
+  //   [e.target.id]: e.target.value,
+  // })
+  //   }
+  const handleChange = (e) => {
+    e.preventDefault();
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
     });
   };
+
+  console.log(formData);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (formData.imageUrl.length < 2 || !formData.ssn) {
+      setImageUploadError("please upload both front and back images");
+    } else {
+      console.log("submitted!");
+    }
+  };
+
   return (
     <div>
-      <form className="flex flex-col max-w-lg mx-auto">
-        <input type="text" placeholder="SSN" />
-        <input
-          onChange={(e) => setFiles(e.target.files)}
-          type="file"
-          accept="image/*"
-          multiple
-        />
-        <button onClick={handleImageSubmit} type="button">
-          Upload images
+      <form onSubmit={handleSubmit}>
+        <div>
+          <span>SSN: </span>
+          <input
+            type="text"
+            placeholder="ssn"
+            id="ssn"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="img">Front Image:</label>
+          <br />
+          <input
+            type="file"
+            accept="image/*"
+            id="img"
+            onChange={(e) => setFrontImage((prev) => e.target.files[0])}
+          />
+        </div>
+        <br />
+        <div>
+          <label htmlFor="img">Back Image:</label>
+          <br />
+          <input
+            type="file"
+            accept="image/*"
+            id="img"
+            onChange={(e) => setBackImage((prev) => e.target.files[0])}
+          />
+        </div>
+        <br />
+        <button onClick={handleImageUpload} type="button">
+          Upload
         </button>
-        <button>Submit</button>
+        {imageUploadError && <p style={{ color: "red" }}>{imageUploadError}</p>}
+
+        <button type="submit">Submit form</button>
       </form>
+
+      {loading && (
+        <div className="sweet-loading">
+          <button onClick={() => setLoading(!loading)}>Toggle Loader</button>
+          <input
+            value={color}
+            onChange={(input) => setColor(input.target.value)}
+            placeholder="Color of the loader"
+          />
+
+          <ClipLoader
+            color={color}
+            loading={loading}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </div>
+      )}
     </div>
   );
 };

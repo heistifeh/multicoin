@@ -8,9 +8,9 @@ const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "multicoin-78b61.firebaseapp.com",
   projectId: "multicoin-78b61",
-  storageBucket: "multicoin-78b61.firebasestorage.app",
+  storageBucket: "multicoin-78b61.appspot.com",
   messagingSenderId: "964216390964",
-  appId: "1:964216390964:web:6c3025f1ecb93276a85161"
+  appId: "1:964216390964:web:6c3025f1ecb93276a85161",
 };
 
 // Initialize Firebase

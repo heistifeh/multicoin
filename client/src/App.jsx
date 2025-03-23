@@ -43,10 +43,10 @@ export default function App() {
 
         <Route path="/about" element={<About />} />
         <Route path="/profile" element={<Profile />} />
-        <Route  element={<PrivateRoute />}>
+        <Route element={<PrivateRoute />}>
           <Route path="/verify-identity" element={<VerifyIdentity />} />
+          <Route path="/verify-email" element={<EmailVerificationPage />} />
         </Route>
-        <Route path="/verify-email" element={<EmailVerificationPage />} />
       </Routes>
       <Toaster />
     </BrowserRouter>

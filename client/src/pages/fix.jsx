@@ -1,27 +1,50 @@
-<form onSubmit={handleSubmit} className="space-y-6">
-<div className="flex justify-between">
-  {inputCode.map((digit, index) => (
-    <input
-      key={index}
-      ref={(el) => (inputRefs.current[index] = el)}
-      type="text"
-      maxLength="6"
-      value={digit}
-      onChange={(e) => handleChange(index, e.target.value)}
-      onKeyDown={(e) => handleKeyDown(index, e)}
-      className="w-12 h-12 text-center text-2xl font-bold bg-gray-700 text-white border-2 border-gray-600 rounded-lg focus:border-green-500 focus:outline-none"
-    />
-  ))}
-</div>
-{/* {error && <p className='text-red-500 font-semibold mt-2'>{error}</p>} */}
-<motion.button
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  type="submit"
-  disabled={inputCode.some((digit) => !digit)}
-  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 disabled:opacity-50"
->
-  {/* {isLoading ? "Verifying..." : "Verify Email"} */}
-  Verify email
-</motion.button>
-</form>
+//  const [files, setFiles] = useState([]);
+//   const [formData, setFormData] = useState({
+//     imageUrl: [],
+//   });
+//   const [imageUploadError, setImageUploadError] = useState(null);
+  // const handleImageSubmit = async (e) => {
+  //   if (files.length > 0 && files.length < 7) {
+  //     const promises = [];
+  //     for (let i = 0; i < files.length; i++) {
+  //       promises.push(uploadImage(files[i]));
+  //     }
+  //     // await Promise.all(promise);
+  //     Promise.all(promises)
+  //       .then((urls) => {
+  //         setFormData({ ...formData, imageUrl: formData.imageUrl.concat(urls) });
+  //         setImageUploadError(false);
+  //       })
+  //       .catch((err) => {
+  //         setImageUploadError("Image upload failed (2mb per file)");
+  //       });
+  //   } else {
+  //     setImageUploadError(
+  //       "Image upload failed, you can only upload two images."
+  //     );
+  //   }
+  // };
+
+  // const uploadImage = async (file) => {
+  //   return new Promise((resolve, reject) => {
+  //     const storage = getStorage(app);
+  //     const fileName = new Date().getTime() + file.name;
+  //     const storageRef = ref(storage, fileName);
+  //     const uploadTask = uploadBytesResumable(storageRef, file);
+  //     uploadTask.on(
+  //       "state_changed",
+  //       (snapshot) => {
+  //         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  //         console.log(`Upload is ${progress}% done`);
+  //       },
+  //       (error) => {
+  //         reject(error);
+  //       },
+  //       () => {
+  //         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+  //           resolve(downloadURL);
+  //         });
+  //       }
+  //     );
+  //   });
+  // };
