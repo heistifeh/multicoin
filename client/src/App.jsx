@@ -21,6 +21,8 @@ import EmailVerificationPage from "./pages/EmailVerificationPage.jsx";
 import { Toaster } from "react-hot-toast";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import VerifyIdentity from "./pages/VerifyIdentity.jsx";
+import RedirectUser from "./components/RedirectUser.jsx";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
 export default function App() {
   return (
     <BrowserRouter>
@@ -45,6 +47,9 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
         <Route element={<PrivateRoute />}>
           <Route path="/verify-identity" element={<VerifyIdentity />} />
+        </Route>
+        <Route element={<RedirectUser />}>
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/verify-email" element={<EmailVerificationPage />} />
         </Route>
       </Routes>
