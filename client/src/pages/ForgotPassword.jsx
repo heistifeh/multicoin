@@ -14,7 +14,7 @@ const ForgotPassword = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [other, setOther] = useState(false);
-
+  const [submitted, setSubmitted] = useState(false);
 
   const navigate = useNavigate();
   const asset = (assetName, other) => {
@@ -50,29 +50,33 @@ const ForgotPassword = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  try {
-    setLoading(true)
-    const res = await fetch("/api/auth/forgot-password", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    const data = await res.json();
-    if(data.success === false){
-        setLoading(false)
-        return setError(data.message)
-    }
-    setError(null)
-    setLoading(false)
-    toast.success("Please proceed to reset your password")
-    navigate("/reset-password")
-  } catch (error) {
-    setError(error)
-    setLoading(false)
-  }
+    try {
+      setLoading(true);
+      const res = await fetch("/api/auth/forgot-password", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        setLoading(false);
+        toast.error(data.message);
+        setError(data.message);
+        return;
+      }
+      const token = data.resetToken;
 
+      setError(null);
+      setLoading(false);
+      toast.success("Please proceed to reset your password");
+      setSubmitted(true);
+    } catch (error) {
+      setError(error);
+
+      setLoading(false);
+    }
   };
   return (
     <div className=" max-w-lg sm:max-w-lvw mx-auto">
@@ -124,30 +128,51 @@ const ForgotPassword = () => {
         </div>
 
         {/* form */}
-        <div className="flex flex-col my-20 max-w-sm mx-auto sm:mx-0 sm:max-w-lg px-8 justify-center">
-          <h1 className="text-xl sm:text-4xl font-bold text-black my-4">
-            Forgot Password?
-          </h1>
-          <span className="text-sm sm:text-lg">
-            Please Input Your Email to Find your Account.
-          </span>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="email"
-              id="email"
-              onChange={handleChange}
-              placeholder="email"
-              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
-            />
+        {!submitted ? (
+          <div className="flex flex-col my-20 max-w-sm mx-auto sm:mx-0 sm:max-w-lg px-8 justify-center">
+            <h1 className="text-xl sm:text-4xl font-bold text-black my-4">
+              Forgot Password
+            </h1>
+            <span className="text-sm sm:text-lg">
+              Enter your email and we will send you a link to reset your
+              password.
+            </span>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="email"
+                id="email"
+                onChange={handleChange}
+                placeholder="email"
+                className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
+              />
 
+              <div disable={loading} className="flex w-full mt-5">
+                <button className="mx-auto bg-primary text-white p-2 rounded-lg hover:opacity-85 cursor-pointer w-[150px]">
+                  {loading ? "Sending..." : "Send Reset Link"}
+                </button>
+              </div>
+            </form>
+            {error && <p className="text-red-500">{error}</p>}
+          </div>
+        ) : (
+          <div className="flex flex-col my-20 max-w-sm mx-auto sm:mx-0 sm:max-w-lg px-8 justify-center">
+            <h1 className="text-xl sm:text-4xl font-bold text-black my-4">
+              Forgot Password
+            </h1>
+            <span className="text-sm sm:text-lg">
+              If an account exists for <span className="font-bold">{formData.email} </span>we will send you a link
+              to reset your password shortly.
+            </span>
             <div disable={loading} className="flex w-full mt-5">
-              <button className="mx-auto bg-primary text-white p-2 rounded-lg hover:opacity-85 cursor-pointer w-full">
-                {loading ? "Finding email..." : "Find email"}
-              </button>
+              <Link
+                to={"/sign-in"}
+                className="mx-auto bg-primary text-white p-2 rounded-lg hover:opacity-85 cursor-pointer w-full text-center"
+              >
+                Back to Login
+              </Link>
             </div>
-          </form>
-          {error && <p className="text-red-500">{error}</p>}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

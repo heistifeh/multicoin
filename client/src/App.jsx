@@ -23,6 +23,7 @@ import PrivateRoute from "./components/PrivateRoute.jsx";
 import VerifyIdentity from "./pages/VerifyIdentity.jsx";
 import RedirectUser from "./components/RedirectUser.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
+import ResetPassword from "./pages/ResetPassword.jsx";
 export default function App() {
   return (
     <BrowserRouter>
@@ -44,12 +45,14 @@ export default function App() {
         <Route path="/sign-up" element={<Signup />} />
 
         <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
+
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route element={<PrivateRoute />}>
           <Route path="/verify-identity" element={<VerifyIdentity />} />
+          <Route path="/profile" element={<Profile />} />
         </Route>
         <Route element={<RedirectUser />}>
-          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/verify-email" element={<EmailVerificationPage />} />
         </Route>
       </Routes>

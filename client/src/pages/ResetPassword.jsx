@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { FaHeart } from "react-icons/fa6";
 import { TbArrowsUp } from "react-icons/tb";
 import { BiSolidPieChart } from "react-icons/bi";
@@ -10,13 +10,18 @@ import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 
 const ResetPassword = () => {
-  const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [other, setOther] = useState(false);
+  //   password states
 
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const navigate = useNavigate();
+  const { token } = useParams();
+  console.log(token, "token");
+
   const asset = (assetName, other) => {
     return (
       <div className="flex items-center bg-slate-800 w-fit  rounded-lg p-[6px]">
@@ -40,39 +45,48 @@ const ResetPassword = () => {
     // Enable `other` when High-yield Cash Account is rendered
     setOther(true);
   }, []);
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.id]: e.target.value,
-    });
-  };
-  console.log(formData);
+  //   const handleChange = (e) => {
+  //     setFormData({
+  //       ...formData,
+  //       [e.target.id]: e.target.value,
+  //     });
+  //     if()
+  //   };
+  console.log(password, confirmPassword);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  try {
-    setLoading(true)
-    const res = await fetch("/api/auth/forgot-password", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    const data = await res.json();
-    if(data.success === false){
-        setLoading(false)
-        return setError(data.message)
+    if (password !== confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
     }
-    setError(null)
-    setLoading(false)
-    toast.success("Please proceed to reset your password")
-    navigate("/reset-password")
-  } catch (error) {
-    setError(error)
-    setLoading(false)
-  }
 
+    try {
+      setLoading(true);
+      const res = await fetch(`/api/auth/reset-password/${token}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ password }),
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        setLoading(false);
+        return setError(data.message);
+      }
+      setError(null);
+      setLoading(false);
+      toast.success("Password reset succesful, redirecting to login page...");
+      setTimeout(() => {
+        navigate("/sign-in");
+      }, 2000);
+    } catch (error) {
+      toast.error(error || "reset password failed.");
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <div className=" max-w-lg sm:max-w-lvw mx-auto">
@@ -133,16 +147,23 @@ const ResetPassword = () => {
           </span>
           <form onSubmit={handleSubmit}>
             <input
-              type="email"
-              id="email"
-              onChange={handleChange}
-              placeholder="email"
+              type="password"
+              id="password"
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="new password"
+              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
+            />
+            <input
+              type="password"
+              id="confirm-password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="confirm password"
               className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
             />
 
             <div disable={loading} className="flex w-full mt-5">
               <button className="mx-auto bg-primary text-white p-2 rounded-lg hover:opacity-85 cursor-pointer w-full">
-                {loading ? "Finf=ding email..." : "Find email"}
+                {loading ? "setting..." : "Set New Password"}
               </button>
             </div>
           </form>

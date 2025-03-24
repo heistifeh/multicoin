@@ -11,6 +11,7 @@ import {
   signInSuccess,
   signInFailure,
 } from "../redux/user/userSlice.js";
+import toast from "react-hot-toast";
 const Signin = () => {
   const [other, setOther] = useState(false);
   const [formData, setFormData] = useState({});
@@ -64,12 +65,17 @@ const Signin = () => {
       });
       const data = await res.json();
       if (data.success === false) {
-        return dispatch(signInFailure(data.message));
+        dispatch(signInFailure(data.message));
+        toast.error(data.message);
+        return;
       }
       dispatch(signInSuccess(data));
-      navigate("/portfolio");
+      toast.success("Login successful");
+      setTimeout(() => {
+        navigate("/portfolio");
+      }, 1000);
     } catch (error) {
-      dispatch(signInFailure(error.message));
+      toast.error(error.message);
     }
   };
   return (
@@ -148,6 +154,16 @@ const Signin = () => {
               placeholder="password"
               className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
             />
+            <div className="text-sm my-4 ">
+              <span>Forgot password?</span>{" "}
+              <Link
+                to={"/forgot-password"}
+                className="text-primary underline italic"
+              >
+                click here to reset your password.
+              </Link>
+            </div>
+
             {error && <p className="text-red-500">{error}</p>}
 
             <p
@@ -162,7 +178,7 @@ const Signin = () => {
             </p>
             <div disable={loading} className="flex w-full">
               <button className="mx-auto  bg-primary text-white p-2 rounded-lg hover:opacity-85 cursor-pointer w-full">
-                {loading ? "......" : "Sign in"}
+                {loading ? "Signing in" : "Sign in"}
               </button>
             </div>
 

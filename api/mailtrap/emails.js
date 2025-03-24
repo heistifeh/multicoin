@@ -25,10 +25,9 @@ export const sendVerificationEmail = async (email, verificationCode) => {
 export const sendWelcomeEmail = async (email, name) => {
   const receipient = [{ email }];
   try {
-    const response = await mailtrapClient.send({
+     await mailtrapClient.send({
       from: sender,
       to: receipient,
-      subject: "Verify Your Email",
       template_uuid: "7379bcb6-4ca6-4ea7-97cb-0ea6aeaecf78",
       template_variables: {
         company_info_name: "Multicoin",
@@ -49,6 +48,8 @@ export const sendPasswordResetEmail = async (email, resetUrl) => {
       subject: "Reset your password",
       html: PASSWORD_RESET_REQUEST_TEMPLATE.replace("{resetURL}", resetUrl),
     });
+    console.log(resetUrl);
+    
     console.log("Reset Email sent successfully");
   } catch (error) {
     console.log(error);
