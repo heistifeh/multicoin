@@ -1,8 +1,14 @@
 import { errorHandler } from "../utils/error.js";
 import bcrypt from "bcryptjs";
 import User from "../models/user.model.js";
-import { sendVerificationEmail, sendWelcomeEmail } from "../mailtrap/emails.js";
+import {
+  sendPasswordResetEmail,
+  sendResetSuccessEmail,
+  sendVerificationEmail,
+  sendWelcomeEmail,
+} from "../mailtrap/emails.js";
 import jwt from "jsonwebtoken";
+import crypto from "crypto";
 export const signup = async (req, res, next) => {
   try {
     const { email, password, phone } = req.body;
@@ -105,6 +111,57 @@ export const verifyEmail = async (req, res, next) => {
     // send a welcome email
     await sendWelcomeEmail(verifyUser.email, verifyUser.name);
     res.status(200).json({ message: "email verified successfully 🎉" });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const forgotPassword = async (req, res, next) => {
+  const { email } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (!user) return next(errorHandler(404, "user does not exist"));
+
+    // Generate token and set 24 hours expiration
+    const resetToken = crypto.randomBytes(20).toString("hex");
+    const resetPasswordExpiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000);
+
+    user.resetPasswordToken = resetToken;
+    user.resetPasswordExpiresAt = resetPasswordExpiresAt;
+    await user.save();
+
+    const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
+
+    // send mail
+    await sendPasswordResetEmail(user.email, resetUrl);
+    res
+      .status(200)
+      .json({ message: "reset email sent successfully", resetToken });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const resetPassword = async (req, res, next) => {
+  try {
+    const { resetToken } = req.params;
+    const { password } = req.body;
+    const user = await User.findOne({
+      resetPasswordToken: resetToken,
+      resetPasswordExpiresAt: { $gt: Date.now() },
+    });
+    const hashedPassword = bcrypt.hashSync(password, 10);
+
+    user.password = hashedPassword;
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpiresAt = undefined;
+
+    await user.save();
+
+    sendResetSuccessEmail(user.email);
+    res.status(200).json({
+      message: "password reset successful",
+    });
   } catch (error) {
     next(error);
   }

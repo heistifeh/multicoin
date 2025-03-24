@@ -1,14 +1,16 @@
-import { get } from "mongoose";
+import { get, set } from "mongoose";
 import React from "react";
 import { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-const VerifyIdentity = () => {
-  // for spinner
-  let [loading, setLoading] = useState(false);
-  let [color, setColor] = useState("#ffffff");
 
+import toast from "react-hot-toast";
+const VerifyIdentity = () => {
+  //states
+  const [loading, setLoading] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [imageUploadSuccess, setImageUploadSuccess] = useState("");
   // for image upload
   const [formData, setFormData] = useState({
     imageUrl: [],
@@ -41,7 +43,9 @@ const VerifyIdentity = () => {
     e.preventDefault();
     if (frontImage && backImage) {
       try {
-        setLoading(true);
+        setUploading(true);
+        setImageUploadSuccess("");
+        setImageUploadError("");
         // Upload image file
         const frontImgUrl = await uploadFile(frontImage);
         const backImgUrl = await uploadFile(backImage);
@@ -54,7 +58,10 @@ const VerifyIdentity = () => {
         });
         setFrontImage(null);
         setBackImage(null);
-        console.log("File upload success!");
+        setImageUploadSuccess("Document upload success!");
+        setImageUploadError("");
+        toast.success("Document upload success!");
+        setUploading(false);
         setLoading(false);
       } catch (error) {
         console.error(error);
@@ -63,6 +70,7 @@ const VerifyIdentity = () => {
       setImageUploadError(
         "Image upload failed, you can only upload two images."
       );
+      setImageUploadSuccess("");
     }
   };
   //   const handleSubmit = (e)=>{
@@ -84,73 +92,119 @@ const VerifyIdentity = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.imageUrl.length < 2 || !formData.ssn) {
-      setImageUploadError("please upload both front and back images");
+
+    if (formData.imageUrl.length > 1 && formData.ssn) {
+      setImageUploadError(null);
+      setImageUploadSuccess(null);
+      setLoading(true);
+      const res = await fetch("api/verify/verify-identity", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        return setImageUploadError("unable to upload images, please retry.");
+      }
+
+      toast.success("Upload success!");
+      setLoading(false);
+      setImageUploadError(null);
+      navigate("/");
     } else {
-      console.log("submitted!");
+      setImageUploadError("please fill all credentials.");
     }
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <span>SSN: </span>
-          <input
-            type="text"
-            placeholder="ssn"
-            id="ssn"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="img">Front Image:</label>
+    <div className="px-4 sm:px-0">
+      <div className="flex gap-2 items-center p-4">
+        <img src="./logo1.jpg" alt="multicoin" className="rounded-lg" />
+        <span className="text-4xl font-bold text-black">Multicoin</span>
+      </div>
+      <div className="my-10 mx-auto max-w-lg">
+        <h1 className="text-black text-2xl sm:text-5xl font-bold mb-4 text-center">
+          Verify your Identity
+        </h1>
+        <p className="text-sm sm:text-base text-center">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+          eligendi hic ipsam amet itaque at, asperiores incidunt. Dolores, optio
+          odio?
+        </p>
+        <form onSubmit={handleSubmit} className="my-4 ">
+          <div className="border-t-1 border-slate-200 p-3">
+            <p className="font-bold">Input your SSN: </p>
+            <input
+              type="text"
+              placeholder="SSN"
+              id="ssn"
+              onChange={handleChange}
+              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
+            />
+          </div>
+          <div className="border-t-1 border-slate-200 p-3 mt-4">
+            <label htmlFor="img" className="font-bold">
+              Upload Front Image:
+            </label>
+            <br />
+            <input
+              type="file"
+              accept="image/*"
+              id="img"
+              placeholder="heyy"
+              onChange={(e) => setFrontImage((prev) => e.target.files[0])}
+              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
+            />
+          </div>
           <br />
-          <input
-            type="file"
-            accept="image/*"
-            id="img"
-            onChange={(e) => setFrontImage((prev) => e.target.files[0])}
-          />
-        </div>
-        <br />
-        <div>
-          <label htmlFor="img">Back Image:</label>
+          <div className=" p-3 ">
+            <label htmlFor="img" className="font-bold">
+              Upload Back Image:
+            </label>
+            <br />
+            <input
+              type="file"
+              accept="image/*"
+              id="img"
+              onChange={(e) => setBackImage((prev) => e.target.files[0])}
+              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
+            />
+            <button
+              onClick={handleImageUpload}
+              type="button"
+              disabled={uploading}
+              className="mx-auto  bg-primary text-white font-bold py-2 px-4 rounded mt-4"
+            >
+              {uploading ? "Upload Images..." : "Upload Images"}
+            </button>
+            {imageUploadSuccess && (
+              <div>
+                <p className="text-green-500 mt-2">{imageUploadSuccess}</p>
+                {formData.imageUrl.map((image, index) => (
+                  <img
+                    src={image}
+                    alt={`Image ${index}`}
+                    key={index}
+                    className="w-1/2"
+                  />
+                ))}
+              </div>
+            )}
+            {imageUploadError && (
+              <p className="text-red-500 mt-2">{imageUploadError}</p>
+            )}
+          </div>
           <br />
-          <input
-            type="file"
-            accept="image/*"
-            id="img"
-            onChange={(e) => setBackImage((prev) => e.target.files[0])}
-          />
-        </div>
-        <br />
-        <button onClick={handleImageUpload} type="button">
-          Upload
-        </button>
-        {imageUploadError && <p style={{ color: "red" }}>{imageUploadError}</p>}
 
-        <button type="submit">Submit form</button>
-      </form>
-
-      {loading && (
-        <div className="sweet-loading">
-          <button onClick={() => setLoading(!loading)}>Toggle Loader</button>
-          <input
-            value={color}
-            onChange={(input) => setColor(input.target.value)}
-            placeholder="Color of the loader"
-          />
-
-          <ClipLoader
-            color={color}
-            loading={loading}
-            size={150}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-        </div>
-      )}
+          <button
+            type="submit"
+            disabled={loading}
+            className="mx-auto  bg-primary text-white p-2 rounded-lg hover:opacity-85 cursor-pointer w-full"
+          >
+            Submit form
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
