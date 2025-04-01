@@ -16,6 +16,7 @@ import { IoTrendingUp } from "react-icons/io5";
 import Footer from "../../home/Footer";
 import Accordion from "../../../components/Accordion";
 import "./stock.css";
+import stockImage from "../images/stock-image.jpg";
 
 const Stock = () => {
   return (
@@ -40,198 +41,136 @@ const Stock = () => {
               </button> */}
             </div>
           </div>
-          <div className="invest-image sm:w-1/2">
-            <img src={heroStocks} alt="" />
-          </div>
-        </div>
-
-        {/* section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-4 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-200 container-all  max-w-[1420px] mx-auto">
-          <div className="">
-            <div>
-              <FaArrowTrendUp className="text-primary text-xl" />
-            </div>
-            <p className="text-black text-lg sm:text-xl py-2">
-              Optimize how you buy and sell stocks
-            </p>
-            <span className="tracking-wider text-base sm:lg ">
-              Our powerful suite of investing tools includes customizable
-              recurring investments, built-in price alerts, and extended-hours
-              trading.
-            </span>
-          </div>
-          <div>
-            <div>
-              <WiStars className="text-primary text-2xl" />
-            </div>
-            <p className="text-black text-lg sm:text-xl py-2">
-              Learn why the markets are moving
-            </p>
-            <span className="tracking-wider text-base sm:lg ">
-              We deliver advanced data and company-specific analysis to enhance
-              your stock-trading strategies.
-            </span>
-          </div>
-          <div>
-            <div>
-              <FaDollarSign className="text-primary text-xl" />
-            </div>
-            <p className="text-black text-lg sm:text-xl py-2">
-              Access the best price execution
-            </p>
-            <span className="tracking-wider text-base sm:lg">
-              We don’t participate in payment for order flow, so you can get the
-              best possible price for your trades.
-            </span>
+          <div className="invest-image sm:w-1/2 overflow-hidden">
+            <img
+              src={stockImage}
+              alt="Stock"
+              className="rounded-lg w-full max-h-[600px] object-cover"
+            />
           </div>
         </div>
       </header>
+      <div className="container mx-auto px-4 py-8">
+        {/* Header */}
+        <section className="mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-800">
+            Stock Investments – Navigate the Markets with Confidence
+          </h1>
+          <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-700 text-center">
+            At Multicoin Capital, we provide data-driven insights and expert
+            analysis to help investors make informed stock market decisions. Our
+            stock investment strategies focus on high-growth opportunities,
+            long-term value creation, and risk-adjusted returns.
+          </p>
+        </section>
 
-      {/* access */}
-      <div className="my-20 container-all  max-w-[1420px] mx-auto">
-        <span className="text-primary text-base font-semibold">
-          Investing tools
-        </span>
-        <p className="sm:w-1/4 text-4xl sm:6xl text-black">
-          Access powerful investing tools
-        </p>
-      </div>
-
-      {/* next */}
-      <div className="container-all  max-w-[1420px] mx-auto">
-        <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
-          <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
-            <img src={guideStock1} alt="" className="w-1/2 mx-auto" />
-          </div>
-          <div className="invest  sm:w-1/2 flex flex-col justify-center  max-w-[1420px] mx-auto">
-            <div className="mb-10">
-              <Accordion
-                question="Set price alerts for stocks"
-                answer="Make timely investment decisions with price alerts for all the stocks you care about. Get notified when an asset falls above or below your set threshold."
-                id={1}
-              />
-            </div>
-            <div>
-              <Accordion
-                question="Get more time to react to market events"
-                answer="With extended-hours trading, you get over 5 additional hours to buy and sell stocks. Access pre-market trading from 8 AM to 9:30 AM ET and after-hours trading from 4 PM to 8 PM ET."
-                id={2}
-              />
-            </div>
-            <div>
-              <Accordion
-                question="Automatically reinvest your dividends"
-                answer="If you have dividend stocks in your portfolio, you can automatically reinvest your proceeds from the asset right back into the company that paid them out."
-                id={3}
-              />
-            </div>
-            <div>
-              <Accordion
-                question="Compare stocks side by side"
-                answer="Power your stock analysis with Compare—our new stock comparison tool that makes it easy to analyze the fundamentals side by side."
-                id={4}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* informed */}
-      <div className="my-20 container-all  max-w-[1420px] mx-auto">
-        <span className="text-primary text-base font-semibold">
-          Market insights
-        </span>
-        <p className="sm:w-1/4 text-4xl sm:6xl text-black">
-          Make informed investment decisions
-        </p>
-      </div>
-
-      {/* next */}
-      <div className="container-all  max-w-[1420px] mx-auto">
-        <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
-          <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
-            <img src={guideStock3} alt="" className="w-1/2 mx-auto " />
-          </div>
-          <div className="invest  sm:w-1/2 flex flex-col justify-center">
-            <div className="mb-10">
-              <Accordion
-                question="Take a closer look at any stock"
-                answer="Every stock page on Multicoin has helpful information about the company and its performance, including key metrics, news, and recent activity from other investors."
-                id={1}
-              />
-            </div>
-            <div>
-              <Accordion
-                question="Get daily live analysis on the markets"
-                answer="Each day, you can hear experts, analysts, and journalists discuss the day’s biggest market headlines—and what they mean for your portfolio—on Multicoin Live."
-                id={2}
-              />
-            </div>
-            <div>
-              <Accordion
-                question="Upgrade your portfolio"
-                answer="
-With Multicoin Premium, you can unlock advanced data and company-specific analysis to help inform your stock-trading strategies even further."
-                id={3}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* logo-list */}
-      <div className="bg-black mt-20">
-        <div className=" py-10 h-300px  max-w-[1420px] mx-auto ">
-          <div className="mt-20  text-white grid sm:grid-cols-2  w-[90%] mx-auto">
-            <div>
-              <span className="text-primary-very-light text-lg font-semibold">
-                OTC stocks
+        {/* Why Invest Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4 text-center">
+            Why Invest in Stocks with Us?
+          </h2>
+          <ul className="space-y-4 text-gray-700">
+            <li className="flex items-center">
+              <span className="mr-2">✅</span>
+              <span>
+                Comprehensive Market Research – Leverage our deep industry
+                expertise and proprietary research to identify promising stocks.
               </span>
-              <p className="text-2xl sm:6xl py-4">Trade select OTC stocks</p>
-              <span className="py-6">
-                Over 300 select over-the-counter (OTC) stocks are available on
-                Multicoin, focusing predominantly on large-cap international
-                companies.
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">✅</span>
+              <span>
+                Diversified Portfolio – We invest across multiple sectors,
+                including technology, finance, healthcare, and emerging
+                industries.
               </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">✅</span>
+              <span>
+                Smart Trading Strategies – AI-driven analytics, algorithmic
+                trading models, and expert-led portfolio management to optimize
+                returns.
+              </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">✅</span>
+              <span>
+                Risk Management & Hedging – Advanced risk assessment techniques
+                to protect your capital in volatile markets.
+              </span>
+            </li>
+          </ul>
+        </section>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-6 ">
-                <div className="available flex gap-4">
-                  <TiWorld className="text-light-primary text-4xl bg-slate-800 p-2 rounded-sm" />
-                  <span>Over 300 select OTC stocks are now available</span>
-                </div>
-                <div className="available flex gap-4">
-                  <IoTrendingUp className="text-light-primary text-4xl bg-slate-800 p-2 rounded-sm" />
-                  <span>
-                    Stock pages include additional research, data, and analysis
-                  </span>
-                </div>
-                <div className="available flex gap-4">
-                  <IoStatsChartSharp className="text-light-primary text-4xl bg-slate-800 p-2 rounded-sm" />
-                  <span>Additional companies will be added over time</span>
-                </div>
-                <div className="available flex gap-4">
-                  <IoStatsChartSharp className="text-light-primary text-4xl bg-slate-800 p-2 rounded-sm" />
-                  <span>
-                    Available OTC offerings focus predominantly on large-cap
-                    international companies
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="images-list flex overflow-hidden gap-2 items-center justify-center my-8 sm:my-2 h-[500px]">
-              <img
-                src={logoList1}
-                alt=""
-                className="w-fit h-full object-contain overflow-hidden scroll-up"
-              />
-              <img
-                src={logoList2}
-                alt=""
-                className="w-fit h-full object-contain overflow-hidden scroll-down"
-              />
-            </div>
+        {/* Investment Strategies Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 text-center">
+            Our Stock Investment Strategies
+          </h2>
+          <ul className="space-y-4 text-gray-700">
+            <li className="flex items-center">
+              <span className="mr-2">📌</span>
+              <span>
+                <strong>Growth Stocks</strong> – Investing in high-potential
+                companies with strong future earnings.
+              </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">📌</span>
+              <span>
+                <strong>Value Investing</strong> – Identifying undervalued
+                stocks poised for long-term growth.
+              </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">📌</span>
+              <span>
+                <strong>Dividend Stocks</strong> – Stable, income-generating
+                investments with consistent returns.
+              </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">📌</span>
+              <span>
+                <strong>Sector Rotation</strong> – Allocating capital
+                dynamically to capitalize on economic trends.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        {/* Stay Ahead Section */}
+        <section className="mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
+            Stay Ahead of the Market
+          </h2>
+          <p className="text-gray-700">
+            With real-time market data, expert research reports, and
+            personalized investment solutions, we empower investors to build
+            resilient portfolios. Whether you're an experienced trader or new to
+            stock investing, our insights and tools will help you navigate the
+            market with confidence.
+          </p>
+        </section>
+
+        {/* Call to Action */}
+        <section className="mb-12 text-center">
+          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <a
+              href="#"
+              className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+            >
+              🚀 Explore Stocks Now Portfolio
+            </a>
+            <a
+              href="#"
+              className="px-6 py-3 bg-green-600 text-white rounded hover:bg-green-700 transition"
+            >
+              📊 View Market Insights and Get Expert Recommendations
+            </a>
           </div>
-        </div>
+        </section>
       </div>
 
       {/* big image */}
