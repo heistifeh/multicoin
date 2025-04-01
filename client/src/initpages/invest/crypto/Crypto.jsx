@@ -31,7 +31,7 @@ import "./crypto.css";
 import { Link } from "react-router-dom";
 
 import poster from "./images/poster.jpg";
-
+import bitcoin from "./images/bitcoin.jpg";
 const Crypto = () => {
   const [activeId, setActiveId] = useState(1);
   return (
@@ -59,337 +59,139 @@ const Crypto = () => {
               <button className="sign-up bg-primary text-white p-2 w-30 rounded-4xl text-xl cursor-pointer hover:bg-primary-dark transition duration-300 custom-shadow">
                 Sign Up
               </button>
-              <button className="explore  border-1 border-slate-400 text-black p-2 w-36 rounded-4xl text-lg cursor-pointer hover:bg-primary hover:text-white transition duration-300 custom-shadow">
+              {/* <button className="explore  border-1 border-slate-400 text-black p-2 w-36 rounded-4xl text-lg cursor-pointer hover:bg-primary hover:text-white transition duration-300 custom-shadow">
                 Explore stocks
-              </button>
+              </button> */}
             </div>
           </div>
-          <div className="invest-image sm:w-1/2 mt-20">
-            <img src={heroStocks} alt="" />
+          <div className="invest-image sm:w-2/3 mt-20">
+            <img src={bitcoin} alt="" className="rounded-2xl h-full" />
           </div>
         </div>
       </header>
 
-      <div className="py-40 lg:py-80"></div>
-      <div className="py-40 lg:py-80"></div>
+      <div className="py-100 md:py-60 lg:py-90"></div>
       {/* leading texts */}
-      <div className="my-10 flex flex-col gap-6 text-sm px-2 mx-auto container-inner container-all py-6 max-w-[1000px]">
-        <span>
-          Cryptocurrency services provided by Bakkt Crypto Solutions LLC (NMLS
-          ID 1828849), a licensed virtual currency business by the New York Dept
-          of Financial Services and a licensed money transmitter. Your
-          cryptocurrency investments are held in your Bakkt Crypto account,
-          which is separate from your brokerage account with Multicoin
-          Investing. Multicoin Investing is a registered broker-dealer and FINRA
-          member, and does not provide cryptocurrency trading or custodying
-          services. Cryptocurrencies are not securities and are not FDIC insured
-          or protected by SIPC. Cryptocurrency investing is speculative and
-          involves significant risks, including loss of principal. Please review
-          the Risk Disclosures before trading.
-          <span className="text-sm text-primary-very-light">Learn more</span>
-        </span>
-      </div>
-
-      {/* section */}
-      <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-200 px-4 container-all max-w-[1000px] mx-auto">
-        <div className="w-4/5">
-          <div className="">
-            <FaArrowTrendUp className="text-[#F37609] text-4xl bg-[#FEF1E6] p-2 rounded-lg" />
-          </div>
-          <p className="text-black text-lg sm:text-xl py-2">
-            Buy, sell, and hold crypto
+      <div className="container mx-auto px-4 py-8">
+        {/* Header Section */}
+        <section className="mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-800">
+            Cryptocurrency Investments – Navigating the Digital Asset Revolution
+          </h1>
+          <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-700 text-center">
+            At Multicoin Capital, we specialize in investing in transformative
+            blockchain technologies and digital assets that are reshaping the
+            global financial landscape. With a deep understanding of the crypto
+            economy, we deploy capital across a broad spectrum of opportunities,
+            from established cryptocurrencies to emerging decentralized
+            networks.
           </p>
-          <span className="tracking-wider text-base sm:lg ">
-            A streamlined investing experience includes Bitcoin, Ethereum, and
-            more.
-          </span>
-        </div>
-        <div className="w-4/5">
-          <div>
-            <WiStars className="text-[#F37609] text-4xl bg-[#FEF1E6] p-2 rounded-lg" />
-          </div>
-          <p className="text-black text-lg sm:text-xl py-2">
-            Automate your investing strategy
-          </p>
-          <span className="tracking-wider text-base sm:lg ">
-            Schedule recurring investments in one crypto or a combination of
-            tokens.
-          </span>
-        </div>
-        <div className="w-4/5">
-          <div>
-            <FaDollarSign className="text-[#F37609] text-4xl bg-[#FEF1E6] p-2 rounded-lg" />
-          </div>
-          <p className="text-black text-lg sm:text-xl py-2">
-            Make informed crypto decisions
-          </p>
-          <span className="tracking-wider text-base sm:lg">
-            Inform your crypto investing strategies with the insights and
-            analysis that matters.
-          </span>
-        </div>
-      </div>
+        </section>
 
-      {/* access */}
-      <div className="my-20 px-4 max-w-[1000px] mx-auto">
-        <span className="text-[#F37609] text-base font-semibold">
-          Investing tools
-        </span>
-        <p className="sm:w-2/4 text-4xl sm:text-6xl text-black">
-          Build your portfolio with crypto
-        </p>
-      </div>
-
-      {/* next */}
-      <div className="max-w-[1000px] mx-auto">
-        <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
-          <div
-            className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6"
-            style={{
-              backgroundImage: `url(${bgfeature2})`,
-              backgroundSize: "cover", // Example of adding another style
-              backgroundPosition: "center", // Another property
-            }}
-          >
-            <img
-              onClick={() => console.log("hey")}
-              src={
-                activeId == 1
-                  ? guide1
-                  : activeId == 2
-                  ? guide2
-                  : activeId == 3
-                  ? guide3
-                  : null
-              }
-              alt=""
-              className="w-4/5 mx-auto "
-            />
-          </div>
-          <div className="invest  sm:w-1/2 flex flex-col justify-center">
-            <div onClick={() => setActiveId(1)}>
-              <Accordion
-                question="Invest in crypto with US dollars"
-                answer="Bakkt Crypto allows you to invest in a variety of crypto assets, including Bitcoin and Ethereum. You can buy and sell with US dollars, 24/7."
-                id={1}
-              />
-            </div>
-            <div onClick={() => setActiveId(2)}>
-              <Accordion
-                question="Manage your assets in one place"
-                answer="
-On Multicoin, you can see the crypto investments in your Bakkt Crypto account alongside the stocks and ETFs in your brokerage account."
-                id={2}
-              />
-            </div>
-            <div onClick={() => setActiveId(3)}>
-              <Accordion
-                question="Set timely crypto price alerts"
-                answer="
-Stay on top of market volatility with crypto price alerts. Get notified when there’s a significant upward or downward movement."
-                id={3}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 py-20 gap-4 my-10 sm:my-20 max-w-[1000px] mx-auto">
-        <div className="sm:w-1/2 sm:mx-auto">
-          <img src={crypto} alt="" />
-        </div>
-        <div className="sm:w-5/6 sm:mx-auto">
-          <div className="my-20 px-4 ">
-            <span className="text-[#F37609] text-base font-semibold">
-              Automation
-            </span>
-            <p className=" text-4xl sm:text-6xl text-black my-4">
-              Schedule recurring crypto investments
-            </p>
-            <span>
-              Navigate volatile markets, manage risk, and build wealth over time
-              with recurring investments. You can automatically invest in a
-              single crypto or a personalized combination of crypto assets on a
-              daily, weekly, biweekly, or monthly basis.
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* access */}
-      <div className="my-20 px-4 max-w-[1000px] mx-auto">
-        <span className="text-[#F37609] text-base font-semibold">
-          Crypto insights
-        </span>
-        <p className="sm:w-2/4 text-4xl sm:text-6xl text-black">
-          Inform your crypto investing strategies
-        </p>
-      </div>
-
-      {/* next */}
-      <div className="max-w-[1000px] mx-auto">
-        <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
-          <div
-            className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6"
-            style={{
-              backgroundImage: `url(${bgfeature2})`,
-              backgroundSize: "cover", // Example of adding another style
-              backgroundPosition: "center", // Another property
-            }}
-          >
-            <img
-              onClick={() => console.log("hey")}
-              className="w-4/5 mx-auto"
-              src={
-                activeId == 1
-                  ? guide4
-                  : activeId == 2
-                  ? guide5
-                  : activeId == 3
-                  ? guide6
-                  : null
-              }
-              alt=""
-            />
-          </div>
-          <div className="invest  sm:w-1/2 flex flex-col justify-center">
-            <div onClick={() => setActiveId(1)}>
-              <Accordion
-                question="Access helpful crypto context"
-                answer="
-Every asset page on Multicoin has helpful information to guide your crypto investing journey—including stats, news, and more."
-                id={1}
-              />
-            </div>
-            <div onClick={() => setActiveId(2)}>
-              <Accordion
-                question="Tune in to live crypto analysis"
-                answer="
-Each week on Multicoin Live, journalists and experts break down the biggest headlines in the world of crypto. Tune in and get the latest crypto analysis."
-                id={2}
-              />
-            </div>
-            <div onClick={() => setActiveId(3)}>
-              <Accordion
-                question="Upgrade your portfolio"
-                answer="
-
-With Multicoin Premium, you can further customize your crypto price alerts and access advanced metrics to guide your crypto investing strategy."
-                id={3}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* access */}
-      <div className="my-20 px-4 w-5/6 text-center max-w-[1000px] mx-auto">
-        <span className="text-[#F37609] text-base font-semibold">
-          Bakkt Crypto
-        </span>
-        <p className="text-4xl sm:text-6xl text-black">
-          Your crypto is held 1:1
-        </p>
-        <p className="text-base sm:text-lg text-black py-8 ">
-          Cryptocurrency services are provided by Bakkt Crypto, a licensed
-          virtual currency business by the New York State Department of
-          Financial Services and a licensed money transmitter. Your Bakkt Crypto
-          account is separate from your brokerage account with Multicoin
-          Investing, which holds your cash and your investments in US-listed
-          stocks and ETFs. Multicoin Investing is a registered broker-dealer and
-          FINRA member, and does not offer cryptocurrency trading or custodying
-          services.
-        </p>
-        <p className="text-sm ">
-          Cryptocurrencies offered by Bakkt Crypto are not securities and are
-          not FDIC insured or protected by SIPC. Cryptocurrency investing is
-          speculative and involves significant risks, including loss of
-          principal. Please review the{" "}
-          <Link className="text-primary">Risk Disclosures</Link> before trading.
-          Assets Directory
-        </p>
-      </div>
-
-      {/* informed */}
-      <div className="my-10 w-4/5 max-w-[1000px] mx-auto  ">
-        <p className=" text-4xl sm:9xl text-black pb-4">
-          Have questions? Find answers.
-        </p>
-      </div>
-
-      {/* next */}
-      <div className="max-w-[1000px] mx-auto">
-        <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
-          <div className="w-4/5 mx-auto">
-            <Accordion
-              question="Who is Bakkt Crypto?
-"
-              answer="
-When you invest in cryptocurrency via Multicoin, you’re opening an account with Bakkt Crypto Solutions, LLC (NMLS ID 1828849). Bakkt Crypto is a licensed virtual currency business by the New York State Department of Financial Services and a licensed money transmitter. Bakkt Crypto is not a registered broker-dealer or a FINRA member. Learn more about Bakkt Crypto here.
-
-Note that your Bakkt Crypto account is separate from your brokerage account with Multicoin Investing, which holds your investments in US-listed stocks and ETFs. Multicoin Investing is a registered broker-dealer and FINRA member."
-              id={1}
-            />
-            <Accordion
-              question="How do I get started with crypto?
-"
-              answer="Before you can invest in cryptocurrency via our platform, you’ll first need to open a cryptocurrency account directly with Bakkt Crypto Solutions, LLC. Your cryptocurrency trades will be executed by Bakkt Crypto, and your cryptocurrency assets will be held in your Bakkt Crypto account. Through the Multicoin platform, you will be able to review the crypto holdings in your Bakkt Crypto account, submit trade orders to Bakkt Crypto, and contact Bakkt Crypto for customer support."
-              id={2}
-            />
-            <Accordion
-              question="How much does Bakkt Crypto charge to trade crypto?
-
-"
-              answer="Bakkt Crypto charges a transaction fee based on the dollar value of your cryptocurrency trade. For details, see the Fee Schedule."
-              id={3}
-            />
-            <Accordion
-              question="Is there a limit to my crypto purchases through Bakkt Crypto?
-"
-              answer="
-The minimum buy amount for crypto is $1 and maximum order size is $100k. The total outstanding order limit is $200k which means you cannot have multiple limit orders with a total exceeding $200k."
-              id={3}
-            />
-            <Accordion
-              question="Can I access my Bakkt Crypto account outside of Multicoin?
-"
-              answer="
-
-You can access your Bakkt Crypto account and place trades directly with Bakkt Crypto by visiting this page. For trades made on this website, you’ll also be able to fund your purchases and transfer your sales proceeds directly to your bank of choice."
-              id={4}
-            />
-            <Accordion
-              question="What is crypto?
-"
-              answer="
-Cryptocurrency is a digital store of value or medium of exchange that is recorded on a blockchain. Cryptocurrencies are not backed or supported by any government or central bank. Instead, their value is derived by market forces of supply and demand, which tends to make them more volatile than traditional fiat currencies. In addition, cryptocurrency markets and exchanges are not regulated in the same way as securities investing, and investors do not have the same protections as they do when they invest in equities, options or fixed income."
-              id={5}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* next */}
-      <div className="max-w-[1000px] mx-auto my-20">
-        <div className="flex flex-col-reverse mt-10 sm:mt-10 sm:flex-row-reverse justify-between gap-8 items-center">
-          <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
-            <img src={poster} alt="" className="w-1/2 mx-auto " />
-          </div>
-          <div className="w-1/2  px-4">
-            <div className="invest  sm:w-2/3 mb-6 flex flex-col justify-center ">
-              <h1 className=" my-2 font-bold text-lg  text-black">
-                Have additional questions Stocks on Multicoin?
-              </h1>
-              <span className="text-base tracking-wide text-slate-600">
-                Our US-based customer experience team has FINRA-licensed
-                specialists standing by to help.
+        {/* Why Invest Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4 text-center">
+            Why Invest in Crypto with Us?
+          </h2>
+          <ul className="space-y-4 text-gray-700">
+            <li className="flex items-center">
+              <span className="mr-2">✅</span>
+              <span>
+                Institutional-Grade Research – Data-driven insights and
+                fundamental analysis of top-performing digital assets.
               </span>
-              <span className="text-primary text-base font-semibold pt-10">
-                Contact our award-winning team
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">✅</span>
+              <span>
+                Diversified Portfolio – Exposure to Layer 1 and Layer 2
+                blockchains, DeFi, Web3, NFTs, and AI-powered crypto projects.
               </span>
-            </div>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">✅</span>
+              <span>
+                Active Portfolio Management – Hands-on governance participation,
+                liquidity provisioning, and risk mitigation strategies.
+              </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">✅</span>
+              <span>
+                Secure &amp; Compliant Investments – Adherence to best practices
+                in security, custody, and regulatory compliance.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        {/* Crypto Investment Strategies */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 text-center">
+            Our Crypto Investment Strategies
+          </h2>
+          <ul className="space-y-4 text-gray-700">
+            <li className="flex items-center">
+              <span className="mr-2">📌</span>
+              <span>
+                <strong>Core Holdings</strong> – Long-term investments in
+                high-value networks like Bitcoin (BTC) and Ethereum (ETH).
+              </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">📌</span>
+              <span>
+                <strong>DeFi &amp; Web3</strong> – Strategic allocations in
+                decentralized finance protocols and Web3 infrastructure.
+              </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">📌</span>
+              <span>
+                <strong>Early-Stage Tokens</strong> – Investing in innovative
+                projects before they achieve mass adoption.
+              </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">📌</span>
+              <span>
+                <strong>Staking &amp; Yield Farming</strong> – Maximizing
+                returns through network participation and liquidity incentives.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        {/* Stay Ahead Section */}
+        <section className="mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
+            Stay Ahead in the Crypto Space
+          </h2>
+          <p className="text-gray-700">
+            With the rapid evolution of blockchain technology, staying informed
+            is key. Multicoin Capital provides market-leading research,
+            real-time insights, and expert strategies to help investors navigate
+            the volatility of the digital asset market.
+          </p>
+        </section>
+
+        {/* Call-to-Action Section */}
+        <section className="mb-12 text-center">
+          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <a
+              href="#"
+              className="px-6 py-3 bg-primary text-white rounded hover:bg-text transition"
+            >
+              🚀 Explore Crypto Opportunities
+            </a>
+            <a
+              href="#"
+              className="px-6 py-3 bg-primary text-white rounded hover:bg-text transition"
+            >
+              📊 View Market Insights and Get Expert Recommendations
+            </a>
           </div>
-        </div>
+        </section>
       </div>
       {/* big image */}
       <div className="bg-black my-0">
