@@ -344,9 +344,9 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
           </div>
         </Link>
 
-        <div className="hidden lg:flex space-x-2 items-center">
+        <div className="hidden lg:flex space-x-4 items-center">
           <ul className={`flex space-x-10  z-10 ${megaOff}`}>
-            <Link
+            {/* <Link
               onMouseEnter={() => setMegaMenu({ state: true, name: "invest" })}
               to={"/invest/stock"}
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
@@ -354,7 +354,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
               }`}
             >
               Stock
-              {megaMenu && megaMenu.name === "" ? <InvestMenu /> : ""}
+              {megaMenu && megaMenu.name === "invest" ? <InvestMenu /> : ""}
             </Link>
             <Link
               onMouseEnter={() =>
@@ -366,7 +366,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
               }`}
             >
               Crypto
-              {megaMenu && megaMenu.name === "" ? (
+              {megaMenu && megaMenu.name === "resources" ? (
                 <ResourceMenu />
               ) : (
                 ""
@@ -380,7 +380,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
               }`}
             >
               ETF
-              {megaMenu && megaMenu.name === "" ? <Companymenu /> : ""}
+              {megaMenu && megaMenu.name === "company" ? <Companymenu /> : ""}
             </Link>
             <Link
               onMouseEnter={() => setMegaMenu({ state: true, name: "premium" })}
@@ -390,8 +390,35 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
               }`}
             >
               Premium
-              {megaMenu && megaMenu.name === "" ? <Premiummenu /> : ""}
-            </Link>
+              {megaMenu && megaMenu.name === "premium" ? <Premiummenu /> : ""}
+            </Link> */}
+            <Link
+              
+              to={"/invest/stock"}
+              className={` hover:bg-slate-100 transition duration-300 p-3 ${
+                megaMenu.state ? megaOn : megaOff
+              }`}
+            >
+              Stocks
+            </Link> 
+            <Link
+              
+              to={"/invest/crypto"}
+              className={` hover:bg-slate-100 transition duration-300 p-3 ${
+                megaMenu.state ? megaOn : megaOff
+              }`}
+            >
+              Crypto
+            </Link> 
+            <Link
+              
+              to={"/invest/etf"}
+              className={` hover:bg-slate-100 transition duration-300 p-3 ${
+                megaMenu.state ? megaOn : megaOff
+              }`}
+            >
+              ETFs
+            </Link> 
           </ul>
           <Link to={"/sign-up"}
             className={`border-1 border-text  px-5 py-2 rounded-lg cursor-pointer transition-all duration-500 ${

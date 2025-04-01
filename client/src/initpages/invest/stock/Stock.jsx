@@ -35,9 +35,9 @@ const Stock = () => {
               <button className="sign-up bg-primary text-white p-2 w-30 rounded-4xl text-xl cursor-pointer hover:bg-primary-dark transition duration-300 custom-shadow">
                 Sign Up
               </button>
-              <button className="explore  border-1 border-slate-200 text-black p-2 w-36 rounded-4xl text-lg cursor-pointer hover:bg-primary hover:text-white transition duration-300 custom-shadow">
+              {/* <button className="explore  border-1 border-slate-200 text-black p-2 w-36 rounded-4xl text-lg cursor-pointer hover:bg-primary hover:text-white transition duration-300 custom-shadow">
                 Explore stocks
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="invest-image sm:w-1/2">

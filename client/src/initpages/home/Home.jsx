@@ -13,11 +13,7 @@ const Home = () => {
       <div className="container-all">
         <Navbar />
         <Header />
-        <Nerdwallet />
-        <Assets />
-        <Features />
-        <Alpha />
-        <Upsell />
+        
         <Footer />
       </div>
     </>
