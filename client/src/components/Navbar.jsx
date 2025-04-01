@@ -348,25 +348,25 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
           <ul className={`flex space-x-10  z-10 ${megaOff}`}>
             <Link
               onMouseEnter={() => setMegaMenu({ state: true, name: "invest" })}
-              to={"/"}
+              to={"/invest/stock"}
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
             >
-              Invest
-              {megaMenu && megaMenu.name === "invest" ? <InvestMenu /> : ""}
+              Stock
+              {megaMenu && megaMenu.name === "" ? <InvestMenu /> : ""}
             </Link>
             <Link
               onMouseEnter={() =>
                 setMegaMenu({ state: true, name: "resources" })
               }
-              to={"/"}
+              to={"/invest/crypto"}
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
             >
-              Resources
-              {megaMenu && megaMenu.name === "resources" ? (
+              Crypto
+              {megaMenu && megaMenu.name === "" ? (
                 <ResourceMenu />
               ) : (
                 ""
@@ -374,13 +374,13 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
             </Link>
             <Link
               onMouseEnter={() => setMegaMenu({ state: true, name: "company" })}
-              to={"/"}
+              to={"/invest/etf"}
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
             >
-              Company
-              {megaMenu && megaMenu.name === "company" ? <Companymenu /> : ""}
+              ETF
+              {megaMenu && megaMenu.name === "" ? <Companymenu /> : ""}
             </Link>
             <Link
               onMouseEnter={() => setMegaMenu({ state: true, name: "premium" })}
@@ -390,7 +390,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
               }`}
             >
               Premium
-              {megaMenu && megaMenu.name === "premium" ? <Premiummenu /> : ""}
+              {megaMenu && megaMenu.name === "" ? <Premiummenu /> : ""}
             </Link>
           </ul>
           <Link to={"/sign-up"}

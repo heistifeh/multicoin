@@ -13,3 +13,8 @@ export const verifyIdentity = async (req, res, next) => {
     next(error);
   }
 };
+
+
+export const showIdentity = async (req, res, next)=>{
+  
+}
