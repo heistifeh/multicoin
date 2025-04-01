@@ -393,34 +393,43 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
               {megaMenu && megaMenu.name === "premium" ? <Premiummenu /> : ""}
             </Link> */}
             <Link
-              
+              to={"/"}
+              className={` hover:bg-slate-100 transition duration-300 p-3 ${
+                megaMenu.state ? megaOn : megaOff
+              }`}
+            >
+              Home
+            </Link>
+            <Link
               to={"/invest/stock"}
+              target="_blank"
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
             >
               Stocks
-            </Link> 
+            </Link>
             <Link
-              
               to={"/invest/crypto"}
+              target="_blank"
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
             >
               Crypto
-            </Link> 
+            </Link>
             <Link
-              
               to={"/invest/etf"}
+              target="_blank"
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
             >
-              ETFs
-            </Link> 
+              NTFs
+            </Link>
           </ul>
-          <Link to={"/sign-up"}
+          <Link
+            to={"/sign-up"}
             className={`border-1 border-text  px-5 py-2 rounded-lg cursor-pointer transition-all duration-500 ${
               megaMenu.state ? megaOn : megaOff
             }`}

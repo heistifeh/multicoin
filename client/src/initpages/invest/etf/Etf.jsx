@@ -15,7 +15,7 @@ import { FaDollarSign } from "react-icons/fa";
 import { IoTrendingUp } from "react-icons/io5";
 import Footer from "../../home/Footer";
 import Accordion from "../../../components/Accordion";
-
+import nft from "./images/nft.jpg";
 const Etf = () => {
   return (
     <div className="container-all">
@@ -24,7 +24,7 @@ const Etf = () => {
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8 container-all">
           <div className="invest  sm:w-1/2 flex flex-col justify-center">
             <h1 className="text-black my-2 text-4xl sm:text-7xl">
-              Invest in ETFs
+              Invest in NFTs
             </h1>
             <span className="text-lg leading-5 sm:text-xl tracking-wider">
               Broaden your market exposure with collections of securities that
@@ -35,230 +35,144 @@ const Etf = () => {
                 Sign Up
               </button>
               <button className="explore  border-1 border-slate-200 text-black p-2 w-36 rounded-4xl text-lg cursor-pointer hover:bg-primary hover:text-white transition duration-300 custom-shadow">
-                Explore ETFs
+                Explore NFTs
               </button>
             </div>
           </div>
           <div className="invest-image sm:w-1/2">
-            <img src={heroStocks} alt="" />
-          </div>
-        </div>
-
-        {/* section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-4 py-4 sm:py-10 sm:border-t-1 sm:border-b-1 border-slate-200 container-all">
-          <div className="">
-            <div>
-              <FaArrowTrendUp className="text-primary text-xl" />
-            </div>
-            <p className="text-black text-lg sm:text-xl py-2">
-              Diversify with one trade
-            </p>
-            <span className="tracking-wider text-base sm:lg ">
-              Instead of diversifying your portfolio with individual stocks, you
-              can cover entire sectors with one ETF.
-            </span>
-          </div>
-          <div>
-            <div>
-              <WiStars className="text-primary text-2xl" />
-            </div>
-            <p className="text-black text-lg sm:text-xl py-2">
-              Pay less than a mutual fund
-            </p>
-            <span className="tracking-wider text-base sm:lg ">
-              The majority of ETFs are passively managed—which means they
-              typically have lower operating expense ratios (OERs) than mutual
-              funds.
-            </span>
-          </div>
-          <div>
-            <div>
-              <FaDollarSign className="text-primary text-xl" />
-            </div>
-            <p className="text-black text-lg sm:text-xl py-2">
-              Invest with flexibility
-            </p>
-            <span className="tracking-wider text-base sm:lg">
-              Unlike mutual funds, you can buy and sell ETFs during regular
-              market hours and extended-hours trading. Or, automate your buys
-              with recurring investments.
-            </span>
+            <img src={nft} alt="" className="rounded-xl h-[600px]" />
           </div>
         </div>
       </header>
 
-      {/* access */}
-      <div className="my-20 container-all  max-w-[1000px] mx-auto">
-        <span className="text-primary text-base font-semibold">
-          Investing tools
-        </span>
-        <p className="sm:w-1/4 text-4xl sm:6xl text-black">
-          Access powerful investing tools
-        </p>
-      </div>
+      <div className="container mx-auto px-4 py-8">
+        {/* Header Section */}
+        <section className="mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-800">
+            NFT Investments – Unlocking the Future of Digital Ownership
+          </h1>
+          <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-700 text-center">
+            At Multicoin Capital, we recognize that Non-Fungible Tokens (NFTs)
+            are revolutionizing digital ownership, art, gaming, and
+            decentralized economies. As blockchain technology reshapes how value
+            is stored and transferred, NFTs stand at the forefront of
+            innovation, offering unique investment opportunities.
+          </p>
+        </section>
 
-      {/* next */}
-      <div className="container-all  max-w-[1000px] mx-auto">
-        <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
-          <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
-            <img src={guideStock1} alt="" className="w-1/2 mx-auto" />
-          </div>
-          <div className="invest  sm:w-1/2 flex flex-col justify-center">
-            <div>
-              <Accordion
-                question="Set price alerts for ETFs"
-                answer="Make timely investment decisions with price alerts for ETFs. Get notified when an asset falls above or below your set threshold."
-                id={1}
-              />
-            </div>
-            <div>
-              <Accordion
-                question="Get more time to react to market events"
-                answer="With extended-hours trading, you get over 5 additional hours to buy and sell ETFs. Access pre-market trading from 8 AM to 9:30 AM ET and after-hours trading from 4 PM to 8 PM ET."
-                id={2}
-              />
-            </div>
-            <div>
-              <Accordion
-                question="Automatically reinvest your dividends"
-                answer="If your ETFs pay dividends, you can automatically reinvest your dividends right back into the fund that paid them out."
-                id={3}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* informed */}
-      <div className="my-20 container-all  max-w-[1000px] mx-auto">
-        <span className="text-primary text-base font-semibold">
-          Market insights
-        </span>
-        <p className="sm:w-1/4 text-4xl sm:6xl text-black">
-          Make informed investment decisions
-        </p>
-      </div>
-
-      {/* next */}
-      <div className="container-all  max-w-[1000px] mx-auto">
-        <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
-          <div className="invest-image sm:w-1/2 bg-slate-100  mx-auto py-6">
-            <img src={guideStock3} alt="" className="w-1/2 mx-auto " />
-          </div>
-          <div className="invest  sm:w-1/2 flex flex-col justify-center">
-            <div>
-              <Accordion
-                question="Take a closer look at any ETF"
-                answer="Every ETF page on Multicoin has helpful information about the fund and its performance, including key metrics, news, and recent activity from other investors."
-                id={1}
-              />
-            </div>
-            <div>
-              <Accordion
-                question="Get daily live analysis on the markets"
-                answer="Each day, you can hear experts, analysts, and journalists discuss the day’s biggest market headlines—and what they mean for your portfolio—on Multicoin Live."
-                id={2}
-              />
-            </div>
-            <div>
-              <Accordion
-                question="Upgrade your portfolio"
-                answer="With Multicoin Premium, you can unlock advanced data and analysis to help inform your ETF trading strategies even further."
-                id={3}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* informed */}
-      <div className="my-10 w-4/5 mx-auto  max-w-[1000px] mx-auto ">
-        <p className=" text-4xl sm:9xl text-black pb-4">
-          Have questions? Find answers.
-        </p>
-      </div>
-      {/* next */}
-      <div className="mb-10  max-w-[1000px] mx-auto">
-        <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8">
-          <div className="w-4/5 mx-auto">
-            <Accordion
-              question="What is an ETF and how does it work?"
-              answer="Also known as an ETF, an exchange-traded fund is multiple stocks or assets offered together as a bundle or package. "
-              id={1}
-            />
-            <Accordion
-              question="What is the difference between an ETF and a mutual fund?"
-              answer="Mutual funds are priced once per day after market closes and ETF prices change during market hours as they are traded on an exchange throughout the day. "
-              id={2}
-            />
-            <Accordion
-              question="How do you choose an ETF to invest in?"
-              answer="When choosing what ETF to invest in, you should determine if the fund’s investment objectives align with your investing goals. It is important to do your research, taking things like past performance and fund manager into consideration. Multicoin offers a suite of diversified ETFs that helps your investment align with your goals."
-              id={3}
-            />
-            <Accordion
-              question="How can I invest in ETFs on Multicoin?"
-              answer="There are numerous ETFs that you can invest in on the Multicoin platform. With one transaction, you can buy a diversified set of investments that align to your goals."
-              id={4}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* logo-list */}
-      <div className="bg-black">
-        <div className=" py-10 h-300px  max-w-[1000px] mx-auto">
-          <div className="mt-20  text-white grid sm:grid-cols-2  w-[90%] mx-auto">
-            <div>
-              <span className="text-primary-very-light text-lg font-semibold">
-                OTC stocks
+        {/* Why Invest Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4 text-center">
+            Why Invest in NFTs with Us?
+          </h2>
+          <ul className="space-y-4 text-gray-700">
+            <li className="flex items-center">
+              <span className="mr-2">✅</span>
+              <span>
+                Institutional-Grade Research – In-depth analysis of the NFT
+                market, emerging trends, and high-value digital assets.
               </span>
-              <p className="text-2xl sm:6xl py-4">Trade select OTC stocks</p>
-              <span className="py-6">
-                Over 300 select over-the-counter (OTC) stocks are available on
-                Multicoin, focusing predominantly on large-cap international
-                companies.
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">✅</span>
+              <span>
+                Diverse Portfolio Exposure – Investments in blue-chip NFTs,
+                metaverse assets, gaming ecosystems, and digital collectibles.
               </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">✅</span>
+              <span>
+                Blockchain-Backed Ownership – Secure, verifiable, and immutable
+                ownership through decentralized networks.
+              </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">✅</span>
+              <span>
+                Strategic Market Positioning – Identifying undervalued NFTs,
+                early-stage projects, and new digital asset use cases.
+              </span>
+            </li>
+          </ul>
+        </section>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-6 ">
-                <div className="available flex gap-4">
-                  <TiWorld className="text-light-primary text-4xl bg-slate-800 p-2 rounded-sm" />
-                  <span>Over 300 select OTC stocks are now available</span>
-                </div>
-                <div className="available flex gap-4">
-                  <IoTrendingUp className="text-light-primary text-4xl bg-slate-800 p-2 rounded-sm" />
-                  <span>
-                    Stock pages include additional research, data, and analysis
-                  </span>
-                </div>
-                <div className="available flex gap-4">
-                  <IoStatsChartSharp className="text-light-primary text-4xl bg-slate-800 p-2 rounded-sm" />
-                  <span>Additional companies will be added over time</span>
-                </div>
-                <div className="available flex gap-4">
-                  <IoStatsChartSharp className="text-light-primary text-4xl bg-slate-800 p-2 rounded-sm" />
-                  <span>
-                    Available OTC offerings focus predominantly on large-cap
-                    international companies
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="images-list flex overflow-hidden gap-2 items-center justify-center my-8 sm:my-2">
-              <img
-                src={logoList1}
-                alt=""
-                className="w-fit h-[500px] object-contain overflow-hidden"
-              />
-              <img
-                src={logoList2}
-                alt=""
-                className="w-fit h-[500px] object-contain overflow-hidden"
-              />
-            </div>
+        {/* NFT Investment Strategies Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 text-center">
+            Our NFT Investment Strategies
+          </h2>
+          <ul className="space-y-4 text-gray-700">
+            <li className="flex items-center">
+              <span className="mr-2">📌</span>
+              <span>
+                <strong>Blue-Chip NFTs</strong> – Holdings in top-tier
+                collections like CryptoPunks, Bored Ape Yacht Club, and
+                generative art.
+              </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">📌</span>
+              <span>
+                <strong>Metaverse &amp; Virtual Real Estate</strong> – Investing
+                in digital land on platforms like Decentraland and The Sandbox.
+              </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">📌</span>
+              <span>
+                <strong>Gaming &amp; Play-to-Earn</strong> – Exposure to
+                NFT-based gaming economies and blockchain-powered in-game
+                assets.
+              </span>
+            </li>
+            <li className="flex items-center">
+              <span className="mr-2">📌</span>
+              <span>
+                <strong>NFT Infrastructure &amp; Marketplaces</strong> –
+                Investments in platforms that power NFT creation, trading, and
+                utility.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        {/* Shape the Future Section */}
+        <section className="mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
+            Shape the Future of Digital Collectibles
+          </h2>
+          <p className="text-gray-700">
+            The NFT space is rapidly evolving, and staying ahead requires
+            insight, research, and strategic capital deployment. Whether you're
+            an investor, creator, or enthusiast, Multicoin Capital provides the
+            expertise and resources to help you navigate the NFT revolution.
+          </p>
+        </section>
+
+        {/* Call-to-Action Section */}
+        <section className="mb-12 text-center">
+          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <a
+              href="#"
+              className="px-6 py-3 bg-primary text-white rounded hover:bg-text transition"
+            >
+              🚀 Explore NFT Opportunities
+            </a>
+            <a
+              href="#"
+              className="px-6 py-3 bg-primary text-white rounded hover:bg-text transition"
+            >
+              🎨 View Market Insights and Discover Emerging NFT Trends
+            </a>
           </div>
-        </div>
-      </div>
+        </section>
 
+        {/* Footer */}
+        <footer className="text-center text-sm text-gray-500">
+          © 2017 - 2025 Multicoin Capital Management, LLC. All Rights Reserved.
+        </footer>
+      </div>
       {/* big image */}
       <div className="bg-black ">
         <div className="my-0">

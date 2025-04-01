@@ -168,19 +168,19 @@ const Header = () => {
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <a
               href="#"
-              className="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+              className="px-6 py-3 bg-primary text-white rounded hover:bg-blue-700 transition"
             >
               Explore Our Funds Portfolio
             </a>
             <a
               href="#"
-              className="px-6 py-3 bg-green-600 text-white rounded hover:bg-green-700 transition"
+              className="px-6 py-3 bg-primary text-white rounded hover:bg-green-700 transition"
             >
               Read Our Research
             </a>
             <a
               href="#"
-              className="px-6 py-3 bg-purple-600 text-white rounded hover:bg-purple-700 transition"
+              className="px-6 py-3 bg-primary text-white rounded hover:bg-purple-700 transition"
             >
               Start Investing Today
             </a>
