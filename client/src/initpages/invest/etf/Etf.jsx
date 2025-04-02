@@ -173,34 +173,8 @@ const Etf = () => {
           © 2017 - 2025 Multicoin Capital Management, LLC. All Rights Reserved.
         </footer>
       </div>
-      {/* big image */}
-      <div className="bg-black ">
-        <div className="my-0">
-          <hr className="text-slate-400" />
-          <div className="flex flex-col items-center justify-center mb-0 pt-40 pb-4 bg-black w-[90%] mx-auto text-center">
-            <span className="text-4xl md:text-6xl text-white">
-              Build your portfolio with Multicoin
-            </span>
-            <span className="text-4xl md:text-6xl text-primary-very-light"></span>
-            <div className="flex items-center justify-center md:w-fit">
-              <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold ">
-                Sign Up
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-black">
-        <div
-          className="relative img-alpha mt-0 max-w-[1000px] mx-auto"
-          style={{ width: "100%" }}
-        >
-          <img src={herobg} alt="" className="h-[100%] w-full" />
-        </div>
-      </div>
-
-      <Footer />
+    
+e      <Footer />
     </div>
   );
 };

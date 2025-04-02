@@ -425,7 +425,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
                 megaMenu.state ? megaOn : megaOff
               }`}
             >
-              NTFs
+              NFTs
             </Link>
           </ul>
           <Link

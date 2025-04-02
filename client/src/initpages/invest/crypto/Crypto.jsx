@@ -193,32 +193,7 @@ const Crypto = () => {
           </div>
         </section>
       </div>
-      {/* big image */}
-      <div className="bg-black my-0">
-        <hr className="text-slate-400" />
-        <div className="flex flex-col items-center justify-center mb-0 pt-40 pb-4 bg-black w-[90%] mx-auto text-center">
-          <span className="text-4xl md:text-6xl text-white">
-            Simple. Sophisticated.
-          </span>
-          <span className="text-4xl md:text-6xl text-primary-very-light">
-            Significantly cheaper.
-          </span>
-          <span className="text-4xl md:text-6xl text-primary-very-light"></span>
-          <div className="flex items-center justify-center md:w-fit">
-            <button className="cursor-pointer text-white my-10 md:my-20 bg-primary py-4 rounded-4xl hover:bg-primary-very-light transition duration-300 w-[200px] text-lg md:text-xl font-semibold custom-shadow-dark">
-              Sign Up
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="bg-black">
-        <div
-          className="relative img-alpha mt-0 max-w-[1000px] mx-auto"
-          style={{ width: "100%" }}
-        >
-          <img src={herobg} alt="" className="h-[100%] w-full" />
-        </div>
-      </div>
+      
 
       <Footer />
     </div>
