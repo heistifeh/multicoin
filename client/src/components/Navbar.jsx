@@ -356,6 +356,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
               Stock
               {megaMenu && megaMenu.name === "invest" ? <InvestMenu /> : ""}
             </Link>
+
             <Link
               onMouseEnter={() =>
                 setMegaMenu({ state: true, name: "resources" })
@@ -372,6 +373,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
                 ""
               )}
             </Link>
+
             <Link
               onMouseEnter={() => setMegaMenu({ state: true, name: "company" })}
               to={"/invest/etf"}
@@ -382,6 +384,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
               ETF
               {megaMenu && megaMenu.name === "company" ? <Companymenu /> : ""}
             </Link>
+
             <Link
               onMouseEnter={() => setMegaMenu({ state: true, name: "premium" })}
               to={"/"}
@@ -391,7 +394,8 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
             >
               Premium
               {megaMenu && megaMenu.name === "premium" ? <Premiummenu /> : ""}
-            </Link> */}
+            </Link> 
+            */}
             <Link
               to={"/"}
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
@@ -402,7 +406,6 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
             </Link>
             <Link
               to={"/invest/stock"}
-              target="_blank"
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
@@ -411,7 +414,6 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
             </Link>
             <Link
               to={"/invest/crypto"}
-              target="_blank"
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
@@ -420,7 +422,6 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
             </Link>
             <Link
               to={"/invest/etf"}
-              target="_blank"
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
