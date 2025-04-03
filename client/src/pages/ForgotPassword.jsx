@@ -115,16 +115,7 @@ const ForgotPassword = () => {
             </div>
           </div>
 
-          {/* assets */}
-          <div className="my-10 flex flex-wrap gap-4">
-            {asset("Stocks")}
-            {asset("Options Trading")}
-            {asset("Treasuries")}
-            {asset("Bonds")}
-
-            {asset("High-yield", "4.1% APY")}
-            {asset("Bond Account", "6.95% yield")}
-          </div>
+         
         </div>
 
         {/* form */}
