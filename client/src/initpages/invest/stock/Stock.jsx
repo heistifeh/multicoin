@@ -45,7 +45,7 @@ const Stock = () => {
             <img
               src={stockImage}
               alt="Stock"
-              className="rounded-lg w-full max-h-[600px] object-cover"
+              className="rounded-lg w-full max-h-[600px] object-cover animate-pulseZoom"
             />
           </div>
         </div>
@@ -158,13 +158,15 @@ const Stock = () => {
         <section className="mb-12 text-center">
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <a
-              href="#"
+              href="https://multicoin.capital/portfolio/"
+              target="_blank"
               className="px-6 py-3 bg-primary text-white rounded hover:bg-text transition"
             >
               🚀 Explore Stocks Now Portfolio
             </a>
             <a
-              href="#"
+              href="https://multicoin.capital/writing/?utm_source=chatgpt.com"
+              target="_blank"
               className="px-6 py-3 bg-primary text-white rounded hover:bg-text transition"
             >
               📊 View Market Insights and Get Expert Recommendations

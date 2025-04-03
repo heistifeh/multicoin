@@ -28,7 +28,7 @@ const Margin = () => {
     <div className="">
       <Navbar />
       <header className="relative rounded-none ">
-        <div className="absolute top-0 bg-cover flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8    left-0 right-0 bg-gradient-to-tr from-black to-[#000E43] ">
+        <div className="absolute top-0 bg-cover flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8    left-0 right-0 bg-gradient-to-tr from-black to-primary-dark ">
           <div className="invest md:w-4/5  sm:w-1/2 flex flex-col justify-center pt-20 px-8">
             <br />
             <br />

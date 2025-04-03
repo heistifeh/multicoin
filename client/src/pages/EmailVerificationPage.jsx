@@ -97,7 +97,7 @@ const EmailVerificationPage = ({ email }) => {
     <div className=" max-w-lg sm:max-w-lvw mx-auto">
       <div className=" grid sm:grid-cols-2 justify-between gap-4 h-screen ">
         {/* sidebar */}
-        <div className=" hidden sm:flex flex-col bg-gradient-to-tr from-black to-[#000E43]  px-6">
+        <div className=" hidden sm:flex flex-col bg-gradient-to-tr from-black to-primary-dark  px-6">
           <div className=" top-4 flex gap-2 items-center ">
             <div>
               <img src="./logo.png" alt="" />

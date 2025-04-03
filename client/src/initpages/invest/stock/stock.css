@@ -23,3 +23,20 @@
 .scroll-down {
   animation: scroll-down 10s linear infinite;
 }
+
+@keyframes pulseZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pulseZoom {
+  animation: pulseZoom 3s ease-in-out infinite;
+}
+

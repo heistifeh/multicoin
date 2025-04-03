@@ -15,6 +15,7 @@ import { FaDollarSign } from "react-icons/fa";
 import { IoTrendingUp } from "react-icons/io5";
 import Footer from "../../home/Footer";
 import Accordion from "../../../components/Accordion";
+import "./etf.css"
 import nft from "./images/nft.jpg";
 const Etf = () => {
   return (
@@ -24,7 +25,7 @@ const Etf = () => {
         <div className="flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8 container-all">
           <div className="invest  sm:w-1/2 flex flex-col justify-center">
             <h1 className="text-black my-2 text-4xl sm:text-7xl">
-              Invest in NFTs
+              Invest in ETFs
             </h1>
             <span className="text-lg leading-5 sm:text-xl tracking-wider">
               Broaden your market exposure with collections of securities that
@@ -35,16 +36,15 @@ const Etf = () => {
                 Sign Up
               </button>
               <button className="explore  border-1 border-slate-200 text-black p-2 w-36 rounded-4xl text-lg cursor-pointer hover:bg-primary hover:text-white transition duration-300 custom-shadow">
-                Explore NFTs
+                Explore ETFs
               </button>
             </div>
           </div>
           <div className="invest-image sm:w-1/2">
-            <img src={nft} alt="" className="rounded-xl h-[600px]" />
+            <img src={nft} alt="" className="rounded-xl h-[600px] animate-pulseZoom" />
           </div>
         </div>
       </header>
-
       <div className="container mx-auto px-4 py-8">
         {/* Header Section */}
         <section className="mb-12">
@@ -52,10 +52,10 @@ const Etf = () => {
             NFT Investments – Unlocking the Future of Digital Ownership
           </h1>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-700 text-center">
-            At Multicoin Capital, we recognize that Non-Fungible Tokens (NFTs)
+            At Multicoin Capital, we recognize that Non-Fungible Tokens (ETFs)
             are revolutionizing digital ownership, art, gaming, and
             decentralized economies. As blockchain technology reshapes how value
-            is stored and transferred, NFTs stand at the forefront of
+            is stored and transferred, ETFs stand at the forefront of
             innovation, offering unique investment opportunities.
           </p>
         </section>
@@ -63,7 +63,7 @@ const Etf = () => {
         {/* Why Invest Section */}
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4 text-center">
-            Why Invest in NFTs with Us?
+            Why Invest in ETFs with Us?
           </h2>
           <ul className="space-y-4 text-gray-700">
             <li className="flex items-center">
@@ -76,7 +76,7 @@ const Etf = () => {
             <li className="flex items-center">
               <span className="mr-2">✅</span>
               <span>
-                Diverse Portfolio Exposure – Investments in blue-chip NFTs,
+                Diverse Portfolio Exposure – Investments in blue-chip ETFs,
                 metaverse assets, gaming ecosystems, and digital collectibles.
               </span>
             </li>
@@ -90,7 +90,7 @@ const Etf = () => {
             <li className="flex items-center">
               <span className="mr-2">✅</span>
               <span>
-                Strategic Market Positioning – Identifying undervalued NFTs,
+                Strategic Market Positioning – Identifying undervalued ETFs,
                 early-stage projects, and new digital asset use cases.
               </span>
             </li>
@@ -106,7 +106,7 @@ const Etf = () => {
             <li className="flex items-center">
               <span className="mr-2">📌</span>
               <span>
-                <strong>Blue-Chip NFTs</strong> – Holdings in top-tier
+                <strong>Blue-Chip ETFs</strong> – Holdings in top-tier
                 collections like CryptoPunks, Bored Ape Yacht Club, and
                 generative art.
               </span>
@@ -154,13 +154,15 @@ const Etf = () => {
         <section className="mb-12 text-center">
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <a
-              href="#"
+              href="https://multicoin.capital/portfolio/?utm_source=chatgpt.com"
+              target="_blank"
               className="px-6 py-3 bg-primary text-white rounded hover:bg-text transition"
             >
               🚀 Explore NFT Opportunities
             </a>
             <a
-              href="#"
+              href="https://multicoin.capital/writing/?utm_source=chatgpt.com"
+              target="_blank"
               className="px-6 py-3 bg-primary text-white rounded hover:bg-text transition"
             >
               🎨 View Market Insights and Discover Emerging NFT Trends
@@ -173,8 +175,7 @@ const Etf = () => {
           © 2017 - 2025 Multicoin Capital Management, LLC. All Rights Reserved.
         </footer>
       </div>
-    
-e      <Footer />
+      e <Footer />
     </div>
   );
 };

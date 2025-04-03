@@ -65,7 +65,7 @@ const Crypto = () => {
             </div>
           </div>
           <div className="invest-image sm:w-2/3 mt-20">
-            <img src={bitcoin} alt="" className="rounded-2xl h-full" />
+            <img src={bitcoin} alt="" className="rounded-2xl h-full animate-pulseZoom" />
           </div>
         </div>
       </header>
@@ -179,13 +179,15 @@ const Crypto = () => {
         <section className="mb-12 text-center">
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <a
-              href="#"
+              href="https://multicoin.capital/portfolio/?utm_source=chatgpt.com"
+              target="_blank"
               className="px-6 py-3 bg-primary text-white rounded hover:bg-text transition"
             >
               🚀 Explore Crypto Opportunities
             </a>
             <a
-              href="#"
+              href="https://multicoin.capital/writing/?utm_source=chatgpt.com"
+              target="_blank"
               className="px-6 py-3 bg-primary text-white rounded hover:bg-text transition"
             >
               📊 View Market Insights and Get Expert Recommendations
@@ -193,7 +195,6 @@ const Crypto = () => {
           </div>
         </section>
       </div>
-      
 
       <Footer />
     </div>

@@ -7,6 +7,7 @@ import { BiSolidPieChart } from "react-icons/bi";
 import { TbArrowsUp } from "react-icons/tb";
 import { FaHeart } from "react-icons/fa";
 import "../../components/animate.css";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="">
@@ -167,23 +168,25 @@ const Header = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <a
-              href="#"
+              href="https://multicoin.capital/portfolio/"
+              target="_blank"
               className="px-6 py-3 bg-primary text-white rounded hover:bg-blue-700 transition"
             >
               Explore Our Funds Portfolio
             </a>
             <a
-              href="#"
+              href="https://multicoin.capital/"
+              target="_blank"
               className="px-6 py-3 bg-primary text-white rounded hover:bg-green-700 transition"
             >
               Read Our Research
             </a>
-            <a
-              href="#"
+            <Link to={"/sign-up"}
+              target="_blank"
               className="px-6 py-3 bg-primary text-white rounded hover:bg-purple-700 transition"
             >
               Start Investing Today
-            </a>
+            </Link>
           </div>
         </section>
 

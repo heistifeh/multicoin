@@ -19,7 +19,7 @@ const Treasuries = () => {
       <header className="relative rounded-none ">
         <Navbar />
 
-        <div className="absolute top-0 bg-cover flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8    left-0 right-0 bg-gradient-to-tr from-black to-[#000E43] max-w-[1440px] mx-auto">
+        <div className="absolute top-0 bg-cover flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8    left-0 right-0 bg-gradient-to-tr from-black to-primary-dark max-w-[1440px] mx-auto">
           <div className="invest  sm:w-2/3 flex flex-col justify-center mt-12 px-8">
             <span className="text-sm text-white border-1 border-slate-600 w-fit rounded-lg px-[4px]  ">
               Treasury Account
