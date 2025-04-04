@@ -36,11 +36,11 @@ const Crypto = () => {
   const [activeId, setActiveId] = useState(1);
   return (
     <div className="">
-      <header className="relative rounded-none">
+      <header className="relative rounded-none mb-10">
         <Navbar />
 
         <div
-          className="absolute top-0 bg-cover flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8    left-0 right-0"
+          className="relative bg-cover flex flex-col mt-10 sm:mt-0 sm:flex-row justify-between gap-8"
           style={{
             backgroundImage: `url(${bgfeature})`,
             backgroundSize: "cover", // Example of adding another style
@@ -64,16 +64,17 @@ const Crypto = () => {
               </button> */}
             </div>
           </div>
-          <div className="invest-image sm:w-2/3 mt-20">
+          <div className="invest-image sm:w-2/3 pt-10">
             <img src={bitcoin} alt="" className="rounded-2xl h-full animate-pulseZoom" />
           </div>
         </div>
       </header>
 
-      <div className="py-100 md:py-60 lg:py-90 xl:py-100 2xl:py-150"></div>
+      
+      
 
       {/* leading texts */}
-      <div className="container mx-auto px-4 py-8">
+      <div className=" container mx-auto px-4 py-8">
         {/* Header Section */}
         <section className="mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-800">
