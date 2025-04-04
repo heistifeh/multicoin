@@ -420,6 +420,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
             >
               Crypto
             </Link>
+            
             <Link
               to={"/invest/etf"}
               className={` hover:bg-slate-100 transition duration-300 p-3 ${

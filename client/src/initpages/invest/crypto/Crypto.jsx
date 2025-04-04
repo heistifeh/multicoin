@@ -70,7 +70,8 @@ const Crypto = () => {
         </div>
       </header>
 
-      <div className="py-100 md:py-60 lg:py-90"></div>
+      <div className="py-100 md:py-60 lg:py-90 xl:py-100 2xl:py-150"></div>
+
       {/* leading texts */}
       <div className="container mx-auto px-4 py-8">
         {/* Header Section */}
