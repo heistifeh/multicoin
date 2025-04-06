@@ -33,9 +33,9 @@ const Stock = () => {
               the market insights you need to execute your investing strategies.
             </span>
             <div className="flex my-8 gap-4 sm:gap-8">
-              <button className="sign-up bg-primary text-white p-2 w-30 rounded-4xl text-xl cursor-pointer hover:bg-primary-dark transition duration-300 custom-shadow">
+              <Link to={"/sign-up"} className="sign-up bg-primary text-white p-2 w-30 rounded-4xl text-xl cursor-pointer hover:bg-primary-dark transition duration-300 custom-shadow">
                 Sign Up
-              </button>
+              </Link>
               {/* <button className="explore  border-1 border-slate-200 text-black p-2 w-36 rounded-4xl text-lg cursor-pointer hover:bg-primary hover:text-white transition duration-300 custom-shadow">
                 Explore stocks
               </button> */}
