@@ -24,6 +24,7 @@ import VerifyIdentity from "./pages/VerifyIdentity.jsx";
 import RedirectUser from "./components/RedirectUser.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
 import ResetPassword from "./pages/ResetPassword.jsx";
+import Dashboard from "./dashboard/Dashboard.jsx";
 export default function App() {
   return (
     <BrowserRouter>
@@ -46,6 +47,7 @@ export default function App() {
 
         <Route path="/about" element={<About />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route path="/dashboard" element={<Dashboard />} />
 
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route element={<PrivateRoute />}>
