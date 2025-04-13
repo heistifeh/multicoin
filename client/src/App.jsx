@@ -26,8 +26,7 @@ import ForgotPassword from "./pages/ForgotPassword.jsx";
 import ResetPassword from "./pages/ResetPassword.jsx";
 
 //dashboard pages go here
-import dashboard from '../src/dashboard/Dashboard.js'
-import Dashboard from "../src/dashboard/Dashboard.js";
+import Dashboard from "../src/dashboard/Dashboard.jsx";
 export default function App() {
   return (
     <BrowserRouter>
