@@ -24,6 +24,10 @@ import VerifyIdentity from "./pages/VerifyIdentity.jsx";
 import RedirectUser from "./components/RedirectUser.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
 import ResetPassword from "./pages/ResetPassword.jsx";
+
+//dashboard pages go here
+import dashboard from '../src/dashboard/Dashboard.js'
+import Dashboard from "../src/dashboard/Dashboard.js";
 export default function App() {
   return (
     <BrowserRouter>
@@ -55,6 +59,9 @@ export default function App() {
         <Route element={<RedirectUser />}>
           <Route path="/verify-email" element={<EmailVerificationPage />} />
         </Route>
+
+        {/* dashboard routes */}
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Toaster />
     </BrowserRouter>
