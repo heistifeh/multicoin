@@ -1,6 +1,12 @@
 import React from "react";
 import AppNavbar from "./components/AppNavbar.jsx";
 import AppTheme from "../../shared-theme/AppTheme.jsx";
+import {
+  chartsCustomizations,
+  dataGridCustomizations,
+  datePickersCustomizations,
+  treeViewCustomizations,
+} from './theme/customizations';
 export default function Dashboard() {
   const xThemeComponents = {
     ...chartsCustomizations,
