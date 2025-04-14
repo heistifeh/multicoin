@@ -37,15 +37,17 @@ export default function AppNavbar() {
 
   return (
     <AppBar
-      position="fixed"
+      // position="fixed"
       sx={{
-        display: { xs: "auto", md: "none" },
+        display: { xs: 'block' }, // "auto" is not a valid value for display
         boxShadow: 0,
-        bgcolor: "background.paper",
-        backgroundImage: "none",
-        borderBottom: "1px solid",
-        borderColor: "divider",
-        top: "var(--template-frame-height, 0px)",
+        bgcolor: 'background.paper',
+        backgroundImage: 'none',
+        borderBottom: '1px solid',
+        borderColor: 'divider',
+        top: 'var(--template-frame-height, 0px)',
+        position: 'sticky', // likely needed if you're setting top
+        zIndex: 1100 // optional: useful if used as a sticky header
       }}
     >
       <Toolbar variant="regular">
@@ -79,6 +81,8 @@ export default function AppNavbar() {
           <SideMenuMobile open={open} toggleDrawer={toggleDrawer} />
         </Stack>
       </Toolbar>
+      {/* <p>TExt is here</p> */}
+      
     </AppBar>
   );
 }

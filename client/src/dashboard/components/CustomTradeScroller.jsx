@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import { columns, rows } from '../internals/data/gridData';
+import { columns, rows } from '../internals/data/gridData.jsx';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';

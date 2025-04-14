@@ -6,12 +6,12 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import SelectContent from './SelectContent';
-import MenuContent from './MenuContent';
-import CardAlert from './CardAlert';
-import OptionsMenu from './OptionsMenu';
-import { useAuth } from '../context/AuthContext';
-import { useUser } from '../context/UserContext';
+import SelectContent from './SelectContent.jsx';
+import MenuContent from './MenuContent.jsx';
+import CardAlert from './CardAlert.jsx';
+import OptionsMenu from './OptionsMenu.jsx';
+import { useAuth } from '../../context/AuthContext.jsx';
+import { useUser } from '../../context/UserContext.jsx';
 
 const drawerWidth = 240;
 
@@ -27,10 +27,10 @@ const Drawer = styled(MuiDrawer)({
 });
 
 export default function SideMenu() {
-  const { user } = useAuth();
-  const { userBalance, loading } = useUser();
+  // const { user } = useAuth();
+  // const { userBalance, loading } = useUser();
 
-  console.log(user,"user info")
+  // console.log(user,"user info")
   // React.useEffect(() => {
   //   if (user) {
   //     // Refresh user data when the component mounts
@@ -60,7 +60,7 @@ export default function SideMenu() {
       <Divider />
       <MenuContent />
       <CardAlert />
-      {user && !loading && (
+      {/* {user && !loading && (
         <Box sx={{ p: 2 }}>
           <Typography variant="body2" sx={{ fontWeight: 500 }}>
             Balance: ${userBalance?.total_balance.toFixed(2)}
@@ -69,7 +69,7 @@ export default function SideMenu() {
             Profit: ${userBalance?.total_profit.toFixed(2)}
           </Typography>
         </Box>
-      )}
+      )} */}
       <Stack
         direction="row"
         sx={{
@@ -82,16 +82,16 @@ export default function SideMenu() {
       >
         <Avatar
           sizes="small"
-          alt={user?.username || "Guest"}
+          alt={ "Guest"}
           src="/static/images/avatar/7.jpg"
           sx={{ width: 36, height: 36 }}
         />
         <Box sx={{ mr: 'auto' }}>
           <Typography variant="body2" sx={{ fontWeight: 500, lineHeight: '16px' }}>
-            {user?.username || "Guest"}
+            { "Guest"}
           </Typography>
           <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-            {user?.username || "Not signed in"}
+            { "Not signed in"}
           </Typography>
         </Box>
         <OptionsMenu />

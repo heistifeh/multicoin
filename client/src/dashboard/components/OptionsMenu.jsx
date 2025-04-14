@@ -9,8 +9,8 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon, { listItemIconClasses } from '@mui/material/ListItemIcon';
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 import MoreVertRoundedIcon from '@mui/icons-material/MoreVertRounded';
-import MenuButton from './MenuButton';
-import { useAuth } from '../context/AuthContext';
+import MenuButton from './MenuButton.jsx';
+import { useAuth } from '../../context/AuthContext.jsx';
 import { useNavigate } from 'react-router-dom';
 
 const MenuItem = styled(MuiMenuItem)({
@@ -20,7 +20,7 @@ const MenuItem = styled(MuiMenuItem)({
 export default function OptionsMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const { logout } = useAuth();
+  // const { logout } = useAuth();
   const navigate = useNavigate();
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
