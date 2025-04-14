@@ -2,12 +2,13 @@ import Dexie from "dexie";
 
 const db = new Dexie("TradingSimulatorDB");
 
-db.version(1).stores({
-  users:
-    "++id, username, email, password, deposit, total_profit, total_balance, last_load_time",
-  transactions: "++id, user_id, type, amount, status, created_at",
-});
-
+db.version(2).stores({
+    users:
+      "++id, username, email, password, deposit, total_profit, total_balance, last_load_time",
+    transactions:
+      "++id, [user_id+type+status], created_at"
+  });
+  
 export async function initializeDatabase() {
   await db.open();
   // Start the auto-increase process
@@ -43,14 +44,8 @@ export async function signIn(username, password) {
 }
 
 export async function getUserBalance(userId) {
-  // const user = await db.users.get(userId);
-//   const user = {
-//     id: 'bhjjhdfhjdf76872637',
-//     username: "John Doe",
-//     deposit: 200,
-//     total_profit: 200,
-//     total_balance: 500,
-//   };
+  const user = await db.users.get(userId);
+
   if (user) {
     return {
       deposit: user.deposit,

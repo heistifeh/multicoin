@@ -41,6 +41,7 @@ export default function MiningOutputBarChart() {
         </Stack>
         <BarChart
           borderRadius={8}
+          width={600}
           colors={colorPalette}
           xAxis={[
             {

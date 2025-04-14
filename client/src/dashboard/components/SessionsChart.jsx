@@ -70,6 +70,7 @@ export default function MiningActivityChart() {
         </Stack>
         <LineChart
           colors={colorPalette}
+          width={600}
           xAxis={[
             {
               scaleType: 'point',
