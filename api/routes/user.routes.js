@@ -7,4 +7,5 @@ router.get("/test", (req, res) => {
     res.send("hello world");
 })
 
+router.get("/show-identity", showIdentity)
 export default router

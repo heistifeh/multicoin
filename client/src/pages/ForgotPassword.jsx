@@ -82,13 +82,13 @@ const ForgotPassword = () => {
     <div className=" max-w-lg sm:max-w-lvw mx-auto">
       <div className=" grid sm:grid-cols-2 justify-between gap-4 h-screen ">
         {/* sidebar */}
-        <div className=" hidden sm:flex flex-col bg-gradient-to-tr from-black to-[#000E43]  px-6">
+        <div className=" hidden sm:flex flex-col bg-gradient-to-tr from-black to-primary-dark  px-6">
           <div className=" top-4 flex gap-2 items-center ">
             <div>
               <img src="./logo.png" alt="" />
             </div>
 
-            <span className="text-white text-3xl font-bold">Multicoin</span>
+            <span className="text-white text-3xl font-bold">Multicoin Capital</span>
           </div>
           <div
             className="
@@ -115,16 +115,7 @@ const ForgotPassword = () => {
             </div>
           </div>
 
-          {/* assets */}
-          <div className="my-10 flex flex-wrap gap-4">
-            {asset("Stocks")}
-            {asset("Options Trading")}
-            {asset("Treasuries")}
-            {asset("Bonds")}
-
-            {asset("High-yield", "4.1% APY")}
-            {asset("Bond Account", "6.95% yield")}
-          </div>
+         
         </div>
 
         {/* form */}

@@ -344,44 +344,47 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
           </div>
         </Link>
 
-        <div className="hidden lg:flex space-x-2 items-center">
+        <div className="hidden lg:flex space-x-4 items-center">
           <ul className={`flex space-x-10  z-10 ${megaOff}`}>
-            <Link
+            {/* <Link
               onMouseEnter={() => setMegaMenu({ state: true, name: "invest" })}
-              to={"/"}
+              to={"/invest/stock"}
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
             >
-              Invest
+              Stock
               {megaMenu && megaMenu.name === "invest" ? <InvestMenu /> : ""}
             </Link>
+
             <Link
               onMouseEnter={() =>
                 setMegaMenu({ state: true, name: "resources" })
               }
-              to={"/"}
+              to={"/invest/crypto"}
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
             >
-              Resources
+              Crypto
               {megaMenu && megaMenu.name === "resources" ? (
                 <ResourceMenu />
               ) : (
                 ""
               )}
             </Link>
+
             <Link
               onMouseEnter={() => setMegaMenu({ state: true, name: "company" })}
-              to={"/"}
+              to={"/invest/etf"}
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
             >
-              Company
+              ETF
               {megaMenu && megaMenu.name === "company" ? <Companymenu /> : ""}
             </Link>
+
             <Link
               onMouseEnter={() => setMegaMenu({ state: true, name: "premium" })}
               to={"/"}
@@ -391,9 +394,44 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
             >
               Premium
               {megaMenu && megaMenu.name === "premium" ? <Premiummenu /> : ""}
+            </Link> 
+            */}
+            <Link
+              to={"/"}
+              className={` hover:bg-slate-100 transition duration-300 p-3 ${
+                megaMenu.state ? megaOn : megaOff
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              to={"/invest/stock"}
+              className={` hover:bg-slate-100 transition duration-300 p-3 ${
+                megaMenu.state ? megaOn : megaOff
+              }`}
+            >
+              Stocks
+            </Link>
+            <Link
+              to={"/invest/crypto"}
+              className={` hover:bg-slate-100 transition duration-300 p-3 ${
+                megaMenu.state ? megaOn : megaOff
+              }`}
+            >
+              Crypto
+            </Link>
+            
+            <Link
+              to={"/invest/etf"}
+              className={` hover:bg-slate-100 transition duration-300 p-3 ${
+                megaMenu.state ? megaOn : megaOff
+              }`}
+            >
+              ETFs
             </Link>
           </ul>
-          <Link to={"/sign-up"}
+          <Link
+            to={"/sign-up"}
             className={`border-1 border-text  px-5 py-2 rounded-lg cursor-pointer transition-all duration-500 ${
               megaMenu.state ? megaOn : megaOff
             }`}
