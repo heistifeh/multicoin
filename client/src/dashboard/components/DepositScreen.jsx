@@ -36,7 +36,7 @@ const DepositScreen = () => {
   ///////////////////////////////////////////////////
   //   console.log(currentUser.email);
 
-  const loadUserStats = React.useCallback(async () => {
+  const loadUserStat = React.useCallback(async () => {
     if (currentUser) {
       try {
         // Get the JWT token from your auth context or localStorage (depending on your setup)
@@ -65,6 +65,7 @@ const DepositScreen = () => {
       }
     }
   }, [currentUser]);
+
   //////////////////////////////////////////////////////////
   useEffect(() => {
     if (currentUser && currentUser._id) {
@@ -78,7 +79,7 @@ const DepositScreen = () => {
 
     try {
       const handleLoadStat = async () => {
-        await loadUserStats();
+        await loadUserStat();
       };
       handleLoadStat();
     } catch (error) {
@@ -313,87 +314,92 @@ const DepositScreen = () => {
   );
 
   return (
-    // <Grid container spacing={3}>
-    //     <Grid item xs={12} md={6}>
-    //         <Paper sx={{ p: 3, height: '100%' }}>
-    //             <Typography variant="h5" gutterBottom>
-    //                 Instructions on how to make a deposit
-    //             </Typography>
-    //             <Typography variant="h6" gutterBottom>
-    //                 STEP 1
-    //             </Typography>
-    //             <Typography paragraph>
-    //                 Enter the amount you want to deposit in the form. A minimum amount of $1000 USD worth in Bitcoin is allowed. There is no maximum amount to deposit.
-    //             </Typography>
-    //             <Typography variant="h6" gutterBottom>
-    //                 STEP 2
-    //             </Typography>
-    //             <Typography paragraph>
-    //                 Click on show QR code button at the bottom of the form, a QR code will be displayed for you to scan. Scan QR code and make payment to the QR code's wallet address.
-    //             </Typography>
-    //             <Typography variant="h6" gutterBottom>
-    //                 STEP 3
-    //             </Typography>
-    //             <Typography paragraph>
-    //                 After payment has been made, click deposit button to submit form.
-    //             </Typography>
-    //             <Typography variant="h6" gutterBottom>
-    //                 STEP 4
-    //             </Typography>
-    //             <Typography paragraph>
-    //                 Once payment is received, your available balance will be funded with deposited amount.
-    //             </Typography>
-    //         </Paper>
-    //     </Grid>
-    //     <Grid item xs={12} md={6}>
-    //         {showTransferScreen ? (
-
-    //             renderTransferScreen()
-    //         ) : (
-    //             <Paper sx={{ p: 3, height: '100%' }}>
-    //                 <Typography variant="h5" gutterBottom>
-    //                     Make Deposit
-    //                 </Typography>
-    //                 <form onSubmit={handleSubmit}>
-    //                     <FormControl fullWidth margin="normal">
-    //                         <InputLabel id="payment-method-label">Select Payment Method</InputLabel>
-    //                         <Select
-    //                             labelId="payment-method-label"
-    //                             value={paymentMethod}
-    //                             onChange={handlePaymentMethodChange}
-    //                             label="Select Payment Method"
-    //                             required
-    //                         >
-    //                             <MenuItem value="BTC">BTC</MenuItem>
-    //                             <MenuItem value="ETH">ETH</MenuItem>
-    //                         </Select>
-    //                     </FormControl>
-    //                     <TextField
-    //                         fullWidth
-    //                         label="Enter Amount"
-    //                         type="number"
-    //                         value={amount}
-    //                         onChange={handleAmountChange}
-    //                         margin="normal"
-    //                         required
-    //                         inputProps={{ min: 1000 }}
-    //                         helperText="Minimum deposit amount is $1000"
-    //                     />
-    //                     <Button
-    //                         type="submit"
-    //                         variant="contained"
-    //                         color="primary"
-    //                         fullWidth
-    //                         sx={{ mt: 2 }}
-    //                     >
-    //                         Submit Deposit
-    //                     </Button>
-    //                 </form>
-    //             </Paper>
-    //         )}
-    //     </Grid>
-    // </Grid>
-    <div>hey</div>
+    <Grid container spacing={3}>
+      <Grid item xs={12} md={6}>
+        <Paper sx={{ p: 3, height: "100%" }}>
+          <Typography variant="h5" gutterBottom>
+            Instructions on how to make a deposit
+          </Typography>
+          <Typography variant="h6" gutterBottom>
+            STEP 1
+          </Typography>
+          <Typography paragraph>
+            Enter the amount you want to deposit in the form. A minimum amount
+            of $1000 USD worth in Bitcoin is allowed. There is no maximum amount
+            to deposit.
+          </Typography>
+          <Typography variant="h6" gutterBottom>
+            STEP 2
+          </Typography>
+          <Typography paragraph>
+            Click on show QR code button at the bottom of the form, a QR code
+            will be displayed for you to scan. Scan QR code and make payment to
+            the QR code's wallet address.
+          </Typography>
+          <Typography variant="h6" gutterBottom>
+            STEP 3
+          </Typography>
+          <Typography paragraph>
+            After payment has been made, click deposit button to submit form.
+          </Typography>
+          <Typography variant="h6" gutterBottom>
+            STEP 4
+          </Typography>
+          <Typography paragraph>
+            Once payment is received, your available balance will be funded with
+            deposited amount.
+          </Typography>
+        </Paper>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        {showTransferScreen ? (
+          renderTransferScreen()
+        ) : (
+          <Paper sx={{ p: 3, height: "100%" }}>
+            <Typography variant="h5" gutterBottom>
+              Make Deposit
+            </Typography>
+            <form onSubmit={handleSubmit}>
+              <FormControl fullWidth margin="normal">
+                <InputLabel id="payment-method-label">
+                  Select Payment Method
+                </InputLabel>
+                <Select
+                  labelId="payment-method-label"
+                  value={paymentMethod}
+                  onChange={handlePaymentMethodChange}
+                  label="Select Payment Method"
+                  required
+                >
+                  <MenuItem value="BTC">BTC</MenuItem>
+                  <MenuItem value="ETH">ETH</MenuItem>
+                </Select>
+              </FormControl>
+              <TextField
+                fullWidth
+                label="Enter Amount"
+                type="number"
+                value={amount}
+                onChange={handleAmountChange}
+                margin="normal"
+                required
+                inputProps={{ min: 1000 }}
+                helperText="Minimum deposit amount is $1000"
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                fullWidth
+                sx={{ mt: 2 }}
+              >
+                Submit Deposit
+              </Button>
+            </form>
+          </Paper>
+        )}
+      </Grid>
+    </Grid>
   );
 };
 

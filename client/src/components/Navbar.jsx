@@ -431,7 +431,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
             </Link>
           </ul>
           <Link
-            to={"/sign-up"}
+            to={"/sign-in"}
             className={`border-1 border-text  px-5 py-2 rounded-lg cursor-pointer transition-all duration-500 ${
               megaMenu.state ? megaOn : megaOff
             }`}
