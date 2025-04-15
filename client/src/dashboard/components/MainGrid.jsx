@@ -195,7 +195,7 @@ export default function MainGrid() {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ lastLoadTime: currentTime }),
+            body: JSON.stringify({ timestamp: currentTime }),
           });
           console.log("Last load time updated successfully");
 

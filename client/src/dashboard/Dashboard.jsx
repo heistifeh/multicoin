@@ -21,8 +21,10 @@ const xThemeComponents = {
   ...dataGridCustomizations,
   ...datePickersCustomizations,
   ...treeViewCustomizations,
-};
+};  
 import { useDispatch, useSelector } from "react-redux";
+import DepositScreen from "./components/DepositScreen";
+
 
 export default function Dashboard(props) {
   const { loading, error } = useSelector((state) => state.user);
@@ -58,6 +60,7 @@ export default function Dashboard(props) {
             <Header />
             <Routes key={location.pathname}>
               <Route index element={<MainGrid />} />
+              <Route path="deposit" element={<DepositScreen />} />
             </Routes>
           </Stack>
         </Box>
