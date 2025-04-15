@@ -1,11 +1,22 @@
-import express from "express";
-import { Router } from "express";
+import express from 'express';
+// import { getUserBalance, getLastLoadTime, updateLastLoadTime, increaseBalanceForUser } from '../controllers/userController';
+// getUserBalance
+import { verifyToken } from '../utils/verifyToken';
+// import { getUserBalance } from '../services/accountSevices';
+import { getUserBalance, getLastLoadTime, updateLastLoadTime, increaseBalanceForUser } from '../controller/user.controller';
 
-const router = Router();
+const userDetailRoutes = express.Router();
 
-router.get("/test", (req, res) => {
-    res.send("hello world");
-})
+// Get user balance
+userDetailRoutes.get('/:userId/balance', verifyToken, getUserBalance);
 
-router.get("/show-identity", showIdentity)
-export default router
+// Get last load time for a user
+userDetailRoutes.get('/:userId/last-load-time', verifyToken, getLastLoadTime);
+
+// Update last load time for a user
+userDetailRoutes.put('/:userId/last-load-time', verifyToken, updateLastLoadTime);
+
+// Increase balance for a user
+userDetailRoutes.post('/:userId/increase-balance', verifyToken, increaseBalanceForUser);
+
+export default userDetailRoutes;
