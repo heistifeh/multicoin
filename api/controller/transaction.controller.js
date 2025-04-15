@@ -2,9 +2,8 @@
 // import User from '../models/User'; // Import the User model
 // import { generateVerificationCode } from '../utils/verificationCode'; // Import utility for generating verification codes
 
-import User from "../models/user.model";
-import Transaction from "../models/transactions.model";
-
+import User from "../models/user.model.js";
+import Transaction from "../models/transactions.model.js";
 
 // Create a deposit transaction
 export async function createDeposit(req, res) {

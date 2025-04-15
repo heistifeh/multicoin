@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { alpha } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
@@ -22,8 +22,13 @@ const xThemeComponents = {
   ...datePickersCustomizations,
   ...treeViewCustomizations,
 };
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Dashboard(props) {
+  const { loading, error } = useSelector((state) => state.user);
+  const  { currentUser } = useSelector((state) => state.user);
+  console.log(currentUser.email);
+
   return (
     <AppTheme {...props} themeComponents={xThemeComponents}>
       <CssBaseline enableColorScheme />
@@ -51,7 +56,9 @@ export default function Dashboard(props) {
             }}
           >
             <Header />
-            <MainGrid />
+            <Routes key={location.pathname}>
+              <Route index element={<MainGrid />} />
+            </Routes>
           </Stack>
         </Box>
       </Box>

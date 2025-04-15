@@ -37,6 +37,7 @@ export const signup = async(req, res, next) => {
             deposit: 0,
             total_profit: 0,
             total_balance: 0,
+            username: email.split("@")[0],
             // set the verification token to expire in 24 hours
             verificationTokenExpiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
         });

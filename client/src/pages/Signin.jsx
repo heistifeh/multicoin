@@ -72,7 +72,7 @@ const Signin = () => {
       dispatch(signInSuccess(data));
       toast.success("Login successful");
       setTimeout(() => {
-        navigate("/portfolio");
+        navigate("/dashboard");
       }, 1000);
     } catch (error) {
       toast.error(error.message);
