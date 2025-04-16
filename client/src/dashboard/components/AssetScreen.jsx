@@ -7,6 +7,7 @@ import {
   TextField,
   Button,
   CircularProgress,
+  Box,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { FiArrowUpRight, FiArrowDown } from "react-icons/fi";
@@ -73,16 +74,19 @@ const AssetScreen = () => {
   if (loading) return <CircularProgress />;
   if (!data) return <Typography>No data available</Typography>;
 
-  return (
+  return (<>
+  
+    <Grid item xs={12}>
+    <Typography variant="h4" gutterBottom>
+      Cryptocurrency Assets
+    </Typography>
+  </Grid>
     <Grid container spacing={3}>
       {/* Top Typography Block */}
-      <Grid item xs={12}>
-        <Typography variant="h4" gutterBottom>
-          Cryptocurrency Assets
-        </Typography>
-      </Grid>
+     
 
       {/* Data mapping for cryptocurrency assets */}
+      
       {data.map((crypto) => (
         <Grid item xs={12} sm={6} md={4} lg={3} key={crypto.id}>
           <AssetCard elevation={3}>
@@ -118,6 +122,7 @@ const AssetScreen = () => {
         </Grid>
       ))}
     </Grid>
+    </>
   );
 };
 

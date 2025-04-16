@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Breadcrumbs, { breadcrumbsClasses } from '@mui/material/Breadcrumbs';
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
+import { useLocation } from 'react-router-dom';
 
 const StyledBreadcrumbs = styled(Breadcrumbs)(({ theme }) => ({
   margin: theme.spacing(1, 0),
@@ -16,6 +17,11 @@ const StyledBreadcrumbs = styled(Breadcrumbs)(({ theme }) => ({
 }));
 
 export default function NavbarBreadcrumbs() {
+  const location = useLocation(); // Get the current location (route)
+
+  // Get the current path (e.g., "/home" or "/dashboard")
+  const currentPath = location.pathname.split("/dashboard")[1].replace("/", "") || "Home"; // Default to "Home" if the path is empty
+
   return (
     <StyledBreadcrumbs
       aria-label="breadcrumb"
@@ -23,7 +29,8 @@ export default function NavbarBreadcrumbs() {
     >
       <Typography variant="body1">Dashboard</Typography>
       <Typography variant="body1" sx={{ color: 'text.primary', fontWeight: 600 }}>
-        Home
+      {currentPath.charAt(0).toUpperCase() + currentPath.slice(1)} {/* Capitalize the first letter */}
+     
       </Typography>
     </StyledBreadcrumbs>
   );
