@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate, Navigate } from "react-router-dom";
 import { alpha } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
@@ -34,7 +34,7 @@ export default function Dashboard(props) {
   //cehck if the user ID is verified
   const isIdVerified = currentUser.isIdVerified;
   console.log(currentUser.email);
-
+const navigate = useNavigate();
   return (
     <AppTheme {...props} themeComponents={xThemeComponents}>
       <CssBaseline enableColorScheme />
@@ -84,7 +84,7 @@ export default function Dashboard(props) {
                     cursor: "pointer",
                     fontWeight: 500,
                   }}
-                  onClick={() => navigate("/verify")}
+                  onClick={() => navigate("/verify-identity")}
                 >
                   Click here to verify your account.
                 </Box>

@@ -420,7 +420,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
             >
               Crypto
             </Link>
-            
+
             <Link
               to={"/invest/etf"}
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
@@ -438,9 +438,11 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
           >
             <span>Sign In</span>
           </Link>
-          <div className="bg-gradient-to-br from-primary to-primary-dark text-white px-5 py-2 rounded-lg hover:bg-primary-dark cursor-pointer transition-all duration-500">
-            <span>Get Started</span>
-          </div>
+          <Link to={"/sign-up"}>
+            <div className="bg-gradient-to-br from-primary to-primary-dark text-white px-5 py-2 rounded-lg hover:bg-primary-dark cursor-pointer transition-all duration-500">
+              <span>Get Started</span>
+            </div>
+          </Link>
         </div>
         <div className=" lg:hidden " onClick={handleHamBurgerMenu}>
           {hamburger ? (

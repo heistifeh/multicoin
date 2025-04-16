@@ -6,6 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 import toast from "react-hot-toast";
+import { useSelector } from "react-redux";
 const VerifyIdentity = () => {
   //states
   const [loading, setLoading] = useState(false);
@@ -18,6 +19,9 @@ const VerifyIdentity = () => {
   const [frontImage, setFrontImage] = useState(null);
   const [backImage, setBackImage] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
+
+  const { currentUser } = useSelector((state) => state.user);
+
   const navigate = useNavigate();
 
   const uploadFile = async (img) => {
@@ -97,20 +101,35 @@ const VerifyIdentity = () => {
       setImageUploadError(null);
       setImageUploadSuccess(null);
       setLoading(true);
-      const res = await fetch("api/verify/verify-identity", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `/api/verify/verify-identity/${currentUser._id}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
       if (data.success === false) {
         return setImageUploadError("unable to upload images, please retry.");
       }
 
-      toast.success("Upload success!");
-      setLoading(false);
-      setImageUploadError(null);
-      navigate("/");
+      if (data.isIdVerified) {
+        // Update the frontend state with the new verification status
+        // (e.g., set user as verified, hide verification message)
+        toast.success("Upload success! Identity verification in progress...");
+        setLoading(false);
+        setImageUploadError(null);
+        currentUser.isIdVerified = true; // Update the currentUser state directly
+
+        // Optionally: You can set this in your global state if using Redux
+        // dispatch(setUserVerified(true)); // If using Redux to manage state
+
+        // Navigate to dashboard or a verification success page
+        navigate("/dashboard");
+      } else {
+        toast.error("Verification failed. Please try again.");
+      }
     } else {
       setImageUploadError("please fill all credentials.");
     }

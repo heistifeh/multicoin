@@ -37,10 +37,12 @@ const Header = () => {
               className="absolute inset-0 bg-gradient-to-r from-primary via-primary-dark to-primary 
                   animate-gradient"
             ></div>
-            <div className="flex items-center relative z-10 text-white px-5 py-2 transition-all duration-500 justify-center gap-2">
-              <span>Get Started</span>
-              <MdArrowOutward />
-            </div>
+            <Link to={"/sign-up"}>
+              <div className="flex items-center relative z-10 text-white px-5 py-2 transition-all duration-500 justify-center gap-2">
+                <span>Get Started</span>
+                <MdArrowOutward />
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -181,7 +183,8 @@ const Header = () => {
             >
               Read Our Research
             </a>
-            <Link to={"/sign-up"}
+            <Link
+              to={"/sign-up"}
               target="_blank"
               className="px-6 py-3 bg-primary text-white rounded hover:bg-purple-700 transition"
             >

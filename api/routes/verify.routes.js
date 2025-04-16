@@ -4,6 +4,6 @@ import { verifyIdentity } from "../controller/verifyIdentity.controller.js";
 
 const router = express.Router();
 
-router.post("/verify-identity", verifyToken, verifyIdentity);
+router.post("/verify-identity/:id", verifyToken, verifyIdentity);
 
 export default router;
