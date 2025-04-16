@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Grid,
   Typography,
@@ -12,8 +12,9 @@ import {
   IconButton,
   Snackbar,
   Alert,
+  Divider,
+  Collapse,
 } from "@mui/material";
-// import QRCode from 'qrcode.react';
 import { QRCodeSVG } from "qrcode.react";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { useSelector } from "react-redux";
@@ -22,31 +23,27 @@ const DepositScreen = () => {
   const [paymentMethod, setPaymentMethod] = useState("");
   const [amount, setAmount] = useState(1000);
   const [showTransferScreen, setShowTransferScreen] = useState(false);
+  const [showDepositForm, setShowDepositForm] = useState(false); // Toggles deposit form section
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [openConfirmSnackbar, setOpenConfirmSnackbar] = useState(false);
   const [balance, setBalance] = useState({});
   const [pendingDeposits, setPendingDeposits] = useState([]);
-  const [message, setMessage] = useState("");
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
   const [userId, setUserId] = useState(null);
 
   const { currentUser } = useSelector((state) => state.user);
-
-  ///////////////////////////////////////////////////
-  //   console.log(currentUser.email);
+  const depositFormRef = useRef(null);
 
   const loadUserStats = React.useCallback(async () => {
     if (currentUser) {
       try {
-        // Get the JWT token from your auth context or localStorage (depending on your setup)
-
         // Fetch user balance
         const balanceResponse = await fetch(
           `/api/user/${currentUser._id}/balance`
         );
         if (!balanceResponse.ok) {
-          throw new Error(`Failed to fetch balance: `);
+          throw new Error("Failed to fetch balance:");
         }
         const balance = await balanceResponse.json();
         console.log(balance);
@@ -56,26 +53,23 @@ const DepositScreen = () => {
           `/api/transactions/pending/${currentUser._id}`
         );
         if (!pendingDepositsResponse.ok) {
-          throw new Error(`Failed to fetch pending deposits:`);
+          throw new Error("Failed to fetch pending deposits:");
         }
         const pendingDeposits = await pendingDepositsResponse.json();
         console.log(pendingDeposits);
       } catch (error) {
-        console.error("Failed to load the function", error);
+        console.error("Failed to load user stats", error);
       }
     }
   }, [currentUser]);
-  //////////////////////////////////////////////////////////
+
   useEffect(() => {
     if (currentUser && currentUser._id) {
       setUserId(currentUser._id);
     }
   }, [currentUser]);
 
-  React.useEffect(() => {
-    // const FIVE_SECONDS_MS = 5 * 1000; // 5 seconds in milliseconds
-    const FIVE_SECONDS_MS = 5 * 60 * 60 * 1000; // 5 hours in milliseconds
-
+  useEffect(() => {
     try {
       const handleLoadStat = async () => {
         await loadUserStats();
@@ -84,11 +78,24 @@ const DepositScreen = () => {
     } catch (error) {
       console.error("Failed to update balance and stats:", error);
     }
-  }, []);
+  }, [loadUserStats]);
 
+  // Auto scroll to deposit form when shown
+  useEffect(() => {
+    if (showDepositForm && depositFormRef.current) {
+      depositFormRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [showDepositForm]);
+
+  // Wallet addresses for QR code and copy functionality
   const walletAddresses = {
     BTC: "bc1qd6evmz0hwgd4xpuxphrhzhtd32s9gfp0y086wm",
     ETH: "0x85454158cC78EA7cb9C621b8fdB95dd493AFA7c2",
+    USDT_ERC20: "0xYourEthereumAddress",
+    USDT_TRC20: "TYourTronAddress",
+    USDT_BEP20: "bnbYourBSCAddress",
+    BNB: "bnbYourBSCAddress",
+    SOL: "solYourSolanaAddress",
   };
 
   const handlePaymentMethodChange = (event) => {
@@ -116,32 +123,21 @@ const DepositScreen = () => {
   };
 
   const handleCloseSnackbar = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
+    if (reason === "clickaway") return;
     setOpenSnackbar(false);
   };
 
-  const createDeposit = async ({
-    username = currentUser.username, // Send current user's ID
-   
-    amount, // Amount from the state
-   
-  }) => {
+  const createDeposit = async ({ username = currentUser.username, amount }) => {
     try {
       const resultResponse = await fetch("/api/transactions/create", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json", // The content type should be JSON
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          username,
-          amount: amount, // Amount from the state
-        }),
+        body: JSON.stringify({ username, amount }),
       });
       const result = await resultResponse.json();
       console.log(result);
-
       return result;
     } catch (error) {
       console.error("Error creating deposit:", error);
@@ -154,14 +150,8 @@ const DepositScreen = () => {
 
   const handleConfirmTransaction = async () => {
     try {
-      // Assume we have the user's email stored in a variable or context
-      // Replace with actual user email
-      // const result = await createDeposit(user?.username, parseFloat(amount), paymentMethod);
-      const result = await createDeposit({
-        amount: parseFloat(amount), // Amount from the state
-      });
+      const result = await createDeposit({ amount: parseFloat(amount) });
       console.log(result);
-      
       if (result.success) {
         setSnackbarMessage("Deposit request created successfully!");
         setSnackbarSeverity("success");
@@ -170,17 +160,13 @@ const DepositScreen = () => {
           `/api/transactions/pending/${currentUser._id}`
         );
         const pendingDeposits = await pendingDepositsResponse.json();
-        console.log(pendingDeposits); // Refresh pending deposits
         setPendingDeposits(pendingDeposits);
-        // We'll return to the main screen after the snackbar is closed
       } else {
-        console.error("Failed to create deposit:", result.message);
         setSnackbarMessage("Failed to create deposit. Please try again.");
         setSnackbarSeverity("error");
         setOpenConfirmSnackbar(true);
       }
     } catch (error) {
-      console.error("Error creating deposit:", error);
       setSnackbarMessage("An error occurred. Please try again.");
       setSnackbarSeverity("error");
       setOpenConfirmSnackbar(true);
@@ -188,48 +174,16 @@ const DepositScreen = () => {
   };
 
   const handleCloseConfirmSnackbar = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
+    if (reason === "clickaway") return;
     setOpenConfirmSnackbar(false);
     if (snackbarSeverity === "success") {
       setShowTransferScreen(false);
-      setAmount(1000); // Reset amount to default
+      setAmount(1000); // Reset to default
       setPaymentMethod(""); // Reset payment method
     }
   };
 
-  const fetchUserBalance = async () => {
-    if (userId) {
-      setBalance(balance);
-    }
-  };
-
-  const fetchPendingDeposits = async () => {
-    if (userId) {
-      setPendingDeposits(pendingDeposits);
-    }
-  };
-
-  const handleDeposit = async (e) => {
-    e.preventDefault();
-    await createDeposit({
-      user_id: currentUser._id, // Send current user's ID
-      type: "deposit", // Deposit type
-      amount: parseFloat(amount), // Amount from the state
-      status: "pending", // The transaction is pending
-    });
-    setMessage(result.message);
-    if (result.success) {
-      setAmount("");
-      // Fetch pending deposits
-      const pendingDepositsResponse = await fetch(
-        `api/transactions/pending/${currentUser._id}`
-      );
-      const pendingDeposits = await pendingDepositsResponse.json();
-    }
-  };
-
+  // Render the transfer/confirmation screen once the user submits the deposit form
   const renderTransferScreen = () => (
     <Paper sx={{ p: 3, height: "100%" }}>
       <Typography variant="h5" gutterBottom>
@@ -312,91 +266,218 @@ const DepositScreen = () => {
   );
 
   return (
-    <Grid container spacing={3}>
-      <Grid item xs={12} md={6}>
-        <Paper sx={{ p: 3, height: "100%" }}>
+    <Grid spacing={3}>
+      {/* Guidelines & Instructions Section (Full Width) */}
+      <Grid item xs={12}>
+        <Paper sx={{ p: 3, height: "100%", overflowY: "auto" }}>
           <Typography variant="h5" gutterBottom>
-            Instructions on how to make a deposit
+            Crypto Payments – Secure & Instant Deposits
           </Typography>
+          <Typography variant="body1" gutterBottom>
+            At Multicoin Capital, we offer fast and secure cryptocurrency
+            payment options for funding your account. Follow the instructions
+            below to ensure smooth transactions.
+          </Typography>
+          <Divider sx={{ my: 2 }} />
           <Typography variant="h6" gutterBottom>
-            STEP 1
+            Accepted Cryptocurrencies & Wallet Addresses
           </Typography>
-          <Typography paragraph>
-            Enter the amount you want to deposit in the form. A minimum amount
-            of $1000 USD worth in Bitcoin is allowed. There is no maximum amount
-            to deposit.
+          <Typography variant="body2" gutterBottom>
+            To fund your account, send your chosen cryptocurrency to the
+            corresponding wallet address. Ensure you select the correct network
+            to avoid lost transactions.
           </Typography>
+          <Typography variant="subtitle1" gutterBottom>
+            Bitcoin (BTC)
+          </Typography>
+          <Typography variant="body2" gutterBottom>
+            Wallet Address: ?<br />
+            Network: Bitcoin (BTC) Mainnet
+          </Typography>
+          <Typography variant="subtitle1" gutterBottom>
+            Ethereum (ETH) & ERC-20 Tokens (USDT, USDC, etc.)
+          </Typography>
+          <Typography variant="body2" gutterBottom>
+            Wallet Address: ?<br />
+            Network: ERC-20 (Ethereum Mainnet)
+          </Typography>
+          <Typography variant="subtitle1" gutterBottom>
+            Tether (USDT) - Multiple Networks
+          </Typography>
+          <Typography variant="body2" gutterBottom>
+            USDT (ERC-20): 0xYourEthereumAddress (Ethereum Mainnet)
+            <br />
+            USDT (TRC-20): TYourTronAddress (Tron Network)
+            <br />
+            USDT (BEP-20): bnbYourBSCAddress (Binance Smart Chain)
+          </Typography>
+          <Typography variant="body2" color="textSecondary" gutterBottom>
+            (Ensure you select the correct USDT network to prevent failed
+            transactions.)
+          </Typography>
+          <Typography variant="subtitle1" gutterBottom>
+            Binance Coin (BNB) & BEP-20 Tokens (USDT, USDC, etc.)
+          </Typography>
+          <Typography variant="body2" gutterBottom>
+            Wallet Address: ?<br />
+            Network: BEP-20 (Binance Smart Chain)
+          </Typography>
+          <Typography variant="subtitle1" gutterBottom>
+            Solana (SOL)
+          </Typography>
+          <Typography variant="body2" gutterBottom>
+            Wallet Address: ?<br />
+            Network: Solana (SOL) Mainnet
+          </Typography>
+          <Divider sx={{ my: 2 }} />
           <Typography variant="h6" gutterBottom>
-            STEP 2
+            Important Deposit Guidelines
           </Typography>
-          <Typography paragraph>
-            Click on show QR code button at the bottom of the form, a QR code
-            will be displayed for you to scan. Scan QR code and make payment to
-            the QR code's wallet address.
+          <Typography variant="body2" component="div">
+            <ul>
+              <li>
+                ✅ Always Double-Check the Wallet Address – Cryptocurrency
+                transactions are irreversible. Ensure you enter the correct
+                address.
+              </li>
+              <li>
+                ✅ Select the Right Network – Sending funds to the wrong network
+                (e.g., ERC-20 USDT to a TRC-20 address) may result in lost
+                funds.
+              </li>
+              <li>
+                ✅ Minimum Deposit Amounts Apply – Small deposits below the
+                required minimum may not be credited. (Minimum Deposit is
+                $1,000)
+              </li>
+              <li>
+                ✅ Network Fees Apply – Blockchain transactions require network
+                fees (gas fees), which must be covered by the sender.
+              </li>
+              <li>
+                ✅ Processing Time – Deposits are processed after blockchain
+                confirmation:
+                <ul>
+                  <li>Bitcoin (BTC): ~10-30 minutes</li>
+                  <li>Ethereum (ETH) & ERC-20 Tokens: ~5-15 minutes</li>
+                  <li>BEP-20 & TRC-20 Tokens: ~1-5 minutes</li>
+                  <li>Solana (SOL): ~1-2 minutes</li>
+                </ul>
+              </li>
+            </ul>
           </Typography>
+          <Divider sx={{ my: 2 }} />
           <Typography variant="h6" gutterBottom>
-            STEP 3
+            Confirming Your Deposit
           </Typography>
-          <Typography paragraph>
-            After payment has been made, click deposit button to submit form.
+          <Typography variant="body2" gutterBottom>
+            Once you’ve sent the funds, submit your payment details for
+            verification:
           </Typography>
+          <Typography variant="body2" gutterBottom component="div">
+            Send an email to: [Your Support Email] with:
+            <ul>
+              <li>Transaction ID (TxID) from your wallet</li>
+              <li>Amount Sent & Cryptocurrency Used</li>
+              <li>Your Account Username or ID</li>
+            </ul>
+          </Typography>
+          <Divider sx={{ my: 2 }} />
           <Typography variant="h6" gutterBottom>
-            STEP 4
+            Need Help? Contact Support
           </Typography>
-          <Typography paragraph>
-            Once payment is received, your available balance will be funded with
-            deposited amount.
+          <Typography variant="body2" gutterBottom>
+            If you encounter any issues with your crypto deposit, our team is
+            available to assist you.
           </Typography>
+          <Typography variant="body2" gutterBottom>
+            Email: [Your Support Email] <br />
+            Live Chat: [Your Website Live Chat Link]
+          </Typography>
+          <Typography variant="body2" color="textSecondary" gutterBottom>
+            ⚠️ Warning: Protect Your Funds – Never send funds to an address not
+            listed on this page. We will never request private keys or wallet
+            passwords – beware of scams. If you're unsure about a transaction,
+            contact support before sending funds.
+          </Typography>
+          <Divider sx={{ my: 2 }} />
+          <Typography variant="h6" gutterBottom>
+            Ready to Fund Your Account? 🚀
+          </Typography>
+          <Typography variant="body2" gutterBottom>
+            Choose your preferred cryptocurrency and send funds now to get
+            started!
+          </Typography>
+          <Button
+            variant="contained"
+            color="secondary"
+            fullWidth
+            sx={{ mt: 2 }}
+            onClick={() => setShowDepositForm(true)}
+          >
+            View Your Wallet & Deposit Now
+          </Button>
         </Paper>
       </Grid>
-      <Grid item xs={12} md={6}>
-        {showTransferScreen ? (
-          renderTransferScreen()
-        ) : (
-          <Paper sx={{ p: 3, height: "100%" }}>
-            <Typography variant="h5" gutterBottom>
-              Make Deposit
-            </Typography>
-            <form onSubmit={handleSubmit}>
-              <FormControl fullWidth margin="normal">
-                <InputLabel id="payment-method-label">
-                  Select Payment Method
-                </InputLabel>
-                <Select
-                  labelId="payment-method-label"
-                  value={paymentMethod}
-                  onChange={handlePaymentMethodChange}
-                  label="Select Payment Method"
-                  required
-                >
-                  <MenuItem value="BTC">BTC</MenuItem>
-                  <MenuItem value="ETH">ETH</MenuItem>
-                </Select>
-              </FormControl>
-              <TextField
-                fullWidth
-                label="Enter Amount"
-                type="number"
-                value={amount}
-                onChange={handleAmountChange}
-                margin="normal"
-                required
-                inputProps={{ min: 1000 }}
-                helperText="Minimum deposit amount is $1000"
-              />
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                fullWidth
-                sx={{ mt: 2 }}
-              >
-                Submit Deposit
-              </Button>
-            </form>
-          </Paper>
-        )}
-      </Grid>
+
+      {/* Deposit Form / Transfer Screen Section (Full Width) */}
+      {showDepositForm && (
+        <Grid item xs={12} ref={depositFormRef}>
+          <Collapse in={showDepositForm} timeout="auto" unmountOnExit>
+            {showTransferScreen ? (
+              renderTransferScreen()
+            ) : (
+              <Paper sx={{ p: 3, height: "100%" }}>
+                <Typography variant="h5" gutterBottom>
+                  Make Deposit
+                </Typography>
+                <form onSubmit={handleSubmit}>
+                  <FormControl fullWidth margin="normal">
+                    <InputLabel id="payment-method-label">
+                      Select Payment Method
+                    </InputLabel>
+                    <Select
+                      labelId="payment-method-label"
+                      value={paymentMethod}
+                      onChange={handlePaymentMethodChange}
+                      label="Select Payment Method"
+                      required
+                    >
+                      <MenuItem value="BTC">BTC</MenuItem>
+                      <MenuItem value="ETH">ETH</MenuItem>
+                      <MenuItem value="USDT_ERC20">USDT (ERC-20)</MenuItem>
+                      <MenuItem value="USDT_TRC20">USDT (TRC-20)</MenuItem>
+                      <MenuItem value="USDT_BEP20">USDT (BEP-20)</MenuItem>
+                      <MenuItem value="BNB">BNB</MenuItem>
+                      <MenuItem value="SOL">SOL</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <TextField
+                    fullWidth
+                    label="Enter Amount"
+                    type="number"
+                    value={amount}
+                    onChange={handleAmountChange}
+                    margin="normal"
+                    required
+                    inputProps={{ min: 1000 }}
+                    helperText="Minimum deposit amount is $1000"
+                  />
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    sx={{ mt: 2 }}
+                  >
+                    Submit Deposit
+                  </Button>
+                </form>
+              </Paper>
+            )}
+          </Collapse>
+        </Grid>
+      )}
     </Grid>
   );
 };
