@@ -46,6 +46,12 @@ const userSlice = createSlice({
       state.error = action.payload;
       state.loading = false;
     },
+    updateVerificationStatus: (state, action) => {
+      // Update the user's verification status (isIdVerified)
+      if (state.currentUser) {
+        state.currentUser.isIdVerified = action.payload; // Update the verification status
+      }
+    },
   },
 });
 
@@ -59,5 +65,6 @@ export const {
   verifyEmailStart,
   verifyEmailSuccess,
   verifyEmailFailure,
+  updateVerificationStatus,  // New action for updating verification status
 } = userSlice.actions;
 export default userSlice.reducer;

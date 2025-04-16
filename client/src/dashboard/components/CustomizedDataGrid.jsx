@@ -1,48 +1,42 @@
-import * as React from 'react';
+import React from 'react';
+import { Paper, Typography } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
-import { columns, rows } from '../internals/data/gridData';
+import { columns, useTransactionData } from '../internals/data/gridData';  // Import the columns and hook
 
 export default function CustomizedDataGrid() {
+  const { rows, loading } = useTransactionData();  // Use the custom hook to get rows and loading
+
+  // Customize pageTitle rendering
+  const renderPageTitle = (params) => {
+    // Check if the transaction type is "Deposit"
+    const style = params.row.transactionType === 'Deposit'
+      ? { backgroundColor: '#e0f7fa', fontWeight: 'bold', color: '#00796b' }
+      : {};
+
+    return <div style={style}>{params.value}</div>;
+  };
+
+  // Update the columns to include the custom render for pageTitle
+  const customColumns = columns.map((col) => {
+    if (col.field === 'pageTitle') {
+      return {
+        ...col,
+        renderCell: renderPageTitle, // Use custom render for pageTitle
+      };
+    }
+    return col;
+  });
+
   return (
-    <DataGrid
-      checkboxSelection
-      rows={rows}
-      columns={columns}
-      getRowClassName={(params) =>
-        params.indexRelativeToCurrentPage % 2 === 0 ? 'even' : 'odd'
-      }
-      initialState={{
-        pagination: { paginationModel: { pageSize: 20 } },
-      }}
-      pageSizeOptions={[10, 20, 50]}
-      disableColumnResize
-      density="compact"
-      slotProps={{
-        filterPanel: {
-          filterFormProps: {
-            logicOperatorInputProps: {
-              variant: 'outlined',
-              size: 'small',
-            },
-            columnInputProps: {
-              variant: 'outlined',
-              size: 'small',
-              sx: { mt: 'auto' },
-            },
-            operatorInputProps: {
-              variant: 'outlined',
-              size: 'small',
-              sx: { mt: 'auto' },
-            },
-            valueInputProps: {
-              InputComponentProps: {
-                variant: 'outlined',
-                size: 'small',
-              },
-            },
-          },
-        },
-      }}
-    />
+    <Paper sx={{ p: 3, height: '100%' }}>
+      <Typography variant="h5" gutterBottom>
+        Transaction Data
+      </Typography>
+      {loading ? (
+        <Typography>Loading...</Typography>  // Display loading while fetching
+      ) : (
+        <DataGrid columns={customColumns} rows={rows} />  // Use custom columns with updated render
+      )}
+    </Paper>
   );
 }

@@ -53,7 +53,7 @@ export default function SessionsChart() {
     <Card variant="outlined" sx={{ width: '100%' }}>
       <CardContent>
         <Typography component="h2" variant="subtitle2" gutterBottom>
-          Sessions
+        Portfolio Growth & Insights
         </Typography>
         <Stack sx={{ justifyContent: 'space-between' }}>
           <Stack
@@ -70,7 +70,7 @@ export default function SessionsChart() {
             <Chip size="small" color="success" label="+35%" />
           </Stack>
           <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-            Sessions per day for the last 30 days
+          Investments Trends Over the Last 30 Days
           </Typography>
         </Stack>
         <LineChart
@@ -84,8 +84,8 @@ export default function SessionsChart() {
           ]}
           series={[
             {
-              id: 'direct',
-              label: 'Direct',
+              id: 'investment',
+              label: 'Investment',
               showMark: false,
               curve: 'linear',
               stack: 'total',
@@ -98,8 +98,8 @@ export default function SessionsChart() {
               ],
             },
             {
-              id: 'referral',
-              label: 'Referral',
+              id: 'refferalGains',
+              label: 'Refferal Gains',
               showMark: false,
               curve: 'linear',
               stack: 'total',
@@ -112,8 +112,8 @@ export default function SessionsChart() {
               ],
             },
             {
-              id: 'organic',
-              label: 'Organic',
+              id: 'organicReturns',
+              label: 'Organic Returns',
               showMark: false,
               curve: 'linear',
               stack: 'total',

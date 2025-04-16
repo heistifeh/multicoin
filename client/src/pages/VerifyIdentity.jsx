@@ -4,9 +4,11 @@ import { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import {
+  updateVerificationStatus
+} from "../redux/user/userSlice.js";
 import toast from "react-hot-toast";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 const VerifyIdentity = () => {
   //states
   const [loading, setLoading] = useState(false);
@@ -21,7 +23,7 @@ const VerifyIdentity = () => {
   const [imageUploadError, setImageUploadError] = useState(null);
 
   const { currentUser } = useSelector((state) => state.user);
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const uploadFile = async (img) => {
@@ -120,7 +122,7 @@ const VerifyIdentity = () => {
         toast.success("Upload success! Identity verification in progress...");
         setLoading(false);
         setImageUploadError(null);
-        currentUser.isIdVerified = true; // Update the currentUser state directly
+        dispatch(updateVerificationStatus(true)) // Update the currentUser state directly
 
         // Optionally: You can set this in your global state if using Redux
         // dispatch(setUserVerified(true)); // If using Redux to manage state
