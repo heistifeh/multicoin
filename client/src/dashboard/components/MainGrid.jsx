@@ -4,20 +4,20 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Copyright from "../internals/components/Copyright";
-import ChartUserByCountry from "./ChartUserByCountry";
-import CustomizedTreeView from "./CustomizedTreeView";
-import CustomizedDataGrid from "./CustomizedDataGrid";
-import HighlightedCard from "./HighlightedCard";
-import PageViewsBarChart from "./PageViewsBarChart";
-import SessionsChart from "./SessionsChart";
-import StatCard from "./StatCard";
+import ChartUserByCountry from "./ChartUserByCountry.jsx";
+import CustomizedTreeView from "./CustomizedTreeView.jsx";
+import CustomizedDataGrid from "./CustomizedDataGrid.jsx";
+import HighlightedCard from "./HighlightedCard.jsx";
+import PageViewsBarChart from "./PageViewsBarChart.jsx";
+import SessionsChart from "./SessionsChart.jsx";
+import StatCard from "./StatCard.jsx";
 import { useState, useCallback } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 const fallbackData = [
   {
     title: 'Total Deposit',
-    value: '$200.00',
+    value: '$0.00',
     interval: 'All time',
     trend: 'up',
     data: [

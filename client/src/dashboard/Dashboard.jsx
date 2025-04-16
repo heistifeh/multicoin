@@ -8,6 +8,7 @@ import AppNavbar from "./components/AppNavbar";
 import Header from "./components/Header";
 import MainGrid from "./components/MainGrid";
 import SideMenu from "./components/SideMenu";
+import AssetScreen from "./components/AssetScreen";
 import AppTheme from "../shared-theme/AppTheme";
 import {
   chartsCustomizations,
@@ -25,6 +26,7 @@ const xThemeComponents = {
 import { useDispatch, useSelector } from "react-redux";
 import DepositScreen from "./components/DepositScreen";
 import WithdrawalScreen from "./components/WithdrawalScreen";
+import Analytics from "./components/Analytics";
 
 
 export default function Dashboard(props) {
