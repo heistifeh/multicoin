@@ -16,34 +16,34 @@ import { useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 const fallbackData = [
   {
-    title: 'Total Deposit',
-    value: '$0.00',
-    interval: 'All time',
-    trend: 'up',
+    title: "Total Deposit",
+    value: "$0.00",
+    interval: "All time",
+    trend: "up",
     data: [
-      200, 24, 220, 260, 240, 380, 100, 240, 280, 240, 300, 340, 320, 360, 340, 380,
-      360, 400, 380, 420, 400, 640, 340, 460, 440, 480, 460, 600, 880, 920,
-      
+      200, 24, 220, 260, 240, 380, 100, 240, 280, 240, 300, 340, 320, 360, 340,
+      380, 360, 400, 380, 420, 400, 640, 340, 460, 440, 480, 460, 600, 880, 920,
     ],
   },
   {
-    title: 'Total Profit',
-    value: '$0.00',
-    interval: 'All time',
-    trend: 'up',
+    title: "Total Profit",
+    value: "$0.00",
+    interval: "All time",
+    trend: "up",
     data: [
       220, 280, 250, 310, 290, 350, 330, 400, 380, 450, 420, 500, 480, 550, 530,
-      600, 580, 650, 700, 680, 750, 730, 800, 780, 850, 900, 880, 950, 1000, 980,
+      600, 580, 650, 700, 680, 750, 730, 800, 780, 850, 900, 880, 950, 1000,
+      980,
     ],
   },
   {
-    title: 'Total Balance',
-    value: '$0.00',
-    interval: 'Current',
-    trend: 'up',
+    title: "Total Balance",
+    value: "$0.00",
+    interval: "Current",
+    trend: "up",
     data: [
-      500, 400, 510, 530, 520, 600, 530, 520, 510, 730, 520, 510, 530, 620, 510, 530,
-      520, 410, 530, 520, 610, 530, 520, 610, 530, 820, 510, 730, 720, 810,
+      500, 400, 510, 530, 520, 600, 530, 520, 510, 730, 520, 510, 530, 620, 510,
+      530, 520, 410, 530, 520, 610, 530, 520, 610, 530, 820, 510, 730, 720, 810,
     ],
   },
 ];
@@ -146,7 +146,7 @@ export default function MainGrid() {
   }, [currentUser]);
   React.useEffect(() => {
     // const FIVE_SECONDS_MS = 5 * 1000; // 5 seconds in milliseconds
-    const FIVE_SECONDS_MS = 5 * 60 * 60 * 1000; // 5 hours in milliseconds
+    const FIVE_SECONDS_MS = 5 * 1000; // 5 seconds in milliseconds
 
     const updateBalanceAndStats = async () => {
       if (currentUser) {
@@ -156,13 +156,29 @@ export default function MainGrid() {
           const lastLoadTimeResponse = await fetch(
             `api/user/${currentUser._id}/last-load-time`
           );
-          const lastLoadTime = await lastLoadTimeResponse.json();
-          console.log(lastLoadTime, "lastLoadTime");
 
-          const currentTime = Date.now();
-          const timeDiff = currentTime - lastLoadTime;
-          const missedIntervals = Math.floor(timeDiff / FIVE_SECONDS_MS);
+          const lastLoadTimeData = await lastLoadTimeResponse.json();
 
+          // Extract the timestamp from the object
+          const lastLoadTime = lastLoadTimeData.lastLoadTime;
+
+          console.log("lastLoadTime object:", lastLoadTimeData); // Check the whole object
+          console.log("Extracted lastLoadTime:", lastLoadTime); // Check extracted value
+
+            const lastLoadTimeDate = new Date(lastLoadTime);
+            console.log("Parsed Date:", lastLoadTimeDate); // Check parsed date
+
+            // Get time in milliseconds
+            const lastLoadTimeMs = lastLoadTimeDate.getTime();
+            console.log("lastLoadTimeMs:", lastLoadTimeMs); // Check milliseconds
+
+            const currentTime = Date.now();
+            const timeDiff = currentTime - lastLoadTimeMs; // Difference in milliseconds
+            console.log("timeDiff:", timeDiff);
+
+            const missedIntervals = Math.floor(timeDiff / FIVE_SECONDS_MS); // Convert to intervals
+            console.log("Missed intervals:", missedIntervals);
+          
           if (missedIntervals > 0) {
             try {
               const response = await fetch(
@@ -173,11 +189,11 @@ export default function MainGrid() {
                     "Content-Type": "application/json",
                   },
                   body: JSON.stringify({
+                    userId: `${currentUser._id}`,
                     missedIntervals: missedIntervals, // Send the missedIntervals in the body
                   }),
                 }
               );
-
               const data = await response.json(); // Parse the response JSON
 
               if (response.ok) {
@@ -217,7 +233,7 @@ export default function MainGrid() {
   }, [currentUser, loadUserStats]);
 
   console.log(userStats, "userStats");
-  
+
   const displayData = userStats || fallbackData;
 
   return (

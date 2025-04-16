@@ -31,7 +31,7 @@ export default function PageViewsBarChart() {
             }}
           >
             <Typography variant="h4" component="p">
-              1.3M
+              2.3M
             </Typography>
             <Chip size="small" color="error" label="-8%" />
           </Stack>
