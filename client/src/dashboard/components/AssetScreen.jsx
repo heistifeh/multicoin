@@ -7,7 +7,10 @@ import {
   TextField,
   Button,
   CircularProgress,
-  Box,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { FiArrowUpRight, FiArrowDown } from "react-icons/fi";
@@ -38,26 +41,45 @@ const PriceChange = styled(Typography)(({ theme, isPositive }) => ({
   color: isPositive ? theme.palette.success.main : theme.palette.error.main,
 }));
 
-const AssetScreen = ({handleSelect}) => {
+const AssetScreen = ({ handleSelect }) => {
+  const [assetType, setAssetType] = useState("crypto"); // Default asset type is 'crypto'
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const url =
+  const urlCrypto =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
+  const urlStocks = "/api/stocks"; // Placeholder for stock API
+  const urlRealEstate = "/api/real-estate"; // Placeholder for real estate data
+  const urlMutualFunds = "/api/mutual-funds"; // Placeholder for mutual funds data
+  const urlETFs = "/api/etfs"; // Placeholder for ETF data
 
+  // Asset data fetching logic
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const cachedData = Cookies.get("cryptoData");
+      const cachedData = Cookies.get(`${assetType}Data`);
 
       if (cachedData) {
         setData(JSON.parse(cachedData));
         setLoading(false);
       } else {
+        let url;
+        if (assetType === "crypto") {
+          url = urlCrypto;
+        } else if (assetType === "stocks") {
+          url = urlStocks;
+        } else if (assetType === "realEstate") {
+          url = urlRealEstate;
+        } else if (assetType === "mutualFunds") {
+          url = urlMutualFunds;
+        } else if (assetType === "etfs") {
+          url = urlETFs;
+        }
+
         try {
           const response = await axios.get(url);
           setData(response.data);
-          Cookies.set("cryptoData", JSON.stringify(response.data), {
+          Cookies.set(`${assetType}Data`, JSON.stringify(response.data), {
             expires: 1 / 24,
           }); // expires in 1 hour
         } catch (error) {
@@ -69,59 +91,81 @@ const AssetScreen = ({handleSelect}) => {
     };
 
     fetchData();
-  }, []);
+  }, [assetType]);
+
+  const handleAssetChange = (event) => {
+    setAssetType(event.target.value); // Update the selected asset type
+  };
 
   if (loading) return <CircularProgress />;
   if (!data) return <Typography>No data available</Typography>;
 
-  return (<>
-  
-    <Grid item xs={12}>
-    <Typography variant="h4" gutterBottom>
-      Cryptocurrency Assets
-    </Typography>
-  </Grid>
-    <Grid container spacing={3}>
-      {/* Top Typography Block */}
-     
-
-      {/* Data mapping for cryptocurrency assets */}
-      
-      {data.map((crypto) => (
-        <Grid item xs={12} sm={6} md={4} lg={3} key={crypto.id}>
-          <AssetCard elevation={3}>
-            <CryptoIcon src={crypto.image} alt={crypto.name} />
-            <Typography variant="h6" gutterBottom>
-              {crypto.name}
-            </Typography>
-            <Typography variant="subtitle1" gutterBottom>
-              ${crypto.current_price.toLocaleString()}
-            </Typography>
-            <PriceChange
-              variant="body2"
-              isPositive={crypto.price_change_percentage_24h > 0}
-            >
-              {crypto.price_change_percentage_24h > 0 ? (
-                <FiArrowUpRight />
-              ) : (
-                <FiArrowDown />
-              )}
-              {Math.abs(crypto.price_change_percentage_24h).toFixed(2)}%
-            </PriceChange>
-            <TextField
-              type="number"
-              label="Enter amount"
-              variant="outlined"
-              fullWidth
-              margin="normal"
-            />
-            <Button onClick={handleSelect} variant="contained" color="primary" fullWidth>
-              Buy
-            </Button>
-          </AssetCard>
-        </Grid>
-      ))}
-    </Grid>
+  return (
+    <>
+      <Grid item xs={12}>
+        <Typography variant="h4" gutterBottom>
+          {assetType.charAt(0).toUpperCase() + assetType.slice(1)} Assets
+        </Typography>
+        <Typography variant="body1" color="textSecondary" gutterBottom>
+          Choose any of the assets below that you want to invest in. Select your
+          preferred asset to start your investment journey today!
+        </Typography>
+        <FormControl fullWidth margin="normal">
+          <InputLabel>Choose Asset Type</InputLabel>
+          <Select
+            value={assetType}
+            onChange={handleAssetChange}
+            label="Choose Asset Type"
+          >
+            <MenuItem value="crypto">Cryptocurrencies</MenuItem>
+            <MenuItem value="stocks">Stocks</MenuItem>
+            <MenuItem value="realEstate">Real Estate</MenuItem>
+            <MenuItem value="mutualFunds">Mutual Funds</MenuItem>
+            <MenuItem value="etfs">ETFs</MenuItem>
+          </Select>
+        </FormControl>
+      </Grid>
+      <Grid container spacing={3}>
+        {data.map((asset) => (
+          <Grid item xs={12} sm={6} md={4} lg={3} key={asset.id}>
+            <AssetCard elevation={3}>
+              <CryptoIcon src={asset.image} alt={asset.name} />
+              <Typography variant="h6" gutterBottom>
+                {asset.name}
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom>
+                ${asset.current_price ? asset.current_price.toLocaleString() : asset.price}
+              </Typography>
+              <PriceChange
+                variant="body2"
+                isPositive={asset.price_change_percentage_24h > 0}
+              >
+                {asset.price_change_percentage_24h > 0 ? (
+                  <FiArrowUpRight />
+                ) : (
+                  <FiArrowDown />
+                )}
+                {Math.abs(asset.price_change_percentage_24h).toFixed(2)}%
+              </PriceChange>
+              <TextField
+                type="number"
+                label="Enter amount"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+              <Button
+                onClick={handleSelect}
+                variant="contained"
+                color="primary"
+                fullWidth
+              >
+                Buy
+              </Button>
+            </AssetCard>
+          </Grid>
+        ))}
+      </Grid>
     </>
   );
 };
