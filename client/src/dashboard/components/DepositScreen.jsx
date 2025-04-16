@@ -15,6 +15,8 @@ import {
   Divider,
   Collapse,
 } from "@mui/material";
+import {  Box } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { QRCodeSVG } from "qrcode.react";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { useSelector } from "react-redux";
@@ -42,7 +44,7 @@ const DepositScreen = () => {
   //   return () => {
   //     setSelectedAsset(false);
   //   };
-  // }, []); 
+  // }, []);
   const loadUserStats = React.useCallback(async () => {
     if (currentUser) {
       try {
@@ -274,9 +276,11 @@ const DepositScreen = () => {
   );
   const handleSelectAsset = () => {
     setSelectedAsset(true);
-    console.log(selectedAsset, "selectedAsset");
   };
-  
+  const handleGoBack = () => {
+    setSelectedAsset(false);
+  };
+
   return (
     <>
       {selectedAsset ? (
@@ -284,9 +288,16 @@ const DepositScreen = () => {
           {/* Guidelines & Instructions Section (Full Width) */}
           <Grid item xs={12}>
             <Paper sx={{ p: 3, height: "100%", overflowY: "auto" }}>
-              <Typography variant="h5" gutterBottom>
-                Crypto Payments – Secure & Instant Deposits
-              </Typography>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                {/* Go Back Icon Button */}
+                <IconButton onClick={handleGoBack}>
+                  <ArrowBackIcon />
+                </IconButton>
+
+                <Typography variant="h5" gutterBottom>
+                  Crypto Payments – Secure & Instant Deposits
+                </Typography>
+              </Box>
               <Typography variant="body1" gutterBottom>
                 At Multicoin Capital, we offer fast and secure cryptocurrency
                 payment options for funding your account. Follow the
@@ -495,7 +506,7 @@ const DepositScreen = () => {
           )}
         </Grid>
       ) : (
-        <AssetScreen handleSelect={handleSelectAsset}/>
+        <AssetScreen handleSelect={handleSelectAsset} />
       )}
     </>
   );

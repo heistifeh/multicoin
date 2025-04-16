@@ -7,14 +7,12 @@ import {
   TextField,
   Button,
   CircularProgress,
-  Select,
-  MenuItem,
-  InputLabel,
-  FormControl,
+  Box,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { FiArrowUpRight, FiArrowDown } from "react-icons/fi";
 import Cookies from "js-cookie";
+import DepositPage from "./DepositPage";
 
 const AssetCard = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
@@ -93,8 +91,8 @@ const AssetScreen = ({ handleSelect }) => {
     fetchData();
   }, [assetType]);
 
-  const handleAssetChange = (event) => {
-    setAssetType(event.target.value); // Update the selected asset type
+  const handleAssetChange = (type) => {
+    setAssetType(type); // Update the selected asset type
   };
 
   if (loading) return <CircularProgress />;
@@ -110,22 +108,49 @@ const AssetScreen = ({ handleSelect }) => {
           Choose any of the assets below that you want to invest in. Select your
           preferred asset to start your investment journey today!
         </Typography>
-        <FormControl fullWidth margin="normal">
-          <InputLabel>Choose Asset Type</InputLabel>
-          <Select
-            value={assetType}
-            onChange={handleAssetChange}
-            label="Choose Asset Type"
+
+        {/* Buttons for Asset Type Selection */}
+        <Box sx={{ display: "flex", gap: 2, marginBottom: 3 }}>
+          <Button
+            variant={assetType === "crypto" ? "contained" : "outlined"}
+            color="primary"
+            onClick={() => handleAssetChange("crypto")}
           >
-            <MenuItem value="crypto">Cryptocurrencies</MenuItem>
-            <MenuItem value="stocks">Stocks</MenuItem>
-            <MenuItem value="realEstate">Real Estate</MenuItem>
-            <MenuItem value="mutualFunds">Mutual Funds</MenuItem>
-            <MenuItem value="etfs">ETFs</MenuItem>
-          </Select>
-        </FormControl>
+            Cryptocurrencies
+          </Button>
+          <Button
+            variant={assetType === "stocks" ? "contained" : "outlined"}
+            color="primary"
+            onClick={handleSelect}
+          >
+            Stocks
+          </Button>
+          <Button
+            variant={assetType === "realEstate" ? "contained" : "outlined"}
+            color="primary"
+            onClick={handleSelect}
+          >
+            Real Estate
+          </Button>
+          <Button
+            variant={assetType === "mutualFunds" ? "contained" : "outlined"}
+            color="primary"
+            onClick={handleSelect}
+          >
+            Mutual Funds
+          </Button>
+          <Button
+            variant={assetType === "etfs" ? "contained" : "outlined"}
+            color="primary"
+            onClick={handleSelect}
+          >
+            ETFs
+          </Button>
+        </Box>
       </Grid>
+
       <Grid container spacing={3}>
+        {/* Map and render data for assets */}
         {data.map((asset) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={asset.id}>
             <AssetCard elevation={3}>
