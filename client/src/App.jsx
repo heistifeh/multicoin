@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./initpages/home/Home.jsx";
 import Stock from "./initpages/invest/stock/Stock.jsx";
 import Options from "./initpages/invest/options/Options.jsx";
@@ -48,8 +48,7 @@ export default function App() {
 
         <Route path="/about" element={<About />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/deposit" element={<DepositScreen />} /> 
+        <Route path="/dashboard/*" element={<Dashboard />} />
 
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route element={<PrivateRoute />}>
@@ -59,6 +58,7 @@ export default function App() {
         <Route element={<RedirectUser />}>
           <Route path="/verify-email" element={<EmailVerificationPage />} />
         </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Toaster />
     </BrowserRouter>

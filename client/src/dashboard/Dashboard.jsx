@@ -24,6 +24,7 @@ const xThemeComponents = {
 };  
 import { useDispatch, useSelector } from "react-redux";
 import DepositScreen from "./components/DepositScreen";
+import WithdrawalScreen from "./components/WithdrawalScreen";
 
 
 export default function Dashboard(props) {
@@ -61,6 +62,9 @@ export default function Dashboard(props) {
             <Routes key={location.pathname}>
               <Route index element={<MainGrid />} />
               <Route path="deposit" element={<DepositScreen />} />
+              <Route path="withdraw" element={<WithdrawalScreen />} />
+              <Route path="analytics" element={<Analytics />} />
+              <Route path="assets" element={<AssetScreen />} />
             </Routes>
           </Stack>
         </Box>

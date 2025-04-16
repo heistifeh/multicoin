@@ -17,7 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 const fallbackData = [
   {
     title: 'Total Deposit',
-    value: '$0.00',
+    value: '$200.00',
     interval: 'All time',
     trend: 'up',
     data: [

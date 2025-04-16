@@ -36,36 +36,35 @@ const DepositScreen = () => {
   ///////////////////////////////////////////////////
   //   console.log(currentUser.email);
 
-  const loadUserStat = React.useCallback(async () => {
+  const loadUserStats = React.useCallback(async () => {
     if (currentUser) {
       try {
         // Get the JWT token from your auth context or localStorage (depending on your setup)
 
         // Fetch user balance
         const balanceResponse = await fetch(
-          `api/user/${currentUser._id}/balance`
+          `/api/user/${currentUser._id}/balance`
         );
         if (!balanceResponse.ok) {
           throw new Error(`Failed to fetch balance: `);
         }
         const balance = await balanceResponse.json();
-        console.log("balance");
+        console.log(balance);
 
         // Fetch pending deposits
-        // const pendingDepositsResponse = await fetch(
-        //   `api/transactions/pending/${currentUser._id}`
-        // );
-        // if (!pendingDepositsResponse.ok) {
-        //   throw new Error(`Failed to fetch pending deposits:`);
-        // }
-        // const pendingDeposits = await pendingDepositsResponse.json();
-        // console.log(pendingDeposits);
+        const pendingDepositsResponse = await fetch(
+          `/api/transactions/pending/${currentUser._id}`
+        );
+        if (!pendingDepositsResponse.ok) {
+          throw new Error(`Failed to fetch pending deposits:`);
+        }
+        const pendingDeposits = await pendingDepositsResponse.json();
+        console.log(pendingDeposits);
       } catch (error) {
         console.error("Failed to load the function", error);
       }
     }
   }, [currentUser]);
-
   //////////////////////////////////////////////////////////
   useEffect(() => {
     if (currentUser && currentUser._id) {
@@ -79,7 +78,7 @@ const DepositScreen = () => {
 
     try {
       const handleLoadStat = async () => {
-        await loadUserStat();
+        await loadUserStats();
       };
       handleLoadStat();
     } catch (error) {
@@ -124,10 +123,10 @@ const DepositScreen = () => {
   };
 
   const createDeposit = async ({
-    user_id, // Send current user's ID
-    type, // Deposit type
+    username = currentUser.username, // Send current user's ID
+   
     amount, // Amount from the state
-    status = "pending", // The transaction is pending
+   
   }) => {
     try {
       const resultResponse = await fetch("/api/transactions/create", {
@@ -136,13 +135,13 @@ const DepositScreen = () => {
           "Content-Type": "application/json", // The content type should be JSON
         },
         body: JSON.stringify({
-          user_id, // Send current user's ID
-          type, // Deposit type
-          amount, // Amount from the state
-          status, // The transaction is pending
+          username,
+          amount: amount, // Amount from the state
         }),
       });
       const result = await resultResponse.json();
+      console.log(result);
+
       return result;
     } catch (error) {
       console.error("Error creating deposit:", error);
@@ -158,18 +157,17 @@ const DepositScreen = () => {
       // Assume we have the user's email stored in a variable or context
       // Replace with actual user email
       // const result = await createDeposit(user?.username, parseFloat(amount), paymentMethod);
-      await createDeposit({
-        user_id: currentUser._id, // Send current user's ID
-        type: "deposit", // Deposit type
+      const result = await createDeposit({
         amount: parseFloat(amount), // Amount from the state
-        status: "pending", // The transaction is pending
       });
+      console.log(result);
+      
       if (result.success) {
         setSnackbarMessage("Deposit request created successfully!");
         setSnackbarSeverity("success");
         setOpenConfirmSnackbar(true);
         const pendingDepositsResponse = await fetch(
-          `api/transactions/pending/${currentUser._id}`
+          `/api/transactions/pending/${currentUser._id}`
         );
         const pendingDeposits = await pendingDepositsResponse.json();
         console.log(pendingDeposits); // Refresh pending deposits
