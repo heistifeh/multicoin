@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { alpha } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
@@ -22,16 +22,17 @@ const xThemeComponents = {
   ...dataGridCustomizations,
   ...datePickersCustomizations,
   ...treeViewCustomizations,
-};  
+};
 import { useDispatch, useSelector } from "react-redux";
 import DepositScreen from "./components/DepositScreen";
 import WithdrawalScreen from "./components/WithdrawalScreen";
 import Analytics from "./components/Analytics";
 
-
 export default function Dashboard(props) {
   const { loading, error } = useSelector((state) => state.user);
-  const  { currentUser } = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user);
+  //cehck if the user ID is verified
+  const isIdVerified = currentUser.isIdVerified;
   console.log(currentUser.email);
 
   return (
@@ -60,6 +61,36 @@ export default function Dashboard(props) {
               mt: { xs: 8, md: 0 },
             }}
           >
+            {!isIdVerified && (
+              <Box
+                sx={{
+                  width: "100%",
+                  p: 2,
+                  bgcolor: "warning.light",
+                  border: "1px solid",
+                  borderColor: "warning.main",
+                  borderRadius: 1,
+                  textAlign: "center",
+                }}
+              >
+                <Box component="span" sx={{ mr: 1 }}>
+                  Your account is not verified yet.
+                </Box>
+                <Box
+                  component="span"
+                  sx={{
+                    color: "primary.main",
+                    textDecoration: "underline",
+                    cursor: "pointer",
+                    fontWeight: 500,
+                  }}
+                  onClick={() => navigate("/verify")}
+                >
+                  Click here to verify your account.
+                </Box>
+              </Box>
+            )}
+
             <Header />
             <Routes key={location.pathname}>
               <Route index element={<MainGrid />} />
