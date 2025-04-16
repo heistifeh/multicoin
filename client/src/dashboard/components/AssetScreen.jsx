@@ -38,7 +38,7 @@ const PriceChange = styled(Typography)(({ theme, isPositive }) => ({
   color: isPositive ? theme.palette.success.main : theme.palette.error.main,
 }));
 
-const AssetScreen = () => {
+const AssetScreen = ({handleSelect}) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -115,7 +115,7 @@ const AssetScreen = () => {
               fullWidth
               margin="normal"
             />
-            <Button variant="contained" color="primary" fullWidth>
+            <Button onClick={handleSelect} variant="contained" color="primary" fullWidth>
               Buy
             </Button>
           </AssetCard>

@@ -17,7 +17,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const mainListItems = [
   { text: "Home", icon: <HomeRoundedIcon />, path: "/dashboard" },
   {
-    text: "Deposit",
+    text: "Invest",
     icon: <AssignmentRoundedIcon />,
     path: "/dashboard/deposit",
   },
