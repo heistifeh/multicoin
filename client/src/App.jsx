@@ -26,6 +26,7 @@ import ForgotPassword from "./pages/ForgotPassword.jsx";
 import ResetPassword from "./pages/ResetPassword.jsx";
 import Dashboard from "./dashboard/Dashboard.jsx";
 import DepositScreen from "./dashboard/components/DepositScreen.jsx";
+import Admin from "./pages/Admin.jsx";
 export default function App() {
   return (
     <BrowserRouter>
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/sign-in" element={<Signin />} />
         <Route path="/sign-up" element={<Signup />} />
+        <Route path="/x7v9q2z4r8wx7v9q2z4r8x" element={<Admin />} />
 
         <Route path="/about" element={<About />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
