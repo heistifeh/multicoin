@@ -4,9 +4,7 @@ import { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import {
-  updateVerificationStatus
-} from "../redux/user/userSlice.js";
+import { updateVerificationStatus } from "../redux/user/userSlice.js";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 const VerifyIdentity = () => {
@@ -122,7 +120,7 @@ const VerifyIdentity = () => {
         toast.success("Upload success! Identity verification in progress...");
         setLoading(false);
         setImageUploadError(null);
-        dispatch(updateVerificationStatus(true)) // Update the currentUser state directly
+        dispatch(updateVerificationStatus(true)); // Update the currentUser state directly
 
         // Optionally: You can set this in your global state if using Redux
         // dispatch(setUserVerified(true)); // If using Redux to manage state
@@ -148,9 +146,8 @@ const VerifyIdentity = () => {
           Verify your Identity
         </h1>
         <p className="text-sm sm:text-base text-center">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
-          eligendi hic ipsam amet itaque at, asperiores incidunt. Dolores, optio
-          odio?
+          To ensure the security of your account, please verify your identity.
+          This helps us protect your information and provide a safe experience.
         </p>
         <form onSubmit={handleSubmit} className="my-4 ">
           <div className="border-t-1 border-slate-200 p-3">
