@@ -38,11 +38,13 @@ app.use(
   })
 );
 // Serve static files from the React app (build folder)
-app.use(express.static(path.join(__dirname, "build")));
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+// Serve static files from the React app (build folder)
+app.use(express.static(path.join(__dirname, 'build')));
 
 // Catch-all route to serve index.html for all routes
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 // Or allow only specific origin
