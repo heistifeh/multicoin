@@ -21,13 +21,21 @@ mongoose
 
 const app = express();
 // Allow all origins (for development)
+// Allow only specific origin
+const allowedOrigins = ["https://multicoinapp.com"];
+
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://multicoinapp.com"], // Multiple frontend URLs
-    credentials: true, // Allow cookies to be sent with requests
+    origin: function (origin, callback) {
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, // Allow credentials (cookies, authorization headers)
   })
 );
-
 // Or allow only specific origin
 // app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
