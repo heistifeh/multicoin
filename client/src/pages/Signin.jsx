@@ -69,6 +69,7 @@ const Signin = () => {
         toast.error(data.message);
         return;
       }
+      localStorage.setItem("token", data.token);
       dispatch(signInSuccess(data));
       toast.success("Login successful");
       setTimeout(() => {

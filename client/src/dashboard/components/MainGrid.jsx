@@ -96,14 +96,30 @@ export default function MainGrid() {
 
         // Fetch user balance
         const balanceResponse = await fetch(
-          `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/balance`
+          `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/balance`,
+          {
+            method: "GET", // Use "PUT" if updating data
+            headers: {
+              Authorization: `Bearer ${currentUser.token}`,
+              "Content-Type": "application/json", // Required if you're sending/receiving JSON
+            },
+            credentials: "include", // Ensures cookies (including the token) are sent with the request
+          }
         );
         const balance = await balanceResponse.json();
         console.log(balance);
 
         // Fetch pending deposits
         const pendingDepositsResponse = await fetch(
-          `https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`
+          `https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`,
+          {
+            method: "GET", // Use "PUT" if updating data
+            headers: {
+              Authorization: `Bearer ${currentUser.token}`,
+              "Content-Type": "application/json", // Required if you're sending/receiving JSON
+            },
+            credentials: "include", // Ensures cookies (including the token) are sent with the request
+          }
         );
         const pendingDeposits = await pendingDepositsResponse.json();
         console.log(pendingDeposits);
@@ -147,27 +163,23 @@ export default function MainGrid() {
   React.useEffect(() => {
     // const FIVE_SECONDS_MS = 5 * 1000; // 5 seconds in milliseconds
     const FIVE_SECONDS_MS = 5 * 1000; // 5 seconds in milliseconds
-    const token = localStorage.getItem("token");
-console.log(token);
+    // const token = localStorage.getItem("token");
+    // console.log(token);
 
     const updateBalanceAndStats = async () => {
       if (currentUser) {
-        if (!token) {
-          console.error("No token found. Please log in again.");
-          return;
-        }
-
         try {
           // Fetch last load time from the server
 
           const lastLoadTimeResponse = await fetch(
             `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/last-load-time`,
             {
-              method: "GET", // or "PUT" if you're updating
+              method: "GET", // Use "PUT" if updating data
               headers: {
-                Authorization: `Bearer ${token}`, // Add this header with the token
-                "Content-Type": "application/json", // if needed
+                Authorization: `Bearer ${currentUser.token}`,
+                "Content-Type": "application/json", // Required if you're sending/receiving JSON
               },
+              credentials: "include", // Ensures cookies (including the token) are sent with the request
             }
           );
 
@@ -206,6 +218,7 @@ console.log(token);
                     userId: `${currentUser._id}`,
                     missedIntervals: missedIntervals, // Send the missedIntervals in the body
                   }),
+                  credentials: "include",
                 }
               );
               const data = await response.json(); // Parse the response JSON

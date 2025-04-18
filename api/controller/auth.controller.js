@@ -80,6 +80,9 @@ export const signin = async (req, res, next) => {
     }
     // then we authnticate user
     const token = jwt.sign({ id: verifiedUser._id }, "forallthedogs");
+    //add token to data
+    verifiedUser.token = token;
+    await verifiedUser.save();
     const { password: pass, ...detailsWithoutPassword } = verifiedUser._doc;
     res
       .cookie("token", token, { httpOnly: true })
