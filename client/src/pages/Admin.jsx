@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import toast from "react-hot-toast";
 const Admin = () => {
   const [pendingDeposits, setPendingDeposits] = useState([]);
@@ -7,6 +8,8 @@ const Admin = () => {
   const [success, setSuccess] = useState(false);
   const [selectedDeposit, setSelectedDeposit] = useState(null);
   const [actionError, setActionError] = useState(false);
+  
+  const { currentUser } = useSelector((state) => state.user);
   const [status, setStatus] = useState({
     status: "",
   });
@@ -14,7 +17,17 @@ const Admin = () => {
   // Fetch transactions from the API
   const fetchTransactions = async () => {
     try {
-      const res = await fetch("https://multicoin-xdbp.onrender.com/api/transactions/pending");
+      const res = await fetch(
+        "https://multicoin-xdbp.onrender.com/api/transactions/pending",
+        {
+          method: "GET", // Use "PUT" if updating data
+          headers: {
+            Authorization: `Bearer ${currentUser.token}`,
+            "Content-Type": "application/json", // Required if you're sending/receiving JSON
+          },
+          credentials: "include", // Ensures cookies (including the token) are sent with the request
+        }
+      );
       const data = await res.json();
       setPendingDeposits(data);
     } catch (error) {
@@ -57,13 +70,17 @@ const Admin = () => {
     }
 
     try {
-      const res = await fetch(`https://multicoin-xdbp.onrender.com/api/transactions/status/${selectedDeposit}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(status),
-      });
+      const res = await fetch(
+        `https://multicoin-xdbp.onrender.com/api/transactions/status/${selectedDeposit}`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${currentUser.token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(status),
+        }
+      );
       const data = await res.json();
 
       if (data.success === false) {

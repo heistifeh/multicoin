@@ -105,7 +105,9 @@ const VerifyIdentity = () => {
         `https://multicoin-xdbp.onrender.com/api/verify/verify-identity/${currentUser._id}`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            Authorization: `Bearer ${currentUser.token}`,
+             "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         }
       );

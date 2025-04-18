@@ -212,6 +212,7 @@ export default function MainGrid() {
                 {
                   method: "POST",
                   headers: {
+                    Authorization: `Bearer ${currentUser.token}`,
                     "Content-Type": "application/json",
                   },
                   body: JSON.stringify({
@@ -238,6 +239,8 @@ export default function MainGrid() {
             {
               method: "PUT",
               headers: {
+                Authorization: `Bearer ${currentUser.token}`,
+
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({ timestamp: currentTime }),

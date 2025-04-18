@@ -23,10 +23,11 @@ const app = express();
 // Allow all origins (for development)
 app.use(
   cors({
-    origin: "http://localhost:5173", // Frontend URL
+    origin: ["http://localhost:5173", "http://multicoinapp.com"], // Multiple frontend URLs
     credentials: true, // Allow cookies to be sent with requests
   })
 );
+
 // Or allow only specific origin
 // app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
