@@ -36,6 +36,14 @@ app.use(
     credentials: true, // Allow credentials (cookies, authorization headers)
   })
 );
+// Serve static files from the React app (build folder)
+app.use(express.static(path.join(__dirname, 'build')));
+
+// Catch-all route to serve index.html for all routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 // Or allow only specific origin
 // app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
