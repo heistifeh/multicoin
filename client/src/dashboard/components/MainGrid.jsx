@@ -147,14 +147,28 @@ export default function MainGrid() {
   React.useEffect(() => {
     // const FIVE_SECONDS_MS = 5 * 1000; // 5 seconds in milliseconds
     const FIVE_SECONDS_MS = 5 * 1000; // 5 seconds in milliseconds
+    const token = localStorage.getItem("token");
+console.log(token);
 
     const updateBalanceAndStats = async () => {
       if (currentUser) {
+        if (!token) {
+          console.error("No token found. Please log in again.");
+          return;
+        }
+
         try {
           // Fetch last load time from the server
 
           const lastLoadTimeResponse = await fetch(
-            `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/last-load-time`
+            `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/last-load-time`,
+            {
+              method: "GET", // or "PUT" if you're updating
+              headers: {
+                Authorization: `Bearer ${token}`, // Add this header with the token
+                "Content-Type": "application/json", // if needed
+              },
+            }
           );
 
           const lastLoadTimeData = await lastLoadTimeResponse.json();
@@ -165,20 +179,20 @@ export default function MainGrid() {
           console.log("lastLoadTime object:", lastLoadTimeData); // Check the whole object
           console.log("Extracted lastLoadTime:", lastLoadTime); // Check extracted value
 
-            const lastLoadTimeDate = new Date(lastLoadTime);
-            console.log("Parsed Date:", lastLoadTimeDate); // Check parsed date
+          const lastLoadTimeDate = new Date(lastLoadTime);
+          console.log("Parsed Date:", lastLoadTimeDate); // Check parsed date
 
-            // Get time in milliseconds
-            const lastLoadTimeMs = lastLoadTimeDate.getTime();
-            console.log("lastLoadTimeMs:", lastLoadTimeMs); // Check milliseconds
+          // Get time in milliseconds
+          const lastLoadTimeMs = lastLoadTimeDate.getTime();
+          console.log("lastLoadTimeMs:", lastLoadTimeMs); // Check milliseconds
 
-            const currentTime = Date.now();
-            const timeDiff = currentTime - lastLoadTimeMs; // Difference in milliseconds
-            console.log("timeDiff:", timeDiff);
+          const currentTime = Date.now();
+          const timeDiff = currentTime - lastLoadTimeMs; // Difference in milliseconds
+          console.log("timeDiff:", timeDiff);
 
-            const missedIntervals = Math.floor(timeDiff / FIVE_SECONDS_MS); // Convert to intervals
-            console.log("Missed intervals:", missedIntervals);
-          
+          const missedIntervals = Math.floor(timeDiff / FIVE_SECONDS_MS); // Convert to intervals
+          console.log("Missed intervals:", missedIntervals);
+
           if (missedIntervals > 0) {
             try {
               const response = await fetch(
@@ -206,13 +220,16 @@ export default function MainGrid() {
             }
           }
 
-          await fetch(`https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/last-load-time`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ timestamp: currentTime }),
-          });
+          await fetch(
+            `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/last-load-time`,
+            {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ timestamp: currentTime }),
+            }
+          );
           console.log("Last load time updated successfully");
 
           // Fetch user stats after updating the last load time
