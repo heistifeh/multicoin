@@ -7,6 +7,7 @@ import verifyRoutes from "./routes/verify.routes.js";
 import cookieParser from "cookie-parser";
 import transationRoutes from "./routes/transaction.routes.js";
 import userDetailRoutes from "./routes/user.routes.js";
+import cors from "cors";
 dotenv.config();
 
 mongoose
