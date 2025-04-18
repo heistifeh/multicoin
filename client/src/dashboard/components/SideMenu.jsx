@@ -10,6 +10,8 @@ import SelectContent from "./SelectContent";
 import MenuContent from "./MenuContent";
 import CardAlert from "./CardAlert";
 import OptionsMenu from "./OptionsMenu";
+import CheckIcon from "@mui/icons-material/Check";
+
 import { useDispatch, useSelector } from "react-redux";
 const drawerWidth = 240;
 
@@ -24,7 +26,7 @@ const Drawer = styled(MuiDrawer)({
   },
 });
 
-export default function SideMenu() {
+export default function SideMenu({ verifiedState }) {
   const { loading, error } = useSelector((state) => state.user);
   const { currentUser } = useSelector((state) => state.user);
   return (
@@ -58,15 +60,15 @@ export default function SideMenu() {
         <MenuContent />
         <CardAlert />
         {currentUser && !loading && (
-        <Box sx={{ p: 2 }}>
-          <Typography variant="body2" sx={{ fontWeight: 500 }}>
-            Balance: ${currentUser?.total_balance.toFixed(2)}
-          </Typography>
-          <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-            Profit: ${currentUser?.total_profit.toFixed(2)}
-          </Typography>
-        </Box>
-      )}
+          <Box sx={{ p: 2 }}>
+            <Typography variant="body2" sx={{ fontWeight: 500 }}>
+              Balance: ${currentUser?.total_balance.toFixed(2)}
+            </Typography>
+            <Typography variant="caption" sx={{ color: "text.secondary" }}>
+              Profit: ${currentUser?.total_profit.toFixed(2)}
+            </Typography>
+          </Box>
+        )}
       </Box>
       <Stack
         direction="row"
@@ -84,13 +86,36 @@ export default function SideMenu() {
           src="/static/images/avatar/7.jpg"
           sx={{ width: 36, height: 36 }}
         />
-        <Box sx={{ mr: "auto" }}>
-          <Typography
-            variant="body2"
-            sx={{ fontWeight: 500, lineHeight: "16px" }}
-          >
-            {currentUser?.username || "Guest"}
-          </Typography>
+        <Box sx={{ display: "flex", flexDirection: "column", mr: "auto" }}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Typography
+              variant="body2"
+              sx={{ fontWeight: 500, lineHeight: "16px", mr: 1 }}
+            >
+              {currentUser?.username || "Guest"}
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                px: 1,
+                py: 0.5,
+                borderRadius: 20,
+                backgroundColor: verifiedState ? "success.main" : "error.main",
+                color: "white",
+                fontWeight: 500,
+                fontSize: "12px",
+              }}
+            >
+              {verifiedState ? (
+                <>
+                  <CheckIcon sx={{ mr: 0.5 }} /> Verified
+                </>
+              ) : (
+                "Not Verified"
+              )}
+            </Box>
+          </Box>
           <Typography variant="caption" sx={{ color: "text.secondary" }}>
             {currentUser?.email || "Not signed in"}
           </Typography>

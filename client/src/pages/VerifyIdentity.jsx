@@ -39,7 +39,7 @@ const VerifyIdentity = () => {
       console.log(secure_url);
       return secure_url;
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   };
 
@@ -114,22 +114,18 @@ const VerifyIdentity = () => {
         return setImageUploadError("unable to upload images, please retry.");
       }
 
-      if (data.isIdVerified) {
-        // Update the frontend state with the new verification status
-        // (e.g., set user as verified, hide verification message)
-        toast.success("Upload success! Identity verification in progress...");
-        setLoading(false);
-        setImageUploadError(null);
-        dispatch(updateVerificationStatus(true)); // Update the currentUser state directly
+      // Update the frontend state with the new verification status
+      // (e.g., set user as verified, hide verification message)
+      toast.success("Upload success! Identity verification in progress...");
+      setLoading(false);
+      setImageUploadError(null);
+      dispatch(updateVerificationStatus(true)); // Update the currentUser state directly
 
-        // Optionally: You can set this in your global state if using Redux
-        // dispatch(setUserVerified(true)); // If using Redux to manage state
+      // Optionally: You can set this in your global state if using Redux
+      // dispatch(setUserVerified(true)); // If using Redux to manage state
 
-        // Navigate to dashboard or a verification success page
-        navigate("/dashboard");
-      } else {
-        toast.error("Verification failed. Please try again.");
-      }
+      // Navigate to dashboard or a verification success page
+      navigate("/dashboard");
     } else {
       setImageUploadError("please fill all credentials.");
     }
