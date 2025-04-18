@@ -26,32 +26,25 @@ const ITEMS = [
     label: "Website",
     children: [
       { id: "1.1", label: "Home", color: "green" },
-      { id: "1.2", label: "Pricing", color: "green" },
-      { id: "1.3", label: "About us", color: "green" },
-      {
-        id: "1.4",
-        label: "Blog",
-        children: [
-          { id: "1.1.1", label: "Announcements", color: "blue" },
-          { id: "1.1.2", label: "April lookahead", color: "blue" },
-          { id: "1.1.3", label: "What's new", color: "blue" },
-          { id: "1.1.4", label: "Meet the team", color: "blue" },
-        ],
-      },
+      { id: "1.2", label: "Stocks", color: "green" },
+      { id: "1.3", label: "Crypto", color: "green" },
+      { id: "1.4", label: "ETFs", color: "green" },
     ],
   },
   {
     id: "2",
-    label: "Store",
+    label: "Dashboard",
     children: [
-      { id: "2.1", label: "All products", color: "green" },
+      { id: "2.1", label: "Dashboard", color: "green" },
       {
         id: "2.2",
-        label: "Categories",
+        label: "Invest",
         children: [
-          { id: "2.2.1", label: "Gadgets", color: "blue" },
-          { id: "2.2.2", label: "Phones", color: "blue" },
-          { id: "2.2.3", label: "Wearables", color: "blue" },
+          { id: "2.2.1", label: "Cryptocurrencies", color: "blue" },
+          { id: "2.2.2", label: "Stocks", color: "blue" },
+          { id: "2.2.3", label: "Real Estate", color: "blue" },
+          { id: "2.2.4", label: "Mutual Funds", color: "blue" },
+          { id: "2.2.5", label: "ETFs", color: "blue" },
         ],
       },
       { id: "2.3", label: "Bestsellers", color: "green" },
@@ -59,7 +52,6 @@ const ITEMS = [
     ],
   },
   { id: "4", label: "Contact", color: "blue" },
-  { id: "5", label: "Help", color: "blue" },
 ];
 
 function DotIcon({ color }) {

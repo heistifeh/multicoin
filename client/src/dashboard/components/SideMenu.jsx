@@ -58,7 +58,7 @@ export default function SideMenu({ verifiedState }) {
         }}
       >
         <MenuContent />
-        <CardAlert />
+        {/* <CardAlert /> */}
         {currentUser && !loading && (
           <Box sx={{ p: 2 }}>
             <Typography variant="body2" sx={{ fontWeight: 500 }}>

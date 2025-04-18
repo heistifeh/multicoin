@@ -39,8 +39,12 @@ const mainListItems = [
 ];
 
 const secondaryListItems = [
-  { text: "Settings", icon: <SettingsRoundedIcon /> },
-  { text: "About", icon: <InfoRoundedIcon /> },
+  // { text: "Settings", icon: <SettingsRoundedIcon /> },
+  {
+    text: "About",
+    icon: <InfoRoundedIcon />,
+    path: "https://multicoin.capital/about/",
+  },
   { text: "Feedback", icon: <HelpRoundedIcon /> },
 ];
 
@@ -50,10 +54,17 @@ export default function MenuContent() {
 
   const handleNavigation = React.useCallback(
     (path) => {
-      navigate(path);
+      const isExternal =
+        path.startsWith("http://") || path.startsWith("https://");
+      if (isExternal) {
+        window.open(path, "_blank"); // opens in a new tab, or use `window.location.href = path` for same tab
+      } else {
+        navigate(path); // internal navigation
+      }
     },
     [navigate]
   );
+
   return (
     <Stack sx={{ flexGrow: 1, p: 1, justifyContent: "space-between" }}>
       <List dense>

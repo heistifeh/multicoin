@@ -151,45 +151,55 @@ const AssetScreen = ({ handleSelect }) => {
 
       <Grid container spacing={3}>
         {/* Map and render data for assets */}
-        {data.map((asset) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={asset.id}>
-            <AssetCard elevation={3}>
-              <CryptoIcon src={asset.image} alt={asset.name} />
-              <Typography variant="h6" gutterBottom>
-                {asset.name}
-              </Typography>
-              <Typography variant="subtitle1" gutterBottom>
-                ${asset.current_price ? asset.current_price.toLocaleString() : asset.price}
-              </Typography>
-              <PriceChange
-                variant="body2"
-                isPositive={asset.price_change_percentage_24h > 0}
-              >
-                {asset.price_change_percentage_24h > 0 ? (
-                  <FiArrowUpRight />
-                ) : (
-                  <FiArrowDown />
-                )}
-                {Math.abs(asset.price_change_percentage_24h).toFixed(2)}%
-              </PriceChange>
-              <TextField
-                type="number"
-                label="Enter amount"
-                variant="outlined"
-                fullWidth
-                margin="normal"
-              />
-              <Button
-                onClick={handleSelect}
-                variant="contained"
-                color="primary"
-                fullWidth
-              >
-                Buy
-              </Button>
-            </AssetCard>
-          </Grid>
-        ))}
+        {data
+          .filter((asset) =>
+            ["BTC", "ETH", "USDT", "BNB", "SOL"].includes(
+              asset.symbol?.toUpperCase()
+            )
+          )
+          .map((asset) => (
+            <Grid item xs={12} sm={6} md={4} lg={3} key={asset.id}>
+              <AssetCard elevation={3}>
+                <CryptoIcon src={asset.image} alt={asset.name} />
+                <Typography variant="h6" gutterBottom>
+                  {asset.name}
+                </Typography>
+                <Typography variant="subtitle1" gutterBottom>
+                  $
+                  {asset.current_price
+                    ? asset.current_price.toLocaleString()
+                    : asset.price}
+                </Typography>
+                <PriceChange
+                  variant="body2"
+                  isPositive={asset.price_change_percentage_24h > 0}
+                >
+                  {asset.price_change_percentage_24h > 0 ? (
+                    <FiArrowUpRight />
+                  ) : (
+                    <FiArrowDown />
+                  )}
+                  {Math.abs(asset.price_change_percentage_24h).toFixed(2)}%
+                </PriceChange>
+                <TextField
+                  type="number"
+                  label=" "
+                  variant="filled"
+                  fullWidth
+                  margin="normal"
+                  disabled
+                />
+                <Button
+                  onClick={handleSelect}
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                >
+                  Buy
+                </Button>
+              </AssetCard>
+            </Grid>
+          ))}
       </Grid>
     </>
   );

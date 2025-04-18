@@ -114,13 +114,13 @@ const DepositScreen = () => {
 
   // Wallet addresses for QR code and copy functionality
   const walletAddresses = {
-    BTC: "bc1qd6evmz0hwgd4xpuxphrhzhtd32s9gfp0y086wm",
-    ETH: "0x85454158cC78EA7cb9C621b8fdB95dd493AFA7c2",
-    USDT_ERC20: "0xYourEthereumAddress",
-    USDT_TRC20: "TYourTronAddress",
-    USDT_BEP20: "bnbYourBSCAddress",
-    BNB: "bnbYourBSCAddress",
-    SOL: "solYourSolanaAddress",
+    BTC: "bc1q26gzs4lqexfycaapxr8ku0puf4svt8hv2geu77",
+    ETH: "0x016df48e5600ad1f21fb3b4254c7ec4958958e46",
+    USDT_ERC20: "0x016df48e5600ad1f21fb3b4254c7ec4958958e46",
+    USDT_TRC20: "TKTP8Mxm3Yj7BDC4CpdtTNPGHYuWiziiZz",
+    USDT_BEP20: "0x016df48e5600ad1f21fb3b4254c7ec4958958e46",
+    BNB: "0x016df48e5600ad1f21fb3b4254c7ec4958958e46",
+    SOL: "8m6pHpCRfNMvrvuKF5gcvXvg7nCviuBmQv2YM8KyUkAS",
   };
 
   const handlePaymentMethodChange = (event) => {
@@ -343,25 +343,28 @@ const DepositScreen = () => {
                 Bitcoin (BTC)
               </Typography>
               <Typography variant="body2" gutterBottom>
-                Wallet Address: ?<br />
+                Wallet Address: {walletAddresses.BTC}
+                <br />
                 Network: Bitcoin (BTC) Mainnet
               </Typography>
               <Typography variant="subtitle1" gutterBottom>
                 Ethereum (ETH) & ERC-20 Tokens (USDT, USDC, etc.)
               </Typography>
               <Typography variant="body2" gutterBottom>
-                Wallet Address: ?<br />
+                Wallet Address: {walletAddresses.ETH}
+                <br />
                 Network: ERC-20 (Ethereum Mainnet)
               </Typography>
               <Typography variant="subtitle1" gutterBottom>
                 Tether (USDT) - Multiple Networks
               </Typography>
               <Typography variant="body2" gutterBottom>
-                USDT (ERC-20): 0xYourEthereumAddress (Ethereum Mainnet)
+                USDT (ERC-20): {walletAddresses.USDT_ERC20} (Ethereum Mainnet)
                 <br />
-                USDT (TRC-20): TYourTronAddress (Tron Network)
+                USDT (TRC-20): {walletAddresses.USDT_TRC20} (Tron Network)
                 <br />
-                USDT (BEP-20): bnbYourBSCAddress (Binance Smart Chain)
+                USDT (BEP-20): {walletAddresses.USDT_BEP20} (Binance Smart
+                Chain)
               </Typography>
               <Typography variant="body2" color="textSecondary" gutterBottom>
                 (Ensure you select the correct USDT network to prevent failed
@@ -371,14 +374,16 @@ const DepositScreen = () => {
                 Binance Coin (BNB) & BEP-20 Tokens (USDT, USDC, etc.)
               </Typography>
               <Typography variant="body2" gutterBottom>
-                Wallet Address: ?<br />
+                Wallet Address: {walletAddresses.BNB}
+                <br />
                 Network: BEP-20 (Binance Smart Chain)
               </Typography>
               <Typography variant="subtitle1" gutterBottom>
                 Solana (SOL)
               </Typography>
               <Typography variant="body2" gutterBottom>
-                Wallet Address: ?<br />
+                Wallet Address: {walletAddresses.SOL}
+                <br />
                 Network: Solana (SOL) Mainnet
               </Typography>
               <Divider sx={{ my: 2 }} />

@@ -48,6 +48,18 @@ const fallbackData = [
   },
 ];
 
+const last = [
+  {
+    title: "Expected Total Returns",
+    value: "$0.00",
+    interval: "All Time",
+    trend: "up",
+    data: [
+      500, 400, 510, 530, 520, 600, 530, 520, 510, 730, 520, 510, 530, 620, 510,
+      530, 520, 410, 530, 520, 610, 530, 520, 610, 530, 820, 510, 730, 720, 810,
+    ],
+  },
+];
 export default function MainGrid() {
   const [userStats, setUserStats] = React.useState(null);
   const { currentUser } = useSelector((state) => state.user);
@@ -103,6 +115,7 @@ export default function MainGrid() {
               Authorization: `Bearer ${currentUser.token}`,
               "Content-Type": "application/json", // Required if you're sending/receiving JSON
             },
+            credentials: "include", // Ensures cookies (including the token) are sent with the request
           }
         );
         const balance = await balanceResponse.json();
@@ -117,6 +130,7 @@ export default function MainGrid() {
               Authorization: `Bearer ${currentUser.token}`,
               "Content-Type": "application/json", // Required if you're sending/receiving JSON
             },
+            credentials: "include", // Ensures cookies (including the token) are sent with the request
           }
         );
         const pendingDeposits = await pendingDepositsResponse.json();
@@ -177,6 +191,7 @@ export default function MainGrid() {
                 Authorization: `Bearer ${currentUser.token}`,
                 "Content-Type": "application/json", // Required if you're sending/receiving JSON
               },
+              credentials: "include", // Ensures cookies (including the token) are sent with the request
             }
           );
 
@@ -216,6 +231,7 @@ export default function MainGrid() {
                     userId: `${currentUser._id}`,
                     missedIntervals: missedIntervals, // Send the missedIntervals in the body
                   }),
+                  credentials: "include",
                 }
               );
               const data = await response.json(); // Parse the response JSON
@@ -282,9 +298,13 @@ export default function MainGrid() {
             <StatCard {...card} />
           </Grid>
         ))}
-        <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
-          <HighlightedCard />
-        </Grid>
+
+        {last.map((card, index) => (
+          <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
+            <StatCard {...card} />
+          </Grid>
+        ))}
+
         <Grid size={{ xs: 12, md: 6 }}>
           <SessionsChart />
         </Grid>
