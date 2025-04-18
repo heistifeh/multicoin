@@ -23,39 +23,15 @@ mongoose
 const app = express();
 // Allow all origins (for development)
 // Allow only specific origin
-const allowedOrigins = ["https://multicoinapp.com"];
+// const allowedOrigins = ["https://multicoinapp.com"];
 
 app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allow specific headers
-    credentials: true, // Allow credentials (cookies, authorization headers)
-  })
+  cors()
 );
 // Handle preflight requests (OPTIONS method)
 app.options('*', (req, res) => {
   res.status(200).end();
 });
-
-// Serve static files from the React app (build folder)
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
-// Serve static files from the React app (build folder)
-app.use(express.static(path.join(__dirname, 'build')));
-
-// Catch-all route to serve index.html for all routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-// Or allow only specific origin
-// app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
 app.use(cookieParser());
 
