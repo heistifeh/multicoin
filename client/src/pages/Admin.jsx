@@ -18,16 +18,11 @@ const Admin = () => {
   const fetchTransactions = async () => {
     try {
       const res = await fetch(
-        "https://multicoin-xdbp.onrender.com/api/transactions/pending",
-        {
-          method: "GET", // Use "PUT" if updating data
-          headers: {
-            Authorization: `Bearer ${currentUser.token}`,
-            "Content-Type": "application/json", // Required if you're sending/receiving JSON
-          },
-        }
+        "https://multicoin-xdbp.onrender.com/api/transactions/pending"
       );
       const data = await res.json();
+      console.log(data);
+
       setPendingDeposits(data);
     } catch (error) {
       toast.error("Error fetching transactions.");
@@ -74,7 +69,7 @@ const Admin = () => {
         {
           method: "PUT",
           headers: {
-            Authorization: `Bearer ${currentUser.token}`,
+            
             "Content-Type": "application/json",
           },
           body: JSON.stringify(status),
