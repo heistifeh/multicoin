@@ -57,11 +57,14 @@ const Signup = () => {
     e.preventDefault();
     dispatch(signUpStart());
     try {
-      const res = await fetch("api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://multicoin-xdbp.onrender.com/api/auth/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
       if (data.success === false) {
         return dispatch(signUpFailure(data.message));
@@ -82,7 +85,9 @@ const Signup = () => {
               <img src="./logo.png" alt="" />
             </div>
 
-            <span className="text-white text-3xl font-bold">Multicoin Capital</span>
+            <span className="text-white text-3xl font-bold">
+              Multicoin Capital
+            </span>
           </div>
           <div
             className="
@@ -108,8 +113,6 @@ const Signup = () => {
               <span className="text-white"> Trusted by millions</span>
             </div>
           </div>
-
-         
         </div>
 
         {/* form */}

@@ -52,7 +52,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await fetch("/api/auth/forgot-password", {
+      const res = await fetch("https://multicoin-xdbp.onrender.com/api/auth/forgot-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

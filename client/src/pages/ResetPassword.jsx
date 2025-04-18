@@ -63,7 +63,7 @@ const ResetPassword = () => {
 
     try {
       setLoading(true);
-      const res = await fetch(`/api/auth/reset-password/${token}`, {
+      const res = await fetch(`https://multicoin-xdbp.onrender.com/api/auth/reset-password/${token}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

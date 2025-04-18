@@ -21,7 +21,7 @@ export const useTransactionData = () => {
     const fetchTransactions = async () => {
       if (currentUser && currentUser._id) {
         try {
-          const response = await fetch(`/api/transactions/pending/${currentUser._id}`);
+          const response = await fetch(`https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`);
           const data = await response.json();
 
           console.log('Fetched data:', data); // Log fetched data for debugging

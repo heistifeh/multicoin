@@ -17,7 +17,11 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+// Allow all origins (for development)
+app.use(cors());
 
+// Or allow only specific origin
+// app.use(cors({ origin: 'http://localhost:5173' }));
 const app = express();
 app.use(express.json());
 app.use(cookieParser());

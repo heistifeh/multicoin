@@ -96,14 +96,14 @@ export default function MainGrid() {
 
         // Fetch user balance
         const balanceResponse = await fetch(
-          `api/user/${currentUser._id}/balance`
+          `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/balance`
         );
         const balance = await balanceResponse.json();
         console.log(balance);
 
         // Fetch pending deposits
         const pendingDepositsResponse = await fetch(
-          `api/transactions/pending/${currentUser._id}`
+          `https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`
         );
         const pendingDeposits = await pendingDepositsResponse.json();
         console.log(pendingDeposits);
@@ -154,7 +154,7 @@ export default function MainGrid() {
           // Fetch last load time from the server
 
           const lastLoadTimeResponse = await fetch(
-            `api/user/${currentUser._id}/last-load-time`
+            `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/last-load-time`
           );
 
           const lastLoadTimeData = await lastLoadTimeResponse.json();
@@ -182,7 +182,7 @@ export default function MainGrid() {
           if (missedIntervals > 0) {
             try {
               const response = await fetch(
-                `api/user/${currentUser._id}/increase-balance`,
+                `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/increase-balance`,
                 {
                   method: "POST",
                   headers: {
@@ -206,7 +206,7 @@ export default function MainGrid() {
             }
           }
 
-          await fetch(`api/user/${currentUser._id}/last-load-time`, {
+          await fetch(`https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/last-load-time`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

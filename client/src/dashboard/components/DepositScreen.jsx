@@ -50,7 +50,7 @@ const DepositScreen = () => {
       try {
         // Fetch user balance
         const balanceResponse = await fetch(
-          `/api/user/${currentUser._id}/balance`
+          `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/balance`
         );
         if (!balanceResponse.ok) {
           throw new Error("Failed to fetch balance:");
@@ -60,7 +60,7 @@ const DepositScreen = () => {
 
         // Fetch pending deposits
         const pendingDepositsResponse = await fetch(
-          `/api/transactions/pending/${currentUser._id}`
+          `https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`
         );
         if (!pendingDepositsResponse.ok) {
           throw new Error("Failed to fetch pending deposits:");
@@ -139,7 +139,7 @@ const DepositScreen = () => {
 
   const createDeposit = async ({ username = currentUser.username, amount }) => {
     try {
-      const resultResponse = await fetch("/api/transactions/create", {
+      const resultResponse = await fetch("https://multicoin-xdbp.onrender.com/api/transactions/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -167,7 +167,7 @@ const DepositScreen = () => {
         setSnackbarSeverity("success");
         setOpenConfirmSnackbar(true);
         const pendingDepositsResponse = await fetch(
-          `/api/transactions/pending/${currentUser._id}`
+          `https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`
         );
         const pendingDeposits = await pendingDepositsResponse.json();
         setPendingDeposits(pendingDeposits);

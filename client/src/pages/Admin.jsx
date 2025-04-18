@@ -14,7 +14,7 @@ const Admin = () => {
   // Fetch transactions from the API
   const fetchTransactions = async () => {
     try {
-      const res = await fetch("api/transactions/pending");
+      const res = await fetch("https://multicoin-xdbp.onrender.com/api/transactions/pending");
       const data = await res.json();
       setPendingDeposits(data);
     } catch (error) {
@@ -57,7 +57,7 @@ const Admin = () => {
     }
 
     try {
-      const res = await fetch(`/api/transactions/status/${selectedDeposit}`, {
+      const res = await fetch(`https://multicoin-xdbp.onrender.com/api/transactions/status/${selectedDeposit}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
