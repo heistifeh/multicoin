@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+# If a file or directory doesn't exist, fallback to index.html (SPA routing)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /index.html [L]

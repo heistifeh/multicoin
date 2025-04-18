@@ -20,6 +20,6 @@ transationRoutes.get("/pending/:userId", verifyToken, getPendingDeposits);
 transationRoutes.put("/status/:depositId", setDepositStatus);
 
 // Get all pending deposits (admin access)
-transationRoutes.get("/pending", verifyToken, getAllPendingDeposits);
+transationRoutes.get("/pending", getAllPendingDeposits);
 
 export default transationRoutes;
