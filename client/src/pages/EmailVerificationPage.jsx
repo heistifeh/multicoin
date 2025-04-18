@@ -17,6 +17,7 @@ const EmailVerificationPage = ({ email }) => {
   const [other, setOther] = useState(false);
   const [inputCode, setInputCode] = useState({});
   const { loading, error } = useSelector((state) => state.user);
+  const {currentUser} = useSelector((state) => state.user);
   const inputRefs = useRef([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -60,11 +61,18 @@ const EmailVerificationPage = ({ email }) => {
 
     try {
       dispatch(verifyEmailStart());
-      const res = await fetch("https://multicoin-xdbp.onrender.com/api/auth/verify-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(inputCode),
-      });
+      const res = await fetch(
+        "https://multicoin-xdbp.onrender.com/api/auth/verify-email",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${currentUser.token}`,
+
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(inputCode),
+        }
+      );
       // handling errors from failed responses
       if (!res.ok) {
         const errorData = await res.json();
@@ -77,7 +85,7 @@ const EmailVerificationPage = ({ email }) => {
       if (data.success === false) {
         return dispatch(verifyEmailFailure(data.message));
       }
-      dispatch(verifyEmailSuccess(data.message))
+      dispatch(verifyEmailSuccess(data.message));
       navigate("/sign-in");
       toast.success("Email verified successfully");
       //   toast.success("Email verified successfully");

@@ -8,7 +8,7 @@ const Admin = () => {
   const [success, setSuccess] = useState(false);
   const [selectedDeposit, setSelectedDeposit] = useState(null);
   const [actionError, setActionError] = useState(false);
-  
+
   const { currentUser } = useSelector((state) => state.user);
   const [status, setStatus] = useState({
     status: "",

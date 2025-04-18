@@ -51,7 +51,7 @@ export const useTransactionData = () => {
             {
               method: "GET", // or "PUT" if you're updating
               headers: {
-                Authorization: `Bearer ${token}`, // Add the token in the Authorization header
+                Authorization: `Bearer ${currentUser.token}`,
                 "Content-Type": "application/json", // If required by your API
               },
             }

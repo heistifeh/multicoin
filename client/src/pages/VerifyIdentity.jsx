@@ -107,7 +107,8 @@ const VerifyIdentity = () => {
           method: "POST",
           headers: {
             Authorization: `Bearer ${currentUser.token}`,
-             "Content-Type": "application/json" },
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify(formData),
         }
       );

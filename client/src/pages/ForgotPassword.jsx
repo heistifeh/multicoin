@@ -8,14 +8,13 @@ import { FaCheck } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
-
 const ForgotPassword = () => {
   const [formData, setFormData] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [other, setOther] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
+  const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const asset = (assetName, other) => {
     return (
@@ -52,13 +51,18 @@ const ForgotPassword = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await fetch("https://multicoin-xdbp.onrender.com/api/auth/forgot-password", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://multicoin-xdbp.onrender.com/api/auth/forgot-password",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${currentUser.token}`,
+
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
       if (data.success === false) {
         setLoading(false);
@@ -88,7 +92,9 @@ const ForgotPassword = () => {
               <img src="./logo.png" alt="" />
             </div>
 
-            <span className="text-white text-3xl font-bold">Multicoin Capital</span>
+            <span className="text-white text-3xl font-bold">
+              Multicoin Capital
+            </span>
           </div>
           <div
             className="
@@ -114,8 +120,6 @@ const ForgotPassword = () => {
               <span className="text-white"> Trusted by millions</span>
             </div>
           </div>
-
-         
         </div>
 
         {/* form */}
@@ -151,8 +155,9 @@ const ForgotPassword = () => {
               Forgot Password
             </h1>
             <span className="text-sm sm:text-lg">
-              If an account exists for <span className="font-bold">{formData.email} </span>we will send you a link
-              to reset your password shortly.
+              If an account exists for{" "}
+              <span className="font-bold">{formData.email} </span>we will send
+              you a link to reset your password shortly.
             </span>
             <div disable={loading} className="flex w-full mt-5">
               <Link

@@ -15,7 +15,7 @@ import {
   Divider,
   Collapse,
 } from "@mui/material";
-import {  Box } from "@mui/material";
+import { Box } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { QRCodeSVG } from "qrcode.react";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
@@ -50,7 +50,15 @@ const DepositScreen = () => {
       try {
         // Fetch user balance
         const balanceResponse = await fetch(
-          `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/balance`
+          `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/balance`,
+          {
+            method: "GET", // Use "PUT" if updating data
+            headers: {
+              Authorization: `Bearer ${currentUser.token}`,
+              "Content-Type": "application/json", // Required if you're sending/receiving JSON
+            },
+            credentials: "include", // Ensures cookies (including the token) are sent with the request
+          }
         );
         if (!balanceResponse.ok) {
           throw new Error("Failed to fetch balance:");
@@ -60,7 +68,15 @@ const DepositScreen = () => {
 
         // Fetch pending deposits
         const pendingDepositsResponse = await fetch(
-          `https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`
+          `https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`,
+          {
+            method: "GET", // Use "PUT" if updating data
+            headers: {
+              Authorization: `Bearer ${currentUser.token}`,
+              "Content-Type": "application/json", // Required if you're sending/receiving JSON
+            },
+            credentials: "include", // Ensures cookies (including the token) are sent with the request
+          }
         );
         if (!pendingDepositsResponse.ok) {
           throw new Error("Failed to fetch pending deposits:");
@@ -139,13 +155,18 @@ const DepositScreen = () => {
 
   const createDeposit = async ({ username = currentUser.username, amount }) => {
     try {
-      const resultResponse = await fetch("https://multicoin-xdbp.onrender.com/api/transactions/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, amount }),
-      });
+      const resultResponse = await fetch(
+        "https://multicoin-xdbp.onrender.com/api/transactions/create",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${currentUser.token}`,
+
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, amount }),
+        }
+      );
       const result = await resultResponse.json();
       console.log(result);
       return result;
@@ -167,7 +188,15 @@ const DepositScreen = () => {
         setSnackbarSeverity("success");
         setOpenConfirmSnackbar(true);
         const pendingDepositsResponse = await fetch(
-          `https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`
+          `https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`,
+          {
+            method: "GET", // Use "PUT" if updating data
+            headers: {
+              Authorization: `Bearer ${currentUser.token}`,
+              "Content-Type": "application/json", // Required if you're sending/receiving JSON
+            },
+            credentials: "include", // Ensures cookies (including the token) are sent with the request
+          }
         );
         const pendingDeposits = await pendingDepositsResponse.json();
         setPendingDeposits(pendingDeposits);
