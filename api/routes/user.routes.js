@@ -32,7 +32,5 @@ userDetailRoutes.post(
   increaseBalanceForUser
 );
 
-userDetailRoutes.get("/", verifyToken, (req, res) => {
-  res.send("Hello from Multicoin Database");
-});
+
 export default userDetailRoutes;
