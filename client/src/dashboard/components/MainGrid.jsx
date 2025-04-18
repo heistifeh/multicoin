@@ -103,7 +103,6 @@ export default function MainGrid() {
               Authorization: `Bearer ${currentUser.token}`,
               "Content-Type": "application/json", // Required if you're sending/receiving JSON
             },
-            credentials: "include", // Ensures cookies (including the token) are sent with the request
           }
         );
         const balance = await balanceResponse.json();
@@ -118,7 +117,6 @@ export default function MainGrid() {
               Authorization: `Bearer ${currentUser.token}`,
               "Content-Type": "application/json", // Required if you're sending/receiving JSON
             },
-            credentials: "include", // Ensures cookies (including the token) are sent with the request
           }
         );
         const pendingDeposits = await pendingDepositsResponse.json();
@@ -179,7 +177,6 @@ export default function MainGrid() {
                 Authorization: `Bearer ${currentUser.token}`,
                 "Content-Type": "application/json", // Required if you're sending/receiving JSON
               },
-              credentials: "include", // Ensures cookies (including the token) are sent with the request
             }
           );
 
@@ -219,7 +216,6 @@ export default function MainGrid() {
                     userId: `${currentUser._id}`,
                     missedIntervals: missedIntervals, // Send the missedIntervals in the body
                   }),
-                  credentials: "include",
                 }
               );
               const data = await response.json(); // Parse the response JSON

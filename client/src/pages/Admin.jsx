@@ -25,7 +25,6 @@ const Admin = () => {
             Authorization: `Bearer ${currentUser.token}`,
             "Content-Type": "application/json", // Required if you're sending/receiving JSON
           },
-          credentials: "include", // Ensures cookies (including the token) are sent with the request
         }
       );
       const data = await res.json();
