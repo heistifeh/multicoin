@@ -2,8 +2,14 @@ import { errorHandler } from "./error.js";
 import jwt from "jsonwebtoken";
 
 export const verifyToken = (req, res, next) => {
-  //get token from cookies
-  const { token } = req.body;
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader)
+    return next(
+      errorHandler(401, "You are not authenticated because no token")
+    );
+
+  const token = authHeader.split(" ")[1]; // The token is expected to be in the format "Bearer <token>"
 
   if (!token)
     return next(
