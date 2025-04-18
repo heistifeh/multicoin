@@ -21,8 +21,12 @@ mongoose
 
 const app = express();
 // Allow all origins (for development)
-app.use(cors());
-
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Frontend URL
+    credentials: true, // Allow cookies to be sent with requests
+  })
+);
 // Or allow only specific origin
 // app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
