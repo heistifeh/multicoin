@@ -44,7 +44,7 @@ const Hyca = () => {
           <span className="text-center text-black py-8">
             *Rate subject to change.
             <Link className="text-primary-very-light ml-2">
-              HYCA Disclosures
+            
             </Link>
           </span>
         </div>

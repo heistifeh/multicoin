@@ -421,14 +421,14 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
               Crypto
             </Link>
 
-            <Link
+            {/* <Link
               to={"/invest/etf"}
               className={` hover:bg-slate-100 transition duration-300 p-3 ${
                 megaMenu.state ? megaOn : megaOff
               }`}
             >
               ETFs
-            </Link>
+            </Link> */}
           </ul>
           <Link
             to={"/sign-in"}
@@ -454,102 +454,20 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
         {hamburger && (
           <div className="absolute bg-white w-[100%] top-10 right-0 left-0 lg:hidden h-[100vh] z-400 ">
             <ul>
-              <div
-                onClick={() =>
-                  setListDown({ state: !listDown.state, name: "invest" })
-                }
+              <Link
+                to={"/"}
                 className={` flex justify-between h-10 items-center py-6 ${
                   listDown.state && listDown.name == "invest"
                     ? "text-primary"
                     : ""
                 }`}
               >
-                <li className="text-lg">Invest</li>
-                <MdKeyboardArrowDown className="text-2xl" />
-              </div>
-              {listDown.state && listDown.name == "invest" ? (
-                <div classname="  w-[90%] ">
-                  <ul className="bg-slate-50 text-lg py-2 pl-4 flex flex-col">
-                    <Link to={"/invest/stock"} className="py-2">
-                      Stocks
-                    </Link>
-                    <Link to={"/invest/options"} className="py-2">
-                      Options
-                    </Link>
-                    <div className="flex gap-2 items-center">
-                      <Link to={"/invest/margin"} className="py-2">
-                        Margin
-                      </Link>
-                      <span className=" text-[10px] bg-primary px-2 rounded-lg text-white">
-                        New
-                      </span>
-                    </div>
-                    <Link to={"/invest/bonds"} className="py-2">
-                      Bonds
-                    </Link>
+                <li className="text-lg">Home</li>
+                {/* <MdKeyboardArrowDown className="text-2xl" /> */}
+              </Link>
 
-                    <div className="flex gap-2 items-center">
-                      <Link to={"/invest/bond-account"} className="py-2">
-                        Bond Account
-                      </Link>
-                      <span className=" text-[12px] bg-icon px-2 rounded-xl text-black">
-                        6.5% yield
-                      </span>
-                    </div>
-                    <div className="flex gap-2 items-center">
-                      <Link to={"/invest/hyca"} className="py-2">
-                        High-Yield Cash Account
-                      </Link>
-                      <span className=" text-[12px] bg-icon px-2 rounded-xl text-black">
-                        4.1% APY
-                      </span>
-                    </div>
-
-                    <Link to={"/invest/treasuries"} className="py-2">
-                      Treasuries
-                    </Link>
-                    <div className="flex gap-2 items-center">
-                      <Link to={"/invest/retirement"} className="py-2">
-                        Retirement (IRAs)
-                      </Link>
-                      <span className=" text-[10px] bg-primary px-2 rounded-lg text-white">
-                        New
-                      </span>
-                    </div>
-                    <Link to={"/invest/investment"} className="py-2">
-                      Investment Plans
-                    </Link>
-                    <div className="flex gap-2 items-center">
-                      <Link to={"/invest/crypto"} className="py-2">
-                        Crypto
-                      </Link>
-                      <span className=" text-sm bg-slate-100 px-2 rounded-lg text-text font-extralight">
-                        Offered by Bakkt Crypto
-                      </span>
-                    </div>
-                    <Link to={"/invest/etf"} className="py-2">
-                      ETFs
-                    </Link>
-                  </ul>
-
-                  <div className="bg-slate-50 pl-4">
-                    <span className="text-sm text-text font-semibold">
-                      start investing today
-                    </span>
-                    <img src={navpic} alt="" className="" />
-                    <span className="block text-sm font-bold py-2">
-                      Bond Account
-                    </span>
-                    <span className="text-sm py-2 text-slate-700 ">
-                      Discover a new way to invest in bonds and earn interest
-                      payments. <span className="text-primary">Learn more</span>
-                    </span>
-                  </div>
-                </div>
-              ) : (
-                ""
-              )}
-              <div
+              <Link
+                to={"/invest/stock"}
                 onClick={() =>
                   setListDown({ state: !listDown.state, name: "resources" })
                 }
@@ -559,97 +477,12 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
                     : ""
                 }`}
               >
-                <li className="text-lg">Resources</li>
-                <MdKeyboardArrowDown className="text-2xl" />
-              </div>
-              {listDown.state && listDown.name == "resources" ? (
-                <div classname="  w-[90%] ">
-                  <ul className="bg-slate-50 text-lg py-2 pl-4 flex flex-col">
-                    <Link
-                      to={"/invest/investment"}
-                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                    >
-                      <div className="hover:bg-slate-50">
-                        <span className="text-base">Options Rebate FAQ</span>
-                        <p className="text-text text-sm">
-                          See how the Options Trading Rebate Program works
-                        </p>
-                      </div>
-                    </Link>
-                    <Link
-                      to={"/invest/investment"}
-                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                    >
-                      <div className="hover:bg-slate-50">
-                        <span className="text-base">Transfer Your Account</span>
-                        <p className="text-text text-sm">
-                          Get up to $10,000 when you transfer your investment
-                          portfolio to Public.
-                        </p>
-                      </div>
-                    </Link>
-                    <Link
-                      to={"/invest/investment"}
-                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                    >
-                      <div className="hover:bg-slate-50">
-                        <span className="text-base">
-                          High Yield Savings Calculator.
-                        </span>
-                        <p className="text-text text-sm">
-                          Compare our competitive rates and plan your financial
-                          growth
-                        </p>
-                      </div>
-                    </Link>
-                    <Link
-                      to={"/invest/investment"}
-                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                    >
-                      <div className="hover:bg-slate-50">
-                        <span className="text-base">Bond Screener</span>
-                        <p className="text-text text-sm">
-                          Explore over 10,000 bonds with our advanced screening
-                          tool.
-                        </p>
-                      </div>
-                    </Link>
-                    <Link
-                      to={"/invest/investment"}
-                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                    >
-                      <div className="hover:bg-slate-50">
-                        <span className="text-base">Learn</span>
-                        <p className="text-text text-sm">
-                          Browse our latest articles and investing resources.
-                        </p>
-                      </div>
-                    </Link>
+                <li className="text-lg">Stocks</li>
+                {/* <MdKeyboardArrowDown className="text-2xl" /> */}
+              </Link>
 
-                    <Link
-                      to={"/invest/stock"}
-                      className="text-xl  col-start-4 row-span-full"
-                    ></Link>
-                  </ul>
-
-                  <div className="bg-slate-50 pl-4">
-                    <span className="font-bold text-sm text-text">
-                      start investing today
-                    </span>
-                    <img src={navpic} alt="" className="w-f" />
-                    <span className="block text-sm font-bold py-2">
-                      Bond Account
-                    </span>
-                    <span className="text-sm py-2 text-slate-700 ">
-                      Discover a new way to invest in bonds and earn interest
-                      payments. Learn more
-                    </span>
-                  </div>
-                </div>
-              ) : (
-                ""
-              )}
-              <div
+              <Link
+                to={"/invest/crypto"}
                 onClick={() =>
                   setListDown({ state: !listDown.state, name: "company" })
                 }
@@ -659,81 +492,11 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
                     : ""
                 }`}
               >
-                <li className="text-lg">Company</li>
-                <MdKeyboardArrowDown className="text-2xl" />
-              </div>
-              {listDown.state && listDown.name == "company" ? (
-                <div classname="  w-[90%] ">
-                  <ul className="bg-slate-50 text-lg py-2 pl-4 flex flex-col">
-                    <Link
-                      to={"/invest/investment"}
-                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                    >
-                      <div className="hover:bg-slate-50">
-                        <span className="text-base">About</span>
-                        <p className="text-text text-sm">
-                          Discover how we're making the markets work for all
-                          investors. Newsroom Access our media kit and a
-                          collection of our latest news.
-                        </p>
-                      </div>
-                    </Link>
-                    <Link
-                      to={"/invest/investment"}
-                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                    >
-                      <div className="hover:bg-slate-50">
-                        <span className="text-base">Have questions?</span>
-                        <p className="text-text text-sm">
-                          Reach out to us at support@multicoin.com — we're here
-                          to help.
-                        </p>
-                      </div>
-                    </Link>
-                    <Link
-                      to={"/invest/investment"}
-                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                    >
-                      <div className="hover:bg-slate-50">
-                        <span className="text-base">Media.</span>
-                        <p className="text-text text-sm">
-                          Market news, live commentary, and analysis from
-                          industry experts
-                        </p>
-                      </div>
-                    </Link>
-                    <Link
-                      to={"/invest/investment"}
-                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                    >
-                      <div className="hover:bg-slate-50">
-                        <span className="text-base">Bond Screener</span>
-                        <p className="text-text text-sm">
-                          Explore over 10,000 bonds with our advanced screening
-                          tool.
-                        </p>
-                      </div>
-                    </Link>
-                  </ul>
+                <li className="text-lg">Crypto</li>
+                {/* <MdKeyboardArrowDown className="text-2xl" /> */}
+              </Link>
 
-                  <div className="bg-slate-50 pl-4">
-                    <span className="font-bold text-sm text-text">
-                      start investing today
-                    </span>
-                    <img src={navpic} alt="" className="w-f" />
-                    <span className="block text-sm font-bold py-2">
-                      Bond Account
-                    </span>
-                    <span className="text-sm py-2 text-slate-700 ">
-                      Discover a new way to invest in bonds and earn interest
-                      payments. Learn more
-                    </span>
-                  </div>
-                </div>
-              ) : (
-                ""
-              )}
-              <div
+              {/* <div
                 onClick={() =>
                   setListDown({ state: !listDown.state, name: "premium" })
                 }
@@ -794,7 +557,7 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
                 </div>
               ) : (
                 ""
-              )}
+              )} */}
             </ul>
             <div className="flex flex-col gap-4 w-[80%] mx-auto pt-8">
               <div className="buttons flex gap-4 items-center">

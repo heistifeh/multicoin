@@ -59,7 +59,7 @@ export default function SideMenu({ verifiedState }) {
       >
         <MenuContent />
         {/* <CardAlert /> */}
-        {currentUser && !loading && (
+        {/* {currentUser && !loading && (
           <Box sx={{ p: 2 }}>
             <Typography variant="body2" sx={{ fontWeight: 500 }}>
               Balance: ${currentUser?.total_balance.toFixed(2)}
@@ -68,7 +68,7 @@ export default function SideMenu({ verifiedState }) {
               Profit: ${currentUser?.total_profit.toFixed(2)}
             </Typography>
           </Box>
-        )}
+        )} */}
       </Box>
       <Stack
         direction="row"

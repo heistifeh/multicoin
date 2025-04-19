@@ -17,6 +17,7 @@ import Footer from "../../home/Footer";
 import Accordion from "../../../components/Accordion";
 import "./stock.css";
 import stockImage from "../images/stock-image.jpg";
+import { Link } from "react-router-dom";
 
 const Stock = () => {
   return (

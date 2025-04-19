@@ -39,7 +39,7 @@ export default function Dashboard(props) {
   const { currentUser } = useSelector((state) => state.user);
   //cehck if the user ID is verified
   const isIdVerified = currentUser.isIdVerified;
-  console.log(currentUser.email);
+  // console.log(currentUser.email);
   const navigate = useNavigate();
   return (
     <AppTheme {...props} themeComponents={xThemeComponents}>
@@ -103,7 +103,7 @@ export default function Dashboard(props) {
               <Route path="deposit" element={<DepositScreen />} />
               <Route path="withdraw" element={<WithdrawalScreen />} />
               <Route path="analytics" element={<Analytics />} />
-              <Route path="assets" element={<AssetScreen />} />
+              <Route path="transactions" element={<AssetScreen />} />
             </Routes>
           </Stack>
         </Box>

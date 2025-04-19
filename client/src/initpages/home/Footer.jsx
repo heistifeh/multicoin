@@ -187,7 +187,7 @@ const Footer = () => {
             </span>
 
             <span className="text-sm text-primary-very-light hover:underline">
-              View Full Disclosures
+             
             </span>
           </div>
         </div>

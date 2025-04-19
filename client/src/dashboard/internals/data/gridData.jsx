@@ -41,10 +41,7 @@ export const useTransactionData = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       if (currentUser && currentUser._id) {
-        const token = document.cookie.replace(
-          /(?:(?:^|.*;\s*)twk_token_67ffbb87e9af841915f4e593\s*=\s*([^;]*).*$)|^.*$/,
-          "$1"
-        );
+       
         try {
           const response = await fetch(
             `https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`,
@@ -76,14 +73,14 @@ export const useTransactionData = () => {
           setRows(mappedRows); // Set state with fetched data
           setLoading(false); // Set loading to false
         } catch (error) {
-          console.error("Error fetching transactions:", error);
+          console.error("Error fetching transactions:😑😑😐😐", error);
           setLoading(false); // Set loading to false on error
         }
       }
     };
 
     fetchTransactions();
-  }, [currentUser]);
+  }, []);
 
   // Return rows and loading state
   return { rows, loading };

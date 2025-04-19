@@ -115,7 +115,6 @@ export default function MainGrid() {
               Authorization: `Bearer ${currentUser.token}`,
               "Content-Type": "application/json", // Required if you're sending/receiving JSON
             },
-            credentials: "include", // Ensures cookies (including the token) are sent with the request
           }
         );
         const balance = await balanceResponse.json();
@@ -130,7 +129,6 @@ export default function MainGrid() {
               Authorization: `Bearer ${currentUser.token}`,
               "Content-Type": "application/json", // Required if you're sending/receiving JSON
             },
-            credentials: "include", // Ensures cookies (including the token) are sent with the request
           }
         );
         const pendingDeposits = await pendingDepositsResponse.json();
@@ -191,7 +189,6 @@ export default function MainGrid() {
                 Authorization: `Bearer ${currentUser.token}`,
                 "Content-Type": "application/json", // Required if you're sending/receiving JSON
               },
-              credentials: "include", // Ensures cookies (including the token) are sent with the request
             }
           );
 
@@ -231,7 +228,6 @@ export default function MainGrid() {
                     userId: `${currentUser._id}`,
                     missedIntervals: missedIntervals, // Send the missedIntervals in the body
                   }),
-                  credentials: "include",
                 }
               );
               const data = await response.json(); // Parse the response JSON
@@ -315,16 +311,15 @@ export default function MainGrid() {
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
         Details
       </Typography>
-      <Grid container spacing={2} columns={12}>
-        <Grid size={{ xs: 12, lg: 9 }}>
-          <CustomizedDataGrid />
-        </Grid>
-        <Grid size={{ xs: 12, lg: 3 }}>
+      <Grid item xs={12}>
+        <CustomizedDataGrid />
+
+        {/* <Grid size={{ xs: 12, lg: 3 }}>
           <Stack gap={2} direction={{ xs: "column", sm: "row", lg: "column" }}>
             <CustomizedTreeView />
             <ChartUserByCountry />
           </Stack>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Box>
   );

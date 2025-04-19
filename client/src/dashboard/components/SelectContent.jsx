@@ -61,7 +61,7 @@ export default function SelectContent() {
       <MenuItem value="">
         <ListItemAvatar>
           <Avatar alt="Sitemark web">
-            <DevicesRoundedIcon sx={{ fontSize: "1rem" }} />
+            <img src="/logo1.jpg"/>
           </Avatar>
         </ListItemAvatar>
         <ListItemText primary="MultiCoin Capital" />

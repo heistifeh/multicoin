@@ -13,11 +13,11 @@ import SettingsRoundedIcon from "@mui/icons-material/SettingsRounded";
 import InfoRoundedIcon from "@mui/icons-material/InfoRounded";
 import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { useEffect } from "react";
 const mainListItems = [
   { text: "Home", icon: <HomeRoundedIcon />, path: "/dashboard" },
   {
-    text: "Invest",
+    text: "Deposit",
     icon: <AssignmentRoundedIcon />,
     path: "/dashboard/deposit",
   },
@@ -32,9 +32,9 @@ const mainListItems = [
     path: "/dashboard/analytics",
   },
   {
-    text: "Assets",
+    text: "Transactions",
     icon: <AssignmentRoundedIcon />,
-    path: "/dashboard/assets",
+    path: "/dashboard/transactions",
   },
 ];
 
@@ -44,8 +44,14 @@ const secondaryListItems = [
     text: "About",
     icon: <InfoRoundedIcon />,
     path: "https://multicoin.capital/about/",
+    action: "",
   },
-  { text: "Feedback", icon: <HelpRoundedIcon /> },
+  {
+    text: "Feedback",
+    icon: <HelpRoundedIcon />,
+    path: "",
+    action: "openChat",
+  },
 ];
 
 export default function MenuContent() {
@@ -53,7 +59,19 @@ export default function MenuContent() {
   const location = useLocation();
 
   const handleNavigation = React.useCallback(
-    (path) => {
+    (path, action) => {
+      if (path === "") {
+        if (window.Tawk_API && window.Tawk_API.maximize) {
+          window.Tawk_API.maximize();
+          // Set up listener for when chat is closed/minimized
+          window.Tawk_API.onChatMinimized = function () {
+            navigate("/dashboard");
+          };
+        } else {
+          console.warn("Tawk is not ready yet");
+        }
+      }
+
       const isExternal =
         path.startsWith("http://") || path.startsWith("https://");
       if (isExternal) {
@@ -64,7 +82,13 @@ export default function MenuContent() {
     },
     [navigate]
   );
-
+  useEffect(() => {
+    return () => {
+      if (window.Tawk_API) {
+        window.Tawk_API.onChatMinimized = null;
+      }
+    };
+  }, []);
   return (
     <Stack sx={{ flexGrow: 1, p: 1, justifyContent: "space-between" }}>
       <List dense>
@@ -72,7 +96,7 @@ export default function MenuContent() {
           <ListItem key={`main-${item.path}`} disablePadding>
             <ListItemButton
               selected={location.pathname === item.path}
-              onClick={() => handleNavigation(item.path)}
+              onClick={() => handleNavigation(item.path, item.action)}
             >
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />

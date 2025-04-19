@@ -19,7 +19,7 @@ const Margin = () => {
       <>
         <div className="flex gap-2 items-center my-6 md:mt-4 hover:bg-slate-100 w-[fit-content] px-2 rounded-2xl border-1 border-slate-600 text-sm transition duration-300">
           <CiCircleInfo />
-          <span>{title}</span>
+          <span className="hidden">{title}</span>
         </div>
       </>
     );
