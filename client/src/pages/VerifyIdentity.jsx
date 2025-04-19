@@ -138,7 +138,7 @@ const VerifyIdentity = () => {
     <div className="px-4 sm:px-0">
       <div className="flex gap-2 items-center p-4">
         <img src="./logo1.jpg" alt="multicoin" className="rounded-lg" />
-        <span className="text-4xl font-bold text-black">Multicoin</span>
+        <span className="text-4xl font-bold text-black">Multicoin Capital</span>
       </div>
       <div className="my-10 mx-auto max-w-lg">
         <h1 className="text-black text-2xl sm:text-5xl font-bold mb-4 text-center">

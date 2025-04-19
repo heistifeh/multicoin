@@ -33,7 +33,7 @@ export default function CustomizedDataGrid() {
         Transaction Data
       </Typography>
       {loading ? (
-        <Typography>Loading...</Typography>  // Display loading while fetching
+        <Typography>Loading transaction history...</Typography>  // Display loading while fetching
       ) : (
         <DataGrid columns={customColumns} rows={rows} />  // Use custom columns with updated render
       )}

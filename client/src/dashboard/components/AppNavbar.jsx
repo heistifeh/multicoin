@@ -63,12 +63,17 @@ export default function AppNavbar() {
             spacing={1}
             sx={{ justifyContent: "center", mr: "auto" }}
           >
-          
             <Typography
               variant="h4"
               component="h1"
-              sx={{ color: "text.primary" }}
+              sx={{
+                color: "text.primary",
+                display: "flex",
+                alignItems: "center", // vertically center image and text
+                gap: 1, // space between image and text
+              }}
             >
+              <img src="./logo.png" alt="" style={{ height: 32 }} />
               Multicoin Capital
             </Typography>
           </Stack>

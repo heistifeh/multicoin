@@ -11,8 +11,12 @@ import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
 import MenuButton from "./MenuButton";
 import MenuContent from "./MenuContent";
 import CardAlert from "./CardAlert";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function SideMenuMobile({ open, toggleDrawer }) {
+  const { currentUser } = useSelector((state) => state.user);
+  const navigate = useNavigate();
   return (
     <Drawer
       anchor="right"
@@ -39,17 +43,17 @@ function SideMenuMobile({ open, toggleDrawer }) {
           >
             <Avatar
               sizes="small"
-              alt="Riley Carter"
+              alt={currentUser?.username || "Guest"}
               src="/static/images/avatar/7.jpg"
               sx={{ width: 24, height: 24 }}
             />
             <Typography component="p" variant="h6">
-              Riley Carter
+            {currentUser?.username || "Guest"}
             </Typography>
           </Stack>
-          <MenuButton showBadge>
-            <NotificationsRoundedIcon />
-          </MenuButton>
+          {/* <MenuButton showBadge>
+          
+          </MenuButton> */}
         </Stack>
         <Divider />
         <Stack sx={{ flexGrow: 1 }}>
@@ -59,6 +63,7 @@ function SideMenuMobile({ open, toggleDrawer }) {
         {/* <CardAlert /> */}
         <Stack sx={{ p: 2 }}>
           <Button
+          onClick={() => navigate("/sign-in")}
             variant="outlined"
             fullWidth
             startIcon={<LogoutRoundedIcon />}

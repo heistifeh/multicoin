@@ -308,11 +308,11 @@ export default function MainGrid() {
           <PageViewsBarChart />
         </Grid>
       </Grid>
-      <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
+      {/* <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
         Details
-      </Typography>
+      </Typography> */}
       <Grid item xs={12}>
-        <CustomizedDataGrid />
+        {/* <CustomizedDataGrid /> */}
 
         {/* <Grid size={{ xs: 12, lg: 3 }}>
           <Stack gap={2} direction={{ xs: "column", sm: "row", lg: "column" }}>
