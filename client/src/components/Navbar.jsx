@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
@@ -315,19 +315,19 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
     state: false,
     name: "",
   });
-  const [listDown, setListDown] = useState({
-    state: false,
-    name: "",
-  });
 
   const handleHamBurgerMenu = () => {
-    setHamburger(!hamburger);
-    if (!hamburger) {
+    setHamburger((prev) => !prev);
+  };
+  useEffect(() => {
+    if (hamburger) {
       document.body.classList.add("overflow-hidden");
+      console.log("added");
     } else {
       document.body.classList.remove("overflow-hidden");
+      console.log("removed");
     }
-  };
+  }, [hamburger]);
 
   return (
     <div className="sticky top-0 w-full bg-white z-1000">
@@ -451,16 +451,17 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
             <RxHamburgerMenu className="text-2xl" />
           )}
         </div>
+
+        {/* mobile menu */}
         {hamburger && (
           <div className="absolute bg-white w-[100%] top-10 right-0 left-0 lg:hidden h-[100vh] z-400 ">
-            <ul>
+            <ul className="text-center">
               <Link
                 to={"/"}
-                className={` flex justify-between h-10 items-center py-6 ${
-                  listDown.state && listDown.name == "invest"
-                    ? "text-primary"
-                    : ""
-                }`}
+                onClick={() => {
+                  setHamburger(false); // triggers effect → removes overflow-hidden
+                }}
+                className={` flex justify-between h-10 items-center py-6 text-primary `}
               >
                 <li className="text-lg">Home</li>
                 {/* <MdKeyboardArrowDown className="text-2xl" /> */}
@@ -468,14 +469,10 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
 
               <Link
                 to={"/invest/stock"}
-                onClick={() =>
-                  setListDown({ state: !listDown.state, name: "resources" })
-                }
-                className={` flex justify-between h-10 items-center ${
-                  listDown.state && listDown.name == "resources"
-                    ? "text-primary"
-                    : ""
-                }`}
+                onClick={() => {
+                  setHamburger(false); // triggers effect → removes overflow-hidden
+                }}
+                className={` flex justify-between h-10 items-center text-primary`}
               >
                 <li className="text-lg">Stocks</li>
                 {/* <MdKeyboardArrowDown className="text-2xl" /> */}
@@ -483,81 +480,14 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
 
               <Link
                 to={"/invest/crypto"}
-                onClick={() =>
-                  setListDown({ state: !listDown.state, name: "company" })
-                }
-                className={` flex justify-between h-10 items-center ${
-                  listDown.state && listDown.name == "company"
-                    ? "text-primary"
-                    : ""
-                }`}
+                onClick={() => {
+                  setHamburger(false); // triggers effect → removes overflow-hidden
+                }}
+                className={` flex justify-between h-10 items-center text-primary`}
               >
                 <li className="text-lg">Crypto</li>
                 {/* <MdKeyboardArrowDown className="text-2xl" /> */}
               </Link>
-
-              {/* <div
-                onClick={() =>
-                  setListDown({ state: !listDown.state, name: "premium" })
-                }
-                className={` flex justify-between h-10 items-center ${
-                  listDown.state && listDown.name == "premium"
-                    ? "text-primary"
-                    : ""
-                }`}
-              >
-                <li className="text-lg">Premium</li>
-                <MdKeyboardArrowDown className="text-2xl" />
-              </div>
-              {listDown.state && listDown.name == "premium" ? (
-                <div classname="  w-[90%] transition-all duration-500 ease-in-out">
-                  <ul className="bg-slate-50 text-lg py-2 pl-4 flex flex-col">
-                    <Link to={"/invest/stock"} className="text-xl">
-                      <div className="flex flex-col p-4">
-                        <img
-                          src={assetbg}
-                          alt=""
-                          className="w-2/3 h-2/3 object-cover"
-                        />
-                      </div>
-                    </Link>
-
-                    <Link
-                      to={"/invest/investment"}
-                      className="text-xl col-span-1  hover:bg-slate-100 p-2"
-                    >
-                      <div className="hover:bg-slate-50">
-                        <span className="block text-sm text-text font-semibold">
-                          Multicoin Premium{" "}
-                        </span>
-                        <span className="text-base font-semibold">
-                          Level up your account{" "}
-                        </span>
-                        <p className="text-text text-sm">
-                          Unlock enhanced trading features, white-glove customer
-                          service, advanced data and analysis, and portfolio
-                          management tools.
-                        </p>
-                        <div className="flex gap-4 items-center pt-4">
-                          <button className="cursor-pointer text-white md:my-8 bg-primary py-2 rounded-lg hover:bg-primary-very-light transition duration-300 w-[80px] text-sm  font-semibold ">
-                            Get started
-                          </button>
-                          <Link to={"/"}>
-                            <div className="flex   items-center gap-2">
-                              <span className="text-primary text-sm">
-                                Learn more
-                              </span>
-                              <FaArrowRight className="text-primary" />
-                            </div>
-                          </Link>
-                        </div>
-                      </div>
-                    </Link>
-                  </ul>
-                </div>
-              ) : (
-                ""
-              )} */}
             </ul>
             <div className="flex flex-col gap-4 w-[80%] mx-auto pt-8">
               <div className="buttons flex gap-4 items-center">
@@ -581,12 +511,12 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
           ""
         ) : (
           <div className="lg:hidden fixed bg-slate-50 w-full bottom-5 rounded-lg px-4 py-2 left-0 shadow-sm custom-shadow">
-            <div className="flex justify-between items-center">
+            <Link to={"/sign-up"} className="flex justify-between items-center">
               <span className="text-black text-sm">Start Investing now</span>
               <button className="text-white bg-primary p-2 rounded-lg w-35 font-bold text-lg">
                 Sign up
               </button>
-            </div>
+            </Link>
           </div>
         )}
       </nav>
