@@ -10,7 +10,7 @@ export const mailtrapClient = new MailtrapClient({
 
 export const sender = {
   email: "hello@demomailtrap.co",
-  name: "Multicoin Inc.",
+  name: "Multicoin Capital",
 };
 
 // because we are setting recipients dynamically
