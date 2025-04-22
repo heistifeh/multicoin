@@ -11,10 +11,10 @@ import jwt from "jsonwebtoken";
 import crypto from "crypto";
 export const signup = async (req, res, next) => {
   try {
-    const { email, password, phone } = req.body;
+    const { email, password, phone, lastName, firstName } = req.body;
 
     // if there is no password, email or phone input
-    if (!password || !email || !phone)
+    if (!password || !email || !phone || !lastName || !firstName)
       return res.status(400).json(errorHandler(400, "all fields are required"));
 
     // if user already exists

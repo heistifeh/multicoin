@@ -160,7 +160,7 @@ export const getDesignTokens = (mode) => {
       },
     },
     typography: {
-      fontFamily: 'Inter, sans-serif',
+      fontFamily: 'Titillium Web, serif',
       h1: {
         fontSize: defaultTheme.typography.pxToRem(48),
         fontWeight: 600,
