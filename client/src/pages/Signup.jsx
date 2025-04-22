@@ -128,6 +128,20 @@ const Signup = () => {
           </span>
           <form onSubmit={handleSubmit}>
             <input
+              type="text"
+              id="firstName"
+              placeholder="Legal first name"
+              onChange={handleChange}
+              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
+            />
+            <input
+              type="text"
+              id="lastName"
+              placeholder="Legal last name"
+              onChange={handleChange}
+              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
+            />
+            <input
               type="email"
               id="email"
               placeholder="Email"
@@ -139,16 +153,21 @@ const Signup = () => {
               id="password"
               onChange={handleChange}
               min={8}
-              placeholder="password (min. 8 characters)"
+              placeholder="Password (min. 8 characters)"
               className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
             />
-            <input
-              type="number"
-              id="phone"
-              onChange={handleChange}
-              placeholder="Phone number"
-              className="px-4 border-1 border-slate-200 rounded-lg mt-4 w-full py-2 placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
-            />
+            <div className="flex items-center border-1 border-slate-200 rounded-lg mt-4 w-full overflow-hidden">
+              <span className="px-3 text-sm font-bold text-slate-500 ">
+                +1
+              </span>
+              <input
+                type="text"
+                id="phone"
+                onChange={handleChange}
+                placeholder="Phone number"
+                className=" py-2 w-full placeholder:text-sm placeholder:text-slate-400 placeholder:font-bold outline-none"
+              />
+            </div>
 
             <p
               className="

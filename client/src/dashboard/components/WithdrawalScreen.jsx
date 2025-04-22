@@ -201,20 +201,11 @@ const WithdrawalScreen = () => {
                 >
                   <MenuItem value="BTC">BTC</MenuItem>
                   <MenuItem value="ETH">ETH</MenuItem>
+                  <MenuItem value="USDT_ERC20">USDT (ERC-20)</MenuItem>
+                  <MenuItem value="USDT_TRC20">USDT (TRC-20)</MenuItem>
+                  <MenuItem value="USDT_BEP20">USDT (BEP-20)</MenuItem>
                   <MenuItem value="BNB">BNB</MenuItem>
-                  <MenuItem value="USDT">USDT</MenuItem>
-                  <MenuItem value="USDC">USDC</MenuItem>
                   <MenuItem value="SOL">SOL</MenuItem>
-                  <MenuItem value="ADA">ADA</MenuItem>
-                  <MenuItem value="XRP">XRP</MenuItem>
-                  <MenuItem value="DOT">DOT</MenuItem>
-                  <MenuItem value="DOGE">DOGE</MenuItem>
-                  <MenuItem value="MATIC">MATIC</MenuItem>
-                  <MenuItem value="LTC">LTC</MenuItem>
-                  <MenuItem value="TRX">TRX</MenuItem>
-                  <MenuItem value="AVAX">AVAX</MenuItem>
-                  <MenuItem value="SHIB">SHIB</MenuItem>
-                  <MenuItem value="DAI">DAI</MenuItem>
                 </Select>
               </FormControl>
               <TextField

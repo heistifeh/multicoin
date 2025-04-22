@@ -491,12 +491,18 @@ const Navbar = ({ megaOn = "text-black", megaOff = "text-head" }) => {
             </ul>
             <div className="flex flex-col gap-4 w-[80%] mx-auto pt-8">
               <div className="buttons flex gap-4 items-center">
-                <button className="text-black bg-white p-2 rounded-lg w-35 font-bold text-lg border-1 border-slate-200 custom-shadow">
+                <Link
+                  to={"/sign-in"}
+                  className="text-black bg-white p-2 rounded-lg w-35 font-bold text-lg border-1 border-slate-200 custom-shadow"
+                >
                   Sign in
-                </button>
-                <button className="text-white bg-primary p-2 rounded-lg w-35 font-bold text-lg custom-shadow">
+                </Link>
+                <Link
+                  to={"/sign-up"}
+                  className="text-white bg-primary p-2 rounded-lg w-35 font-bold text-lg custom-shadow"
+                >
                   Get started
-                </button>
+                </Link>
               </div>
 
               <div className="apps p-4 flex  gap-12 items-center">

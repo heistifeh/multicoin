@@ -56,16 +56,16 @@ const Crypto = () => {
               strategy, manage your portfolio – all on Multicoin.
             </span>
             <div className="flex my-8 gap-4 sm:gap-8">
-              <button className="sign-up bg-primary text-white p-2 w-30 rounded-4xl text-xl cursor-pointer hover:bg-primary-dark transition duration-300 custom-shadow">
+              <Link to={"/sign-up"} className="sign-up bg-primary text-white p-2 w-30 rounded-4xl text-xl cursor-pointer hover:bg-primary-dark transition duration-300 custom-shadow text-center">
                 Sign Up
-              </button>
+              </Link>
               {/* <button className="explore  border-1 border-slate-400 text-black p-2 w-36 rounded-4xl text-lg cursor-pointer hover:bg-primary hover:text-white transition duration-300 custom-shadow">
                 Explore stocks
               </button> */}
             </div>
           </div>
           <div className="invest-image sm:w-2/3 pt-10">
-            <img src={bitcoin} alt="" className="rounded-2xl h-full animate-pulseZoom" />
+            <img src={bitcoin} alt="" className="rounded-2xl h-full " />
           </div>
         </div>
       </header>

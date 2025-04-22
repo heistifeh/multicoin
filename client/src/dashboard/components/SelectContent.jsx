@@ -12,6 +12,7 @@ import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import DevicesRoundedIcon from "@mui/icons-material/DevicesRounded";
 import SmartphoneRoundedIcon from "@mui/icons-material/SmartphoneRounded";
 import ConstructionRoundedIcon from "@mui/icons-material/ConstructionRounded";
+import { Box } from "@mui/material";
 
 const Avatar = styled(MuiAvatar)(({ theme }) => ({
   width: 28,
@@ -35,37 +36,35 @@ export default function SelectContent() {
   };
 
   return (
-    <Select
-      labelId="company-select"
-      id="company-simple-select"
-      value={company}
-      onChange={handleChange}
-      displayEmpty
-      inputProps={{ "aria-label": "Select company" }}
-      fullWidth
+    <Box
       sx={{
         maxHeight: 56,
         width: 215,
-        "&.MuiList-root": {
-          p: "8px",
-        },
-        [`& .${selectClasses.select}`]: {
-          display: "flex",
-          alignItems: "center",
-          gap: "2px",
-          pl: 1,
-        },
+        display: "flex",
+        flexDirection: "column",
+        border: "1px solid #e0e0e0",
+        borderRadius: 1,
+        overflow: "hidden",
+        fontSize: "14px",
+        backgroundColor: "background.paper",
       }}
     >
-      <ListSubheader sx={{ pt: 0 }}>Production</ListSubheader>
-      <MenuItem value="">
+      {/* <ListSubheader sx={{ pt: 1, pb: 1 }}>Production</ListSubheader> */}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          px: 1.5,
+          py: 1,
+        }}
+      >
         <ListItemAvatar>
           <Avatar alt="Sitemark web">
-            <img src="/logo1.jpg"/>
+            <img src="/logo1.jpg" alt="Company Logo" />
           </Avatar>
         </ListItemAvatar>
         <ListItemText primary="MultiCoin Capital" />
-      </MenuItem>
-    </Select>
+      </Box>
+    </Box>
   );
 }

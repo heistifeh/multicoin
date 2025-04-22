@@ -316,15 +316,12 @@ const DepositScreen = () => {
           <Paper sx={{ p: 3, height: "100%", overflowY: "auto" }}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
               {/* Go Back Icon Button */}
-              <IconButton onClick={handleGoBack}>
-                <ArrowBackIcon />
-              </IconButton>
 
               <Typography variant="h5" gutterBottom>
                 Crypto Payments – Secure & Instant Deposits
               </Typography>
             </Box>
-            <Button
+            {/* <Button
               variant="contained"
               color="secondary"
               fullWidth
@@ -332,7 +329,7 @@ const DepositScreen = () => {
               onClick={() => setShowDepositForm(true)}
             >
               View Your Wallet & Deposit Now
-            </Button>
+            </Button> */}
             <Typography variant="body1" gutterBottom>
               At Multicoin Capital, we offer fast and secure cryptocurrency
               payment options for funding your account. Follow the instructions
@@ -347,7 +344,7 @@ const DepositScreen = () => {
               corresponding wallet address. Ensure you select the correct
               network to avoid lost transactions.
             </Typography>
-            <Typography variant="subtitle1" gutterBottom>
+            {/* <Typography variant="subtitle1" gutterBottom>
               Bitcoin (BTC)
             </Typography>
             <Typography variant="body2" gutterBottom>
@@ -387,13 +384,14 @@ const DepositScreen = () => {
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
               Solana (SOL)
-            </Typography>
+            </Typography> 
             <Typography variant="body2" gutterBottom>
               Wallet Address: {walletAddresses.SOL}
               <br />
               Network: Solana (SOL) Mainnet
             </Typography>
             <Divider sx={{ my: 2 }} />
+            */}
             <Typography variant="h6" gutterBottom>
               Important Deposit Guidelines
             </Typography>
@@ -431,29 +429,7 @@ const DepositScreen = () => {
               </ul>
             </Typography>
             <Divider sx={{ my: 2 }} />
-            {/* <Typography variant="h6" gutterBottom>
-              Confirming Your Deposit
-            </Typography>
-            <Typography variant="body2" gutterBottom>
-              Once you’ve sent the funds, submit your payment details for
-              verification:
-            </Typography>
-            <Typography variant="body2" gutterBottom component="div">
-              Send an email to: [Your Support Email] with:
-              <ul>
-                <li>Transaction ID (TxID) from your wallet</li>
-                <li>Amount Sent & Cryptocurrency Used</li>
-                <li>Your Account Username or ID</li>
-              </ul>
-            </Typography>
-            <Divider sx={{ my: 2 }} />
-            <Typography variant="h6" gutterBottom>
-              Need Help? Contact Support
-            </Typography>
-            <Typography variant="body2" gutterBottom>
-              If you encounter any issues with your crypto deposit, our team is
-              available to assist you.
-            </Typography> */}
+
             <Typography variant="body2" gutterBottom>
               Email: support@multicoinapp.com <br />
               Live Chat: Click the chat icon at the bottom right of the screen
@@ -476,7 +452,7 @@ const DepositScreen = () => {
             </Typography>
             <Button
               variant="contained"
-              color="secondary"
+              color="primary"
               fullWidth
               sx={{ mt: 2 }}
               onClick={() => setShowDepositForm(true)}

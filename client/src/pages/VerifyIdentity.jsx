@@ -161,7 +161,7 @@ const VerifyIdentity = () => {
           </div>
           <div className="border-t-1 border-slate-200 p-3 mt-4">
             <label htmlFor="img" className="font-bold">
-              Upload Front Image:
+              Upload Driver's Licence Front Image:
             </label>
             <br />
             <input
@@ -176,7 +176,7 @@ const VerifyIdentity = () => {
           <br />
           <div className=" p-3 ">
             <label htmlFor="img" className="font-bold">
-              Upload Back Image:
+              Upload Driver's Licence Back Image:
             </label>
             <br />
             <input

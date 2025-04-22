@@ -46,7 +46,7 @@ const Stock = () => {
             <img
               src={stockImage}
               alt="Stock"
-              className="rounded-lg w-full max-h-[600px] object-cover animate-pulseZoom"
+              className="rounded-lg w-full max-h-[600px] object-cover "
             />
           </div>
         </div>

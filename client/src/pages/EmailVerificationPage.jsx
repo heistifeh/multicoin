@@ -5,7 +5,6 @@ import { TbArrowsUp } from "react-icons/tb";
 import { BiSolidPieChart } from "react-icons/bi";
 import { FaCheck } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
-import { motion } from "framer-motion";
 import {
   verifyEmailStart,
   verifyEmailSuccess,
