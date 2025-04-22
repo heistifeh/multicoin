@@ -396,37 +396,37 @@ const DepositScreen = () => {
               Important Deposit Guidelines
             </Typography>
             <Typography variant="body2" component="div">
-              <ul>
-                <li>
+              <Typography gutterBottom>
+                <Typography gutterBottom>
                   ✅ Always Double-Check the Wallet Address – Cryptocurrency
                   transactions are irreversible. Ensure you enter the correct
                   address.
-                </li>
-                <li>
+                </Typography>
+                <Typography gutterBottom>
                   ✅ Select the Right Network – Sending funds to the wrong
                   network (e.g., ERC-20 USDT to a TRC-20 address) may result in
                   lost funds.
-                </li>
-                <li>
+                </Typography>
+                <Typography gutterBottom>
                   ✅ Minimum Deposit Amounts Apply – Small deposits below the
                   required minimum may not be credited. (Minimum Deposit is
                   $1,000)
-                </li>
-                <li>
+                </Typography>
+                <Typography gutterBottom>
                   ✅ Network Fees Apply – Blockchain transactions require
                   network fees (gas fees), which must be covered by the sender.
-                </li>
-                <li>
+                </Typography>
+                <Typography gutterBottom>
                   ✅ Processing Time – Deposits are processed after blockchain
                   confirmation:
-                  <ul>
+                  <Typography gutterBottom>
                     <li>Bitcoin (BTC): ~10-30 minutes</li>
                     <li>Ethereum (ETH) & ERC-20 Tokens: ~5-15 minutes</li>
                     <li>BEP-20 & TRC-20 Tokens: ~1-5 minutes</li>
                     <li>Solana (SOL): ~1-2 minutes</li>
-                  </ul>
-                </li>
-              </ul>
+                  </Typography>
+                </Typography>
+              </Typography>
             </Typography>
             <Divider sx={{ my: 2 }} />
 

@@ -5,20 +5,20 @@ import { useSelector } from "react-redux";
 export const columns = [
   {
     field: "transactionType",
-    headerName: "Transaction Type",
+    headerName: "Type",
     headerAlign: "left",
     align: "left",
-    flex: 1,
+    flex: 0.5,
     minWidth: 120,
   },
-  { field: "status", headerName: "Status", flex: 0.5, minWidth: 80 },
+  { field: "status", headerName: "Status", flex: 0.5, minWidth: 130 },
   {
     field: "amount",
     headerName: "Amount",
-    headerAlign: "center",
-    align: "center",
-    flex: 1,
-    minWidth: 100,
+    headerAlign: "left",
+    align: "left",
+    flex: 0.5,
+    minWidth: 140,
   },
 
   {
@@ -26,10 +26,10 @@ export const columns = [
     headerName: "Date",
     headerAlign: "left",
     align: "left",
-    flex: 1,
+    flex: 0.5,
     minWidth: 120,
   },
-  { field: "statusLabel", headerName: "Reference ID", flex: 1, minWidth: 100 },
+  
 ];
 
 // Fetch and map rows data from API

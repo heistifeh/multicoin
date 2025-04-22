@@ -70,10 +70,20 @@ export default function AppNavbar() {
                 color: "text.primary",
                 display: "flex",
                 alignItems: "center", // vertically center image and text
+                fontSize: {
+                  xs: "1rem", // Small screen (phones)
+                  sm: "2rem", // Medium screen (tablets)
+                  md: "2.5rem", // Larger screen (desktops)
+                },
                 gap: 1, // space between image and text
               }}
             >
-              <img src="./logo.png" alt="" style={{ height: 32 }} />
+              <img
+                src="/logo1.jpg"
+                alt="multicoin capital"
+                style={{ height: 32 }}
+                className="rounded-sm"
+              />
               Multicoin Capital
             </Typography>
           </Stack>

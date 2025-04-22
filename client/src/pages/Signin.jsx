@@ -170,7 +170,7 @@ const Signin = () => {
             </p>
             <div disable={loading} className="flex w-full">
               <button className="mx-auto  bg-primary text-white p-2 rounded-lg hover:opacity-85 cursor-pointer w-full">
-                {loading ? "Signing in" : "Sign in"}
+                {loading ? "Signing in..." : "Sign in"}
               </button>
             </div>
 

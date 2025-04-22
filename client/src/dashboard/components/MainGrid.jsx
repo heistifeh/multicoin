@@ -63,7 +63,8 @@ const last = [
 export default function MainGrid() {
   const [userStats, setUserStats] = React.useState(null);
   const { currentUser } = useSelector((state) => state.user);
-
+  //cehck if the user ID is verified
+  const isIdVerified = currentUser.isIdVerified;
   // const loadUserStats = React.useCallback(async () => {
   //   if (currentUser) {
   //     try {
@@ -172,7 +173,7 @@ export default function MainGrid() {
   }, [currentUser]);
   React.useEffect(() => {
     // const FIVE_SECONDS_MS = 5 * 1000; // 5 seconds in milliseconds
-    const FIVE_SECONDS_MS = 5 * 1000; // 5 seconds in milliseconds
+    const FIVE_SECONDS_MS = 30 * 1000; // 30 seconds in milliseconds
     // const token = localStorage.getItem("token");
     // console.log(token);
 
@@ -216,26 +217,28 @@ export default function MainGrid() {
 
           if (missedIntervals > 0) {
             try {
-              const response = await fetch(
-                `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/increase-balance`,
-                {
-                  method: "POST",
-                  headers: {
-                    Authorization: `Bearer ${currentUser.token}`,
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    userId: `${currentUser._id}`,
-                    missedIntervals: missedIntervals, // Send the missedIntervals in the body
-                  }),
-                }
-              );
-              const data = await response.json(); // Parse the response JSON
+              if (isIdVerified) {
+                const response = await fetch(
+                  `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/increase-balance`,
+                  {
+                    method: "POST",
+                    headers: {
+                      Authorization: `Bearer ${currentUser.token}`,
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      userId: `${currentUser._id}`,
+                      missedIntervals: missedIntervals, // Send the missedIntervals in the body
+                    }),
+                  }
+                );
+                const data = await response.json(); // Parse the response JSON
 
-              if (response.ok) {
-                console.log("Balance increased:", data);
-              } else {
-                console.error("Error increasing balance:", data.message);
+                if (response.ok) {
+                  console.log("Balance increased:", data);
+                } else {
+                  console.error("Error increasing balance:", data.message);
+                }
               }
             } catch (error) {
               console.error("Error sending request:", error);
@@ -281,7 +284,7 @@ export default function MainGrid() {
     <Box sx={{ width: "100%", maxWidth: { sm: "100%", md: "1700px" } }}>
       {/* cards */}
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
-        Welcome, {currentUser.firstName}
+        Welcome, {currentUser.firstName}.
       </Typography>
       <Grid
         container

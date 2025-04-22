@@ -17,9 +17,10 @@ import { Box } from "@mui/material";
 const Avatar = styled(MuiAvatar)(({ theme }) => ({
   width: 28,
   height: 28,
+  borderRadius: 6, 
   backgroundColor: (theme.vars || theme).palette.background.paper,
   color: (theme.vars || theme).palette.text.secondary,
-  border: `1px solid ${(theme.vars || theme).palette.divider}`,
+  border: `0.5px solid ${(theme.vars || theme).palette.divider}`,
 }));
 
 const ListItemAvatar = styled(MuiListItemAvatar)({
@@ -43,7 +44,7 @@ export default function SelectContent() {
         display: "flex",
         flexDirection: "column",
         border: "1px solid #e0e0e0",
-        borderRadius: 1,
+        // borderRadius: 1,
         overflow: "hidden",
         fontSize: "14px",
         backgroundColor: "background.paper",
@@ -59,11 +60,11 @@ export default function SelectContent() {
         }}
       >
         <ListItemAvatar>
-          <Avatar alt="Sitemark web">
-            <img src="/logo1.jpg" alt="Company Logo" />
+          <Avatar alt="multicoin">
+            <img src="/logo1.jpg" alt="multicoin" />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="MultiCoin Capital" />
+        <ListItemText primary="Multicoin Capital" />
       </Box>
     </Box>
   );

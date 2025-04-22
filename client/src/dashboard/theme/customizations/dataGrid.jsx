@@ -32,12 +32,12 @@ export const dataGridCustomizations = {
           },
         },
         [`& .${tablePaginationClasses.root}`]: {
-          marginRight: theme.spacing(1),
+          marginRight: theme.spacing(0),
           '& .MuiIconButton-root': {
             maxHeight: 32,
             maxWidth: 32,
             '& > svg': {
-              fontSize: '1rem',
+              fontSize: '0.5rem',
             },
           },
         },
@@ -52,7 +52,7 @@ export const dataGridCustomizations = {
           border: `1px solid ${(theme.vars || theme).palette.divider}`,
         },
         [`& .${menuItemClasses.root}`]: {
-          margin: '0 4px',
+          margin: '0',
         },
         [`& .${listItemIconClasses.root}`]: {
           marginRight: 0,
@@ -121,14 +121,14 @@ export const dataGridCustomizations = {
         alignItems: 'flex-end',
       }),
       columnsManagementHeader: ({ theme }) => ({
-        paddingRight: theme.spacing(3),
-        paddingLeft: theme.spacing(3),
+        // paddingRight: theme.spacing(3),
+        // paddingLeft: theme.spacing(3),
       }),
       columnHeaderTitleContainer: {
         flexGrow: 1,
         justifyContent: 'space-between',
       },
-      columnHeaderDraggableContainer: { paddingRight: 2 },
+      columnHeaderDraggableContainer: { },
     },
   },
 };

@@ -28,7 +28,7 @@ export default function CustomizedDataGrid() {
   });
 
   return (
-    <Paper sx={{ p: 3, height: '100%' }}>
+    <Paper sx={{  height: '100%' }}>
       <Typography variant="h5" gutterBottom>
         Transaction Data
       </Typography>

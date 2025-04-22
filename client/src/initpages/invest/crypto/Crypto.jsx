@@ -64,8 +64,8 @@ const Crypto = () => {
               </button> */}
             </div>
           </div>
-          <div className="invest-image sm:w-2/3 pt-10">
-            <img src={bitcoin} alt="" className="rounded-2xl h-full " />
+          <div className="invest-image sm:w-2/3 sm:h-2/3 pt-10">
+            <img src={bitcoin} alt="" className="rounded-2xl  " />
           </div>
         </div>
       </header>
