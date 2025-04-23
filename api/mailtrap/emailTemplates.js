@@ -2,26 +2,25 @@ export const VERIFICATION_EMAIL_TEMPLATE = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verify Your Email</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Verification Code for Multicoin Capital</title>
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="background: linear-gradient(to right, #4CAF50, #45a049); padding: 20px; text-align: center;">
-    <h1 style="color: white; margin: 0;">Verify Your Email</h1>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #f3f4f6; background-color: #111827; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="background-color: #1f2937; padding: 20px; text-align: center; border-radius: 5px 5px 0 0;">
+    <h1 style="color: #ffffff; margin: 0;">Your Verification Code for Multicoin Capital</h1>
   </div>
-  <div style="background-color: #f9f9f9; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-    <p>Hello,</p>
-    <p>Thank you for signing up! Your verification code is:</p>
+  <div style="background-color: #1e293b; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+    <p>Hi {name},</p>
+    <p>Thank you for signing up with Multicoin Capital. To complete your registration, please enter the verification code below:</p>
     <div style="text-align: center; margin: 30px 0;">
       <span style="font-size: 32px; font-weight: bold; letter-spacing: 5px; color: #4CAF50;">{verificationCode}</span>
     </div>
-    <p>Enter this code on the verification page to complete your registration.</p>
-    <p>This code will expire in 15 minutes for security reasons.</p>
-    <p>If you didn't create an account with us, please ignore this email.</p>
+    <p>This code will expire in 15 minutes. If you didn’t initiate this request, please ignore this email.</p>
+    <p>If you have any questions or need assistance, feel free to contact our support team.</p>
     <p>Best regards,<br>Multicoin Capital Team</p>
   </div>
-  <div style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8em;">
+  <div style="text-align: center; margin-top: 20px; color: #9ca3af; font-size: 0.8em;">
     <p>This is an automated message, please do not reply to this email.</p>
   </div>
 </body>
@@ -32,15 +31,15 @@ export const PASSWORD_RESET_SUCCESS_TEMPLATE = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Password Reset Successful</title>
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="background: linear-gradient(to right, #4CAF50, #45a049); padding: 20px; text-align: center;">
-    <h1 style="color: white; margin: 0;">Password Reset Successful</h1>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #f3f4f6; background-color: #111827; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="background-color: #1f2937; padding: 20px; text-align: center; border-radius: 5px 5px 0 0;">
+    <h1 style="color: #ffffff; margin: 0;">Password Reset Successful</h1>
   </div>
-  <div style="background-color: #f9f9f9; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+  <div style="background-color: #1e293b; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
     <p>Hello,</p>
     <p>We're writing to confirm that your password has been successfully reset.</p>
     <div style="text-align: center; margin: 30px 0;">
@@ -50,7 +49,7 @@ export const PASSWORD_RESET_SUCCESS_TEMPLATE = `
     </div>
     <p>If you did not initiate this password reset, please contact our support team immediately.</p>
     <p>For security reasons, we recommend that you:</p>
-    <ul>
+    <ul style="padding-left: 20px; color: #d1d5db;">
       <li>Use a strong, unique password</li>
       <li>Enable two-factor authentication if available</li>
       <li>Avoid using the same password across multiple sites</li>
@@ -58,7 +57,7 @@ export const PASSWORD_RESET_SUCCESS_TEMPLATE = `
     <p>Thank you for helping us keep your account secure.</p>
     <p>Best regards,<br>Multicoin Capital Team</p>
   </div>
-  <div style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8em;">
+  <div style="text-align: center; margin-top: 20px; color: #9ca3af; font-size: 0.8em;">
     <p>This is an automated message, please do not reply to this email.</p>
   </div>
 </body>
@@ -69,15 +68,15 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reset Your Password</title>
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="background: linear-gradient(to right, #4CAF50, #45a049); padding: 20px; text-align: center;">
-    <h1 style="color: white; margin: 0;">Password Reset</h1>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #f3f4f6; background-color: #111827; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="background-color: #1f2937; padding: 20px; text-align: center; border-radius: 5px 5px 0 0;">
+    <h1 style="color: #ffffff; margin: 0;">Password Reset</h1>
   </div>
-  <div style="background-color: #f9f9f9; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+  <div style="background-color: #1e293b; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
     <p>Hello,</p>
     <p>We received a request to reset your password. If you didn't make this request, please ignore this email.</p>
     <p>To reset your password, click the button below:</p>
@@ -87,7 +86,45 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
     <p>This link will expire in 1 hour for security reasons.</p>
     <p>Best regards,<br>Multicoin Capital Team</p>
   </div>
-  <div style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8em;">
+  <div style="text-align: center; margin-top: 20px; color: #9ca3af; font-size: 0.8em;">
+    <p>This is an automated message, please do not reply to this email.</p>
+  </div>
+</body>
+</html>
+`;
+
+
+export const WELCOME_EMAIL_TEMPLATE = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to Multicoin Capital</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #f3f4f6; background-color: #111827; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="background-color: #1f2937; padding: 20px; text-align: center; border-radius: 5px 5px 0 0;">
+   
+    <h1 style="color: #ffffff; margin: 0;">Welcome to Multicoin Capital</h1>
+  </div>
+  <div style="background-color: #1e293b; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
+    <p>Hi {name},</p>
+    <p>Welcome to <strong>Multicoin Capital</strong> — we're excited to have you join us on this journey.</p>
+    <p>At Multicoin, we don’t just invest in crypto, we invest in the future. By harnessing the power of blockchain technology, we're building a smarter, decentralized financial ecosystem designed to create long-term, generational wealth.</p>
+    <p>As part of our community, you’ll gain:</p>
+    <ul style="color: #d1d5db; padding-left: 20px;">
+      <li>Access to research-driven insights and high-conviction investment theses</li>
+      <li>Opportunities to learn how transformative technologies are reshaping global markets</li>
+      <li>Tools to help you make informed decisions and build lasting value for yourself and the generations that follow</li>
+    </ul>
+    <p>We're here to help you navigate this fast-moving space with confidence and clarity. Stay tuned for updates, in-depth reports, and ways to engage with our portfolio and ideas.</p>
+    <p>Let’s shape the future of wealth together.</p>
+    <p>Warm regards,<br>The Multicoin Capital Team</p>
+    <p style="margin-top: 30px;">
+      <a href="{websiteURL}" style="color: #4caf50; text-decoration: none;">Visit our website</a>
+    </p>
+  </div>
+  <div style="text-align: center; margin-top: 20px; color: #9ca3af; font-size: 0.8em;">
     <p>This is an automated message, please do not reply to this email.</p>
   </div>
 </body>

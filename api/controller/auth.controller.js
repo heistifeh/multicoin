@@ -44,7 +44,7 @@ export const signup = async (req, res, next) => {
       verificationTokenExpiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000),
     });
 
-    await sendVerificationEmail(newUser.email, verificationToken);
+    await sendVerificationEmail(newUser.email, verificationToken, newUser.firstName);
 
     await newUser.save();
 
@@ -118,7 +118,7 @@ export const verifyEmail = async (req, res, next) => {
     await verifyUser.save();
 
     // send a welcome email
-    await sendWelcomeEmail(verifyUser.email, verifyUser.name);
+    await sendWelcomeEmail(verifyUser.email, verifyUser.firstName);
     res.status(200).json({ message: "email verified successfully 🎉" });
   } catch (error) {
     next(error);
