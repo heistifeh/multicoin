@@ -6,9 +6,9 @@ export const VERIFICATION_EMAIL_TEMPLATE = `
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Verification Code for Multicoin Capital</title>
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #f3f4f6; background-color: #111827; max-width: 600px; margin: 0 auto; padding: 20px;">
+<body style="font-family: Arial, sans-serif; line-height: 1.5; color: #f3f4f6; background-color: #111827; max-width: 600px; margin: 0 auto; padding: 10px;">
   <div style="background-color: #1f2937; padding: 20px; text-align: center; border-radius: 5px 5px 0 0;">
-    <h1 style="color: #ffffff; margin: 0;">Your Verification Code for Multicoin Capital</h1>
+    <h3 style="color: #ffffff; margin: 0;">Your Verification Code for Multicoin Capital</h3>
   </div>
   <div style="background-color: #1e293b; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
     <p>Hi {name},</p>
@@ -102,10 +102,10 @@ export const WELCOME_EMAIL_TEMPLATE = `
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome to Multicoin Capital</title>
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #f3f4f6; background-color: #111827; max-width: 600px; margin: 0 auto; padding: 20px;">
+<body style="font-family: Arial, sans-serif; line-height: 1.5; color: #f3f4f6; background-color: #111827; max-width: 600px; margin: 0 auto; padding: 10px;">
   <div style="background-color: #1f2937; padding: 20px; text-align: center; border-radius: 5px 5px 0 0;">
    
-    <h1 style="color: #ffffff; margin: 0;">Welcome to Multicoin Capital</h1>
+    <h3 style="color: #ffffff; margin: 0;">Welcome to Multicoin Capital</h3>
   </div>
   <div style="background-color: #1e293b; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
     <p>Hi {name},</p>
