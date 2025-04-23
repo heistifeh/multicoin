@@ -2,6 +2,7 @@ import {
   VERIFICATION_EMAIL_TEMPLATE,
   PASSWORD_RESET_REQUEST_TEMPLATE,
   PASSWORD_RESET_SUCCESS_TEMPLATE,
+  WELCOME_EMAIL_TEMPLATE,
 } from "./emailTemplates.js";
 import { mailtrapClient, sender } from "./mailtrap.config.js";
 
@@ -29,7 +30,7 @@ export const sendWelcomeEmail = async (email, name) => {
       from: sender,
       to: receipient,
       subject: "Welcome to Multicoin Capital",
-      html: VERIFICATION_EMAIL_TEMPLATE.replace("{name}", name).replace(
+      html: WELCOME_EMAIL_TEMPLATE.replace("{name}", name).replace(
         "{websiteURL}",
         "https://multicoinapp.com"
       ),
@@ -64,7 +65,7 @@ export const sendPasswordResetEmail = async (email, resetUrl) => {
       from: sender,
       to: receipient,
       subject: "Reset your password",
-      html: PASSWORD_RESET_REQUEST_TEMPLATE.replace("{resetURL}", resetUrl),
+      html: PASSWORD_RESET_REQUEST_TEMPLATE.replace("{resetURL}", resetUrl).,
     });
     console.log(resetUrl);
 
