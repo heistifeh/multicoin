@@ -109,21 +109,18 @@ export const WELCOME_EMAIL_TEMPLATE = `
   </div>
   <div style="background-color: #1e293b; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">
     <p>Hi {name},</p>
-    <p>Welcome to <strong>Multicoin Capital</strong> — we're excited to have you join us on this journey.</p>
-    <p>At Multicoin, we don’t just invest in crypto, we invest in the future. By harnessing the power of blockchain technology, we're building a smarter, decentralized financial ecosystem designed to create long-term, generational wealth.</p>
-    <p>As part of our community, you’ll gain:</p>
+    <p>Welcome to Multicoin Capital, we’re excited to have you with us!</p>
+    <p>We’re building a decentralized financial future powered by blockchain, focused on long-term, generational wealth. As part of our community, you’ll get:</p>
+   
     <ul style="color: #d1d5db; padding-left: 20px;">
-      <li>Access to research-driven insights and high-conviction investment theses</li>
-      <li>Opportunities to learn how transformative technologies are reshaping global markets</li>
-      <li>Tools to help you make informed decisions and build lasting value for yourself and the generations that follow</li>
+      <li>Research-driven investment insights</li>
+      <li>Education on transformative tech</li>
+      <li>Tools to help you invest with confidence</li>
     </ul>
-    <p>We're here to help you navigate this fast-moving space with confidence and clarity. Stay tuned for updates, in-depth reports, and ways to engage with our portfolio and ideas.</p>
+    <p>Stay tuned for updates, reports, and ways to engage.</p>
     <p>Let’s shape the future of wealth together.</p>
-    <p>Warm regards,<br>The Multicoin Capital Team</p>
-    <p style="margin-top: 30px;">
-      <a href="{websiteURL}" style="color: #4caf50; text-decoration: none;">Visit our website</a>
-    </p>
-  </div>
+    <p>Best,<br>The Multicoin Capital Team</p>
+    
   <div style="text-align: center; margin-top: 20px; color: #9ca3af; font-size: 0.8em;">
     <p>This is an automated message, please do not reply to this email.</p>
   </div>
