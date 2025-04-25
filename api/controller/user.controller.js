@@ -1,6 +1,8 @@
 import User from "../models/user.model.js"; //port the User mode
 // Get the user's balance info (deposit, total_profit, total_balance)
 import { increaseBalance } from "../utils/increaseBalance.js";
+import Transaction from "../models/transactions.model.js";
+import { errorHandler } from "../utils/error.js";
 export async function getUserBalance(req, res) {
   const { userId } = req.params;
 
@@ -91,3 +93,16 @@ export async function increaseBalanceForUser(req, res) {
   }
 }
 
+export async function getUserTransactions(req, res, next) {
+  try {
+    const { userId } = req.params;
+    const userTxns = await Transaction.find({ user_id: userId });
+
+    if (!userTxns) {
+      next(errorHandler(404, "No transactions found"));
+    }
+    return res.status(200).json(userTxns);
+  } catch (error) {
+    next(error);
+  }
+}

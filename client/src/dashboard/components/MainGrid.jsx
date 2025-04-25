@@ -298,18 +298,18 @@ export default function MainGrid() {
           </Grid>
         ))}
 
-        {last.map((card, index) => (
+        {/* {last.map((card, index) => (
           <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
             <StatCard {...card} />
           </Grid>
-        ))}
+        ))} */}
 
-        <Grid size={{ xs: 12, md: 6 }}>
+        {/* <Grid size={{ xs: 12, md: 6 }}>
           <SessionsChart />
         </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
           <PageViewsBarChart />
-        </Grid>
+        </Grid> */}
       </Grid>
       {/* <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
         Details

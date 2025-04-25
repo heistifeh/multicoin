@@ -57,7 +57,7 @@ const { currentUser } = useSelector((state) => state.user);
   useEffect(() => {
     const fetchData = async () => {
       const pendingDepositsResponse = await fetch(
-        `https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`,
+        `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/transactions`,
         {
           method: "GET", // Use "PUT" if updating data
           headers: {

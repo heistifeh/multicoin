@@ -102,7 +102,7 @@ export default function Dashboard(props) {
               <Route index element={<MainGrid />} />
               <Route path="deposit" element={<DepositScreen />} />
               <Route path="withdraw" element={<WithdrawalScreen />} />
-              <Route path="analytics" element={<Analytics />} />
+              {/* <Route path="analytics" element={<Analytics />} /> */}
               <Route path="transactions" element={<AssetScreen />} />
             </Routes>
           </Stack>

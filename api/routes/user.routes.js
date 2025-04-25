@@ -8,6 +8,7 @@ import {
   getLastLoadTime,
   updateLastLoadTime,
   increaseBalanceForUser,
+  getUserTransactions,
 } from "../controller/user.controller.js";
 
 const userDetailRoutes = express.Router();
@@ -32,5 +33,6 @@ userDetailRoutes.post(
   increaseBalanceForUser
 );
 
+userDetailRoutes.get("/:userId/transactions", getUserTransactions);
 
 export default userDetailRoutes;

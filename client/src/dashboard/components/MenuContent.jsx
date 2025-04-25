@@ -27,11 +27,6 @@ const mainListItems = [
     path: "/dashboard/withdraw",
   },
   {
-    text: "Analytics",
-    icon: <AnalyticsRoundedIcon />,
-    path: "/dashboard/analytics",
-  },
-  {
     text: "Transactions",
     icon: <AssignmentRoundedIcon />,
     path: "/dashboard/transactions",
