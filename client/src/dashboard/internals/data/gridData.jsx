@@ -29,7 +29,6 @@ export const columns = [
     flex: 0.5,
     minWidth: 120,
   },
-  
 ];
 
 // Fetch and map rows data from API
@@ -41,19 +40,20 @@ export const useTransactionData = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       if (currentUser && currentUser._id) {
-       
         try {
           const response = await fetch(
-            `https://multicoin-xdbp.onrender.com/api/transactions/pending/${currentUser._id}`,
+            `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/transactions`,
             {
-              method: "GET", // or "PUT" if you're updating
+              method: "GET", // Use "PUT" if updating data
               headers: {
                 Authorization: `Bearer ${currentUser.token}`,
-                "Content-Type": "application/json", // If required by your API
+                "Content-Type": "application/json", // Required if you're sending/receiving JSON
               },
             }
           );
-          const data = await response.json();
+          
+          const data1 = await response.json();
+          const data = [...data1].reverse();
 
           console.log("Fetched data:", data); // Log fetched data for debugging
 

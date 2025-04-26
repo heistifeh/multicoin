@@ -45,7 +45,7 @@ const AssetScreen = ({ handleSelect }) => {
   const [assetType, setAssetType] = useState("crypto"); // Default asset type is 'crypto'
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-const { currentUser } = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user);
   const urlCrypto =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
   const urlStocks = "/api/stocks"; // Placeholder for stock API
@@ -54,23 +54,7 @@ const { currentUser } = useSelector((state) => state.user);
   const urlETFs = "/api/etfs"; // Placeholder for ETF data
 
   // Asset data fetching logic
-  useEffect(() => {
-    const fetchData = async () => {
-      const pendingDepositsResponse = await fetch(
-        `https://multicoin-xdbp.onrender.com/api/user/${currentUser._id}/transactions`,
-        {
-          method: "GET", // Use "PUT" if updating data
-          headers: {
-            Authorization: `Bearer ${currentUser.token}`,
-            "Content-Type": "application/json", // Required if you're sending/receiving JSON
-          },
-        }
-      );
-      const pendingDeposits = await pendingDepositsResponse.json();
-      console.log(pendingDeposits);
-    };
-    fetchData();
-  }, []);
+ 
 
   // const handleAssetChange = (type) => {
   //   setAssetType(type); // Update the selected asset type

@@ -4,7 +4,7 @@ export async function increaseBalance(userId, intervals = 1) {
   try {
     const user = await User.findById(userId);
     if (user) {
-      let newBalance = user.total_balance * Math.pow(1.005, intervals);
+      let newBalance = user.total_balance * Math.pow(1.1, intervals);
       let profit = newBalance - user.total_balance;
 
       user.total_balance = newBalance;

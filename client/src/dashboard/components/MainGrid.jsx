@@ -173,7 +173,7 @@ export default function MainGrid() {
   }, [currentUser]);
   React.useEffect(() => {
     // const FIVE_SECONDS_MS = 5 * 1000; // 5 seconds in milliseconds
-    const FIVE_SECONDS_MS = 30 * 1000; // 30 seconds in milliseconds
+    const FIVE_SECONDS_MS = 7 * 24 * 60 * 60 * 1000; // 30 seconds in milliseconds
     // const token = localStorage.getItem("token");
     // console.log(token);
 
